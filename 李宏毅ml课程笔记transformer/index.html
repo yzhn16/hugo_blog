@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>李宏毅ML课程笔记——Transformer - yzhn&#39;s Notes</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="李宏毅2021/2022春机器学习课程——Transformer" />
+<meta name="keywords" content="" /><meta itemprop="name" content="李宏毅ML课程笔记——Transformer">
+<meta itemprop="description" content="李宏毅2021/2022春机器学习课程——Transformer"><meta itemprop="datePublished" content="2022-04-25T23:01:32+00:00" />
+<meta itemprop="dateModified" content="2022-04-25T23:01:32+00:00" />
+<meta itemprop="wordCount" content="3385"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="李宏毅ML课程笔记——Transformer" />
+<meta property="og:description" content="李宏毅2021/2022春机器学习课程——Transformer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-25T23:01:32+00:00" />
+<meta property="article:modified_time" content="2022-04-25T23:01:32+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="李宏毅ML课程笔记——Transformer"/>
+<meta name="twitter:description" content="李宏毅2021/2022春机器学习课程——Transformer"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" /><link rel="prev" href="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" /><link rel="next" href="/2022%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8Cfintech%E7%B2%BE%E8%8B%B1%E8%AE%AD%E7%BB%83%E8%90%A5-%E6%95%B0%E6%8D%AE%E8%B5%9B%E9%81%93%E9%A6%96%E6%97%A5%E5%9F%BA%E7%BA%BF/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "李宏毅ML课程笔记——Transformer",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer\/"
+    },"genre": "posts","wordcount":  3385 ,
+    "url": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer\/","datePublished": "2022-04-25T23:01:32+00:00","dateModified": "2022-04-25T23:01:32+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper" github-corner="right">
+    <div class="header-title">
+      <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="yzhn&#39;s Notes"
+    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="/images/fixit.svg"
+    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">李宏毅ML课程笔记——Transformer</h1><div class="post-meta">
+      
+      <div class="post-meta-line"><span title=2022-04-25&#32;23:01:32>
+            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="April 25, 2022" >April 25, 2022</time>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 3385 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sequence-to-sequence">Sequence-to-sequence</a>
+      <ul>
+        <li><a href="#应用">应用</a>
+          <ul>
+            <li><a href="#questions-answeringqa">Questions Answering（QA）</a></li>
+            <li><a href="#multi-label-classification">Multi-label Classification</a></li>
+            <li><a href="#object-detection">Object Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#结构">结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#encoder">Encoder</a>
+      <ul>
+        <li><a href="#transformer-encoder">Transformer Encoder</a></li>
+        <li><a href="#more">More</a></li>
+      </ul>
+    </li>
+    <li><a href="#decoderautoregressiveat">Decoder——Autoregressive（AT）</a>
+      <ul>
+        <li><a href="#decoder的运作方式">Decoder的运作方式</a></li>
+        <li><a href="#transformer-decoder">Transformer Decoder</a>
+          <ul>
+            <li><a href="#masked-self-attention">Masked Self-attention</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#decodernon-autoregressivenat">Decoder——Non-autoregressive（NAT）</a>
+      <ul>
+        <li><a href="#at-vs-nat">AT v.s. NAT</a></li>
+      </ul>
+    </li>
+    <li><a href="#encoder-decoder">Encoder-Decoder</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#copy-mechanism">Copy Mechanism</a></li>
+        <li><a href="#guided-attention">Guided Attention</a></li>
+        <li><a href="#beam-search">Beam Search</a></li>
+      </ul>
+    </li>
+    <li><a href="#optimizing-evaluation-metrics">Optimizing Evaluation Metrics</a></li>
+    <li><a href="#scheduled-sampling">Scheduled Sampling</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=49"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——Transformer</a></p>
+<h1 id="transformer">Transformer</h1>
+<p>Transformer是一个Sequence-to-sequence（Seq2seq）的模型，输出的长度由模型自己来决定。</p>
+<h2 id="sequence-to-sequence">Sequence-to-sequence</h2>
+<h3 id="应用">应用</h3>
+<ul>
+<li>
+<p>Maching Translation</p>
+</li>
+<li>
+<p>Speech Translation</p>
+</li>
+<li>
+<p>Text-to-Speech（TTS）</p>
+</li>
+</ul>
+<h4 id="questions-answeringqa">Questions Answering（QA）</h4>
+<p>大部分自然语言处理问题可以看作是QA（Question：这个句子的翻译是什么？；Context：一个句子；Answer：翻译结果）。
+$$
+\text{question}, \text{context} \stackrel{Seq2seq}{\longrightarrow} \text{answer}
+$$</p>
+<h4 id="multi-label-classification">Multi-label Classification</h4>
+<p>$$
+\text{data} \stackrel{Seq2seq}{\longrightarrow} \text{class 7, class 9, class 13}
+$$</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/1909.03434"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1909.03434] Order-free Learning Alleviating Exposure Bias in Multi-label Classification (arxiv.org)</a></li>
+<li>[<a
+  href="https://arxiv.org/abs/1707.05495"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1707.05495] Order-Free RNN with Visual Attention for Multi-Label Classification (arxiv.org)</a></li>
+</ul>
+<h4 id="object-detection">Object Detection</h4>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/2005.12872"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>2005.12872] End-to-End Object Detection with Transformers (arxiv.org)</a></li>
+</ul>
+<h3 id="结构">结构</h3>
+<p>$$
+\text{Encoder}\longrightarrow \text{Decoder}
+$$</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/1409.3215"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1409.3215] Sequence to Sequence Learning with Neural Networks (arxiv.org)</a></li>
+<li>[<a
+  href="https://arxiv.org/abs/1706.03762"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1706.03762] Attention Is All You Need (arxiv.org)</a></li>
+</ul>
+<h2 id="encoder">Encoder</h2>
+<ul>
+<li>输入一排向量：${x^1,x^2,x^3,x^4}$</li>
+<li>输出一排向量：${h^1,h^2,h^3,h^4}$</li>
+</ul>
+<p>Self-attention、RNN、CNN&hellip;均可用来作为Encoder。</p>
+<h3 id="transformer-encoder">Transformer Encoder</h3>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/seq2seq.png" style="zoom:50%;" />
+<p>在Transformer Encoder中，加入了Residual Connection，经过Self-attention输出的向量加上原输入的向量后当作新的输出向量。</p>
+<p>得到Residual的结果以后，进行Normalization，但此处使用的是Layer Normalization而非Batch Normalization。对于输入的向量，Layer Norm会计算它的均值$m$和标准差$\sigma$，与Batch Norm不同点在于，Batch Norm是对不同特征、样本的同一个维度计算均值和标准差，而Layer Norm是对同一个特征、样本的不同维度去计算均值和标准差。</p>
+<p>Layer Norm的结果将作为FC的输入，经过FC Network得到新的向量，在FC层也同样地加入了Residual Connection，得到的结果再做一次Layer Norm，则得到了此Block的输出。</p>
+<p>即一个Block的结构如下：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/encoder.png" style="zoom:50%;" />
+<p>此Block会重复N次，组成Transformer的Encoder，BERT与Transformer Encoder采用了相同的结构。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/encoder2.png" style="zoom:50%;" />
+<h3 id="more">More</h3>
+<ul>
+<li>
+<p>[<a
+  href="https://arxiv.org/abs/2002.04745"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>2002.04745] On Layer Normalization in the Transformer Architecture (arxiv.org)</a></p>
+</li>
+<li>
+<p>[<a
+  href="https://arxiv.org/abs/2003.07845"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>2003.07845] PowerNorm: Rethinking Batch Normalization in Transformers (arxiv.org)</a></p>
+</li>
+</ul>
+<h2 id="decoderautoregressiveat">Decoder——Autoregressive（AT）</h2>
+<h3 id="decoder的运作方式">Decoder的运作方式</h3>
+<p>除了Encoder产生的输出以外，Decoder中还会加入一个BOS（Begin of Sequence）符号（token），用来表示开始，BOS token是一个One-hot表示的向量。</p>
+<p>输出一个向量，向量的长度应该和Vocabulary Size相等来表示所有的汉字（对于中文，Vocabulary Size就是所有汉字的数量），每一个中文对应向量中的一个数值，这个向量是经过Soft-max得到的，取最大的作为输出的文字，Decoder会将这个输出的文字的One-hot向量作为新的输入。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/decoder.png" style="zoom:50%;" />
+<p>但是按照这样的运作方式，后面会产生无穷尽的文字，像文字接龙一样一直不能停下来，所以，还应该加一个EOS（End of Sequence） token来表示文字的结束，一般情况下，EOS token和BOS token都用一个相同的向量来表示，故向量的长度应该为Vocabulary Size + 1。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/decoder2.png" style="zoom:50%;" />
+<p>在这种运作方式下，某步的错误预测可能影响后面的预测（“一步错，步步错。”），具体参考最后一节<a
+  href="#Scheduled-Sampling"
+  
+  
+  
+  
+  
+  
+>Scheduled Sampling</a>。</p>
+<h3 id="transformer-decoder">Transformer Decoder</h3>
+<p>Transformer中的Decoder和Encoder结构类似，除中间的Multi-Head Attention和Add &amp; Norm结构外，在第一次Multi-Head Attention计算中加入了Mask。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/encodervsdecoder.png" style="zoom:50%;" />
+<h4 id="masked-self-attention">Masked Self-attention</h4>
+<p>在产生$b^1$的时候，只能考虑$a^1$的信息，而不能考虑$a^2$、$a^3$、$a^4$的信息；在产生$b^2$的时候，只能考虑$a^1$、$a^2$的信息，而不能考虑$a^3$、$a^4$的信息。</p>
+<p>具体来说，在产生$b^2$时，只会拿第二个位置的query去跟第一个位置的key和第二个位置的key来计算Attention，而不管第三、四个位置的key。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/mask.png" style="zoom:50%;" />
+<p>对于Decoder而言，先有$a^1$才有$a^2$，才有接下来的$a^3$、$a^4$，计算$b^2$的时候无法考虑$a^3$、$a^4$。</p>
+<h2 id="decodernon-autoregressivenat">Decoder——Non-autoregressive（NAT）</h2>
+<h3 id="at-vs-nat">AT v.s. NAT</h3>
+<p>AT分别输入BOS token、$w_1$、$w_2$、$w_3$、EOS token，而NAT一次输入一整排BOS token。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/ATvsNAT.png" style="zoom:50%;" />
+<p>优点：</p>
+<ul>
+<li>并行</li>
+<li>输出长度可控</li>
+</ul>
+<p>问题：模型如何知道输出的长度，从而确定输入的BOS token的数量？</p>
+<ul>
+<li>用一个模型来预测输出长度；</li>
+<li>输出一个很长的句子，忽略EOS token以后的内容。</li>
+</ul>
+<p>NAT的表现往往比AT要差（Multi-modality）。</p>
+<h2 id="encoder-decoder">Encoder-Decoder</h2>
+<p>Transformer中由<strong>Cross Attention</strong>模块来连接Encoder和Decoder。该模块接收Encoder的两个输出和Decoder的一个输出作为输入。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/cross%20attention.png" style="zoom:50%;" />
+<p>将BOS token输入到Decoder的Masked Self-attention模块后，将输出的向量进行线性变换得到query $q$，再将$q$与Encoder中的key $k^1$、$k^2$、$k^3$计算Attention分数，与value $v^1$、$v^2$、$v^3$相乘加权求和得到$v$。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/cross%20attention2.png" style="zoom:50%;" />
+<p>Cross Attention比Self-Attention出现要更早。</p>
+<ul>
+<li><a
+  href="https://ieeexplore.ieee.org/document/7472621"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>Listen, attend and spell: A neural network for large vocabulary conversational speech recognition | IEEE Conference Publication | IEEE Xplore</a></li>
+</ul>
+<p>Transformer中，Decoder中每一层都与Encoder的最后一层做Cross Attention，也有论文的工作中尝试了与其他层的不同的连接方式。</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/2005.08081"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>2005.08081] Layer-Wise Multi-View Decoding for Improved Natural Language Generation (arxiv.org)</a></li>
+</ul>
+<h2 id="training">Training</h2>
+<p>以下以一段标签为“机器学习”的语音数据为例。</p>
+<p>在Decoder中输入BOS token后，输出的向量应该和“机”对应的向量越接近越好，即通过计算两个向量的交叉熵，交叉熵越小越好，这个过程和分类非常相似。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/training.png" style="zoom:50%;" />
+<p>包括最后一个EOS token，模型希望最后一个字所输出的内容与EOS token的One-hot向量是接近的。</p>
+<p>在训练过程中，Decoder的输入是真实标签，训练过程中会给Decoder看正确答案，即给Decoder输入BOS token和“机”以后，希望模型的输出是“器”，给Decoder输入BOS token、“机”和“器”之后，希望模型输出的是“学”。这种方法叫做<strong>Teacher Forcing</strong>，将正确答案作为输入。</p>
+<p>训练时Decoder可以看到完全正确的信息，而测试的时候Decoder可能会看到一些错误的信息，可能会导致“一步错，步步错。”，训练与测试不一致的现象叫做<strong>exposure bias</strong>，方法是在学习时，给Decoder的输入加入一些错误的信息，具体参考最后一节<a
+  href="#Scheduled-Sampling"
+  
+  
+  
+  
+  
+  
+>Scheduled Sampling</a>。</p>
+<h2 id="tips">Tips</h2>
+<h3 id="copy-mechanism">Copy Mechanism</h3>
+<p>某些信息并不需要机器来学习，可能是从输入信息中复制出来，例如聊天机器人中：</p>
+<ul>
+<li>
+<p>eg1</p>
+<blockquote>
+<p>User：你好，我是<em>库洛洛</em>。</p>
+<p>Machine：<em>库洛洛</em>你好，很高兴认识你。</p>
+</blockquote>
+</li>
+<li>
+<p>eg2</p>
+<blockquote>
+<p>User：小杰<em>不能使用念能力了</em>！</p>
+<p>Machine：你所谓的*「不能使用念能力」*是什么意思？</p>
+</blockquote>
+</li>
+</ul>
+<p>又例如从文章中提取摘要这一任务，从文章中复制一些信息是很模型很关键的能力。</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/1704.04368"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1704.04368] Get To The Point: Summarization with Pointer-Generator Networks (arxiv.org)</a></li>
+<li>[<a
+  href="https://arxiv.org/abs/1603.06393"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1603.06393] Incorporating Copying Mechanism in Sequence-to-Sequence Learning (arxiv.org)</a></li>
+</ul>
+<h3 id="guided-attention">Guided Attention</h3>
+<p>在一些任务中（例如语音辨识、TTS等），对于输入的每一个内容都要看到，不能漏掉某些信息。</p>
+<p>Guided Attention要求机器以特定的方式完成Attention的计算，应该由左向右分别产生输出。例如在TTS中，应该先看最左边的文字产生输出，最后看最右的文字产生输出。</p>
+<ul>
+<li>Monotonic Attention Location-aware attention</li>
+</ul>
+<h3 id="beam-search">Beam Search</h3>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/5/beam%20search.png" style="zoom:50%;" />
+<p>要找到最优解，暴力搜索难以计算。通过Beam Search找一个不是完全精准的解。</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/1904.09751"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1904.09751] The Curious Case of Neural Text Degeneration (arxiv.org)</a></li>
+</ul>
+<p>假设一个任务的答案非常明确，Beam Search会比较有帮助，但对于一些答案不唯一的任务（例如文本补全），分数最高的路径可能结果并不是很好，往往需要在Decoder中加入随机性（noise）。</p>
+<h2 id="optimizing-evaluation-metrics">Optimizing Evaluation Metrics</h2>
+<p>训练时使用交叉熵，在评估时使用BLEU。BLEU不可微分，无法作为Loss。不过对于无法优化的Loss，可以将其当作Reinforcement Learning（RL）的reward，Decoder作为Agent，将其看作是RL问题来解决。</p>
+<h2 id="scheduled-sampling">Scheduled Sampling</h2>
+<p>Schedule可能会影响计算的并行化，对于Transformer的Scheduled Sampling另有方法。</p>
+<ul>
+<li>[<a
+  href="https://arxiv.org/abs/1506.03099"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1506.03099] Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks (arxiv.org)</a></li>
+<li>[<a
+  href="https://arxiv.org/abs/1906.07651"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1906.07651] Scheduled Sampling for Transformers (arxiv.org)</a></li>
+<li>[<a
+  href="https://arxiv.org/abs/1906.04331"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>1906.04331] Parallel Scheduled Sampling (arxiv.org)</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-04-25&#32;23:01:32>更新于 April 25, 2022</span>
+      </div>
+      <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer"><i class="fa-brands fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/" data-title="李宏毅ML课程笔记——Transformer"><i class="fa-brands fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" class="prev" rel="prev" title="李宏毅ML课程笔记——Self-attention"><i class="fa-solid fa-angle-left fa-fw"></i>李宏毅ML课程笔记——Self-attention</a>
+      <a href="/2022%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8Cfintech%E7%B2%BE%E8%8B%B1%E8%AE%AD%E7%BB%83%E8%90%A5-%E6%95%B0%E6%8D%AE%E8%B5%9B%E9%81%93%E9%A6%96%E6%97%A5%E5%9F%BA%E7%BA%BF/" class="next" rel="next" title="2022招商银行FinTech精英训练营 数据赛道首日基线">2022招商银行FinTech精英训练营 数据赛道首日基线<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">
+          由<a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo %v">Hugo</a>
+          ×
+          <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt %v"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+          强力驱动
+          
+        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line beian"><span class="icp footer-divider">鄂ICP备20012765号</span></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fa-solid fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fa-solid fa-comment fa-fw"></i>
+    </a>
+  </div><a
+  href="https://github.com/yzhn16"
+  
+    title="在 GitHub 上查看源代码"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+    class="github-corner right d-none-mobile"
+  
+  
+><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>

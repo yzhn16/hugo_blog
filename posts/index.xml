@@ -1,0 +1,149 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>所有文章 - yzhn&#39;s Notes</title>
+    <link>/posts/</link>
+    <description>所有文章 | yzhn&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 16 May 2022 18:08:00 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>李宏毅ML课程笔记——Self-Supervised Learning</title>
+  <link>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-supervised-learning/</link>
+  <pubDate>Mon, 16 May 2022 18:08:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-supervised-learning/</guid>
+  <description><![CDATA[<p>
+<a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=71"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——Self-Supervised Learning</a></p>]]></description>
+</item><item>
+  <title>李宏毅ML课程笔记——生成式对抗网络（GAN）</title>
+  <link>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/</link>
+  <pubDate>Fri, 13 May 2022 17:45:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/</guid>
+  <description><![CDATA[<p><a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=58"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——生成式对抗网络</a></p>]]></description>
+</item><item>
+  <title>统计学习——感知机</title>
+  <link>/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%84%9F%E7%9F%A5%E6%9C%BA/</link>
+  <pubDate>Thu, 12 May 2022 00:29:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%84%9F%E7%9F%A5%E6%9C%BA/</guid>
+  <description><![CDATA[<p>李航《统计学习方法》第2章</p>]]></description>
+</item><item>
+  <title>李宏毅ML课程笔记——各式各样的Attention</title>
+  <link>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%90%84%E5%BC%8F%E5%90%84%E6%A0%B7%E7%9A%84attention/</link>
+  <pubDate>Sat, 30 Apr 2022 19:29:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%90%84%E5%BC%8F%E5%90%84%E6%A0%B7%E7%9A%84attention/</guid>
+  <description><![CDATA[<p><a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=51"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——各式各样的神奇的自注意力</a></p>]]></description>
+</item><item>
+  <title>2022招商银行FinTech精英训练营 数据赛道首日基线</title>
+  <link>/2022%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8Cfintech%E7%B2%BE%E8%8B%B1%E8%AE%AD%E7%BB%83%E8%90%A5-%E6%95%B0%E6%8D%AE%E8%B5%9B%E9%81%93%E9%A6%96%E6%97%A5%E5%9F%BA%E7%BA%BF/</link>
+  <pubDate>Fri, 29 Apr 2022 21:45:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/2022%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8Cfintech%E7%B2%BE%E8%8B%B1%E8%AE%AD%E7%BB%83%E8%90%A5-%E6%95%B0%E6%8D%AE%E8%B5%9B%E9%81%93%E9%A6%96%E6%97%A5%E5%9F%BA%E7%BA%BF/</guid>
+  <description><![CDATA[<p>
+一个简单的方案，lgb五折，无特征工程，仅简单处理了缺失值，CV 0.9504 LB 0.9535。</p>]]></description>
+</item><item>
+  <title>李宏毅ML课程笔记——Transformer</title>
+  <link>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/</link>
+  <pubDate>Mon, 25 Apr 2022 23:01:32 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0transformer/</guid>
+  <description><![CDATA[<p><a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=49"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——Transformer</a></p>]]></description>
+</item><item>
+  <title>李宏毅ML课程笔记——Self-attention</title>
+  <link>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/</link>
+  <pubDate>Sat, 23 Apr 2022 17:45:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/</guid>
+  <description><![CDATA[<p><a
+  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=38"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>李宏毅2021/2022春机器学习课程——自注意力机制（Self-attention）</a></p>]]></description>
+</item><item>
+  <title>Hexo中NexT主题下基于Fancybox的相册页面实现</title>
+  <link>/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/</link>
+  <pubDate>Sat, 05 Mar 2022 19:45:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/</guid>
+  <description><![CDATA[<p>最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。</p>]]></description>
+</item><item>
+  <title>《数字图像处理学》中的基础概念与课后习题总结</title>
+  <link>/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/</link>
+  <pubDate>Thu, 03 Mar 2022 21:39:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/</guid>
+  <description><![CDATA[<p>在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。</p>]]></description>
+</item><item>
+  <title>数字图像处理 课程笔记</title>
+  <link>/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Sat, 05 Feb 2022 11:23:00 &#43;0000</pubDate>
+  <author>作者</author>
+  <guid>/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[<p>参考视频是广东海洋大学的课程录像，参考书目为冈萨雷斯等著，阮秋琦等译的《数字图像处理》（第四版）。</p>]]></description>
+</item></channel>
+</rss>

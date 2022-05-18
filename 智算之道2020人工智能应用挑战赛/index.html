@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>智算之道——2020人工智能应用挑战赛 - yzhn&#39;s Notes</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="
+表格类数据挖掘&#43;图像分类赛题，赛程极短。初赛阶段出现了标签leak。个人赛道初赛Rank4，决赛Rank13。" />
+<meta name="keywords" content="" /><meta itemprop="name" content="智算之道——2020人工智能应用挑战赛">
+<meta itemprop="description" content="
+表格类数据挖掘&#43;图像分类赛题，赛程极短。初赛阶段出现了标签leak。个人赛道初赛Rank4，决赛Rank13。"><meta itemprop="datePublished" content="2020-10-10T10:01:00+00:00" />
+<meta itemprop="dateModified" content="2020-10-10T10:01:00+00:00" />
+<meta itemprop="wordCount" content="649"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="智算之道——2020人工智能应用挑战赛" />
+<meta property="og:description" content="
+表格类数据挖掘&#43;图像分类赛题，赛程极短。初赛阶段出现了标签leak。个人赛道初赛Rank4，决赛Rank13。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-10T10:01:00+00:00" />
+<meta property="article:modified_time" content="2020-10-10T10:01:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="智算之道——2020人工智能应用挑战赛"/>
+<meta name="twitter:description" content="
+表格类数据挖掘&#43;图像分类赛题，赛程极短。初赛阶段出现了标签leak。个人赛道初赛Rank4，决赛Rank13。"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" /><link rel="prev" href="/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2020-digix%E5%85%A8%E7%90%83%E6%A0%A1%E5%9B%ADai%E7%AE%97%E6%B3%95%E7%B2%BE%E8%8B%B1%E5%A4%A7%E8%B5%9B%E8%B5%9B%E9%A2%98a/" /><link rel="next" href="/%E4%B8%AD%E7%A7%BB%E9%9B%86%E6%88%90%E9%9B%84%E5%AE%89%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6%E9%99%A2%E9%A6%96%E5%B1%8Aonecity%E7%BC%96%E7%A8%8B%E5%A4%A7%E8%B5%9B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "智算之道——2020人工智能应用挑战赛",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B\/"
+    },"genre": "posts","wordcount":  649 ,
+    "url": "\/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B\/","datePublished": "2020-10-10T10:01:00+00:00","dateModified": "2020-10-10T10:01:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper" github-corner="right">
+    <div class="header-title">
+      <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="yzhn&#39;s Notes"
+    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="/images/fixit.svg"
+    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">智算之道——2020人工智能应用挑战赛</h1><div class="post-meta">
+      
+      <div class="post-meta-line"><span title=2020-10-10&#32;10:01:00>
+            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="October 10, 2020" >October 10, 2020</time>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 649 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#空值填充">空值填充</a></li>
+    <li><a href="#focal-loss-tensorflow实现">focal loss ——tensorflow实现</a></li>
+    <li><a href="#初赛解决方案">初赛解决方案</a></li>
+    <li><a href="#function-call-stack-train_function">Function call stack: train_function</a></li>
+    <li><a href="#fit_generator">fit_generator</a></li>
+    <li><a href="#决赛解决方案">决赛解决方案</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png"
+    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png 2x"
+    data-sizes="auto"
+    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png"
+    title="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/csia_ltc_2020.png" />
+表格类数据挖掘+图像分类赛题，赛程极短。初赛阶段出现了标签leak。个人赛道初赛Rank4，决赛Rank13。</p>
+<h2 id="空值填充">空值填充</h2>
+<p>　　以众数填充为例。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mode_val</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">all_data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_val</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>　　注意可能有多个众数，一般取第一个（mode()[0]），否则填充后的DataFrame仍存在空值。</p>
+<h2 id="focal-loss-tensorflow实现">focal loss ——tensorflow实现</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">focal_loss</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">softmax</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">),</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">logits</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">tf</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">logits</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">labels</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">softmax</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">prob</span><span class="p">),</span> <span class="n">gamma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">prob</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">loss</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="初赛解决方案">初赛解决方案</h2>
+<p>　　原始特征 + 交叉特征 + 整体(train+test)空值填充，lgb 5折 + catboost，Averaging加权0.4 / 0.6，线上auc 0.8581，个人rank4，初赛出现了标签leak，与前排差距较大，达到了2个百。</p>
+<h2 id="function-call-stack-train_function">Function call stack: train_function</h2>
+<p>　　在tensorflow2.x下调用tf.combat1没有关闭eager_execution()，加入如下代码解决：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">disable_eager_execution</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="fit_generator">fit_generator</h2>
+<p>　　从tensorflow 2.1.0开始已不推荐使用fit_generator，fit替代之。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="c1"># generator</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">img_path</span><span class="o">=</span> <span class="s1">&#39;./&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span>
+</span></span><span class="line"><span class="cl">        <span class="n">labels</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">batch_size</span><span class="p">:</span><span class="n">j</span><span class="o">*</span><span class="n">batch_size</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span><span class="o">=</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">labels</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># fit_generator</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">			<span class="n">generator</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">steps_per_epoch</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">callbacks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">validation_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">validation_steps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">class_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">max_q_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">pickle_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">initial_epoch</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="决赛解决方案">决赛解决方案</h2>
+<p>　　基线模型为EfficientNET-b5，使用20%的数据预热后，冻结除Dense外的所有层并使用全量数据调整网络。<a
+  href="http://papers.nips.cc/paper/9035-fixing-the-train-test-resolution-discrepancy"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>Fixing the train-test resolution discrepancy</a>。 <br>
+　　调用模型对测试集分类结果进行推断时，对测试集做了TTA，包括随机裁切、左右翻转等（考虑天气图像的特殊性，未做上下翻转）。<a
+  href="https://github.com/ultralytics/yolov5/issues/303"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>Test-Time Augmentation (TTA) Tutorial</a>
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png"
+    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png 2x"
+    data-sizes="auto"
+    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png"
+    title="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020/scheme.png" /></p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2020-10-10&#32;10:01:00>更新于 October 10, 2020</span>
+      </div>
+      <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛"><i class="fa-brands fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%99%BA%E7%AE%97%E4%B9%8B%E9%81%932020%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E6%8C%91%E6%88%98%E8%B5%9B/" data-title="智算之道——2020人工智能应用挑战赛"><i class="fa-brands fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2020-digix%E5%85%A8%E7%90%83%E6%A0%A1%E5%9B%ADai%E7%AE%97%E6%B3%95%E7%B2%BE%E8%8B%B1%E5%A4%A7%E8%B5%9B%E8%B5%9B%E9%A2%98a/" class="prev" rel="prev" title="2020 DIGIX全球校园AI算法精英大赛"><i class="fa-solid fa-angle-left fa-fw"></i>2020 DIGIX全球校园AI算法精英大赛</a>
+      <a href="/%E4%B8%AD%E7%A7%BB%E9%9B%86%E6%88%90%E9%9B%84%E5%AE%89%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6%E9%99%A2%E9%A6%96%E5%B1%8Aonecity%E7%BC%96%E7%A8%8B%E5%A4%A7%E8%B5%9B/" class="next" rel="next" title="中移集成（雄安产业研究院）首届OneCity编程大赛">中移集成（雄安产业研究院）首届OneCity编程大赛<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">
+          由<a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo %v">Hugo</a>
+          ×
+          <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt %v"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+          强力驱动
+          
+        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line beian"><span class="icp footer-divider">鄂ICP备20012765号</span></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fa-solid fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fa-solid fa-comment fa-fw"></i>
+    </a>
+  </div><a
+  href="https://github.com/yzhn16"
+  
+    title="在 GitHub 上查看源代码"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+    class="github-corner right d-none-mobile"
+  
+  
+><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>

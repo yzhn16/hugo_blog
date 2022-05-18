@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>《数字图像处理学》中的基础概念与课后习题总结 - yzhn&#39;s Notes</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。" />
+<meta name="keywords" content="" /><meta itemprop="name" content="《数字图像处理学》中的基础概念与课后习题总结">
+<meta itemprop="description" content="在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。"><meta itemprop="datePublished" content="2022-03-03T21:39:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-03T21:39:00+00:00" />
+<meta itemprop="wordCount" content="17921"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="《数字图像处理学》中的基础概念与课后习题总结" />
+<meta property="og:description" content="在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-03T21:39:00+00:00" />
+<meta property="article:modified_time" content="2022-03-03T21:39:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="《数字图像处理学》中的基础概念与课后习题总结"/>
+<meta name="twitter:description" content="在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" /><link rel="prev" href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" /><link rel="next" href="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "《数字图像处理学》中的基础概念与课后习题总结",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93\/"
+    },"genre": "posts","wordcount":  17921 ,
+    "url": "\/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93\/","datePublished": "2022-03-03T21:39:00+00:00","dateModified": "2022-03-03T21:39:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper" github-corner="right">
+    <div class="header-title">
+      <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="yzhn&#39;s Notes"
+    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="yzhn&#39;s Notes"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/images/fixit.svg"
+    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
+    data-sizes="auto"
+    alt="/images/fixit.svg"
+    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                
+                
+              >关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">《数字图像处理学》中的基础概念与课后习题总结</h1><div class="post-meta">
+      
+      <div class="post-meta-line"><span title=2022-03-03&#32;21:39:00>
+            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="March 3, 2022" >March 3, 2022</time>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 17921 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 36 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#本章内容">本章内容</a>
+      <ul>
+        <li><a href="#图像处理技术的分类">图像处理技术的分类</a></li>
+        <li><a href="#数字图像处理的特点">数字图像处理的特点</a></li>
+        <li><a href="#数字图像处理方法">数字图像处理方法</a></li>
+        <li><a href="#数字图像处理的主要内容">数字图像处理的主要内容</a></li>
+        <li><a href="#数字图像处理的硬件设备">数字图像处理的硬件设备</a></li>
+        <li><a href="#数字图像处理的应用">数字图像处理的应用</a></li>
+        <li><a href="#数字图像处理领域的发展动向">数字图像处理领域的发展动向</a></li>
+      </ul>
+    </li>
+    <li><a href="#思考题">思考题</a>
+      <ul>
+        <li><a href="#1-图像处理的主要方法分几大类">1. 图像处理的主要方法分几大类？</a></li>
+        <li><a href="#2-图像处理工程包括哪几项内容">2. 图像处理工程包括哪几项内容？</a></li>
+        <li><a href="#3-数字图像处理的主要内容是什么试说明它们的基本用途">3. 数字图像处理的主要内容是什么？试说明它们的基本用途。</a></li>
+        <li><a href="#4-什么是图像显示中的硬拷贝和软拷贝它们主要用什么设备">4. 什么是图像显示中的硬拷贝和软拷贝？它们主要用什么设备？</a></li>
+        <li><a href="#5-图像信息获取设备有哪几种其优缺点是什么">5. 图像信息获取设备有哪几种？其优缺点是什么？</a></li>
+        <li><a href="#6-图像显示的主要方法有几种其特点什么">6. 图像显示的主要方法有几种？其特点什么？</a></li>
+        <li><a href="#7-数字图像处理有哪些应用试举出几种你见过的应用">7. 数字图像处理有哪些应用？试举出几种你见过的应用。</a></li>
+        <li><a href="#8-数字图像处理的发展方向是什么">8. 数字图像处理的发展方向是什么？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-1">本章内容</a>
+      <ul>
+        <li><a href="#光学预备知识">光学预备知识</a></li>
+        <li><a href="#图像信息的分类">图像信息的分类</a></li>
+        <li><a href="#图像的统计特性">图像的统计特性</a></li>
+        <li><a href="#图像信息的信息量">图像信息的信息量</a>
+          <ul>
+            <li><a href="#离散的图像信息的熵">离散的图像信息的熵</a></li>
+            <li><a href="#连续的图像信息的熵">连续的图像信息的熵</a></li>
+          </ul>
+        </li>
+        <li><a href="#常用图像格式">常用图像格式</a></li>
+        <li><a href="#常用输入设备">常用输入设备</a></li>
+        <li><a href="#常用输出设备">常用输出设备</a></li>
+        <li><a href="#视觉系统的基本构造">视觉系统的基本构造</a></li>
+        <li><a href="#颜色的表示方法及观察条件">颜色的表示方法及观察条件</a></li>
+        <li><a href="#三基色混色及色度表示原理">三基色混色及色度表示原理</a></li>
+        <li><a href="#cie的rgb颜色表示系统">CIE的R、G、B颜色表示系统</a></li>
+        <li><a href="#刺激强度与感觉的关系">刺激强度与感觉的关系</a></li>
+        <li><a href="#亮度适应和颜色适应">亮度适应和颜色适应</a></li>
+        <li><a href="#亮度对比和颜色对比">亮度对比和颜色对比</a></li>
+        <li><a href="#颜色感觉与刺激面积的关系">颜色感觉与刺激面积的关系</a></li>
+        <li><a href="#主观颜色">主观颜色</a></li>
+        <li><a href="#记忆色">记忆色</a></li>
+        <li><a href="#进入色后退色膨胀色收缩色">进入色、后退色、膨胀色、收缩色</a></li>
+        <li><a href="#错视的原因">错视的原因</a></li>
+      </ul>
+    </li>
+    <li><a href="#思考题-1">思考题</a>
+      <ul>
+        <li><a href="#1-光学中的主要计量单位有哪几个它们的含义是什么">1. 光学中的主要计量单位有哪几个？它们的含义是什么？</a></li>
+        <li><a href="#2-图像的统计特性包括哪些内容">2. 图像的统计特性包括哪些内容？</a></li>
+        <li><a href="#17-什么是光觉什么是色觉">17. 什么是光觉？什么是色觉？</a></li>
+        <li><a href="#18-什么是三基色相加混色与相减混色的基色是否相同">18. 什么是三基色？相加混色与相减混色的基色是否相同？</a></li>
+        <li><a href="#19-格拉斯曼定律包含哪些内容">19. 格拉斯曼定律包含哪些内容？</a></li>
+        <li><a href="#21-什么是第三色盲它对图像处理有何意义">21. 什么是第三色盲？它对图像处理有何意义？</a></li>
+        <li><a href="#22-什么是视力视力与哪些因素有关">22. 什么是视力？视力与哪些因素有关？</a></li>
+        <li><a href="#23-什么是马赫现象它指什么而言">23. 什么是马赫现象？它指什么而言？</a></li>
+        <li><a href="#24-什么是光觉门限">24. 什么是光觉门限？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-2">本章内容</a>
+      <ul>
+        <li><a href="#傅里叶变换">傅里叶变换</a>
+          <ul>
+            <li><a href="#定义及基本概念">定义及基本概念</a></li>
+            <li><a href="#性质">性质</a></li>
+          </ul>
+        </li>
+        <li><a href="#离散傅里叶变换dft">离散傅里叶变换（DFT）</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#性质-1">性质</a></li>
+          </ul>
+        </li>
+        <li><a href="#快速傅里叶变换fft">快速傅里叶变换（FFT）</a></li>
+        <li><a href="#离散余弦变换dct">离散余弦变换（DCT）</a>
+          <ul>
+            <li><a href="#定义-1">定义</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#离散余弦变换的正交性">离散余弦变换的正交性</a></li>
+          </ul>
+        </li>
+        <li><a href="#沃尔什变换">沃尔什变换</a></li>
+        <li><a href="#离散沃尔什变换">离散沃尔什变换</a></li>
+        <li><a href="#哈尔函数及哈尔变换">哈尔函数及哈尔变换</a></li>
+        <li><a href="#斜矩阵与斜变换">斜矩阵与斜变换</a></li>
+        <li><a href="#小波变换">小波变换</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-3">本章内容</a>
+      <ul>
+        <li><a href="#直方图">直方图</a></li>
+        <li><a href="#直方图修改技术的基础">直方图修改技术的基础</a></li>
+        <li><a href="#用直方图修改技术进行图像增强">用直方图修改技术进行图像增强</a>
+          <ul>
+            <li><a href="#直方图均衡化处理">直方图均衡化处理</a></li>
+            <li><a href="#直方图规定化处理">直方图规定化处理</a></li>
+            <li><a href="#图像对比度处理">图像对比度处理</a></li>
+          </ul>
+        </li>
+        <li><a href="#图像平滑化处理">图像平滑化处理</a>
+          <ul>
+            <li><a href="#邻域平均法">邻域平均法</a></li>
+            <li><a href="#低通滤波法">低通滤波法</a></li>
+            <li><a href="#多图像平均法">多图像平均法</a></li>
+          </ul>
+        </li>
+        <li><a href="#图像尖锐化处理">图像尖锐化处理</a></li>
+        <li><a href="#利用同态系统进行增强处理">利用同态系统进行增强处理</a></li>
+        <li><a href="#伪彩色图像处理">伪彩色图像处理</a></li>
+      </ul>
+    </li>
+    <li><a href="#思考题-2">思考题</a>
+      <ul>
+        <li><a href="#1-图像增强的目的是什么">1. 图像增强的目的是什么？</a></li>
+        <li><a href="#2-什么是直方图">2. 什么是直方图？</a></li>
+        <li><a href="#3-直方图修改的技术基础是什么-4-在直方图修改技术中采用的变换函数的基本要求是什么-5-直方图均衡化采用何种变换函数-6-直方图均衡化处理的结果是什么">3. 直方图修改的技术基础是什么？/ 4. 在直方图修改技术中采用的变换函数的基本要求是什么？/ 5. 直方图均衡化采用何种变换函数？/ 6. 直方图均衡化处理的结果是什么？</a></li>
+        <li><a href="#11-什么是简并现象如何克服简并现象">11. 什么是“简并”现象？如何克服“简并”现象？</a></li>
+        <li><a href="#12-直方图规定化处理的技术难点是什么如何解决">12. 直方图规定化处理的技术难点是什么？如何解决？</a></li>
+        <li><a href="#14-在邻域平均法处理中如何选取邻域">14. 在邻域平均法处理中如何选取邻域？</a></li>
+        <li><a href="#15-低通滤波法图像增强处理中通常有几种滤波器它们的特点是什么">15. 低通滤波法图像增强处理中通常有几种滤波器？它们的特点是什么？</a></li>
+        <li><a href="#16-多图像平均法为何能去掉噪声它的主要难点是什么">16. 多图像平均法为何能去掉噪声？它的主要难点是什么？</a></li>
+        <li><a href="#17-图像尖锐化处理有几种方法">17. 图像尖锐化处理有几种方法？</a></li>
+        <li><a href="#18-零交叉边缘检测的优点是什么">18. 零交叉边缘检测的优点是什么？</a></li>
+        <li><a href="#19-何为同态处理试述其基本原理">19. 何为同态处理？试述其基本原理。</a></li>
+        <li><a href="#21-在图像处理中有哪几种模型它们的应用对象是什么">21. 在图像处理中有哪几种模型？它们的应用对象是什么？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#endbmatrix-2">\begin{bmatrix}
+1 \
+1 \
+1
+\end{bmatrix}</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-4">本章内容</a>
+      <ul>
+        <li><a href="#行程编码">行程编码</a>
+          <ul>
+            <li><a href="#一维行程编码">一维行程编码</a></li>
+            <li><a href="#二维行程编码预测微分量化器pdq">二维行程编码（预测微分量化器，PDQ）</a></li>
+          </ul>
+        </li>
+        <li><a href="#哈夫曼编码">哈夫曼编码</a></li>
+        <li><a href="#算术编码">算术编码</a></li>
+        <li><a href="#jpeg编码">JPEG编码</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-5">本章内容</a>
+      <ul>
+        <li><a href="#退化模型">退化模型</a></li>
+        <li><a href="#复原的代数方法">复原的代数方法</a></li>
+        <li><a href="#逆滤波">逆滤波</a></li>
+        <li><a href="#最小二乘方滤波">最小二乘方滤波</a></li>
+        <li><a href="#约束去卷积">约束去卷积</a></li>
+        <li><a href="#中值滤波">中值滤波</a></li>
+        <li><a href="#其他空间复原技术">其他空间复原技术</a></li>
+      </ul>
+    </li>
+    <li><a href="#思考题-3">思考题</a>
+      <ul>
+        <li><a href="#1-试述图像退化的基本模型">1. 试述图像退化的基本模型。</a></li>
+        <li><a href="#2-什么是线性空间不变的系统试写出其表达式">2. 什么是线性、空间不变的系统，试写出其表达式。</a></li>
+        <li><a href="#5-什么是非约束复原什么是约束复原">5. 什么是非约束复原？什么是约束复原？</a></li>
+        <li><a href="#8-如果不知道原始图像的功率谱而只知道噪声的方差采用何种方法复原图像为好">8. 如果不知道原始图像的功率谱，而只知道噪声的方差，采用何种方法复原图像为好？</a></li>
+        <li><a href="#9-试描述一维和二维中值滤波的基本原理">9. 试描述一维和二维中值滤波的基本原理。</a></li>
+        <li><a href="#11-试述均值滤波的基本原理">11. 试述均值滤波的基本原理。</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-6">本章内容</a>
+      <ul>
+        <li><a href="#图像重建概述及常用方法">图像重建概述及常用方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#思考题-4">思考题</a>
+      <ul>
+        <li><a href="#1-图像重建中数据的获取模型有哪几种">1. 图像重建中数据的获取模型有哪几种？</a></li>
+        <li><a href="#2-试述傅里叶重建法的基本原理">2. 试述傅里叶重建法的基本原理。</a></li>
+        <li><a href="#3-试述卷积法图像重建的基本原理">3. 试述卷积法图像重建的基本原理。</a></li>
+        <li><a href="#4-试述代数法重建的基本原理">4. 试述代数法重建的基本原理。</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-7">本章内容</a>
+      <ul>
+        <li><a href="#灰度阈值法分割">灰度阈值法分割</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#样板匹配">样板匹配</a></li>
+        <li><a href="#区域生长">区域生长</a></li>
+        <li><a href="#区域聚合">区域聚合</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#本章内容-8">本章内容</a>
+      <ul>
+        <li><a href="#边缘提取算法">边缘提取算法</a></li>
+        <li><a href="#区域填充算法">区域填充算法</a></li>
+        <li><a href="#连接部分提取算法">连接部分提取算法</a></li>
+        <li><a href="#凸壳算法">凸壳算法</a></li>
+        <li><a href="#细化">细化</a></li>
+        <li><a href="#粗化">粗化</a></li>
+        <li><a href="#骨骼化算法">骨骼化算法</a></li>
+        <li><a href="#裁剪">裁剪</a></li>
+        <li><a href="#膨胀">膨胀</a></li>
+        <li><a href="#腐蚀">腐蚀</a></li>
+        <li><a href="#开运算和闭运算">开运算和闭运算</a>
+          <ul>
+            <li><a href="#开启">开启</a></li>
+            <li><a href="#闭合">闭合</a></li>
+          </ul>
+        </li>
+        <li><a href="#灰度形态学的应用">灰度形态学的应用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。</p>
+<h1 id="第一章-绪论">第一章 绪论</h1>
+<h2 id="本章内容">本章内容</h2>
+<h3 id="图像处理技术的分类">图像处理技术的分类</h3>
+<ol>
+<li><strong>模拟图像处理</strong>：包括光学处理（利用透镜）和电子处理，如照相、遥感图像处理、电视信号处理等。速度快，但精度、灵活性较差。</li>
+<li><strong>数字图像处理</strong>：一般都用计算机处理或实时的硬件处理。精度高，但处理速度还有待提高。</li>
+</ol>
+<h3 id="数字图像处理的特点">数字图像处理的特点</h3>
+<ol>
+<li>
+<p><strong>图像信息量大</strong></p>
+<p>一幅图像每个像素的灰度级至少要用$6\ bit$表示，一般采用$8\ bit$（彩色图像），高精度的可用$12\ bit$或$16\ bit$。一般分辨率的图像像素数为$256\times 256$像素、$512\times 512$像素，高分辨率图像可达$1024\times 1024$像素或$2048\times 2048$像素。</p>
+</li>
+<li>
+<p><strong>图像处理技术综合性强</strong></p>
+<p>数字图像处理中涉及的基础知识和专业技术相当广泛。一般来说涉及通信技术、计算机技术、电子技术、电视技术，至于涉及的数学、物理等方面的基础知识就更多。</p>
+</li>
+<li>
+<p><strong>图像信息理论与通信理论密切相关</strong></p>
+<p>图像理论是把通信中的一维时间问题推广到二维空间上来研究的。通信研究的是一维时间信息，是时间域和频率域的问题；图像研究的是二维空间信息，是空间域和空间频率域（或变换域）之间的关系。</p>
+</li>
+</ol>
+<h3 id="数字图像处理方法">数字图像处理方法</h3>
+<p><em>见思考题1</em></p>
+<h3 id="数字图像处理的主要内容">数字图像处理的主要内容</h3>
+<p><em>见思考题3</em></p>
+<h3 id="数字图像处理的硬件设备">数字图像处理的硬件设备</h3>
+<p>一般的数字图像处理系统如下所示：
+$$
+\begin{aligned}
+输入设备\rightarrow A/D（模拟数字转换器） \rightarrow &amp;计算机 \rightarrow D/A（数字模拟转换器） \rightarrow 图像显示器 \
+&amp; \uparrow\downarrow\
+&amp;键盘监视器
+\end{aligned}
+$$
+早期的数字图像处理系统为提高处理速度，增加容量，都采用<strong>大型机</strong>，后来较普遍发展<strong>小型机</strong>为主的系统。</p>
+<p>现在的图像处理系统向<strong>微型图像处理系统</strong>和<strong>大型机</strong>两个方向发展。</p>
+<p>要从根本上解决处理能力、速度与数据量巨大的问题，还应该发展<strong>阵列机</strong>和<strong>并行处理技术</strong>。</p>
+<h3 id="数字图像处理的应用">数字图像处理的应用</h3>
+<p><em>见思考题7</em></p>
+<h3 id="数字图像处理领域的发展动向">数字图像处理领域的发展动向</h3>
+<p><em>见思考题8</em></p>
+<h2 id="思考题">思考题</h2>
+<h3 id="1-图像处理的主要方法分几大类">1. 图像处理的主要方法分几大类？</h3>
+<p>数字图像处理方法大致可分为两大类，即空域法和变换域法。</p>
+<ol>
+<li>
+<p><strong>空域法</strong></p>
+<p>把图像视为平面中各个像素组成的集合，然后直接对这个二维函数进行相应的处理。</p>
+<p>空域处理法主要有两大类：</p>
+<ul>
+<li>
+<p><strong>邻域处理法</strong></p>
+<p>梯度运算、拉普拉斯算子运算、平滑算子运算和卷积运算等。</p>
+</li>
+<li>
+<p><strong>点处理法</strong></p>
+<p>灰度处理，面积、周长、体积和重心运算等。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>变换域法</strong></p>
+<p>首先对图像进行正交变换，得到变换域系数阵列，然后再施各种处理，处理后再将其反变换到空间域，得到处理结果。</p>
+<p>包括滤波、数据压缩、特征提取等处理。</p>
+</li>
+</ol>
+<h3 id="2-图像处理工程包括哪几项内容">2. 图像处理工程包括哪几项内容？</h3>
+<p>完整的数字图像处理工程大体上可分为：</p>
+<ol>
+<li>图像信息的<strong>获取</strong></li>
+<li>图像信息的<strong>存储</strong></li>
+<li>图像信息的<strong>传送</strong></li>
+<li>图像信息的<strong>处理</strong></li>
+<li>图像信息的<strong>输出与显示</strong></li>
+</ol>
+<h3 id="3-数字图像处理的主要内容是什么试说明它们的基本用途">3. 数字图像处理的主要内容是什么？试说明它们的基本用途。</h3>
+<p>数字图像处理概括地说，主要包括：</p>
+<ol>
+<li>
+<p><strong>几何处理</strong></p>
+<p>坐标变换，图像的放大、缩小、旋转、移动，多个图像配准，全景畸变校正，扭曲校正，周长、面积、体积计算等。</p>
+<p>其中图像配准涉及众多的数学变换问题，在医学图像处理中具有重要的应用价值。</p>
+</li>
+<li>
+<p><strong>算术处理</strong></p>
+<p>对图像施以加、减、乘、除等运算。</p>
+<p>如医学图像的减影处理有显著的效果。</p>
+</li>
+<li>
+<p><strong>图像增强</strong></p>
+<p>突出图像中感兴趣的信息，而减弱或去除不需要的信息，从而使有用信息得到加强，便于区分或解释。</p>
+<p>主要方法包括直方图修改技术、伪彩色增强法、灰度窗口、图像平滑、图像尖锐化处理、同态处理等技术。</p>
+</li>
+<li>
+<p><strong>图像复原</strong></p>
+<p>去掉干扰和模糊，恢复图像的本来面目。</p>
+<p>典型的例子如去噪就属于复原处理。</p>
+</li>
+<li>
+<p><strong>图像重建</strong></p>
+<p>以上四项都是从图像到图像的处理，而重建是从数据到图像的处理，即输入的是某种数据，而处理结果得到的是图像。</p>
+<p>该处理的典型应用就是CT技术，早期为X光CT，后来发展有ECT、超声CT、核磁共振（NMR）等。</p>
+</li>
+<li>
+<p><strong>图像编码</strong></p>
+<p>主要宗旨是利用图像信号的统计特性及人类视觉的生理学及心理学特性对图像信号进行高效编码，即研究数据压缩技术，以解决数据量大的矛盾。一般来说，图像编码的目的有三个：</p>
+<ul>
+<li>减少数据存储量</li>
+<li>降低数据率以减少传输带宽</li>
+<li>压缩信息量，便于特征抽取，为识别做准备</li>
+</ul>
+</li>
+<li>
+<p><strong>图像识别</strong></p>
+<p>图像模式识别方法大致有三种：</p>
+<ul>
+<li>
+<p>统计识别法：侧重于特征</p>
+<p>统计决策理论的基本思想就是在不同的模式类中建立一个决策边界，利用决策函数把一个给定的模式归入相应的模式类中。</p>
+</li>
+<li>
+<p>句法结构模式识别法：侧重于结构和基元</p>
+<p>如英文句子由一些短语，短语又由单词，单词又由字母构成一样。用一组模式基元和它们的组成来描述模式的结构的语言，称为模式描述语言。支配基元组成模式的规则称为文法。当每个基元被识别后，利用句法分析就可以作出整个的模式识别。即以这个句子是否符合某特定文法，以判别它是否属于某一类别。这就是句法模式识别的基本思想。</p>
+</li>
+<li>
+<p>模糊识别法：把模糊数学的一些概念和理论用于识别处理。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>图像理解</strong></p>
+<p>由模式识别发展起来的方法，输入图像，输出一种描述。</p>
+</li>
+</ol>
+<h3 id="4-什么是图像显示中的硬拷贝和软拷贝它们主要用什么设备">4. 什么是图像显示中的硬拷贝和软拷贝？它们主要用什么设备？</h3>
+<p>硬拷贝是二维地保持被压缩信息的板状物体实体，当资料经由印表机输出至纸上称为硬拷贝。而软拷贝则表示另有存储（记忆） 的不可见信息，若资料显示在萤幕上则称为软拷贝。</p>
+<p>通常的硬拷贝方法有<strong>照相</strong>、<strong>激光拷贝</strong>、<strong>彩色喷墨打印机</strong>等几种方法。</p>
+<p>软拷贝方法有以下几种：</p>
+<ol>
+<li><strong>CRT显示</strong></li>
+<li><strong>液晶显示器LCD</strong></li>
+<li><strong>彩色等离子显示技术PDP</strong></li>
+<li><strong>场致发光显示器FED</strong></li>
+</ol>
+<h3 id="5-图像信息获取设备有哪几种其优缺点是什么">5. 图像信息获取设备有哪几种？其优缺点是什么？</h3>
+<p>图像信息获取这一过程主要包括摄取图像、光电转换及数字化等几个步骤。通常图像获取的方法有如下几种：</p>
+<ol>
+<li>
+<p><strong>电视摄像机</strong></p>
+<ul>
+<li>优点：设备小巧、速度快、成本低、灵敏度高；</li>
+<li>缺点：灰度层次较差、非线性失真较大、有黑板效应、在使用中需校正。</li>
+</ul>
+</li>
+<li>
+<p><strong>飞点扫描器</strong></p>
+<ul>
+<li>优点：可获得与电视摄像机相仿的扫描速度，但位置进度和分辨率都比电视摄像机高，图像清晰，可透射成像也可反射成像；</li>
+<li>缺点：稳定性和再现性比较差，体积略显庞大，设备价格也较高。</li>
+</ul>
+</li>
+<li>
+<p><strong>扫描鼓</strong></p>
+<ul>
+<li>优点：扫描精度高、信噪比高、可靠性，速度比平台式位密度计要快得多，既可以输入也可以输出；</li>
+<li>缺点：只能采用逐行扫描方式，不能用于随机扫描，同时价格昂贵，维护要求高。</li>
+</ul>
+</li>
+<li>
+<p><strong>扫描仪</strong></p>
+<ul>
+<li>优点：成本很低；</li>
+<li>缺点：速度较慢，精度一般。</li>
+</ul>
+</li>
+<li>
+<p><strong>微光密度计</strong></p>
+<ul>
+<li>优点：精度很高；</li>
+<li>缺点：速度很慢、价格昂贵。</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-图像显示的主要方法有几种其特点什么">6. 图像显示的主要方法有几种？其特点什么？</h3>
+<ol>
+<li>
+<p><strong>硬拷贝</strong>：照相、激光拷贝、彩色喷墨打印等。</p>
+</li>
+<li>
+<p><strong>软拷贝</strong>：</p>
+<ul>
+<li>CRT显示：显示质量好、亮度高、电子束寻址方式简单，成本低。</li>
+<li>液晶显示器LCD</li>
+<li>彩色等离子显示技术PDP：大面积显示、全色显示、对比度高、色纯度好、寿命长、工作电压低、易于批量生产。</li>
+<li>场致发光显示器</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-数字图像处理有哪些应用试举出几种你见过的应用">7. 数字图像处理有哪些应用？试举出几种你见过的应用。</h3>
+<p>其典型的应用领域如下：</p>
+<ol>
+<li>
+<p><strong>遥感</strong></p>
+<p>土地测绘、资源调查、气象监测、环境污染监测、农作物估产、军事侦察等。</p>
+</li>
+<li>
+<p><strong>医学</strong></p>
+<p>X光CT、电阻抗断层图像技术（或阻抗成像）等。</p>
+</li>
+<li>
+<p><strong>通信</strong></p>
+<p>电视广播、可视电话和会议电话、传真、图文电视和可视图文等。</p>
+</li>
+<li>
+<p><strong>工业生产的质量控制</strong></p>
+<p>产品及部件的无损检测（食品包装、玻璃质量、工件尺寸测量和铁谱分析等）。</p>
+</li>
+<li>
+<p><strong>安全保障、公安等方面的应用</strong></p>
+<p>采用模式识别等方法实现监控、指纹档案、案件侦破、交通管理等。</p>
+</li>
+<li>
+<p><strong>教学、科研领域</strong></p>
+<p>科学计算可视化技术、远程培训等。</p>
+</li>
+<li>
+<p><strong>电子商务</strong></p>
+<p>身份认证、产品防伪、水印技术等。</p>
+</li>
+</ol>
+<h3 id="8-数字图像处理的发展方向是什么">8. 数字图像处理的发展方向是什么？</h3>
+<p>图像处理技术未来发展大致归纳如下4点：</p>
+<ol>
+<li><strong>高速、高分辨率和立体化</strong></li>
+<li><strong>三维成像和多维成像</strong></li>
+<li><strong>硬件芯片研究</strong></li>
+<li><strong>新理论与算法研究</strong></li>
+</ol>
+<h1 id="第二章-图像图像系统与视觉结构">第二章 图像、图像系统与视觉结构</h1>
+<h2 id="本章内容-1">本章内容</h2>
+<h3 id="光学预备知识">光学预备知识</h3>
+<p><em>见思考题1</em></p>
+<h3 id="图像信息的分类">图像信息的分类</h3>
+<ol>
+<li>
+<p><strong>符号信息</strong></p>
+<p>一般是用文字、符号、图形等表示的具体的或抽象的事物。</p>
+</li>
+<li>
+<p><strong>景物信息</strong></p>
+<p>能给人以主观感觉但不取决于人本身的客观场景信息。</p>
+</li>
+<li>
+<p><strong>情绪信息</strong></p>
+<p>是一种依赖于受信者的图像信息，不仅能给人以直观感觉，而且能以其特殊的艺术内容刺激人的感官。</p>
+</li>
+</ol>
+<h3 id="图像的统计特性">图像的统计特性</h3>
+<p><em>见思考题2</em></p>
+<h3 id="图像信息的信息量">图像信息的信息量</h3>
+<h4 id="离散的图像信息的熵">离散的图像信息的熵</h4>
+<p>一幅图像如果有$s1,s2,s3,\cdots,s_q$共$q$种幅度值，并且出现的概率分别为$P_1,P_2,P_3,\cdots,P_q$，那么每一种幅度值所具有的信息量分别为$\log_2(\frac{1}{P_1}).\log_2(\frac{1}{P_2}),\log_2(\frac{1}{P_3}),\cdots,\log_2(\frac{1}{P_q})$。由此，其平均信息量（熵）可由下式表示：
+$$
+H=\sum_{i=1}^{q}P_i\log_2\frac{1}{P_i}=-\sum_{i=1}^{q}P_i\log_2{P_i}
+$$</p>
+<h4 id="连续的图像信息的熵">连续的图像信息的熵</h4>
+<p>$$
+H=\int_{-\infty}^{\infty}p(s)\log_2{\frac{1}{p(s)}}ds+\infty
+$$</p>
+<p>一般忽略第二项：
+$$
+H=-\int_{-\infty}^{\infty}p(s)\log_2{p(s)}ds
+$$
+其中$p(s)$是概率密度。</p>
+<p>连续图像的熵并不是绝对熵，而是绝对熵减去一个无限大项，可以说这是一个相对熵。</p>
+<h3 id="常用图像格式">常用图像格式</h3>
+<ul>
+<li><strong>BMP</strong>：点阵图像格式之一。</li>
+<li><strong>PCX</strong>：MS-DOS下常用的格式。</li>
+<li><strong>GIF</strong>：为数据流而设计的一种传输格式，不是作为文件存储的格式。</li>
+<li><strong>JPEG</strong>：有损压缩格式，能够将图像压缩在很小的储存空间。</li>
+<li><strong>TIF(F)</strong>：主要在应用程序和计算机平台之间交换文件。</li>
+<li><strong>GEM</strong>：通常用.IMG为扩展名，由文件头和后面的图像数据组成。</li>
+<li><strong>PBM</strong>：包括了读写许多其他位图文件格式的程序，以及对图像完成变换的实用程序。</li>
+<li><strong>PSD</strong>：Adobe Photoshop的专用图像格式，可以以RGB或CMYK彩色模式储存。</li>
+<li><strong>PCD</strong>：Photo CD专用存储格式，文件特别大，需要存在CD-ROM上。</li>
+<li><strong>WMF</strong>：微软公司开发的矢量图形格式</li>
+</ul>
+<h3 id="常用输入设备">常用输入设备</h3>
+<ul>
+<li><strong>电视摄像机</strong></li>
+<li><strong>飞点扫描设备</strong></li>
+<li><strong>鼓形扫描器</strong></li>
+<li><strong>微密度计</strong></li>
+</ul>
+<h3 id="常用输出设备">常用输出设备</h3>
+<ul>
+<li><strong>监视器</strong></li>
+<li><strong>激光扫描器</strong></li>
+<li><strong>液晶显示器</strong></li>
+<li><strong>等离子体PDP显示技术</strong></li>
+<li><strong>数码纸显示技术</strong></li>
+<li><strong>其他图像显示装置</strong>
+<ul>
+<li><strong>彩色打印机</strong></li>
+<li><strong>投影显示器</strong></li>
+<li><strong>其他平板显示</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="视觉系统的基本构造">视觉系统的基本构造</h3>
+<p>人的视觉系统由<strong>眼球</strong>、<strong>神经系统</strong>及<strong>大脑的视觉中枢</strong>构成。</p>
+<h3 id="颜色的表示方法及观察条件">颜色的表示方法及观察条件</h3>
+<p>颜色的表示方法大体上有两种方法。</p>
+<ol>
+<li>
+<p>设置一套作为标准的颜色样本，被试的颜色与样本进行比较，然后用特殊的记号来表示。</p>
+</li>
+<li>
+<p>取决于刺激光的物理性质和色的感觉的对应关系。（心理物理色）</p>
+</li>
+</ol>
+<h3 id="三基色混色及色度表示原理">三基色混色及色度表示原理</h3>
+<p><em>见思考题18、19</em></p>
+<h3 id="cie的rgb颜色表示系统">CIE的R、G、B颜色表示系统</h3>
+<p>国际照明委员会（CIE）选择红色（波长$\lambda=700.00\ nm$），绿色（波长$\lambda=546.1\ nm$），蓝色（波长$\lambda=438.8\ nm$）三种单色光作为表色系统的三基色。</p>
+<p>产生$1\ lm$白光需要的三基色的近似值可用下面的亮度方程来表示：
+$$
+1\ lm(White)=0.30\ lm(Red)+0.59\ lm(Green)+0.11\ lm(Blue)
+$$
+产生白光时三基色比例关系不等，可以使用$T$单位制：
+$$
+1\ lm(W)=1\ T(R)+1\ T(G)+1\ T(B)
+$$
+可见$1\ T$单位红光$=0.30\ lm$，$1\ T$单位绿光$=0.59\ lm$，$1\ T$单位蓝光$=0.11\ lm$。</p>
+<h3 id="刺激强度与感觉的关系">刺激强度与感觉的关系</h3>
+<p>关于刺激光的强度和颜色的感觉，由于较暗的情况下只有杆状体起作用，所以此时并没有颜色感觉。亮度达到$10^{-3}\ cd/m^2$时锥状体才起作用，也就是亮度达到所谓微明视觉的水平时才有色觉。</p>
+<h3 id="亮度适应和颜色适应">亮度适应和颜色适应</h3>
+<p>从较亮的场所到较暗的场所时，很难马上看到东西，相反，从较暗的场所到较亮的场所，也看不见东西。一般把眼睛的状态适应明暗条件的变化叫做亮度适应。从亮到暗的变化叫做暗适应；从暗到亮的变化叫做亮适应。</p>
+<p>与亮度适应相区别，随着光的分布而变化，眼睛对颜色刺激灵敏度变化的性质。例如，用强红光刺激眼睛后看本来是黄色的物体确实绿色的。这种依赖光分布的视觉灵敏度叫做色适应。</p>
+<h3 id="亮度对比和颜色对比">亮度对比和颜色对比</h3>
+<p>一般情况，在相同亮度的刺激下，背景亮度的不同所感觉到的明暗程度也不同。</p>
+<p>刺激的亮度和色度受周围背景的影响而使其产生不同感觉的现象叫做同时对比现象。这里包括亮度对比和颜色对比。</p>
+<p>关于对比效果的基尔希曼法则：</p>
+<ol>
+<li>目标比背景小，颜色对比大；</li>
+<li>颜色对比在空间分离的两个领域内也发生，间隔大时则效果较小；</li>
+<li>背景大，对比量也大；</li>
+<li>明暗对比最小时，颜色对比最大；</li>
+<li>明暗相同时，背景色度高对比量大；</li>
+<li>亮度及颜色的恒定性（白天的煤山亮度比夜间的雪山亮度高，但仍感觉煤山黑，雪山白）。</li>
+</ol>
+<h3 id="颜色感觉与刺激面积的关系">颜色感觉与刺激面积的关系</h3>
+<p><em>见思考题21（第三色盲）</em></p>
+<h3 id="主观颜色">主观颜色</h3>
+<p>一个一半黑一半白的圆板，当它旋转时，将看到色度较低的颜色。这个现象不能用刺激光的分光特性来预测。圆板缓慢旋转时，从圆心到最外圈将看到不同的颜色。</p>
+<h3 id="记忆色">记忆色</h3>
+<p>我们经常接触的物体，对它的特有的颜色会有记忆，这就是记忆色的概念。例如人的皮肤颜色、草木的颜色等很容易从颜色样本中选出来，这是人人都有的视觉倾向。</p>
+<p>但是一般来说，记忆色与实际颜色并不一样，记忆色的色度和亮度都比实际颜色要高。记忆色与理想颜色的再现关系密切，无论是在彩色电视技术上还是绘画上都受到广泛的关注。</p>
+<h3 id="进入色后退色膨胀色收缩色">进入色、后退色、膨胀色、收缩色</h3>
+<p>观察物体时，根据其颜色有的感觉较近，有的感觉较远。使人有拉近距离感觉的颜色称为进入色，它有较长的波长。看着有推远距离感觉的颜色称为后退色，它有较短的波长。</p>
+<p>另外，有的颜色使我们有物体变大的感觉，称为膨胀色。有的会有缩小的感觉，称为收缩色。这些特性又与亮度有关。亮度高的黄色有增大的感觉，亮度低的蓝色有缩小的感觉。除此外，还有暖色、冷色等。</p>
+<h3 id="错视的原因">错视的原因</h3>
+<p>视觉系统对形状的感受受到物体自身形状及周围背景的影响。这类影响有神经系统引起的错视现象也有心理学因素的作用。</p>
+<p>当出示几个图形时，互相接近的人之间对图形的感觉比较容易取得一致的看法，这里就包括有心理上的诱导作用（群化法则）。另一个关系到心理因素的重要问题是图形和背景的关系问题，对图形和背景的感觉与观察者的经验、态度、明暗差别以及面积的比例等各种因素都有关系。</p>
+<p>视觉对大小形状的感觉也有时间因素的影响。</p>
+<p>当视网膜受到刺激时，并不是只有与刺激部位相对应的神经系统产生反应，而是对其周围也有影响，这种影响可以看成是由某种场引起的，所以把它叫做诱导场。利用诱导场的概念可以解释一些错视现象。</p>
+<h2 id="思考题-1">思考题</h2>
+<h3 id="1-光学中的主要计量单位有哪几个它们的含义是什么">1. 光学中的主要计量单位有哪几个？它们的含义是什么？</h3>
+<ol>
+<li>
+<p><strong>发光强度</strong>（$I$）</p>
+<p>光源发光的功率，其单位主要有如下两种：</p>
+<ul>
+<li>烛光功率（Candle Power，$CP$）：1$CP$是指标准蜡烛发出的光</li>
+<li>新烛光（Candle，$cd$）：1$cd$是“全辐射体”加热到铂的熔点（$2024K$）时从一平方厘米表面面积上发出的光的$1/60$</li>
+</ul>
+</li>
+<li>
+<p><strong>光通量</strong>（$\Phi$）</p>
+<p>每秒钟内光流量的度量，其单位是流明（lumen，$lm$）。</p>
+</li>
+<li>
+<p><strong>照度</strong>（$E$）</p>
+<p>入射到某表面的光通量密度称为该表面的照度，用每单位面积的流明数来表示，主要单位有如下几种：</p>
+<ul>
+<li>公制单位：
+<ul>
+<li>勒克斯（lx）</li>
+<li>辐透（phot）</li>
+<li>毫辐透（mphot）</li>
+</ul>
+</li>
+<li>英制单位：
+<ul>
+<li>英尺一烛光</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>反射系数</strong>（$\rho$）
+$$
+\rho=\frac{某表面反射的流明数}{入射到该表面的流明数}
+$$</p>
+</li>
+<li>
+<p><strong>透射系数</strong>（$\tau$）
+$$
+\tau=\frac{某物质透射的流明数}{入射到该物质的流明数}
+$$</p>
+</li>
+<li>
+<p><strong>亮度</strong>（$L$）</p>
+<p>用来说明物体表面发光的量度。</p>
+<p>亮度的衡量主要有A、B两组单位。</p>
+<ul>
+<li>A组：使用新烛光（坎德拉）为单位
+<ul>
+<li>尼特：1 尼特=1 新烛光/平方米</li>
+<li>熙提：1 熙提=1 新烛光/平方厘米</li>
+</ul>
+</li>
+<li>B组：使用流明数为单位
+<ul>
+<li>亚熙提：1 亚熙提=1 流明/平方米</li>
+<li>郎伯：1 郎伯=1 流明/平方厘米</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-图像的统计特性包括哪些内容">2. 图像的统计特性包括哪些内容？</h3>
+<ol>
+<li><strong>图像的振幅分布特性</strong></li>
+<li><strong>差值信号的振幅分布特性</strong></li>
+<li><strong>图像的自相关函数和空域功率谱</strong></li>
+<li><strong>电视信号的数学表示及自相关函数</strong></li>
+</ol>
+<h3 id="17-什么是光觉什么是色觉">17. 什么是光觉？什么是色觉？</h3>
+<p>眼睛对光的感觉称为光觉，对颜色的感觉称为色觉，这是眼睛的基本特性。</p>
+<h3 id="18-什么是三基色相加混色与相减混色的基色是否相同">18. 什么是三基色？相加混色与相减混色的基色是否相同？</h3>
+<p>几乎所有的彩色都能由三种基本彩色混配出来，这三种彩色就叫做三基色。</p>
+<p>由三基色混配各种颜色的方法通常有两种——<strong>相加混色</strong>和<strong>相减混色</strong>，二者主要的区别表现在以下：</p>
+<ol>
+<li>相加混色是由发光体发出的光相加而产生各种颜色，而相减混色是先有白色光，然后从中减去某些成分（吸收）得到各种彩光；</li>
+<li><strong>相加混色的三基色是红、绿、蓝，而相减混色的三基色是黄、青、紫（一般不确切的说成是黄、蓝、红），即相加混色的补色就是相减混色的基色。</strong></li>
+<li>相加混色和相减混色有不同规律（颜料相混）。</li>
+</ol>
+<h3 id="19-格拉斯曼定律包含哪些内容">19. 格拉斯曼定律包含哪些内容？</h3>
+<ol>
+<li>所有颜色都可以用互相独立的三基色混合得到；</li>
+<li>假如三基色的混合比相等，则色调和色饱和度也相等；</li>
+<li>任意两种颜色相混合产生的新颜色与采用三基色分别合成这两种颜色的各自成分混合起来得到的结果相等；</li>
+<li>混合色的光亮度是原来各分量光亮度的总和。</li>
+</ol>
+<p>色调、色饱和度及亮度是表示色觉程度的，色调表示各种颜色的种类，色饱和度表示颜色深浅。
+$$
+F\equiv R(R)+G(G)+B(B)
+$$</p>
+<h3 id="21-什么是第三色盲它对图像处理有何意义">21. 什么是第三色盲？它对图像处理有何意义？</h3>
+<p>对于一个色觉正常的人来说，颜色刺激面积非常小时就不能识别颜色了，这种色觉异常状态叫做第三色盲。有学者的研究结果表明，当面积较小时，橙、蓝、绿直线的感觉很接近，当更小时，就只有灰色的感觉了。这个原理被用到彩色电视机原理中，对减少传送频带做出了贡献。</p>
+<h3 id="22-什么是视力视力与哪些因素有关">22. 什么是视力？视力与哪些因素有关？</h3>
+<p>视力是指人眼分辨物体细微部分的能力，视力与以下因素有关：</p>
+<ol>
+<li>
+<p><strong>环境</strong></p>
+<p>不同的测试条件测得的视力值也不同。</p>
+</li>
+<li>
+<p><strong>视网膜的不同部分</strong></p>
+<p>视力最好的部分在视线附近，即视网膜中央凹上，中央凹周围视力急剧下降。</p>
+</li>
+<li>
+<p><strong>眼睛的光学系统</strong></p>
+<p>瞳孔较大时，因为成像的光行差时视力变低。但在极端情况下，瞳孔很小时视力也要下降。</p>
+</li>
+<li>
+<p><strong>水晶体的调节状态</strong></p>
+<p>一般情况下，视距在$1\ m$以下时视距越小则视力降低越显著。此外照明亮度高或者测试卡与背景的对比度大则视力会提高。特别是测试标在运动的情况下，运动速度越快则视力越低。</p>
+</li>
+</ol>
+<h3 id="23-什么是马赫现象它指什么而言">23. 什么是马赫现象？它指什么而言？</h3>
+<p>马赫效应是一种<strong>轮廓增强</strong>现象。一幅明暗图像，一边亮一边暗，中间过渡是缓慢斜变的，当观看这样的图象时，视觉的感觉是亮的一边更亮，暗的一边更暗，同时靠近暗的一边的亮度比远离暗的一边要亮，而靠近亮的一边比远离亮的一边显得更暗。</p>
+<h3 id="24-什么是光觉门限">24. 什么是光觉门限？</h3>
+<p>产生光的感觉必须有一定量的光进入眼睛，把产生光觉的最小亮度叫做光觉门限或光觉阈。</p>
+<p>光觉门限的适应状态受生理条件、光的波长、光刺激的持续时间、刺激面积以及在视网膜上的位置等因素的影响。光觉门限的值大约为$1\times 10^{-6}\ cd/m^2$（尼特）。</p>
+<h1 id="第三章-图像处理中的正交变换">第三章 图像处理中的正交变换</h1>
+<h2 id="本章内容-2">本章内容</h2>
+<h3 id="傅里叶变换">傅里叶变换</h3>
+<h4 id="定义及基本概念">定义及基本概念</h4>
+<p>$$
+\begin{aligned}
+F(u)&amp;=\int_{-\infty}^{\infty}f(x)e^{-j2\pi ux}dx \
+f(x)&amp;=\int_{-\infty}^{\infty}F(u)e^{j2\pi ux}du
+\end{aligned}
+$$</p>
+<p>$x$为时域变量，$u$为频率变量，令$\omega=2\pi u$：
+$$
+\begin{aligned}
+F(u)&amp;=\int_{-\infty}^{\infty}f(x)e^{-j\omega x}dx \
+f(x)&amp;=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(u)e^{j\omega x}d\omega
+\end{aligned}
+$$
+$f(x)$的傅里叶变换一般是一个复量：
+$$
+F(\omega)=R(\omega)+jI(\omega)
+$$
+指数形式：
+$$
+F(\omega)=|F(\omega)|e^{j\phi(\omega)}
+$$
+其中，傅里叶幅度谱：
+$$
+|F(\omega)|=\sqrt{R^2(\omega)+I^2(\omega)}
+$$
+相位谱：
+$$
+\phi(w)=\arctan{\frac{I(\omega)}{R(\omega)}}
+$$</p>
+<h4 id="性质">性质</h4>
+<ul>
+<li>可分性</li>
+</ul>
+<p>一个二维傅里叶变换可用两次一维傅里叶变换实现。</p>
+<ul>
+<li>线性</li>
+</ul>
+<p>傅里叶变换是线性算子。</p>
+<ul>
+<li>共轭对称性</li>
+</ul>
+<p>对于$f(-x,-y)$傅里叶变换的共轭函数$F^<em>(-u,-v)$，有：
+$$
+F(u,v)=F^</em>(-u,-v)
+$$</p>
+<ul>
+<li>旋转性</li>
+</ul>
+<p>若空间域函数旋转角度$\theta_0$，则在变换域中此函数的傅里叶变换也旋转同样的角度。</p>
+<ul>
+<li>比例变换特性</li>
+</ul>
+<p>$$
+\begin{aligned}
+af(x,y)&amp;\Leftrightarrow aF(u,v) \
+f(ax,by)&amp;\Leftrightarrow\frac{1}{|ab|}F(\frac{u}{a},\frac{v}{b})
+\end{aligned}
+$$</p>
+<ul>
+<li>帕斯维尔定理（能量保持定理）</li>
+</ul>
+<p>$$
+\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}|f(x,y)|^2dxdy=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}|F(u,v)|^2dudv
+$$</p>
+<ul>
+<li>
+<p>相关定理</p>
+</li>
+<li>
+<p>卷积定理</p>
+</li>
+</ul>
+<h3 id="离散傅里叶变换dft">离散傅里叶变换（DFT）</h3>
+<h4 id="定义">定义</h4>
+<p>$$
+\begin{aligned}
+X(m)&amp;=\sum_{n=-\infty}^{\infty}x(n)e^{-j2\pi mn} \
+x(n)&amp;=\sum_{n=-\infty}^{\infty}X(m)e^{j2\pi mn}
+\end{aligned}
+$$</p>
+<h4 id="性质-1">性质</h4>
+<ul>
+<li>线性</li>
+</ul>
+<p>$$
+ax(n)+by(n)\Leftrightarrow aX(m)+bY(m)
+$$</p>
+<ul>
+<li>对称性</li>
+</ul>
+<p>$$
+\frac{1}{N}X(n)\Leftrightarrow x(-m)
+$$</p>
+<ul>
+<li>
+<p>时间移位</p>
+</li>
+<li>
+<p>频率移位</p>
+</li>
+<li>
+<p>周期性</p>
+</li>
+<li>
+<p>偶函数</p>
+</li>
+<li>
+<p>奇函数</p>
+</li>
+<li>
+<p>卷积定理</p>
+</li>
+<li>
+<p>相关定理</p>
+</li>
+<li>
+<p>帕斯维尔定理</p>
+</li>
+</ul>
+<h3 id="快速傅里叶变换fft">快速傅里叶变换（FFT）</h3>
+<p>在分析离散傅里叶变换中的多余运算之上，进而消除这些重复工作的思想指导下得到的。</p>
+<p>把原始的$N$点序列依次分解为一系列短序列，然后求出这些短序列的离散傅里叶变换，以此减少乘法运算。
+$$
+X(m)=X_1(m)+W_N^mX_2(m)\quad m=0,1,\cdots,N-1
+$$
+一个$N$点的离散傅里叶变换可由两个$N/2$点的傅里叶变换得到，离散傅里叶变换的计算时间主要由乘法决定，当$N$是$2$的整数幂时，上式中$X_1(m)$和$X_2(m)$还可以再分成两个更短的序列。利用系数矩阵$W_N^m$的周期性和分解运算，从而减少乘法运算次数是实现快速运算的关键。</p>
+<p>FFT算法根据分解的特点一般有两类，一类是按时间分解，一类是按频率分解。</p>
+<h3 id="离散余弦变换dct">离散余弦变换（DCT）</h3>
+<h4 id="定义-1">定义</h4>
+<h1 id="endbmatrix"><strong>一维离散余弦变换</strong>的定义：
+$$
+\begin{aligned}
+F(0)&amp;=\frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}f(x) \
+F(u)&amp;=\sqrt{\frac{2}{N}}\sum_{x=0}^{N-1}f(x)cos\frac{(2x+1)u\pi}{2N}
+\end{aligned}
+$$
+其中，$F(u)$是第$u$个余弦变换系数，$u$是广义频率变量，$u=1,2,3,\cdots,N-1$；$f(x)$是时域$N$点序列，$x=0,1,\cdots,N-1$。
+$$
+\begin{bmatrix}
+F(0) \
+F(1) \
+F(2) \
+F(3)
+\end{bmatrix}</h1>
+<p>\begin{bmatrix}
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot \
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot \
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot \
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot \
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+f(0) \
+f(1) \
+f(2) \
+f(3)
+\end{bmatrix}
+$$
+即：
+$$
+\begin{aligned}
+F(u)&amp;=Af(x) \
+f(x)&amp;=A^TF(u)
+\end{aligned}
+$$
+<strong>二维离散余弦变换</strong>矩阵式：
+$$
+\begin{aligned}
+F(u,v)&amp;=Af(x,y)A^T \
+f(x,y)&amp;=A^TF(u,v)A
+\end{aligned}
+$$</p>
+<h4 id="离散余弦变换的正交性">离散余弦变换的正交性</h4>
+<p>$$
+AA^T=I
+$$</p>
+<h3 id="沃尔什变换">沃尔什变换</h3>
+<p>离散傅里叶变换和余弦变换在快速算法中都要用到复数乘法，占用的时间仍然比较多，在某些领域需要更为便利更为有效的变换方法。</p>
+<h3 id="离散沃尔什变换">离散沃尔什变换</h3>
+<p><em>TODO..</em></p>
+<h3 id="哈尔函数及哈尔变换">哈尔函数及哈尔变换</h3>
+<p><em>TODO..</em></p>
+<h3 id="斜矩阵与斜变换">斜矩阵与斜变换</h3>
+<p><em>TODO..</em></p>
+<h3 id="小波变换">小波变换</h3>
+<p><em>TODO..</em></p>
+<h1 id="第四章-图像增强">第四章 图像增强</h1>
+<h2 id="本章内容-3">本章内容</h2>
+<h3 id="直方图">直方图</h3>
+<p><em>见思考题2</em></p>
+<h3 id="直方图修改技术的基础">直方图修改技术的基础</h3>
+<p><em>见思考题3</em></p>
+<h3 id="用直方图修改技术进行图像增强">用直方图修改技术进行图像增强</h3>
+<h4 id="直方图均衡化处理">直方图均衡化处理</h4>
+<p>以累计分布函数变换法为基础的直方图修正法，变换函数：
+$$
+s=T(r)=\int_0^rp_r(w)dw
+$$
+则：
+$$
+\begin{aligned}
+p_r(s)&amp;=[p_r(r)\cdot\frac{dr}{ds}]<em>{r=T^{-1}(s)} \
+&amp;= [p_r(r)\cdot\frac{1}{\frac{ds}{dr}}]</em>{r=T^{-1}(s)}\
+&amp;=[p_r(r)\cdot\frac{1}{p_r(r)}] = 1
+\end{aligned}
+$$
+变换后的图像灰度级服从均匀分布，即得到一幅灰度层次较为适中的图像。</p>
+<h4 id="直方图规定化处理">直方图规定化处理</h4>
+<p>在不同的情况下，并非总需要具有均匀直方图的图像，有时需要具有特定的直方图的图像，以便能够对图像中的某些灰度级加以增强。</p>
+<p>对于原始图像和所希望得到的图像（假设已经得到）都做直方图均衡化处理：
+$$
+\begin{aligned}
+s&amp;=T(r)=\int_0^rp_r(w)dw \
+u&amp;=G(z)=\int_0^zp_z(w)dw
+\end{aligned}
+$$
+同样做了均衡化处理，$p_s(s)$和$p_u(u)$具有同样的均匀密度。根据上式的逆过程，用$s$来代替$u$有：
+$$
+z=G^{-1}(u)\approx G^{-1}(s)
+$$
+则：
+$$
+z\approx G^{-1}[T(r)]
+$$</p>
+<h4 id="图像对比度处理">图像对比度处理</h4>
+<p>图像的亮度范围不足或非线性会使图像的对比度不理想，可用像素幅值重新分配的方法来改善图像对比度。扩大图像亮度范围可以用<strong>线性映射</strong>的方法。</p>
+<h3 id="图像平滑化处理">图像平滑化处理</h3>
+<h4 id="邻域平均法">邻域平均法</h4>
+<p>$$
+g(x,y)=\frac{1}{M}\sum_{(m,n)\in S}f(m,n)
+$$</p>
+<p>采用阈值法可以减少由于邻域平均所产生的模糊效应：
+$$
+g(x,y)=
+\begin{cases}
+\frac{1}{M}\sum_{(m,n)\in S}f(m,n),\quad &amp;若|f(x,y)-|\frac{1}{M}\sum_{(m,n)\in S}f(m,n)|\gt T \
+f(x,y),&amp;其他
+\end{cases}
+$$
+即当一些点和它的邻域内点的灰度的平均值的差不超过规定的阈值时，保留原灰度值不变。</p>
+<h4 id="低通滤波法">低通滤波法</h4>
+<p>$$
+G(u,v)=H(u,v)\cdot F(u,v)
+$$</p>
+<p><em>见思考题15</em></p>
+<h4 id="多图像平均法">多图像平均法</h4>
+<p>加性噪声，与坐标不相关，且平均值为零。
+$$
+\bar{g}(x,y)=\frac{1}{M}\sum_{j=1}^Mg_j(x,y)
+$$
+<em>见思考题16</em></p>
+<h3 id="图像尖锐化处理">图像尖锐化处理</h3>
+<p><em>见思考题17</em></p>
+<h3 id="利用同态系统进行增强处理">利用同态系统进行增强处理</h3>
+<p><em>见思考题19</em></p>
+<h3 id="伪彩色图像处理">伪彩色图像处理</h3>
+<ol>
+<li>
+<p><strong>等密度分层伪彩色技术</strong></p>
+<p>可以用专用硬件实现，照相技术中一幅照片的浓淡层次由底片上银粒的沉积度决定，照片的反差直接与密度有关。</p>
+</li>
+<li>
+<p><strong>灰度分割</strong></p>
+<p>若一幅图像可被看作为二维亮度函数（$x,y,f(x,y)$），用一些平行于图像坐标平面的平面，每一平面在与函数相交处分割函数。一次分割将产生一个两色图像，多分层过程类似。</p>
+<p>例如$16$级分层，通过编码器得到四位码，加到红、绿、蓝、亮度四个通道中即可得到不同的色调，颜色与码的关系可以人为改变，例如：</p>
+<ul>
+<li>0000：黑色</li>
+<li>0001：紫色</li>
+<li>0010：粉红色</li>
+<li>&hellip;</li>
+<li>1110：深蓝色</li>
+<li>1111白色</li>
+</ul>
+</li>
+<li>
+<p><strong>灰度级转换为彩色</strong></p>
+<p>对输入像素的灰度级进行三个相互独立的转换，然后将三个结果分别送到彩色监视器的红、绿、蓝的电子发射枪上。这是对图像的灰度级值的转换，而不是位置的函数。
+$$
+\begin{aligned}
+&amp;\nearrow 红转换 \rightarrow I_R(x,y) \
+f(x,y)&amp;\rightarrow 绿转换 \rightarrow I_G(x,y)\
+&amp;\searrow 蓝转换 \rightarrow I_B(x,y)
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p><strong>一种滤波处理</strong></p>
+<p>前面几种为灰度 - 彩色变换方法，实际应用中也可以针对图像中不同频率成分加以彩色增强，以便更有利于抽取频率信息。
+$$
+\begin{aligned}
+&amp;\nearrow 滤波器 \rightarrow 傅里叶反变换 \rightarrow 附加处理 \searrow \
+\rightarrow 傅里叶变换 &amp;\rightarrow 滤波器 \rightarrow 傅里叶反变换\rightarrow 附加处理 \rightarrow 彩色监视器\
+&amp;\searrow 滤波器 \rightarrow 傅里叶反变换\rightarrow 附加处理 \nearrow
+\end{aligned}
+$$</p>
+</li>
+</ol>
+<h2 id="思考题-2">思考题</h2>
+<h3 id="1-图像增强的目的是什么">1. 图像增强的目的是什么？</h3>
+<p>图像增强是按特定的需要突出一幅图像中的某些信息，同时削弱或去除某些不重要的信息的处理方法。其主要目的是<strong>使处理后的图像对某种特定的应用来说，比原始图像更适用</strong>。因此这类处理是为了某种应用而去改善图像质量的。处理的结果使图像更适合于人的视觉特性或机器的识别系统。</p>
+<p>增强处理并不能增强原始图像的信息，其结果只能增强对某种信息的辨别能力，而这种处理有可能损失一些其他信息。</p>
+<p>图像增强技术主要包括直方图修改处理、图像平滑化处理、图像尖锐化处理以及彩色处理技术等。</p>
+<h3 id="2-什么是直方图">2. 什么是直方图？</h3>
+<p>灰度级的直方图是反映一幅图像中的灰度级与出现这种灰度的概率之间关系的图形。</p>
+<p>图像中，像素的灰度级可作归一化处理：$0\le r\le 1$。</p>
+<p>$r$是一个随机变量，假定对每一瞬间它们是连续的随机变量，用概率密度函数$p_r(r)$来表示原始图像的灰度分布。横轴代表灰度级$r$，纵轴代表灰度级的概率密度$p_r(r)$。从图像的灰度级分布可以看出一幅图像的灰度分布特性。</p>
+<p>引入离散形式，$r_k$代表灰度级，$P_r(r_k)$代替$p_r(r)$，则有：
+$$
+\begin{aligned}
+P_r(r_k)=&amp;\frac{n_k(出现r_k这种灰度的像素数)}{n(图像中的像素总数)}(频数) \
+&amp;\quad \quad0\le r_k \le 1 \quad k=0,1,2,\cdots,l-1
+\end{aligned}
+$$
+$r_k$与$P_r(r_k)$的关系图形称为灰度级的直方图。</p>
+<h3 id="3-直方图修改的技术基础是什么-4-在直方图修改技术中采用的变换函数的基本要求是什么-5-直方图均衡化采用何种变换函数-6-直方图均衡化处理的结果是什么">3. 直方图修改的技术基础是什么？/ 4. 在直方图修改技术中采用的变换函数的基本要求是什么？/ 5. 直方图均衡化采用何种变换函数？/ 6. 直方图均衡化处理的结果是什么？</h3>
+<p>一幅图像，$0\le r \le 1$，对$[0,1]$区间内的任一个$r$做如下变换：
+$$
+s=T(r)
+$$
+$T(r)$应满足：</p>
+<ol>
+<li>$0\le r \le 1$内，$T(r)$单值单增（保证灰度级从白到黑的次序不变）；</li>
+<li>对于$0\le r \le 1$，$0\le T(r) \le 1$（灰度值在允许范围内）。</li>
+</ol>
+<p>反变换为：
+$$
+r=T^{-1}(s)
+$$
+已知随机变量$\xi$的概率密度$p_r(r)$，而随机变量$\eta$是$\xi$的函数，即$\eta=T(\xi)$，$\eta$的概率密度为$p_s(s)$，则可由$p_r(r)$求出$p_s(s)$。</p>
+<p>$s=T(r)$单增可得$r=T^{-1}(s)$单增，则$\eta\lt s$仅当$\xi \lt r$时发生，则：
+$$
+F_\eta(s)=P(\eta\lt s)=P(\xi\lt r)=\int_{-\infty}^rP_r(x)dx
+$$
+两端求导即可得到$\eta$的密度函数$p_s(s)$。
+$$
+p_s(s)=\cdots=[p_r(r)\cdot\frac{dr}{ds}]_{r=T^{-1}(s)}
+$$</p>
+<h3 id="11-什么是简并现象如何克服简并现象">11. 什么是“简并”现象？如何克服“简并”现象？</h3>
+<p>直方图均衡化变换后的灰度级会减少，叫做“简并”现象，这是像素灰度有限的必然结果。</p>
+<p>减少简并现象的简单方法是<strong>增加像素的比特数</strong>，从而减少灰度层次的损失。另外采用<strong>灰度间隔放大理论</strong>的直方图修正法也可以减少简并现象，这种灰度间隔放大可以按照眼睛的对比度灵敏度特性和成像系统的动态范围进行放大。</p>
+<h3 id="12-直方图规定化处理的技术难点是什么如何解决">12. 直方图规定化处理的技术难点是什么？如何解决？</h3>
+<p>利用直方图规定化方法进行图像增强的主要困难在于如何构成有意义的直方图。一般有两种方法，一种是给定一个规定的概率密度函数，若高斯、瑞利等函数。另一种方法是规定一个任意可控制的直方图，其形状可由一些直线所组成，得到希望的形状后，将这个函数数字化。</p>
+<h3 id="14-在邻域平均法处理中如何选取邻域">14. 在邻域平均法处理中如何选取邻域？</h3>
+<ol>
+<li>
+<p>半径=$\Delta{x}$
+$$
+\begin{bmatrix}
+\circ &amp; \bullet &amp; \circ \
+\bullet &amp; \cdot &amp; \bullet \
+\circ &amp; \bullet &amp; \circ
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p>半径=$\sqrt{2}\Delta{x}$
+$$
+\begin{bmatrix}
+\bullet &amp; \bullet &amp; \bullet \
+\bullet &amp; \cdot &amp; \bullet \
+\bullet &amp; \bullet &amp; \bullet
+\end{bmatrix}
+$$</p>
+</li>
+</ol>
+<h3 id="15-低通滤波法图像增强处理中通常有几种滤波器它们的特点是什么">15. 低通滤波法图像增强处理中通常有几种滤波器？它们的特点是什么？</h3>
+<ol>
+<li>
+<p><strong>理想低通滤波器</strong></p>
+<p>处理过程会产生较严重的<strong>模糊和振铃现象</strong>，这种现象是傅里叶变换的性质决定的。</p>
+</li>
+<li>
+<p><strong>布特沃斯低通滤波器</strong></p>
+<p>由于它的$H(u,v)$不是陡峭的截止特性，它的<strong>尾部会包含有大量的高频成分</strong>。且由于在滤波器的通带和阻带之间有一平滑过渡的缘故，经布特沃斯低通滤波器处理的图像将<strong>不会有振铃现象</strong>。</p>
+</li>
+<li>
+<p><strong>指数低通滤波器</strong></p>
+<p>经指数低通滤波器处理的图像<strong>比布特沃斯低通滤波器处理的图像稍模糊一些</strong>，由于指数低通滤波器的传递函数也有较平滑的过渡带，所以图像中也<strong>没有振铃现象</strong>。</p>
+</li>
+<li>
+<p><strong>梯形低通滤波器</strong></p>
+<p>梯形低通滤波器的传递函数特性<strong>介于理想低通滤波器和具有平滑过渡带的低通滤波器之间</strong>，其处理效果也介于这两者中间。结果<strong>有一定的振铃现象</strong>。</p>
+</li>
+</ol>
+<p>详细参考：<a
+  href="https://meurice.xyz/posts/6acabff5.html#%e9%a2%91%e7%8e%87%e5%9f%9f%e9%ab%98%e9%80%9a%ef%bc%88%e9%94%90%e5%8c%96%ef%bc%89%e6%bb%a4%e6%b3%a2%e5%99%a8"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>数字图像处理#频率域高通（锐化）滤波器</a></p>
+<h3 id="16-多图像平均法为何能去掉噪声它的主要难点是什么">16. 多图像平均法为何能去掉噪声？它的主要难点是什么？</h3>
+<p>取$M$辐内容相同但含不同噪声（加性噪声，平均值零）的图像叠加，不难得出：
+$$
+\begin{aligned}
+E{\bar{g}(x,y)}&amp;=f(x,y) \
+\sigma^2_{\bar{g}(x,y)}&amp;=\frac{1}{M}\sigma^2_{n(x,y)} \
+\sigma_{\bar{g}(x,y)}&amp;=\frac{1}{\sqrt{M}}\sigma_{n(x,y)}
+\end{aligned}
+$$
+做平均处理的含噪声图像数目增加时，其统计平均值越接近原始无噪声图像。</p>
+<p>这种方法在实际应用中的最大困难在于把多幅图像配准起来，以便使相应的像素能正确地对应排列。</p>
+<h3 id="17-图像尖锐化处理有几种方法">17. 图像尖锐化处理有几种方法？</h3>
+<ol>
+<li><strong>微分尖锐化处理</strong></li>
+<li><strong>零交叉边缘检测</strong></li>
+<li><strong>Canny算子</strong></li>
+<li><strong>经典的Kirsch算子</strong></li>
+<li><strong>高通滤波法</strong></li>
+</ol>
+<h3 id="18-零交叉边缘检测的优点是什么">18. 零交叉边缘检测的优点是什么？</h3>
+<p>对图像的二维卷积可简化为两个一维卷积，是最佳边缘检测器之一。</p>
+<h3 id="19-何为同态处理试述其基本原理">19. 何为同态处理？试述其基本原理。</h3>
+<p>是把频率过滤和灰度变换结合起来的一种处理方法。它是把图像的照射、反射模型作为频域处理的基础，利用压缩高亮范围和增强对比度来改善图像的一种处理技术。</p>
+<h3 id="21-在图像处理中有哪几种模型它们的应用对象是什么">21. 在图像处理中有哪几种模型？它们的应用对象是什么？</h3>
+<ol>
+<li>
+<p><strong>RGB</strong>彩色模型：<strong>彩色监视器和彩色摄像机等领域</strong></p>
+</li>
+<li>
+<p><strong>CMY</strong>彩色模型：<strong>彩色打印机</strong></p>
+<h1 id="endbmatrix-1">蓝绿（青，Cyan）、红紫（紫，Magenta）、黄（Yellow）
+$$
+\begin{bmatrix}
+C \
+M \
+Y
+\end{bmatrix}</h1>
+<h2 id="endbmatrix-2">\begin{bmatrix}
+1 \
+1 \
+1
+\end{bmatrix}</h2>
+<p>\begin{bmatrix}
+R \
+G \
+B
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p><strong>YIQ</strong>彩色模型：<strong>彩色电视广播</strong></p>
+<h1 id="endbmatrix-3">是一个RGB的编码
+$$
+\begin{bmatrix}
+Y \
+I \
+Q
+\end{bmatrix}</h1>
+<p>\begin{bmatrix}
+0.299 &amp; 0.587 &amp; 0.114 \
+0.596 &amp; -0.275 &amp; -0.321 \
+0.212 &amp; -0.523 &amp; 0.311
+\end{bmatrix}
+\begin{bmatrix}
+R \
+G \
+B
+\end{bmatrix}
+$$</p>
+</li>
+<li>
+<p><strong>HSI</strong>彩色模型：<strong>实用系统</strong>（自动判断水果成熟度的图像处理系统）</p>
+<p>色调（Hue）、饱和度（Saturation）、亮度（Intensity）</p>
+</li>
+</ol>
+<h1 id="第五章-图像编码">第五章 图像编码</h1>
+<h2 id="本章内容-4">本章内容</h2>
+<h3 id="行程编码">行程编码</h3>
+<p>是一种无损编码。</p>
+<h4 id="一维行程编码">一维行程编码</h4>
+<p>$$
+\begin{bmatrix}
+3&amp;3&amp;3&amp;5&amp;5&amp;5&amp;5&amp;5&amp;4&amp;4&amp;8&amp;8&amp;8&amp;8
+\end{bmatrix}
+$$</p>
+<p>得出序列对：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$i$</th>
+<th style="text-align:center">$g_i$</th>
+<th style="text-align:center">$l_i$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$5$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$8$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>行程终点编码：行程终点的位置由扫描行的开始点算起，由到达行程终点的像素计数来确定</li>
+<li>行程长度编码：行程终点位置由这一终点与前一终点的相对距离确定。</li>
+</ul>
+<h4 id="二维行程编码预测微分量化器pdq">二维行程编码（预测微分量化器，PDQ）</h4>
+<p><em>TODO..</em></p>
+<h3 id="哈夫曼编码">哈夫曼编码</h3>
+<p>与哈夫曼树类似。是一种无损编码。</p>
+<h3 id="算术编码">算术编码</h3>
+<p>是一种无损编码。基本步骤如下：</p>
+<ol>
+<li>
+<p>对需要编码的数据，统计所有字符和出现次数；</p>
+</li>
+<li>
+<p>将区间$[0,1)$划分为多个子区间，每个子区间代表一个字符，区间的大小正比于该字符在文中出现的概率$p$；</p>
+</li>
+<li>
+<p>编码从初始区间开始：
+$$
+low=0\quad high=1
+$$</p>
+</li>
+<li>
+<p>不断读入原始数据字符，找到该字符的区间：
+$$
+\begin{aligned}
+low&amp;=low+(high-low)*L \
+high&amp;=low+(high-low)*H
+\end{aligned}
+$$</p>
+</li>
+</ol>
+<p><strong>例1</strong>：原始数据<code>ARBER</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Symbol</th>
+<th style="text-align:center">Times</th>
+<th style="text-align:center">$P$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$0.2$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$0.2$</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$0.2$</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$0.4$</td>
+</tr>
+</tbody>
+</table>
+<p>划分为：
+$$
+\begin{bmatrix}
+0 &amp; &amp; 0.2 &amp; &amp; 0.4 &amp; &amp; 0.6 &amp; &amp; &amp; &amp; 1\
+\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot&amp;\cdot \
+|&amp; A &amp; | &amp; B &amp; | &amp; E &amp; | &amp; &amp; R &amp; &amp;|
+\end{bmatrix}
+$$
+具体步骤：</p>
+<ol>
+<li>
+<p>初始化编码区间$[0,1)$：
+$$
+low=0\quad high=1
+$$</p>
+</li>
+<li>
+<p>字符A的概率区间为$[0,0.2)$，则$L=0$，$H=0.2$，更新区间：
+$$
+\begin{aligned}
+low&amp;=low+(high-low)*L =0\
+high&amp;=low+(high-low)*H=0.2
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>字符R的概率区间为$[0.6,1)$，则$L=0.6$，$H=1$，更新区间：
+$$
+\begin{aligned}
+low&amp;=low+(high-low)*L =0.12\
+high&amp;=low+(high-low)*H=0.2
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>字符R的概率区间为$[0.2,0.4)$，则$L=0.2$，$H=0.4$，更新区间：
+$$
+\begin{aligned}
+low&amp;=low+(high-low)*L =0.136\
+high&amp;=low+(high-low)*H=0.152
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>&hellip;</p>
+</li>
+</ol>
+<p>即每次都按A、B、E、R的比例在新区间上划分子区间。</p>
+<p>可以再参考下面这个例子。</p>
+<p><strong>例2</strong>：原始数据<code>AABABCABAB</code>
+$$
+P(A)=0.5\quad P(B)=0.4\quad P(C)=0.1
+$$
+则：
+$$
+A:[0,0.5)\quad B:[0.5,0.9)\quad C:[0.9,1)
+$$</p>
+<ol>
+<li>
+<p>第二个字符为A，则选中A的区间$[0,0.5)$作为划分的目标区间：
+$$
+A:[0,0.25)\quad B:[0.25,0.45)\quad C:[0.45,0.5)
+$$</p>
+</li>
+<li>
+<p>第一个字符为A，则选中A的区间$[0,0.25)$作为划分的目标区间：
+$$
+A:[0,0.125)\quad B:[0.125,0.225)\quad C:[0.225,0.25)
+$$</p>
+</li>
+<li>
+<p>第一个字符为B，则选中B的区间$[0.125,0.225)$作为划分的目标区间：
+$$
+A:[0.125,0.175)\quad B:[0.175,0.215)\quad C:[0.215,0.225)
+$$</p>
+</li>
+<li>
+<p>&hellip;</p>
+</li>
+</ol>
+<p>重复以上操作，得到编码结果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">目标区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$[0,0.5)$</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$[0,0.25)$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$[0.125,0.225)$</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$[0.125,0.175)$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$[0.15,0.17)$</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">$[0.168,0.17)$</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$[0.168,0.169)$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$[0.1685,0.1689)$</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$[0.1685,0.1687)$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$[0.1686,0.16868)$</td>
+</tr>
+</tbody>
+</table>
+<p>最短压缩，从$[0.1686,0.16868)$选一个二进制数表示，选定$0.16864013671975$，即$0.00101011001011$，故最终的二进制编码为$00101011001011$。</p>
+<p>参考链接：</p>
+<ul>
+<li><a
+  href="https://zhuanlan.zhihu.com/p/390684936"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>什么是算术编码 - 知乎 (zhihu.com)</a></li>
+<li><a
+  href="https://segmentfault.com/a/1190000011561822"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>算数编码原理解析 - SegmentFault 思否</a></li>
+</ul>
+<h3 id="jpeg编码">JPEG编码</h3>
+<p>是一种有损压缩。</p>
+<p><strong>编码</strong>过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph LR
+</span></span><span class="line"><span class="cl">A[原始图像数据分成8*8小块] --&gt;B[DCT]--&gt;C[量化器]--&gt;D[熵编码器]--&gt;E[压缩数据]
+</span></span><span class="line"><span class="cl">	F[量化表]--&gt;C
+</span></span><span class="line"><span class="cl">	G[码表]--&gt;D
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>解码</strong>过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph LR
+</span></span><span class="line"><span class="cl">A[压缩数据] --&gt;B[熵编码器]--&gt;C[反量化器]--&gt;D[IDCT]--&gt;E[恢复的图像数据]
+</span></span><span class="line"><span class="cl">	F[码表]--&gt;B
+</span></span><span class="line"><span class="cl">	G[量化表]--&gt;C
+</span></span><span class="line"><span class="cl">	A -.-&gt;F
+</span></span><span class="line"><span class="cl">	A -.-&gt;G
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>具体步骤</strong>：</p>
+<ol>
+<li>
+<p>将原始图像分为$8\times 8$的数据块，每个block里有64个像素点。</p>
+</li>
+<li>
+<p>将图像中的每个$8\times 8$的block进行DCT变换，经过DCT变换后，低频部分集中在每个block的左上角，高频部分在右下角。所谓JPEG的有损压缩，损的是量化过程中的高频部分。因为有这样一个前提：低频部分比高频部分要重要得多，去除50%的高频信息可能对于编码信息只损失了5%。</p>
+</li>
+<li>
+<p>量化：像素值$\div$量化表对应的值得到的结果。由于量化表左上角的值较小，右上角的值较大，这样就起到了保持低频分量，抑制高频分量的目的。JPEG使用的颜色是YUV格式，Y分量代表了亮度信息，UV分量代表了色差信息。相比而言，Y分量更重要一些。我们可以对Y采用细量化，对UV采用粗量化，可进一步提高压缩比。故量化表通常有两张，一张是针对Y的；一张是针对UV的。</p>
+</li>
+<li>
+<p>编码：编码信息分两类，一类是每个$8\times 8$的block中$[0,0]$位置的元素，这是<strong>DC</strong>（直流分量），代表这个block的平均值，JPEG中对该位置的点单独编码。由于两个相邻的$8\times 8$子块的DC系数相差很小，所以对它们采用差分编码DPCM，可以提高压缩比，即对相邻的子块DC系数的差值进行编码。</p>
+<p>另一类是其他63个元素，即<strong>AC</strong>（交流系数），采用行程编码（Run-length encode,RLE）。为保证低频分量先出现，高频分量后出现，这63个采用了“之”字型（Zig-Zag）的排列方法。</p>
+</li>
+<li>
+<p>得到了DC码字和AC行程码字后，为进一步提高压缩比，需要对RLE编码结果再进行熵编码，选用Huffman编码。</p>
+</li>
+</ol>
+<h1 id="第六章-图像复原">第六章 图像复原</h1>
+<h2 id="本章内容-5">本章内容</h2>
+<h3 id="退化模型">退化模型</h3>
+<p><em>见思考题1</em></p>
+<h3 id="复原的代数方法">复原的代数方法</h3>
+<p>寻找一个估计$\hat{f}$，它使事先确定的某种优度准则为最小。</p>
+<ol>
+<li><strong>非约束复原方法</strong></li>
+<li><strong>约束复原法</strong></li>
+</ol>
+<p><em>见思考题5</em></p>
+<h3 id="逆滤波">逆滤波</h3>
+<p><em>见<a
+  href="https://meurice.xyz/posts/6acabff5.html#%e5%9b%be%e5%83%8f%e5%a4%8d%e5%8e%9f%e6%96%b9%e6%b3%95%e2%80%94%e2%80%94%e9%80%86%e6%bb%a4%e6%b3%a2"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>数字图像处理#图像复原方法——逆滤波</a></em></p>
+<h3 id="最小二乘方滤波">最小二乘方滤波</h3>
+<p><em>见<a
+  href="https://meurice.xyz/posts/6acabff5.html#%e5%9b%be%e5%83%8f%e5%a4%8d%e5%8e%9f%e6%96%b9%e6%b3%95%e2%80%94%e2%80%94%e7%bb%b4%e7%ba%b3%e6%bb%a4%e6%b3%a2"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>数字图像处理#图像复原方法——维纳滤波</a></em></p>
+<h3 id="约束去卷积">约束去卷积</h3>
+<p><em>见思考题8</em></p>
+<h3 id="中值滤波">中值滤波</h3>
+<p><em>见思考题9</em></p>
+<h3 id="其他空间复原技术">其他空间复原技术</h3>
+<ol>
+<li><strong>几何畸变校正</strong></li>
+<li><strong>盲目图像复原</strong></li>
+<li><strong>递归图像复原技术</strong></li>
+</ol>
+<h2 id="思考题-3">思考题</h2>
+<h3 id="1-试述图像退化的基本模型">1. 试述图像退化的基本模型。</h3>
+<p>$$
+\begin{aligned}
+&amp;n(x,y)\
+&amp;\downarrow \
+f(x,y)\rightarrow H \rightarrow &amp;\oplus \rightarrow g(x,y)
+\end{aligned}
+$$</p>
+<h3 id="2-什么是线性空间不变的系统试写出其表达式">2. 什么是线性、空间不变的系统，试写出其表达式。</h3>
+<p><strong>线性</strong>：两个输入之和的响应等于两个响应之和。
+$$
+\begin{aligned}
+H[f_1(x,y)+f_2(x,y)]&amp;=H[f_1(x,y)]+H[f_2(x,y)] \
+&amp;=g_1(x,y)+g_2(x,y)
+\end{aligned}
+$$
+<strong>空间不变</strong>：图像中任一点通过该系统的响应只取决于该点的输入值，而与该点的位置无关。
+$$
+H[f(x-\alpha,y-\beta)]=g(x-\alpha,y-\beta)
+$$</p>
+<h3 id="5-什么是非约束复原什么是约束复原">5. 什么是非约束复原？什么是约束复原？</h3>
+<ul>
+<li>
+<p><strong>非约束复原</strong>：</p>
+<p>噪声项为</p>
+</li>
+</ul>
+<p>$$
+n=g-Hf
+$$</p>
+<p>不了解$n$情况下，希望找到一个$\hat{f}$，使$H\hat{f}$在最小二乘方意义上来说近似于$g$，即：
+$$
+\begin{aligned}
+\parallel n \parallel^2&amp;=\parallel g-H\hat{f}\parallel ^2 \
+J(\hat{f})&amp;=\parallel g-H\hat{f}\parallel^2
+\end{aligned}
+$$
+选择$\hat{f}$除了要求$J(\hat{f})$最小外，不受任何其他条件约束。一般用求极值的方法，使：
+$$
+\frac{\partial J(\hat{f})}{\partial \hat{f}}=-2H^T(g-H\hat{f})=0
+$$</p>
+<ul>
+<li><strong>约束复原</strong>：</li>
+</ul>
+<p>最小二乘方复原处理中，为使在数学上更加容易处理，常附加某种约束条件。例如可以令$Q$为$f$的线性算子，则原问题可以看成是使形式为$\parallel Q\hat{f}\parallel$的函数，服从约束条件$\parallel n \parallel^2=\parallel g-H\hat{f}\parallel ^2$的最小化问题。</p>
+<p>使用拉格朗日乘数法：
+$$
+J(\hat{f})=\parallel Q\hat{f} \parallel ^2 + \lambda(\parallel g-H\hat{f}\parallel ^2 - \parallel n \parallel ^2)
+$$
+使：
+$$
+\frac{\partial J(\hat{f})}{\partial \hat{f}}=2Q^TQ\hat{f}-2\lambda H^T(g-H\hat{f})=0
+$$</p>
+<h3 id="8-如果不知道原始图像的功率谱而只知道噪声的方差采用何种方法复原图像为好">8. 如果不知道原始图像的功率谱，而只知道噪声的方差，采用何种方法复原图像为好？</h3>
+<p>最小二乘法是在原始图像和噪声都是平稳随机相场并且功率谱已知的假设下推导的，在没有这方面先验知识而只知道噪声的方差的情况下，则可采用<strong>约束去卷积</strong>的方法来复原。</p>
+<h3 id="9-试描述一维和二维中值滤波的基本原理">9. 试描述一维和二维中值滤波的基本原理。</h3>
+<p>中值滤波的基本原理是把数字图像或数字序列中一点的值用该点的一个邻域中各点值的中值代替。</p>
+<p><em>若邻域内数值个数$n$为偶数则为$\frac{1}{2}[x_{\frac{n}{2}}+x_{\frac{n}{2}+1}]$。</em>
+$$
+\begin{bmatrix}
+x_i&amp;0&amp;0&amp;0&amp;8&amp;0&amp;0&amp;2&amp;3&amp;2&amp;0&amp;3&amp;5&amp;3&amp;0&amp;0&amp;2&amp;3&amp;4&amp;5&amp;5&amp;5&amp;5&amp;5&amp;0&amp;0&amp;0 \
+y_i&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;2&amp;2&amp;2&amp;2&amp;3&amp;3&amp;3&amp;0&amp;0&amp;2&amp;3&amp;4&amp;5&amp;5&amp;5&amp;5&amp;5&amp;0&amp;0&amp;0
+\end{bmatrix}
+$$
+可见经过中值滤波后脉冲噪声被滤除，振荡被平滑掉了，斜坡和阶跃部分被保存了下来。</p>
+<p>一维中值滤波不难推广到二维。</p>
+<p>对于<strong>加权的中值滤波</strong>，其基本原理是改变窗口中变量的个数，可以使一个以上的变量等于同一点的值。
+$$
+\begin{aligned}
+y_i &amp;=Weighted_med(x_{i-1},x_i,x_{i+1}) \
+&amp;=Med(x_{i-1},x_{i-1},x_i,x_i,x_i,x_{i+1},x_{i+1})
+\end{aligned}
+$$</p>
+<h3 id="11-试述均值滤波的基本原理">11. 试述均值滤波的基本原理。</h3>
+<p>{% raw %}
+$$
+\begin{aligned}
+y_i&amp;=Mean{x_{ij}} \
+&amp;=\frac{1}{9}\sum_{m=-1}^1\sum_{n=-1}^1{x_{{i+m},{j+n}}}
+\end{aligned}
+$$
+{% endraw%}</p>
+<h1 id="第七章-图像重建">第七章 图像重建</h1>
+<h2 id="本章内容-6">本章内容</h2>
+<h3 id="图像重建概述及常用方法">图像重建概述及常用方法</h3>
+<p>图像重建被广泛应用于检测和观察中，这种重建方法一边是根据物体的一些横截面部分的投影而进行的。在一些应用中，某个物体的内部结构图像的检测只能通过这种重建才不会有任何物理上的损伤。由于这种无损检测技术的显著优点，它的适用面非常广泛，例如医疗放射学、核医学、电子显微、无线和雷达天文学。</p>
+<p>常用方法有：</p>
+<ol>
+<li><strong>傅里叶变换重建</strong></li>
+<li><strong>卷积法重建</strong></li>
+<li><strong>代数重建方法</strong></li>
+</ol>
+<p><em>见思考题2、3、4</em></p>
+<h2 id="思考题-4">思考题</h2>
+<h3 id="1-图像重建中数据的获取模型有哪几种">1. 图像重建中数据的获取模型有哪几种？</h3>
+<ol>
+<li>
+<p><strong>透射模型</strong></p>
+<p>透射模型建立于能量通过物体后有一部分能量会被吸收的基础之上，透射模型经常用在X射线、电子射线及光线和热辐射的情况下。</p>
+</li>
+<li>
+<p><strong>发射模型</strong></p>
+<p>发射可以用来确定物体的位置，它是通过在相反的方向分解散射的两束伽马射线来实现的，这两束射线的度越时间可用来确定物体的位置。</p>
+</li>
+<li>
+<p><strong>反射模型</strong></p>
+<p>能量反射也可以用来测定物体的表面特性，例如光线、电子束、激光或作为能量源的超声波等都可以用来进行这种测定。</p>
+</li>
+</ol>
+<h3 id="2-试述傅里叶重建法的基本原理">2. 试述傅里叶重建法的基本原理。</h3>
+<p>一个三维（或二维）物体，它的二维（或一维）投影的傅里叶变换恰与此物体的傅里叶变换的主体部分相等。通过将投影进行旋转和部分傅里叶变换可以首先构造整个傅里叶变换的平面，然后只需再通过傅里叶反变换就可以得到重建后的物体。</p>
+<h3 id="3-试述卷积法图像重建的基本原理">3. 试述卷积法图像重建的基本原理。</h3>
+<p><em>TODO..</em></p>
+<h3 id="4-试述代数法重建的基本原理">4. 试述代数法重建的基本原理。</h3>
+<p><em>TODO..</em></p>
+<h1 id="第八章-图像分析">第八章 图像分析</h1>
+<h2 id="本章内容-7">本章内容</h2>
+<h3 id="灰度阈值法分割">灰度阈值法分割</h3>
+<p>把图像灰度分成不同的等级，然后用设置灰度门限的方法确定有意义的区域或与分割的物体之边界。</p>
+<p>可以设一个阈值$T$，把直方图分成两个部分，$T$的选择要遵循如下原则：</p>
+<ul>
+<li>$B_1$应尽可能包含与背景相关联的灰度级</li>
+<li>$B_2$应包含物体的所有灰度级</li>
+</ul>
+<p>为了找出水平方向和垂直方向上的边界，要进行两次扫描，首先确定一个门限$T$，然后执行以下步骤：</p>
+<ol>
+<li>
+<h1 id="f_1xy">对$f(x,y)$的每一行进行检测，产生的图像的灰度将遵循如下规则：
+$$
+f_1(x,y)</h1>
+<p>\begin{cases}
+L_E\quad f(x,y)和f(x,y-1)处在不同的灰度级上\
+L_B\quad 其他
+\end{cases}
+$$</p>
+</li>
+<li>
+<h1 id="f_2xy">对$f(x,y)$的每一列进行检测，产生的图像的灰度将遵循如下规则：
+$$
+f_2(x,y)</h1>
+<p>\begin{cases}
+L_E\quad f(x,y)和f(x-1,y)处在不同的灰度级上\
+L_B\quad 其他
+\end{cases}
+$$</p>
+</li>
+</ol>
+<p>为了得到边缘图像，可用下述方法处理：
+$$
+f(x,y)=
+\begin{cases}
+L_E\quad f_1(x,y)或f_2(x,y)中的任何一个等于L_E\
+L_B\quad 其他
+\end{cases}
+$$</p>
+<h3 id="样板匹配">样板匹配</h3>
+<p>样板是为了检测某些不变区域特性而设计的阵列。样板可根据检测目的不同分为点样板、线样板、梯度样板、正交样板。</p>
+<p>一个点样板例子如下：
+$$
+\begin{bmatrix}
+-1 &amp; -1 &amp; -1 \
+-1 &amp; 8 &amp; -1 \
+-1 &amp; -1 &amp; -1
+\end{bmatrix}
+$$
+用点样板的检测步骤如下：</p>
+<p>样板中心（标号为$8$）沿着图像从一个像素移到另一个像素，在每一个位置上，把处在样板内的图像的每一点的值乘以样板的相应方格中指示的数字，然后把结果相加。</p>
+<p>可以采用阈值法清除一些较弱的响应。</p>
+<p>一些线检测样板如下：
+$$
+\begin{bmatrix}
+-1 &amp; -1 &amp; -1\
+2 &amp; 2 &amp; 2 \
+-1 &amp; -1 &amp; -1
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+-1 &amp; -1 &amp; 2\
+-1 &amp; 2 &amp; -1 \
+2 &amp; -1 &amp; -1
+\end{bmatrix}
+$$
+一些梯度检测样板如下：
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; 1\
+0 &amp; 0 &amp; 0 \
+-1 &amp; -2 &amp; -1
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+1 &amp; 0 &amp; -1\
+2 &amp; 0 &amp; -2 \
+1 &amp; 0 &amp; -1
+\end{bmatrix}
+$$
+一些梯度检测样板如下：
+$$
+\begin{bmatrix}
+1 &amp; \sqrt{2} &amp; 1\
+0 &amp; 0 &amp; 0 \
+-1 &amp; -\sqrt{2} &amp; -1
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+\sqrt{2} &amp; 0 &amp; 0\
+-1 &amp; 0 &amp; 1 \
+0 &amp; 1 &amp; -\sqrt{2}
+\end{bmatrix}
+$$</p>
+<h3 id="区域生长">区域生长</h3>
+<p>分割图像的目的是要把一幅图像划分成一些区域，对于该问题最直接的方法是把一幅图像分成满足某种判据的区域，即把点组成区域。</p>
+<p>分割区域的一种方法称为区域生长或区域生成，假设区域的数目以及在每个区域中单个点的位置已知，则可推导一种算法，从一个已知点开始，加上与已知点相似的邻近点形成一个区域，这个相似性准则可以是灰度级、彩色、组织、梯度或其他特性。相似性的测度可以由所确定的阈值来判定。</p>
+<p>它的方法是从满足检测准则的点开始，在各个方向上生长区域。当邻近点满足检测准则就并入小块区域中，当新的点被合并后再用新的区域重复这一过程，直到没有可接受的邻近点时，生成过程终止。</p>
+<h3 id="区域聚合">区域聚合</h3>
+<p>区域聚合可直接用于图像分割，它要求集合中的各个点必须在平面上相邻接而且特性相似。区域聚合的步骤是首先检查图像的测度集，以确定在测度空间中聚合的位置和数目，然后把这些聚合的定义用于图像，以得到区域聚合。</p>
+<p>首先在图片上定义某个等价关系，最简单的等价关系可定义为$p(i,j)=p(k,l)$。任何在点的格子上的等价关系又可划分为等价类，例如$p(i,j)$的取值范围为$0\sim 63$，就可以产生64个等价类的模板。这些等价的类又可以进一步分为最大连接的子集，称为连接分量，连接性可以用点$(i,j)$的邻点来定义，如4连接邻点、8连接邻点。</p>
+<p>如$R$是属于格子的子集，在$R$中存在一个点序列，第一个点和最后一个点分别为$p_1$、$p_2$，这两个点是被连接起来的，这样相继的各点是4连接相邻的。通过这样的连接关系可以定义一个属于$R$的子集，这个子集形成一个区域。在这个区域中，任何点都与$R$有关。利用等价模板可分成最大的连接区域，然后，这些最大的连接区域又可以形成有意义的分割。</p>
+<h1 id="第九章-数学形态学处理">第九章 数学形态学处理</h1>
+<h2 id="本章内容-8">本章内容</h2>
+<h3 id="边缘提取算法">边缘提取算法</h3>
+<p>图像$A$的边界$b(A)$定义为：
+$$
+b(A)=A-(A\ominus B)
+$$
+其中，$B$是适当的结构元素。</p>
+<h3 id="区域填充算法">区域填充算法</h3>
+<p>孔洞：被<strong>前景像素</strong>连成的边框所包围的<strong>背景区域</strong>。</p>
+<ul>
+<li>
+<p>令$A$表示一个集合：其元素是$8$连通的边界，且每个边界包围一个孔洞；</p>
+</li>
+<li>
+<p>令$X_0$表示一个与包含$A$的相同大小的阵列，其初始状态为：</p>
+<ul>
+<li>包含每个孔洞中的一个指定位置处的前景像素点；</li>
+<li>除上述的前景像素点外，其余元素均为背景像素点。</li>
+</ul>
+</li>
+<li>
+<p>在给定$A$和$X_0$的前提下，采用前景像素填充$A$的所有空洞的过程如下：
+$$
+X_k=(X_{k-1}\oplus B)\cap A^c\quad k=1,2,3,\cdots
+$$</p>
+<ul>
+<li>其中，$B$是对称结构元素，$B=\begin{bmatrix}0 &amp; 1 &amp; 0 \ 1 &amp; 1 &amp; 1 \ 0 &amp; 1 &amp; 0\end{bmatrix}$；</li>
+<li>若$X_k=X_{k-1}$，则算法在迭代的第$k$步结束；</li>
+<li>集合$X_k$包含所有被填充的孔洞，$X_k$和$A$的并集则包含被填充的孔洞及其边界。</li>
+</ul>
+</li>
+</ul>
+<p>每一步运算中，膨胀结果与$A^c$的交集操作实现了将膨胀结果限制在感兴趣区域内，即条件膨胀。</p>
+<p><em>B对图像X的膨胀是B对X的<strong>前景元素</strong>的膨胀。</em></p>
+<h3 id="连接部分提取算法">连接部分提取算法</h3>
+<p>$Y$表示一个包含与集合$A$相连接的部分，假设$Y$内的一个点$P$已知。那么下述迭代表达式可得到$Y$中的所有元素：
+$$
+X_k=(X_{k-1}\oplus B)\cap A \quad k=1,2,3,\cdots
+$$
+其中$X_0=P$，$B$为一合适的结构元，若$X_k=X_{k-1}$则算法收敛。</p>
+<p>该表达式与区域填充算法的表达式$X_k=(X_{k-1}\oplus B)\cap A^c$类似。</p>
+<h3 id="凸壳算法">凸壳算法</h3>
+<p>设$B^i,i=1,2,3,4$，代表4个结构元，获得集合$A$凸壳$C(A)$的简单形态学算法由下述公式实现：
+$$
+X_k^i=(X_{k-1}^i\circledast B^i)\cup A\quad i=1,2,3,4 \quad k=1,2,3,\cdots
+$$
+式中，$X_0^i=A$，现在令$D^i=X_{conv}^i$，下标“conv”表示当$X_k^i=X_{k-1}^i$时收敛，那么$A$的凸壳为：
+$$
+C(A)=\bigcup_{i=1}^4D^i
+$$
+即，这个过程包括对$A$和$B^i$重复使用击中（Hit）或击不中（Miss）变换；当没有进一步的变化发生时，求$A$和所谓的结果$D^1$并集。对$B^2$重复此过程直到没有进一步的变化为止。</p>
+<h3 id="细化">细化</h3>
+<p>集合$A$被结构元的细化用$A\otimes B$表示，根据击中（Hit）或击不中（Miss）变换定义：
+$$
+\begin{aligned}
+A\otimes B&amp;=A-(A\circledast B) \
+&amp;=A\cap (A\circledast B)^c
+\end{aligned}
+$$
+<em>TODO..</em></p>
+<h3 id="粗化">粗化</h3>
+<p><em>TODO..</em></p>
+<h3 id="骨骼化算法">骨骼化算法</h3>
+<p><em>TODO..</em></p>
+<h3 id="裁剪">裁剪</h3>
+<p><em>TODO..</em></p>
+<h3 id="膨胀">膨胀</h3>
+<p>效果：扩大图像中的物体。</p>
+<p>设$A$：原始二值图像，$B$：结构元素，则$A$被$B$膨胀定义为：
+$$
+A\oplus B={z|(\hat{B})_z\cap A \ne \emptyset}
+$$
+或：
+$$
+A\oplus B = {z|[(\hat{B})_z\cap A]\subseteq A }
+$$
+即$A$被$B$膨胀的结果是满足上式的所有位移$z$的点（前景像素点）的集合。</p>
+<p>膨胀应用实例：桥接裂缝</p>
+<h3 id="腐蚀">腐蚀</h3>
+<p>效果：缩小图像中的物体。</p>
+<p>设$A$：原始二值图像，$B$：结构元素，则$A$被$B$腐蚀定义为：
+$$
+A \ominus B = {z|(B)_z \subseteq A}
+$$
+即，将结构元素$B$相对于集合$A$进行平移，只要平移后的结构元素都包含在集合$A$中，则这些位移$z$的点的集合（前景像素点）为腐蚀结果。
+如果结构元素取$\begin{bmatrix}
+1 &amp; 1 &amp; 1 \
+1 &amp; 1 &amp; 1 \
+1 &amp; 1 &amp; 1
+\end{bmatrix}$，腐蚀将使物体的边界沿周边减少一个像素。</p>
+<p>腐蚀可以去除<strong>小于结构元素</strong>的物体。</p>
+<h3 id="开运算和闭运算">开运算和闭运算</h3>
+<h4 id="开启">开启</h4>
+<p>效果：平滑物体的轮廓、断开较窄的狭颈、消除细的突出物。
+$$
+A \circ B=(A\ominus B)\oplus B
+$$
+即先用$B$对$A$腐蚀，然后用$B$对腐蚀结果进行膨胀。</p>
+<p>性质：</p>
+<ul>
+<li>$A\circ B$是$A$的子集</li>
+<li>若$C \subseteq D$，则$C\circ B\subseteq D\circ B$</li>
+<li>$(A\circ B)\circ B=A \circ B$</li>
+</ul>
+<h4 id="闭合">闭合</h4>
+<p>效果：同样平滑物体的轮廓，但弥合狭窄的断裂和细长的沟壑，消除小孔，并填补轮廓中的缝隙。
+$$
+A\bullet B=(A\oplus B)\ominus B
+$$
+即先用$B$对$A$膨胀，然后用$B$对腐蚀结果进行腐蚀。</p>
+<p>性质：</p>
+<ul>
+<li>$A\bullet B$是$A$的子集</li>
+<li>若$C \subseteq D$，则$C\bullet B\subseteq D\bullet B$</li>
+<li>$(A\bullet B)\bullet B=A \bullet B$</li>
+</ul>
+<h3 id="灰度形态学的应用">灰度形态学的应用</h3>
+<ul>
+<li>
+<p><strong>形态学图像平滑</strong>：对图像先进行闭运算处理再进行开运算处理，处理结果将去除或消亮斑或暗斑。</p>
+</li>
+<li>
+<p><strong>形态学图像梯度</strong>：服饰和膨胀处理常用于计算图像的形态梯度：
+$$
+g=(f\oplus b)-(f \ominus b)
+$$</p>
+</li>
+<li>
+<p><strong>Top-hat变换</strong>
+$$
+h=f-(f\circ b)
+$$
+其中$f$为输入图像，$b$为结构元函数。这一变换的最初命名是由于用平顶圆柱和平行六面体作为结构元函数，它常被用于阴影的细节增强处理。</p>
+</li>
+<li>
+<p><strong>纹理分割</strong></p>
+</li>
+<li>
+<p><strong>粒状处理</strong></p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-03-03&#32;21:39:00>更新于 March 3, 2022</span>
+      </div>
+      <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结"><i class="fa-brands fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/" data-title="《数字图像处理学》中的基础概念与课后习题总结"><i class="fa-brands fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="数字图像处理 课程笔记"><i class="fa-solid fa-angle-left fa-fw"></i>数字图像处理 课程笔记</a>
+      <a href="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" class="next" rel="next" title="Hexo中NexT主题下基于Fancybox的相册页面实现">Hexo中NexT主题下基于Fancybox的相册页面实现<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">
+          由<a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo %v">Hugo</a>
+          ×
+          <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt %v"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+          强力驱动
+          
+        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line beian"><span class="icp footer-divider">鄂ICP备20012765号</span></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fa-solid fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fa-solid fa-comment fa-fw"></i>
+    </a>
+  </div><a
+  href="https://github.com/yzhn16"
+  
+    title="在 GitHub 上查看源代码"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+    class="github-corner right d-none-mobile"
+  
+  
+><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>
