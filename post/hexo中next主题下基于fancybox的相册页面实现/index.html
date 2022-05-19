@@ -32,14 +32,14 @@
 <meta property="og:url" content="/post/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content='/uploads/default.jpg'><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content='/images/fancybox.jpg'><meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hexo中NexT主题下基于Fancybox的相册页面实现 | yzhn&#39;s Notes">
 
 	<link rel="canonical" href="/post/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/">
 
 
 	<meta name="twitter:description" content="最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。">
-<meta name="twitter:image" content="/uploads/default.jpg">
+<meta name="twitter:image" content="/images/fancybox.jpg">
 <meta property="article:published_time" content="2022-03-05T19:45:00&#43;00:00">
 	<meta property="article:updated_time" content="2022-03-05T19:45:00&#43;00:00">
 
@@ -278,6 +278,10 @@ xmlns="http://www.w3.org/2000/svg"
                 </div>
             </div>
         </header>
+        
+        <div class="article-hero-image" id="ArticleImage__Hero">
+            <img src="/images/fancybox.jpg">
+        </div>
         
     </div>
 </section>
@@ -518,7 +522,7 @@ xmlns="http://www.w3.org/2000/svg"
                 >
                     <div>
                         <div class="image-container">
-                            <img src="" class="article-image" />
+                            <img src="/images/lena_std.jpg" class="article-image" />
                         </div>
                         <div>
                             <h2 class="article-title">
