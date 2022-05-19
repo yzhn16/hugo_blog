@@ -1,0 +1,1331 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/images/favicon.svg">
+    
+    <link rel="stylesheet" href="/scss/global.min.21349b939dfaef508f26ef6f31876a6e87bc5a57aefd0e213d17fe4e5192c499.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+<title>大数据处理技术复习要点总结 | yzhn&#39;s Notes</title>
+<meta name="description" content="本文就『Lending Club贷款数据转换与融合』、『行星数据分组与聚合』以及『德国能源数据时间序列分析』等案例对Pandas中的部分分析方法以及机器学习中部分算法进行总结。">
+<meta property="og:title" content="大数据处理技术复习要点总结 | yzhn&#39;s Notes">
+<meta property="og:site_name" content="yzhn&#39;s Notes">
+<meta property="og:description" content="本文就『Lending Club贷款数据转换与融合』、『行星数据分组与聚合』以及『德国能源数据时间序列分析』等案例对Pandas中的部分分析方法以及机器学习中部分算法进行总结。">
+<meta property="og:url" content="/post/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93-pandas/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content='/uploads/default.jpg'><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="大数据处理技术复习要点总结 | yzhn&#39;s Notes">
+
+	<link rel="canonical" href="/post/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93-pandas/">
+
+
+	<meta name="twitter:description" content="本文就『Lending Club贷款数据转换与融合』、『行星数据分组与聚合』以及『德国能源数据时间序列分析』等案例对Pandas中的部分分析方法以及机器学习中部分算法进行总结。">
+<meta name="twitter:image" content="/uploads/default.jpg">
+<meta property="article:published_time" content="2021-05-25T13:39:00&#43;00:00">
+	<meta property="article:updated_time" content="2021-05-25T13:39:00&#43;00:00">
+
+
+
+    </head>
+
+
+<body class="line-numbers">
+
+    
+    <script src="/js/initColors.js"></script>
+
+    <div class="layout-styled">
+
+        <Section class="section">
+  <div class="nav-container">
+    <a class="logo-link" href="/">
+      <div id="logo-desktop">
+        <svg
+        width="192"
+        height="23"
+        viewBox="0 0 192 23"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="Logo__Desktop"
+      >
+        <g clipPath="url(#clip0)">
+          <path
+            d="M120.941 6.15477H122.453V2.83255L124.114 2.44922V6.15477H126.713V7.30477H124.114V16.377C124.114 17.314 124.54 17.7826 125.435 17.7826C125.925 17.7826 126.478 17.6335 126.904 17.4205L127.181 18.4214C126.606 18.7835 125.861 18.9964 124.86 18.9964C123.539 18.9964 122.432 18.3788 122.432 16.5261V7.30477H120.92V6.15477H120.941Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M131.739 7.77334C132.825 6.70852 134.273 5.89926 135.764 5.89926C137.723 5.89926 138.937 6.94278 138.937 9.17889V17.6122L140.555 17.8465V18.7409H137.233V9.58352C137.233 7.9863 136.616 7.30482 135.338 7.30482C134.166 7.30482 132.74 8.0076 131.739 8.90204V17.5909L133.442 17.8039V18.7196H128.416V17.8039L130.078 17.5909V1.29926L128.374 1.04371V0.0214844H131.739V7.77334V7.77334Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M141.854 12.4374C141.854 7.6883 143.92 5.89941 146.731 5.89941C149.648 5.89941 151.267 7.64571 151.267 11.9689V12.629H143.6C143.621 16.3772 144.686 17.8253 147.284 17.8253C148.605 17.8253 149.584 17.3994 150.5 16.7818L151.096 17.6124C150.01 18.5068 148.754 18.9966 147.008 18.9966C143.941 18.9753 141.854 17.2929 141.854 12.4374ZM143.621 11.5216H149.521C149.521 8.34849 148.754 6.98552 146.709 6.98552C144.857 6.98552 143.771 8.2633 143.621 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M162.682 7.85849C163.768 6.70849 165.024 5.87793 166.515 5.87793C168.474 5.87793 169.646 6.92145 169.646 9.15756V17.6335L171.286 17.8677V18.6983H167.963V9.68997C167.963 8.07145 167.388 7.32608 166.089 7.32608C164.918 7.32608 163.789 8.02886 162.81 8.9233V17.6122L164.449 17.8464V18.7409H161.127V9.68997C161.127 8.07145 160.552 7.32608 159.253 7.32608C158.082 7.32608 156.953 8.02886 155.973 8.9233V17.6122L157.677 17.8464V18.7409H152.651V17.8464L154.312 17.6122V7.47515L152.609 7.2196V6.15478H155.654L155.888 7.85849C156.974 6.72978 158.188 5.89923 159.679 5.89923C161.212 5.87793 162.277 6.51682 162.682 7.85849Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M171.925 12.4374C171.925 7.6883 173.991 5.89941 176.802 5.89941C179.719 5.89941 181.338 7.64571 181.338 11.9689V12.629H173.671C173.692 16.3772 174.757 17.8253 177.355 17.8253C178.676 17.8253 179.655 17.3994 180.571 16.7818L181.167 17.6124C180.081 18.5068 178.825 18.9966 177.079 18.9966C174.012 18.9753 171.925 17.2929 171.925 12.4374ZM173.692 11.5216H179.591C179.591 8.34849 178.825 6.98552 176.78 6.98552C174.928 6.98552 173.863 8.2633 173.692 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M183.084 18.0383V15.504H184.234L184.618 17.442C185.278 17.7189 185.789 17.8892 186.811 17.8892C188.664 17.8892 189.558 17.0374 189.558 15.5466C189.558 14.0559 188.834 13.4809 186.79 12.8846C184.831 12.2883 183.382 11.4577 183.382 9.13645C183.382 7.39016 184.639 5.89941 187.195 5.89941C188.664 5.89941 189.835 6.17627 190.687 6.68738V9.15775H189.558L189.132 7.34756C188.579 7.09201 187.961 7.00682 187.258 7.00682C185.789 7.00682 184.852 7.7309 184.852 8.98738C184.852 10.3077 185.576 10.8189 187.365 11.3513C189.431 12.0115 191.156 12.7142 191.156 15.3976C191.156 17.7615 189.431 18.9753 186.79 18.9753C185.235 18.9753 183.957 18.6346 183.084 18.0383Z"
+            fill="#7A8085"
+          />
+          <path class="change-fill"
+            d="M38.3122 9.98811C38.3122 8.66774 37.9501 8.15663 36.9492 8.15663C36.1186 8.15663 35.0964 8.62515 34.3936 9.20015V16.9733L35.8418 17.165V18.6344H30.0918V17.165L31.5825 16.9733V8.24182L30.0918 7.92237V6.19737H33.9251L34.2446 7.64552C35.3733 6.55941 36.6298 5.87793 38.1418 5.87793C39.9946 5.87793 41.102 6.92145 41.102 9.07237V16.9733L42.5927 17.165V18.6344H38.3122V9.98811V9.98811Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M62.3982 17.1858V18.6553H56.0732V17.1858L57.564 16.9942V8.2627L56.0732 7.94326V6.21826H59.8427L60.226 8.17752C61.0779 6.85715 62.1427 5.94141 63.6973 5.94141C63.8677 5.94141 64.0594 5.9627 64.1871 6.0053L63.8251 8.94418C63.5483 8.81641 63.2501 8.77381 62.8668 8.77381C61.8871 8.77381 61.1418 9.05067 60.3751 9.71085V16.9516L62.3982 17.1858Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M76.7098 6.19733H78.0941V3.08807L80.5432 2.55566V6.21863H82.9709V8.0927H80.5432V15.6742C80.5432 16.5899 80.8839 16.9946 81.6293 16.9946C82.0978 16.9946 82.5876 16.8455 82.907 16.6751L83.3543 18.3575C82.758 18.6983 81.9061 18.9751 80.6709 18.9751C78.9672 18.9751 78.0941 18.1658 78.0941 16.0362V8.0927H76.7098V6.19733Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M90.4664 17.1648V18.6343H84.6738V17.1648L86.1646 16.9731V8.24167L84.6738 7.92222V6.19722H88.9757V16.9731L90.4664 17.1648ZM85.696 1.76759C85.696 0.787963 86.4627 0 87.4423 0C88.422 0 89.1886 0.766667 89.1886 1.76759C89.1886 2.72593 88.422 3.51389 87.421 3.51389C86.4627 3.51389 85.696 2.72593 85.696 1.76759Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M98.3251 7.90097V6.19727H103.053V7.92227L101.924 8.11393L98.3251 18.6556H95.663L92.064 8.09264L90.9991 7.92227V6.19727H96.2593V7.90097L95.0242 8.09264L96.7279 13.6084C97.0473 14.6519 97.1964 15.5037 97.3668 16.4834H97.388C97.5371 15.525 97.7714 14.5241 98.0482 13.5871L99.6668 8.07134L98.3251 7.90097Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M75.6867 17.1224C74.5793 17.1437 74.3664 16.952 74.3664 15.9724V9.79645C74.3664 6.96404 72.9821 5.87793 70.3201 5.87793C68.3821 5.87793 66.7423 6.45293 65.4219 7.28349L66.2312 9.02978C67.3599 8.45478 68.4673 8.09274 69.7238 8.09274C71.1932 8.09274 71.5552 8.88071 71.5552 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C71.0867 16.6326 70.4052 17.0585 69.4469 17.0585C68.3821 17.0585 67.871 16.5261 67.871 15.0353C67.871 13.3103 68.5951 12.8205 70.4904 12.7779V11.2233C66.6358 11.2659 65.0386 12.4372 65.0386 15.2057C65.0386 17.8465 66.4867 18.9752 68.6589 18.9752C70.2136 18.9752 71.0654 18.315 71.7895 17.5696C72.0451 18.5705 72.833 18.9752 73.8978 18.9752C74.6645 18.9752 75.3886 18.7622 75.8571 18.5066L75.6867 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M54.4968 17.1224C53.3894 17.1437 53.1764 16.952 53.1764 15.9724V9.79645C53.1764 6.96404 51.7922 5.87793 49.1301 5.87793C47.1922 5.87793 45.5523 6.45293 44.232 7.28349L45.0412 9.02978C46.1699 8.45478 47.2773 8.09274 48.5338 8.09274C50.0033 8.09274 50.3653 8.88071 50.3653 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C49.8968 16.6326 49.2153 17.0585 48.257 17.0585C47.1922 17.0585 46.681 16.5261 46.681 15.0353C46.681 13.3103 47.4051 12.8205 49.3005 12.7779V11.2233C45.4459 11.2659 43.8486 12.4372 43.8486 15.2057C43.8486 17.8465 45.2968 18.9752 47.469 18.9752C49.0236 18.9752 49.8755 18.315 50.5996 17.5696C50.8551 18.5705 51.6431 18.9752 52.7079 18.9752C53.4746 18.9752 54.1986 18.7622 54.6672 18.5066L54.4968 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M107.653 13.055H113.594V11.9476C113.594 7.47534 111.869 5.89941 108.803 5.89941C105.63 5.89941 103.628 7.79478 103.628 12.4161C103.628 17.1013 105.523 18.9966 109.058 18.9966C110.954 18.9966 112.231 18.5068 113.467 17.5272L112.657 16.0577C111.678 16.6753 110.868 17.0587 109.463 17.0587C107.546 17.0587 106.801 16.1855 106.63 14.0133C106.588 13.6939 106.567 13.0976 106.567 12.4587C106.567 12.054 106.567 11.6707 106.588 11.3726V11.3513C106.737 8.51886 107.397 7.60312 108.781 7.60312C110.4 7.60312 110.783 8.58275 110.783 11.3513H107.674V13.055H107.653Z"
+            fill="#000"
+          />
+          <path class="change-fill" d="M17.5907 20.2954H0V23H17.5907V20.2954Z" fill="#000" />
+          <path class="change-fill"
+            d="M0 7.96484V18.9537L5.38796 15.1843V11.7343L0 7.96484Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5689 10.9463V0L12.1597 3.74815V7.13426L17.5689 10.9463Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5907 18.975L17.5694 12.288L0 0V6.62315L17.5907 18.975Z"
+            fill="#000"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="191.156" height="23" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+</div>
+<div id="logo-mobile" class="hidden">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="23" height="23" viewBox="0 0 512.000000 512.000000"
+    preserveAspectRatio="xMidYMid meet">
+   <metadata>
+   Created by potrace 1.15, written by Peter Selinger 2001-2017
+   </metadata>
+   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+   fill="" stroke="none">
+   <path d="M590 4383 l1 -738 756 -530 c698 -489 1151 -807 2618 -1837 l540
+   -380 3 748 c2 590 -1 751 -10 760 -7 7 -308 218 -668 470 -360 251 -1230 859
+   -1933 1351 -702 491 -1284 893 -1292 893 -13 0 -15 -92 -15 -737z"/>
+   <path d="M3887 4708 l-597 -412 0 -381 0 -381 597 -419 c328 -231 602 -421
+   610 -423 11 -3 13 204 13 1212 0 987 -2 1216 -13 1216 -7 0 -282 -186 -610
+   -412z"/>
+   <path d="M590 2135 c0 -910 3 -1225 11 -1225 10 0 343 231 1049 728 l155 109
+   0 389 0 388 -595 418 c-327 229 -601 417 -607 418 -10 0 -13 -251 -13 -1225z"/>
+   <path d="M590 320 l0 -310 1960 0 1960 0 0 310 0 310 -1960 0 -1960 0 0 -310z"/>
+   </g>
+   </svg>
+</div>
+      <span class="header-hidden">Navigate back to the homepage</span>
+    </a>
+    <div class="nav-controls">
+      <button id="copyButton" class="icon-wrapper">
+        <svg
+    class="icon-image"
+    width="24"
+    height="20"
+    viewBox="0 0 24 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2 5C2 3.34328 3.34328 2 5 2H14C15.6567 2 17 3.34328 17 5V9C17 10.6567 15.6567 12 14 12H10C9.44771 12 9 12.4477 9 13C9 13.5523 9.44771 14 10 14H14C16.7613 14 19 11.7613 19 9V5C19 2.23872 16.7613 0 14 0H5C2.23872 0 0 2.23872 0 5V9C0 10.4938 0.656313 11.8361 1.6935 12.7509C2.10768 13.1163 2.73961 13.0767 3.10494 12.6625C3.47028 12.2483 3.43068 11.6164 3.0165 11.2511C2.39169 10.6999 2 9.89621 2 9V5ZM7 11C7 9.34328 8.34328 8 10 8H14C14.5523 8 15 7.55228 15 7C15 6.44772 14.5523 6 14 6H10C7.23872 6 5 8.23872 5 11V15C5 17.7613 7.23872 20 10 20H19C21.7613 20 24 17.7613 24 15V11C24 9.50621 23.3437 8.16393 22.3065 7.24906C21.8923 6.88372 21.2604 6.92332 20.8951 7.3375C20.5297 7.75168 20.5693 8.38361 20.9835 8.74894C21.6083 9.30007 22 10.1038 22 11V15C22 16.6567 20.6567 18 19 18H10C8.34328 18 7 16.6567 7 15V11Z"
+      fill="#000"
+    />
+</svg>
+        <div id="toolTip" class="tool-tip " >
+            copied
+        </div>
+        <input id="copyText" style="opacity: 0;" type="text" class="tool-tip " />
+      </button>
+
+      <button id="themeColorButton" class="icon-wrapper"> 
+        <div id="sunRays" class="sun-rays"></div>
+        <div id="moonOrSun" class="moon-or-sun"></div>
+        <div id="moonMask" class="moon-mask"></div>
+      </button>
+    </div>
+</div>
+</Section>
+
+
+<script src="/js/toggleLogos.js"></script>
+
+
+<script src="/js/toggleColors.js"></script>
+
+
+<script src="/js/copyUrl.js"></script>
+
+        
+
+<section class="section narrow">
+
+    <section id="articleHero" class="section narrow">
+    <div class="article-hero">
+        <header class="article-header">
+            <h1 class="article-hero-heading">大数据处理技术复习要点总结</h1>
+            <div class="article-hero-subtitle">
+                <div class="article-meta">
+                    
+
+
+    <div class="article-coauthors-container">
+        
+        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
+            <div class="article-coauthors-list" style="width: 0px;">
+                
+            </div>
+            <strong class="article-coauthors-name-container">
+                
+            </strong>
+            <div class="article-coauthors-icon-container">
+                <svg
+width="17"
+height="17"
+viewBox="0 0 17 17"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+    <path style="fill: var(--primary);"
+      d="M5.3209 8.86719L8.50026 12.0396L11.6796 8.86719L12.6563 9.84385L8.50026 13.9999L4.34424 9.84385L5.3209 8.86719Z"
+    />
+    <path style="fill: var(--primary);"
+      d="M11.6791 8.13281L8.49974 4.96039L5.32039 8.13281L4.34373 7.15615L8.49974 3.00013L12.6558 7.15615L11.6791 8.13281Z"
+    />
+</svg>
+            </div>
+        </span>
+
+        <ul id="uncollapsedCoauthors" class="article-coauthors-list-open hidden">
+            <div id="uncollapsedAction" class="article-icon-open-container">
+                <svg
+width="17"
+height="17"
+viewBox="0 0 17 17"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+    <path style="fill: var(--primary);"
+      d="M11.6796 14L8.50023 10.8276L5.32088 14L4.34422 13.0233L8.50023 8.86732L12.6563 13.0233L11.6796 14Z"
+    />
+    <path style="fill: var(--primary);"
+      d="M5.32041 3L8.49977 6.17243L11.6791 3L12.6558 3.97666L8.49977 8.13268L4.34375 3.97666L5.32041 3Z"
+    />
+</svg>
+            </div>
+            
+        </ul>
+    </div>
+
+
+
+<script src="/js/collapseAuthors.js"></script>
+                    May 25, 2021
+                    • 21 min read
+                </div>
+            </div>
+        </header>
+        
+    </div>
+</section>
+
+
+    <aside id="progressBar" class="aside-container">
+    <div class="aside-align">
+      <div>
+        <div class="overlap-container">
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container" tabIndex={-1}>
+        <div class="track-line" aria-hidden="true">
+            <div id="progressIndicator" class="progress-line"></div>
+        </div>
+    </div>
+</aside>
+
+
+    <article  id="articleContent" class="post-content" style="position:relative;">
+        <p>本文就『Lending Club贷款数据转换与融合』、『行星数据分组与聚合』以及『德国能源数据时间序列分析』等案例对Pandas中的部分分析方法以及机器学习中部分算法进行总结。</p>
+<h2 id="lending-club贷款数据转换与融合">Lending Club贷款数据转换与融合</h2>
+<p>　　该案例完整Jupyter Notebook可参考<a href="http://cookdata.cn/note/view_static_note/5acc2adb881ca8e68cfbb1cd1347d28d/">Lending Club贷款数据转换与融合</a>。</p>
+<h3 id="数据源">数据源</h3>
+<pre tabindex="0"><code>user = pd.read_csv(&#34;./input/user.csv&#34;)
+loan = pd.read_csv(&#34;./input/loan.csv&#34;)
+history = pd.read_csv(&#34;./input/history.csv&#34;)
+</code></pre><h3 id="随机采样sample">随机采样(sample)</h3>
+<p>　　随机查看贷款交易数据中的5行。</p>
+<pre tabindex="0"><code>loan.sample(n=5)
+</code></pre><p>　　随机查看贷款交易数据中的1%。</p>
+<pre tabindex="0"><code>loan.sample(frac=0.01)
+</code></pre><p>　　sample默认的是不放回采样（每个样本只可能出现一次），可以调整replace参数为True改为有放回采样。</p>
+<pre tabindex="0"><code>loan.sample(n=10,replace=True)
+</code></pre><p>　　若希望重复调用某次采样的结果，可以设定random_state参数为同一个数来实现。</p>
+<pre tabindex="0"><code>loan.sample(n=5,random_state=42)
+</code></pre><p>　　除了行采样，sample也可以实现列采样，只需要调整axis参数为1即可。</p>
+<pre tabindex="0"><code>loan.sample(n=3,axis=1)
+</code></pre><h3 id="数据融合mergejoin">数据融合(merge,join)</h3>
+<pre tabindex="0"><code>test_user = user.loc[[1,3,5,7,8]]
+test_loan = loan[loan.user.isin([2,3,4,5,6,7])]
+</code></pre><p>　　merge和join作为Pandas中常用的数据融合方法，目的都是将两个数据表通过共同变量进行连接。</p>
+<h4 id="merge">merge</h4>
+<p>　　merge参数如下：</p>
+<pre tabindex="0"><code>left.merge(right, how=&#39;inner&#39;, on=None, 
+		left_on=None, right_on=None, 
+		left_index=False, right_index=False, 
+		sort=False, suffixes=(&#39;_x&#39;, &#39;_y&#39;), indicator=False)
+</code></pre><p>　　left和right分别指代要进行连接的两个数据框。<br>
+　　on, left_on, right_on, 用来指定连接的变量。若这一变量在两个数据框中命名相同，直接使用on指定即可，否则通过left_on和right_on分别指定左表变量名和右表变量名。<br>
+　　若需要基于数据框的索引进行连接，则要通过设定left_index和right_index的参数为True来实现。<br>
+　　how为连接方式，有&rsquo;inner&rsquo;, &rsquo;left&rsquo;, &lsquo;right&rsquo;, &lsquo;outer&rsquo;四种。</p>
+<p>　　基于用户信息数据的&rsquo;user_id&rsquo;变量和贷款交易数据的&rsquo;user&rsquo;变量进行内连接(inner)。这种方式下，只有所选定列在左表与右表能匹配的行会被保留。</p>
+<pre tabindex="0"><code>test_user.merge(test_loan,how=&#34;inner&#34;,
+				left_on=&#34;user_id&#34;,right_on=&#34;user&#34;)
+</code></pre><p>　　基于用户信息数据的&rsquo;user_id&rsquo;变量和贷款交易数据的&rsquo;user&rsquo;变量进行左连接(left)。这种方式下，左表所有行都被保留，不能匹配的部分用缺失值填充。</p>
+<pre tabindex="0"><code>test_user.merge(test_loan,how=&#34;left&#34;,
+				left_on=&#34;user_id&#34;,right_on=&#34;user&#34;)
+</code></pre><p>　　基于用户信息数据的&rsquo;user_id&rsquo;变量和贷款交易数据的&rsquo;user&rsquo;变量进行右连接(right)。这种方式下，右表所有行都被保留，不能匹配的部分用缺失值填充。</p>
+<pre tabindex="0"><code>test_user.merge(test_loan,how=&#34;right&#34;,
+				left_on=&#34;user_id&#34;,right_on=&#34;user&#34;)
+</code></pre><p>　　基于用户信息数据的&rsquo;user_id&rsquo;变量和贷款交易数据的&rsquo;user&rsquo;变量进行外连接(outer)。这种方式下，左表和右表所有行都会被保留，不能匹配的部分用缺失值填充。</p>
+<pre tabindex="0"><code>test_user.merge(test_loan,how=&#34;outer&#34;,
+				left_on=&#34;user_id&#34;,right_on=&#34;user&#34;)
+</code></pre><p>　　merge中的indicator参数能很好地找到返回结果的来源,设定indicator参数为Ture后，返回结果中多了一列&quot;_merge&quot;，取值有&quot;both&quot;, &ldquo;left_only&rdquo;, &ldquo;right_only&quot;三种。分别代表左右表匹配成功，左表有而右表没有，右表有而左表没有三种情况。</p>
+<p>$$
+\begin{array}{c|c|c}
+&amp; .. &amp; _merge \
+\hline
+0 &amp; .. &amp; both \
+\hline
+1 &amp; .. &amp; left_only \
+\hline
+2 &amp; .. &amp; right_only
+\end{array}
+$$</p>
+<p>　　当左表与右表中变量同名时，我们可以通过suffixes参数为左表变量与右表变量附加不同字段，便于后续区分。</p>
+<p>$$
+\begin{array}{c|c|c|c|c|c|c|c}
+&amp; user &amp; term_l &amp; grade_l &amp; .. &amp; term_r &amp; grade_r &amp; .. \
+\hline
+0 &amp; 6 &amp; 60 months &amp; .. &amp; .. &amp; 60 months &amp; .. &amp; .. \
+\hline
+.. &amp; .. &amp; .. &amp; .. &amp; .. &amp; .. &amp; .. &amp; ..
+\end{array}
+$$</p>
+<h4 id="join">join</h4>
+<p>　　join参数如下：</p>
+<pre tabindex="0"><code>left.join(right, on=None, how=&#39;left&#39;,
+		lsuffix=&#39;&#39;, rsuffix=&#39;&#39;, sort=False)
+</code></pre><p>　　事实上，join就是merge的简化版本，所有join能实现的操作，都可以使用merge实现。</p>
+<ul>
+<li>使用join时，右表只能基于索引进行连接；</li>
+<li>通过on参数，可以指定左表进行连接的变量（可以是索引也可以是任意列）。</li>
+</ul>
+<p>　　merge和join中还有一个参数sort，指定为True会让返回的结果按连接变量进行升序排列。</p>
+<h3 id="排序sort_indexsort_values">排序(sort_index,sort_values)</h3>
+<p>　　Pandas中的sort_index和sort_values也可以对DataFrame进行排序，sort_index是按照索引进行排序，sort_values是按照指定变量排序。<br>
+　　例如想将用户历史数据按账户平均存款排序。</p>
+<pre tabindex="0"><code>history.sort_values(by=&#39;avg_cur_bal&#39;)
+</code></pre><p>　　若要降序排列，可以指定ascending参数为False。</p>
+<pre tabindex="0"><code>history.sort_values(by=&#39;avg_cur_bal&#39;,
+					ascending=False)
+</code></pre><p>　　也可以指定对缺失值的排序方式，默认缺失值将排在最后，可以设定na_position为first将缺失值排在最前面。</p>
+<pre tabindex="0"><code>history.sort_values(by=&#39;avg_cur_bal&#39;,
+					na_position=&#39;first&#39;)
+</code></pre><h3 id="离散化cutqcut">离散化(cut,qcut)</h3>
+<h4 id="cut">cut</h4>
+<p>　　使用cut函数按照指定的分割点对数据进行划分。<br>
+　　通过设定bin参数设定了分割点，将数据按照中位数进行了划分。同时设定了参数labels，使用这个参数可以方便地为新的划分区间命名。<br>
+　　<strong>左开右闭区间</strong></p>
+<pre tabindex="0"><code>annual_inc = pd.cut(combine.annual_inc,
+					bins=[np.min(combine.annual_inc)-1,
+                    	np.percentile(combine.annual_inc,50),
+                    	np.max(combine.annual_inc)+1],
+					labels=[&#39;low&#39;,&#39;high&#39;])
+</code></pre><p>　　cut也可以直接指定划分份数，将数据等距划分。<br>
+　　例如，将数据等距分为五份：</p>
+<pre tabindex="0"><code>pd.cut(combine.annual_inc,5)
+</code></pre><p>　　理论上，数据应被等距分为了五份，每一个区间的长度都相同，但我们计算可以发现，第一个区间的长度为113364，而其他几个区间的长度都为112800。这并不是cut分割错误，只是为了包含最小值或最大值，<strong>cut的左右端会拓展0.1%</strong>。</p>
+<h4 id="qcut">qcut</h4>
+<p>　　Pandas中与cut相似的另一个函数是qcut，它将按照每个区间中频数相同的原则进行划分,当我们指定划分份数后，就会用相应的分位数进行划分。例如，当我们使用qcut将数据分为两份时，分割点就是中位数，四份时分割点就是四分位数。</p>
+<pre tabindex="0"><code>pd.qcut(combine.annual_inc,2)
+</code></pre><h3 id="值替换replacemap">值替换(replace,map)</h3>
+<p>　　认为状态为&quot;Charged Off&rdquo;,&ldquo;In Grace Period&rdquo;, &ldquo;Late (31-120 days)&ldquo;的贷款有违约风险，视为不良贷款，将其值标记为1，其他贷款标记为0。<br>
+　　使用replace进行值替换。</p>
+<pre tabindex="0"><code>combine[&#39;loan_status&#39;].replace(
+	to_replace=[&#39;Fully Paid&#39;,&#39;Current&#39;,&#39;Charged Off&#39;,&#39;In Grace Period&#39;,&#39;Late (31-120 days)&#39;],
+    value=[0,0,1,1,1],
+    inplace=True)
+</code></pre><p>　　除了将需要替换的值与替换的新值分别用列表输入外，也可以使用字典进行指定。</p>
+<pre tabindex="0"><code>test_loan.replace(to_replace={&#39;loan_status&#39;:{&#39;Fully Paid&#39;:0,&#39;Charged Off&#39;:0,&#39;In Grace Period&#39;:1}})
+</code></pre><p>　　也可以同时指定不同变量的不同值替换为相同新值。</p>
+<pre tabindex="0"><code>test_loan.replace(to_replace={&#39;loan_status&#39;:&#39;Fully Paid&#39;,&#39;grade&#39;:&#39;A&#39;},value=&#39;Good&#39;)
+</code></pre><p>　　也可以指定正则表达式进行替换，这时需要设定参数regex为True，代表to_replace部分输入的是正则表达式。如查找所有以C开头的字段并替换为Bad。</p>
+<pre tabindex="0"><code>test_loan.replace(to_replace=&#39;C+.*$&#39;, value=&#39;Bad&#39;, regex=True)
+</code></pre><h4 id="map">map</h4>
+<p>　　在Pandas中，如果只是针对某一个Series进行数值替代，我们也可以使用map方法。</p>
+<pre tabindex="0"><code>test_loan[&#39;loan_status&#39;].map({&#39;Fully Paid&#39;:0,&#39;Charged Off&#39;:0,&#39;In Grace Period&#39;:1})
+</code></pre><p>　　这同样实现了将贷款状态进行替换的效果，但map不能像replace一样直接对DataFrame进行操作。不过map不仅仅可以像上面一样输入字典作为参数，也可以直接输入一个函数进行映射。<br>
+　　例如，将数据中利率低于12%的映射为&rsquo;Low&rsquo;，高于12%的映射为&rsquo;High&rsquo;。</p>
+<pre tabindex="0"><code>def f(x):
+    if x &lt; 12:
+        return &#39;Low&#39;
+    else:
+        return &#39;High&#39;
+        
+combine[&#39;int_rate&#39;].map(f)
+</code></pre><h3 id="哑变量处理get_dummies">哑变量处理(get_dummies)</h3>
+<pre tabindex="0"><code>cat_vars=[&#39;term&#39;,&#39;grade&#39;,&#39;emp_length&#39;,&#39;annual_inc&#39;,&#39;home_ownership&#39;,&#39;verification_status&#39;]
+for var in cat_vars:
+    cat_list = pd.get_dummies(combine[var], prefix=var, drop_first=True)
+    combine=combine.join(cat_list)
+</code></pre><p>　　get_dummies函数中使用了两个参数。prefix可以为新生成的哑变量添加前缀，这方便我们识别新生成的变量是从原来哪一个变量中得来的。drop_first设置为True将删去所获得哑变量的第一个，这是因为在建模中，有k类的分类变量只需要k-1个变量就可以将其描述，如果使用k个变量则会出现完全共线性的问题。<br>
+　　此外，在这里选择了使用join而不是merge，这是因为get_dummies返回的结果与原始数据有相同的索引，使用join直接基于索引进行连接更简洁。</p>
+<pre tabindex="0"><code> pd.get_dummies(combine[&#39;grade&#39;], prefix=&#39;grade&#39;,drop_first=True)[:5]
+</code></pre><p>$$
+\begin{array}{c|c|c}
+&amp;grade_B&amp;	grade_C&amp;	grade_D&amp;	grade_E&amp;	grade_F&amp;	grade_G\
+\hline
+0&amp;	0&amp;	0&amp;	1&amp;	0&amp;	0&amp;	0&amp; \
+\hline
+1&amp;	0&amp;	1&amp;	0&amp;	0&amp;	0&amp;	0&amp; \
+\hline
+2&amp;	1&amp;	0&amp;	0&amp;	0&amp;	0&amp;	0&amp; \
+\hline
+3&amp;	0&amp;	0&amp;	0&amp;	0&amp;	0&amp;	0&amp;\
+\hline
+4&amp;	0&amp;	1&amp;	0&amp;	0&amp;	0&amp;	0&amp;
+\end{array}
+$$</p>
+<p>　　如果使用merge：</p>
+<pre tabindex="0"><code>combine=combine.merge(cat_list,left_index=True,right_index=True)
+</code></pre><h3 id="添加常数项列concat">添加常数项列(concat)</h3>
+<p>　　在回归分析中，我们往往还需要为自变量添加常数项列，值全为1。<br>
+　　首先创建一个长度为X的行数，值全为1的列表。再将其转化为Series，并命名&quot;const&rdquo;。</p>
+<pre tabindex="0"><code>const = pd.Series([1] * combine.shape[0],name=&#34;const&#34;)
+</code></pre><p>　　重设X索引，使用concat对数据进行合并，并指定方向为列。</p>
+<pre tabindex="0"><code>X.reset_index(drop=True,inplace=True)
+X = pd.concat([const,X],axis=1)
+</code></pre><p>　　这里之所以要先重新设置X的索引，是因为concat是基于索引进行拼接的。这么看来，对于列的拼接其实直接使用join就可以了，不过目前join只能作为DataFrame的方法，想拼接DataFrame和Series就必须把DataFrame写在前面：</p>
+<pre tabindex="0"><code>X.join(const)
+</code></pre><p>　　此外，concat更常用的是进行行的连接。concat参数如下：</p>
+<pre tabindex="0"><code>  pandas.concat(objs, axis=0, join=&#39;outer&#39;)
+</code></pre><p>　　objs: Series,DataFrame等构成的list<br>
+　　axis: 合并连接的方向，0是行，1是列<br>
+　　join：连接方式，&ldquo;inner&quot;或者&quot;outer&rdquo;</p>
+<p>　　可以看到，concat的对象必须是一个list。</p>
+<p>　　创建两个dataframe:df1,df2。</p>
+<pre tabindex="0"><code>df1 = pd.DataFrame([[&#39;a&#39;,&#39;a&#39;, 1], [&#39;b&#39;,&#39;b&#39;, 2]],columns=[&#39;letter&#39;,&#39;letter1&#39;,&#39;number&#39;])
+</code></pre><p>$$
+\begin{array}{c|c|c|c}
+&amp; letter &amp; letter1	&amp; number\
+\hline
+0	&amp; a	&amp; a	&amp; 1\
+\hline
+1	&amp; b	&amp; b	&amp; 2
+\end{array}
+$$</p>
+<pre tabindex="0"><code>df2 = pd.DataFrame([[&#39;c&#39;,&#39;c&#39;, 3], [&#39;d&#39;,&#39;d&#39;, 4]],columns=[&#39;letter&#39;,&#39;letter2&#39;,&#39;number&#39;])
+</code></pre><p>$$
+\begin{array}{c|c|c|c}
+&amp; letter &amp; letter1	&amp; number\
+\hline
+0	&amp; c	&amp; c	&amp; 3\
+\hline
+1	&amp; d	&amp; d	&amp; 4
+\end{array}
+$$</p>
+<p>　　使用inner方式进行连接，只有能够匹配的变量才会保留。</p>
+<pre tabindex="0"><code>pd.concat([df1,df2],axis=0,join=&#39;inner&#39;)
+</code></pre><p>$$
+\begin{array}{c|c|c}
+&amp; letter &amp; number \
+\hline
+0 &amp;	a &amp;	1 \
+\hline
+1 &amp;	b &amp;	2 \
+\hline
+0 &amp;	c &amp;	3 \
+\hline
+1 &amp;	d &amp;	4
+\end{array}
+$$
+　　使用outer方式进行连接，所有变量都会保留，不能匹配的部分用缺失值填充。</p>
+<pre tabindex="0"><code>pd.concat([df1,df2],axis=0,join=&#39;outer&#39;)
+</code></pre><p>$$
+\begin{array}{c|c|c}
+&amp; letter &amp;	letter1 &amp; letter2 &amp;	number \
+\hline
+0 &amp;	a&amp;	a&amp;	NaN&amp;	1 \
+\hline
+1&amp;	b&amp;	b&amp;	NaN&amp;	2 \
+\hline
+0&amp;	c&amp;	NaN&amp;	c&amp;	3 \
+\hline
+1&amp;	d&amp;	NaN&amp;d	4&amp;
+\end{array}
+$$</p>
+<p>　　ignore_index参数为Ture将忽略原来的索引，从0开始重建索引。</p>
+<pre tabindex="0"><code>pd.concat([df1,df2],ignore_index=True)
+</code></pre><p>　　通过key参数可以建立多层索引，方便识别数据来自于哪个数据源。</p>
+<pre tabindex="0"><code>pd.concat([df1,df2],keys=[&#39;df1&#39;, &#39;df2&#39;])
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c}
+&amp; &amp; letter &amp; letter1 &amp; letter2&amp; number \
+\hline
+df1 &amp; 0 &amp; a &amp; a &amp; NaN &amp; 1 \
+&amp; 1 &amp; b &amp; b &amp; NaN &amp; 2 \
+\hline
+df2 &amp; 0 &amp; c &amp; NaN &amp; c &amp; 3 \
+&amp; 1 &amp; d &amp; NaN &amp; d &amp; 4 \
+\end{array}
+$$</p>
+<h2 id="行星数据分组与聚合">行星数据分组与聚合</h2>
+<p>　　该案例完整Jupyter Notebook可参考<a href="http://cookdata.cn/note/view_static_note/7b30c741facfb06d83bc37ae3a7fa8a3/">行星数据分组与聚合</a>。</p>
+<h3 id="数据源-1">数据源</h3>
+<p>　　行星数据集记录了2014年之前发现的行星的信息。</p>
+<pre tabindex="0"><code>planets = pd.read_csv(&#34;./input/planets.csv&#34;)
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c|c}
+&amp; method&amp;number&amp;orbital_period&amp;mass&amp;distance&amp;year \
+\hline
+0&amp;	Radial Velocity	&amp;1&amp;	269.300	&amp;7.10	&amp;77.40	&amp;2006 \
+\hline
+1&amp;	Radial Velocity	&amp;1&amp;	874.774	&amp;2.21	&amp;56.95	&amp;2008 \
+\hline
+2&amp;	Radial Velocity	&amp;1&amp;	763.000	&amp;2.60	&amp;19.84	&amp;2011 \
+\hline
+3&amp;	Radial Velocity	&amp;1&amp;	326.030	&amp;19.40	&amp;110.62	&amp;2007 \
+\hline
+4&amp;	Radial Velocity	&amp;1&amp;	516.220	&amp;10.50	&amp;119.47	&amp;2009
+\end{array}
+$$</p>
+<h3 id="数据分组">数据分组</h3>
+<h4 id="通过特征分组">通过特征分组</h4>
+<p>　　groupby可以指定某一个特征或指定某一组特征进行分组。<br>
+　　例如按method特征对数据进行分组。</p>
+<pre tabindex="0"><code>grouped = planets.groupby(&#39;method&#39;)
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f1d00504a58&gt;
+</code></pre><p>　　groupby还能通过指定一个与目标数据等长的array、list或Series进行分组。<br>
+　　例如，行星数据集共有1035条记录，生成一个长度为1035，前500都为0，后535都为1的array。<br>
+　　使用repeat，输入中第一部分指定了值，第二部分指定对应值的重复次数。我们将生成结果记为a。</p>
+<pre tabindex="0"><code>a = np.repeat([0,1], [500, 535])
+</code></pre><p>　　以其对原数据进行分组，并计算各特征的均值。</p>
+<pre tabindex="0"><code>planets.groupby(a).mean()
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c}
+&amp;number&amp;orbital_period&amp;mass&amp;distance&amp;year\
+\hline
+0&amp;	1.644000&amp;	1450.908401&amp;	2.580901&amp;	97.615625&amp;	2007.916000&amp; \
+\hline
+1&amp;	1.917757&amp;	2526.729858&amp;	2.800112&amp;	507.660000&amp;	2010.149533&amp;
+\end{array}
+$$</p>
+<h4 id="通过函数分组">通过函数分组</h4>
+<p>　　也可以通过函数进行分组。<br>
+　　例如，想将数据按发现年份在2000年前和2000年后进行分组。使用set_index设定year变量为数据的新索引，然后定义一个函数test，当数据小于2000时返回&rsquo;Before 2000&rsquo;，大于等于2000时返回&rsquo;After 2000&rsquo;，最后通过自定义函数test进行分组，并求各组各变量均值。</p>
+<pre tabindex="0"><code>new = planets.set_index(&#39;year&#39;)
+
+def test(x):
+    if x&lt;2000:
+        return &#39;Before 2000&#39;
+    else:
+        return &#39;After 2000&#39;
+        
+new.groupby(test).mean()
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c}
+&amp;	number&amp;	orbital_period&amp;	mass&amp;	distance\
+\hline
+After 2000&amp;	1.780658&amp;	2058.025770&amp;	2.615027&amp;	272.918742&amp;\
+\hline
+Before 2000&amp;	1.937500&amp;	349.672379&amp;	3.071469&amp;	26.354483&amp;
+\end{array}
+$$
+　　函数的输入是数据的索引列。以上代码相当于这样两步操作：<br>
+　　1. 对目标数据索引的每一个元素执行相应函数；</p>
+<pre tabindex="0"><code>group_index = new.index.map(test)
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Index([&#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;,
+       &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;Before 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;,
+       ...
+       &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;,
+       &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;, &#39;After 2000&#39;],
+      dtype=&#39;object&#39;, name=&#39;year&#39;, length=1035)
+</code></pre><p>　　2. 以这一个新变量group_index进行分组。</p>
+<pre tabindex="0"><code>new.groupby(group_index).mean()
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c}
+&amp;	number&amp;	orbital_period&amp;	mass&amp;	distance\
+\hline
+year &amp; &amp; &amp; &amp; \
+\hline
+After 2000&amp;	1.780658&amp;	2058.025770&amp;	2.615027&amp;	272.918742\
+\hline
+Before 2000&amp;	1.937500&amp;	349.672379&amp;	3.071469&amp;	26.354483
+\end{array}
+$$</p>
+<h3 id="groupby对象的基本操作">GroupBy对象的基本操作</h3>
+<h4 id="对分组进行迭代">对分组进行迭代</h4>
+<p>　　groupby返回的结果是一个GroupBy类型的对象，可以使用循环查看其内部结构：</p>
+<pre tabindex="0"><code>pd.set_option(&#39;expand_frame_repr&#39;,False)
+for (name,group) in grouped:
+    print(name)
+    print(group.head(n=2),&#39;\n&#39;)
+</code></pre><p>　　GroupBy类型的对象是由各组组名与其对应的分组数据构成。这里只依据method一个特征进行了分组，若基于多个特征进行分组，则返回的GroupBy的组名会是一个多元元组。</p>
+<pre tabindex="0"><code>for (name,group) in planets.groupby([&#39;method&#39;,&#39;year&#39;]):
+    print(name)
+</code></pre><p>　　GroupBy内部是由一个个DataFrame组成，可以在循环中对每组数据进行操作。<br>
+　　例如，对每组数据使用shape。为了使输出更美观，我们使用format指定了输出的字符串格式，第一个{0:30s}匹配format中第一个字符串method，并指定字符串长度为30；第二个{1}匹配format中第二个字符串group.shape。</p>
+<pre tabindex="0"><code>for (method, group) in planets.groupby(&#39;method&#39;):
+    print(&#34;{0:30s} shape={1}&#34;.format(method, group.shape))
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Astrometry                     shape=(2, 6)
+Eclipse Timing Variations      shape=(9, 6)
+Imaging                        shape=(38, 6)
+Microlensing                   shape=(23, 6)
+Orbital Brightness Modulation  shape=(3, 6)
+Pulsar Timing                  shape=(5, 6)
+Pulsation Timing Variations    shape=(1, 6)
+Radial Velocity                shape=(553, 6)
+Transit                        shape=(397, 6)
+Transit Timing Variations      shape=(4, 6)
+</code></pre><p>　　也有一些可以直接对GroupBy使用的方法，例如size方法可以查看每个分组的数据量。</p>
+<pre tabindex="0"><code>grouped.size()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>method
+Astrometry                         2
+Eclipse Timing Variations          9
+Imaging                           38
+Microlensing                      23
+Orbital Brightness Modulation      3
+Pulsar Timing                      5
+Pulsation Timing Variations        1
+Radial Velocity                  553
+Transit                          397
+Transit Timing Variations          4
+dtype: int64
+</code></pre><h4 id="选择指定特征分析">选择指定特征分析</h4>
+<p>　　针对GroupBy类型的对象，我们可以直接选取出需要的列。例如，取出year特征。</p>
+<pre tabindex="0"><code>grouped[&#39;year&#39;]
+</code></pre><p>　　这仍然是一个GroupBy类型的对象，但和之前的结果相比，这是一个SeriesGroupBy，而之前的是一个DataFrameGroupBy。<br>
+　　对于这种类型，可以直接使用一些聚合函数（如sum、mean、max、min&hellip;）。例如，查看不同方法发现的行星与地球距离的中位数：</p>
+<pre tabindex="0"><code>planets.groupby(&#39;method&#39;)[&#39;distance&#39;].median()
+</code></pre><p>　　也可以直接使用describe。例如查看不同方法发现行星的时间情况。</p>
+<pre tabindex="0"><code>grouped[&#39;year&#39;].describe()
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c}
+&amp; count &amp; mean &amp; std &amp; min &amp; 25% &amp; 50% &amp; 75% &amp; max \
+\hline
+method\
+\hline
+Astrometry	&amp;2.0&amp;2011.500000&amp;2.121320&amp;2010.0&amp;2010.75&amp;2011.5&amp;2012.25&amp;2013.0\
+\hline
+&hellip;
+\end{array}
+$$</p>
+<h4 id="结合分组方法与聚合函数分析">结合分组方法与聚合函数分析</h4>
+<p>　　首先将年份按每10年进行划分。通过//将年份整除10（向下取整），再乘以10，可以将年份变换为对应年代。再使用astype将类型转换为字符串并加上&rsquo;s&rsquo;代表对应年代。</p>
+<pre tabindex="0"><code>decade = 10 * (planets[&#39;year&#39;] // 10)
+decade = decade.astype(str) + &#39;s&#39;
+</code></pre><p>　　按发现行星的方法和发现的年代进行分组，并统计相应分组下发现的行星的总数。</p>
+<pre tabindex="0"><code>planets.groupby([&#39;method&#39;, decade])[&#39;number&#39;].sum()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>method						year 
+Astrometry					2010s      2
+Eclipse Timing Variations	2000s      5
+							2010s     10
+Imaging						2000s     29
+ 							2010s     21
+...
+</code></pre><p>　　使用unstack将按层次化索引拆开为新的列索引。</p>
+<pre tabindex="0"><code>planets.groupby([&#39;method&#39;, decade])[&#39;number&#39;].sum().unstack()
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c}
+year&amp;1980s&amp;1990s&amp;2000s&amp;2010s \
+\hline
+method \
+\hline
+Astrometry&amp;NaN&amp;NaN&amp;NaN&amp;2.0 \
+\hline
+Eclipse Timing Variations&amp;NaN&amp;NaN&amp;5.0&amp;10.0\
+\hline
+&hellip;
+\end{array}
+$$</p>
+<h3 id="groupbyapply">GroupBy.apply</h3>
+<p>　　apply方法能够分别对每一份分组数据进行对应的函数操作，再合并成一个数据表。因此，apply中使用的函数必须是以DataFrame作为输入的，而且每一个apply语句只能传入一个函数。<br>
+　　例如：使用apply计算不同方法发现的行星在各特征上的极差(最大值与最小值之差)。</p>
+<pre tabindex="0"><code>grouped.apply(lambda x: x.max() - x.min())
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c}
+&amp;number&amp;orbital_period&amp;mass&amp;distance&amp;year\
+\hline
+method \
+\hline
+Astrometry&amp;	0.0&amp;769.640000&amp;NaN&amp;5.79	&amp;3.0 \
+\hline
+Eclipse Timing Variations&amp;1.0&amp;8303.750000&amp;1.8500&amp;369.28	&amp;4.0 \
+\hline
+&hellip;
+\end{array}
+$$</p>
+<p>　　此例中，每一组数据返回了一个Series。apply应用的函数也可以只返回一个标量，例如计算每种方法发现的行星中和地球距离的最大值与轨道周期的最大值之比。
+<em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>method
+Astrometry                         0.020443
+Eclipse Timing Variations          0.048924
+Imaging                            0.000226
+Microlensing                       1.513725
+Orbital Brightness Modulation    763.789269
+Pulsar Timing                      0.032854
+Pulsation Timing Variations             NaN
+Radial Velocity                    0.020418
+Transit                           25.633248
+Transit Timing Variations         13.243750
+dtype: float64
+</code></pre><p>　　apply应用的函数也可以返回一个DataFrame。例如分组中心化数据。</p>
+<pre tabindex="0"><code>grouped.apply(lambda x: x-x.mean())
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c|c}
+&amp;distance&amp;	mass&amp;	method&amp;	number&amp;	orbital_period&amp;	year\
+\hline
+0&amp;	25.799792&amp;	4.469301&amp;	NaN&amp;	-0.721519&amp;	-554.05468&amp;	-1.518987\
+\hline
+1&amp;	5.349792&amp;	-0.420699&amp;	NaN&amp;	-0.721519&amp;	51.41932&amp;	0.481013\
+\hline
+&hellip;
+\end{array}
+$$</p>
+<p>　　当apply中运用的函数除了输入的DataFrame外还有其他参数时，直接在apply中进行赋值即可。例如查看按method分组后各组数据的前两行。</p>
+<pre tabindex="0"><code>def func1(x,n):
+    return(x.head(n))
+grouped.apply(func1,n=2)
+</code></pre><p>　　apply的运行实际过程有分开运算、结果合并两步，因此，在数据量较大时，apply的运行速度会比可以实现同样操作的其他方法要慢。</p>
+<pre tabindex="0"><code>%timeit grouped.apply(np.mean)
+</code></pre><p><em>16.1 ms ± 50.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</em></p>
+<pre tabindex="0"><code>%timeit grouped.mean()
+</code></pre><p><em>624 µs ± 337 ns per loop (mean ± std. dev. of 7 runs, 1000 loops each)</em></p>
+<p>　　总结来看，apply方法只需要传入的函数的输入为DataFrame即可，函数的输出可以是标量、Series或DataFrame。但必须以DataFrame为输入就会导致当我们想对不同特征分别进行操作时比较麻烦。例如，分别计算各种方法发现的行星的距离的均值和发现的数量之和。</p>
+<pre tabindex="0"><code>def func2(df):
+    mean_distance = np.mean(df[&#39;distance&#39;])
+    sum_number = np.sum(df[&#39;number&#39;])
+    return(pd.Series({&#39;mean_distance&#39;:mean_distance,&#39;sum_number&#39;:sum_number}))
+
+grouped.apply(func2) 
+</code></pre><h3 id="groupbyagg">GroupBy.agg</h3>
+<p>　　同样，分别计算各种方法发现的行星的距离的均值和发现的数量之和。</p>
+<pre tabindex="0"><code>grouped.agg({&#39;distance&#39;:&#39;mean&#39;,&#39;number&#39;:&#39;sum&#39;})
+</code></pre><p>　　这里使用“变量名:函数名”的形式向agg传入一个字典。agg方法可以针对某个特征同时执行多个函数。</p>
+<pre tabindex="0"><code>grouped.agg({&#39;distance&#39;:[&#39;min&#39;,&#39;max&#39;,&#39;mean&#39;,&#39;median&#39;],&#39;number&#39;:&#39;sum&#39;})
+</code></pre><p>　　agg方法中同样可以使用自定义函数，例如求极差：</p>
+<pre tabindex="0"><code>grouped.agg(lambda x: x.max()-x.min())
+</code></pre><p>　　需要注意，尽管这里使用agg和apply获得了相同的结果，但是，在apply中是对每一组数据整个DataFrame进行一次运算，而在agg中将对每一组数据中的每一个特征进行运算。</p>
+<pre tabindex="0"><code>def test2(x):
+    return(x.shape)
+</code></pre><pre tabindex="0"><code>grouped.apply(test2)
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>method
+Astrometry                         (2, 6)
+Eclipse Timing Variations          (9, 6)
+Imaging                           (38, 6)
+Microlensing                      (23, 6)
+Orbital Brightness Modulation      (3, 6)
+Pulsar Timing                      (5, 6)
+Pulsation Timing Variations        (1, 6)
+Radial Velocity                  (553, 6)
+Transit                          (397, 6)
+Transit Timing Variations          (4, 6)
+dtype: object
+</code></pre><pre tabindex="0"><code>grouped.agg(test2)
+</code></pre><p>$$
+\begin{array}{c|c|c|c|c|c|c}
+&amp; number&amp;	orbital_period	&amp; mass &amp; distance &amp;	year \
+\hline
+method \
+\hline
+Astrometry&amp;	(2,)&amp;	(2,)&amp;	(2,)&amp;	(2,)&amp;	(2,)\
+\hline
+Eclipse Timing Variations&amp;	(9,)&amp;	(9,)&amp;	(9,)&amp;	(9,)&amp;	(9,)\
+\hline
+&hellip;
+\end{array}
+$$
+　　可以看到，apply返回的是每一组数据的维度，而agg返回的是每组数据下，每一个特征对应的数据的维度。因此，我们可以将agg的操作分为3步：<br>
+　　1. 对每组数据中的每一列执行函数;<br>
+　　2. 将每一列返回结果合并;<br>
+　　3. 将每一组数据返回结果合并</p>
+<pre tabindex="0"><code>%timeit grouped.apply(lambda x: x.max()-x.min())
+</code></pre><p><em>32.2 ms ± 28.9 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)</em></p>
+<pre tabindex="0"><code>%timeit grouped.agg(lambda x:x.max()-x.min())
+</code></pre><p><em>19.6 ms ± 7.73 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</em></p>
+<p>　　因此，尽管相比于apply，agg可以从更细的维度进行数据处理，但也意味着更多的运算消耗。同时，agg方法对使用的函数的返回也有一定要求：对每一个特征，函数只能返回一个标量。例如，使用apply进行中心化的操作无法使用agg完成。</p>
+<pre tabindex="0"><code>grouped.agg(lambda x: x-x.mean())
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>ValueError: Shape of passed values is (6, 10), indices imply (5, 10)
+</code></pre><h3 id="groupbytransform">GroupBy.transform</h3>
+<p>　　transform方法中传入的函数只能返回两种结果，可以广播的标量值或者与分组数据维度相同的数据。<br>
+　　对分组数据求均值，然后把这个均值赋值给整个组（可广播的标量值）。</p>
+<p>$$
+\begin{array}{c|c|c|c|c|c}
+&amp; number&amp;	orbital_period&amp;	mass&amp;	distance&amp;	year \
+\hline
+0&amp;	1.721519&amp;	823.35468&amp;	2.630699&amp;	51.600208&amp;	2007.518987\
+\hline
+1&amp;	1.721519&amp;	823.35468&amp;	2.630699&amp;	51.600208&amp;	2007.518987\
+\hline
+&hellip;
+\end{array}
+$$</p>
+<p>　　使用<code>transform</code>实现分组数据标准化($\dfrac{x-\bar{x}}{s}$)(分组数据维度相同的数据):</p>
+<pre tabindex="0"><code>grouped.transform(lambda x: (x - x.mean()) / x.std())
+</code></pre><p>　　apply中自定义函数对每个分组数据单独进行处理，再将结果合并；整个DataFrame的函数输出可以是标量、Series或DataFrame；每个apply语句只能传入一个函数；<br>
+　　agg可以通过字典方式指定特征进行不同的函数操作，每一特征的函数输出必须为标量；<br>
+　　transform不可以通过字典方式指定特征进行不同的函数操作，但函数运算单位也是DataFrame的每一特征，每一特征的函数输出可以是标量或者Series，但标量会被广播。</p>
+<h2 id="德国能源数据时间序列分析">德国能源数据时间序列分析</h2>
+<p>　　该案例完整Jupyter Notebook可参考<a href="http://cookdata.cn/note/view_static_note/abdeedf821256e7ffacffe03f68e4cf2/">德国能源数据时间序列分析</a>。</p>
+<h3 id="数据源-2">数据源</h3>
+<p>　　数据的字段及其说明如下：
+$$
+\begin{array}{c|c}
+变量名称&amp;含义说明 \
+\hline
+Date&amp;日期 \
+\hline
+Consumption&amp;电力消耗 \
+\hline
+Wind&amp;风能发电量 \
+\hline
+Solar&amp;太阳能发电量
+\end{array}
+$$</p>
+<p>　　使用dtypes查看数据类型。</p>
+<pre tabindex="0"><code>opsd.dtypes
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Date           datetime64[ns]
+Consumption           float64
+Wind                  float64
+Solar                 float64
+Wind+Solar            float64
+dtype: object
+</code></pre><p>　　使用set_index将Date变量设定为索引。</p>
+<pre tabindex="0"><code>opsd.set_index(&#39;Date&#39;,inplace=True)
+</code></pre><p>　　也可以在数据导入时通过参数设置实现这些操作。设定index_col为0即以数据中第一列为索引，设定parse_dates为True，会把索引识别为时间数据类型。</p>
+<pre tabindex="0"><code>opsd = pd.read_csv(&#39;./input/opsd_germany_daily.csv&#39;, index_col=0, parse_dates=True)
+</code></pre><p>　　查看此时索引格式。</p>
+<pre tabindex="0"><code>opsd.index
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>DatetimeIndex([&#39;2006-01-01&#39;, &#39;2006-01-02&#39;, &#39;2006-01-03&#39;, &#39;2006-01-04&#39;,
+               &#39;2006-01-05&#39;, &#39;2006-01-06&#39;, &#39;2006-01-07&#39;, &#39;2006-01-08&#39;,
+               &#39;2006-01-09&#39;, &#39;2006-01-10&#39;,
+               ...
+               &#39;2017-12-22&#39;, &#39;2017-12-23&#39;, &#39;2017-12-24&#39;, &#39;2017-12-25&#39;,
+               &#39;2017-12-26&#39;, &#39;2017-12-27&#39;, &#39;2017-12-28&#39;, &#39;2017-12-29&#39;,
+               &#39;2017-12-30&#39;, &#39;2017-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;Date&#39;, length=4383, freq=None)
+</code></pre><p>　　可以使用asfreq进行指定。如果数据中缺失了某个时间，asfreq将自动为这些时间添加新行，并默认分配空值。</p>
+<pre tabindex="0"><code>opsd = opsd.asfreq(&#39;D&#39;)
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>DatetimeIndex([&#39;2006-01-01&#39;, &#39;2006-01-02&#39;, &#39;2006-01-03&#39;, &#39;2006-01-04&#39;,
+               &#39;2006-01-05&#39;, &#39;2006-01-06&#39;, &#39;2006-01-07&#39;, &#39;2006-01-08&#39;,
+               &#39;2006-01-09&#39;, &#39;2006-01-10&#39;,
+               ...
+               &#39;2017-12-22&#39;, &#39;2017-12-23&#39;, &#39;2017-12-24&#39;, &#39;2017-12-25&#39;,
+               &#39;2017-12-26&#39;, &#39;2017-12-27&#39;, &#39;2017-12-28&#39;, &#39;2017-12-29&#39;,
+               &#39;2017-12-30&#39;, &#39;2017-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;Date&#39;, length=4383, freq=&#39;D&#39;)
+</code></pre><h3 id="基于时间索引筛选数据">基于时间索引筛选数据</h3>
+<p>　　对于时间数据索引，可以使用loc提取数据。例如，查找2017年8月10日的数据。</p>
+<pre tabindex="0"><code>opsd.loc[&#39;2017-08-10&#39;]
+</code></pre><p>　　也可以选择一段时间，例如2014年1月20日至2014年1月22日的数据。与使用loc的常规索引一样，切片将包含两个端点。</p>
+<pre tabindex="0"><code>opsd.loc[&#39;2014-01-20&#39;:&#39;2014-01-22&#39;]
+</code></pre><p>　　可以不具体到日，而仅仅指定对应的年和月，将返回当月的所有数据。例如，查找2017年1月份的数据。</p>
+<pre tabindex="0"><code>opsd.loc[&#39;2017-01&#39;]
+</code></pre><p>　　获取时间范围内的数据也可以使用truncate进行筛选。before将删去给定日期之前的数据，after将删去给定日期之后的数据。例如，筛选2017年1月份的数据。</p>
+<pre tabindex="0"><code>opsd.truncate(before=&#39;2017-01-01&#39;,after=&#39;2017-01-31&#39;)
+</code></pre><h3 id="时间数据基本操作">时间数据基本操作</h3>
+<p>　　针对时间数据，可以使用year，month，weekday等多种方法获取对应时间的年份、月份和星期。<br>
+　　首先使用index提取数据的索引。</p>
+<pre tabindex="0"><code>opsdtime = opsd.index
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>DatetimeIndex([&#39;2006-01-01&#39;, &#39;2006-01-02&#39;, &#39;2006-01-03&#39;, &#39;2006-01-04&#39;,
+               &#39;2006-01-05&#39;, &#39;2006-01-06&#39;, &#39;2006-01-07&#39;, &#39;2006-01-08&#39;,
+               &#39;2006-01-09&#39;, &#39;2006-01-10&#39;,
+               ...
+               &#39;2017-12-22&#39;, &#39;2017-12-23&#39;, &#39;2017-12-24&#39;, &#39;2017-12-25&#39;,
+               &#39;2017-12-26&#39;, &#39;2017-12-27&#39;, &#39;2017-12-28&#39;, &#39;2017-12-29&#39;,
+               &#39;2017-12-30&#39;, &#39;2017-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;Date&#39;, length=4383, freq=&#39;D&#39;)
+</code></pre><p>　　使用year提取每个数据对应的年份。</p>
+<pre tabindex="0"><code>opsdtime.year
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Int64Index([2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006,
+            ...
+            2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><p>　　使用month提取月份。</p>
+<pre tabindex="0"><code>opsdtime.month
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Int64Index([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+            ...
+            12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><p>　　month返回的是对应月份的数字，若想要获得月份的名字可以使用month_name。</p>
+<pre tabindex="0"><code>opsdtime.month_name()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Index([&#39;January&#39;, &#39;January&#39;, &#39;January&#39;, &#39;January&#39;, &#39;January&#39;, &#39;January&#39;,
+       &#39;January&#39;, &#39;January&#39;, &#39;January&#39;, &#39;January&#39;,
+       ...
+       &#39;December&#39;, &#39;December&#39;, &#39;December&#39;, &#39;December&#39;, &#39;December&#39;, &#39;December&#39;,
+       &#39;December&#39;, &#39;December&#39;, &#39;December&#39;, &#39;December&#39;],
+      dtype=&#39;object&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><p>　　可以使用weekday和weekday_name（新版本API已修改为<code>day_name()</code>）查看日期是星期几。</p>
+<pre tabindex="0"><code>opsdtime.weekday
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Int64Index([6, 0, 1, 2, 3, 4, 5, 6, 0, 1,
+            ...
+            4, 5, 6, 0, 1, 2, 3, 4, 5, 6],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><pre tabindex="0"><code>opsdtime.weekday_name
+# opsdtime.day_name()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Index([&#39;Sunday&#39;, &#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;,
+       &#39;Saturday&#39;, &#39;Sunday&#39;, &#39;Monday&#39;, &#39;Tuesday&#39;,
+       ...
+       &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;, &#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;,
+       &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;],
+      dtype=&#39;object&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><p>　　构建月份与对应季节间的映射字典。</p>
+<pre tabindex="0"><code>seasons = [1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1]
+month_to_season = dict(zip(range(1,13), seasons))
+
+opsdtime.month.map(month_to_season)
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>{1: 1, 2: 1, 3: 2, 4: 2, 5: 2, 6: 3, 7: 3, 8: 3, 9: 4, 10: 4, 11: 4, 12: 1}
+
+Int64Index([1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            ...
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=4383)
+</code></pre><h3 id="周期性分析">周期性分析</h3>
+<h4 id="重采样分析周期性">重采样分析周期性</h4>
+<p>　　使用plot查看数据整体情况，电力消耗总量：</p>
+<pre tabindex="0"><code>opsd[&#39;Consumption&#39;].plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc523cae48.png" alt="电力消耗整体情况">
+　　具体查看2007年的数据。</p>
+<pre tabindex="0"><code>opsd.loc[&#39;2007&#39;,&#39;Consumption&#39;].plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc5007e668.png" alt="2007年电力消耗情况">
+　　使用groupby按变量season分组，并计算每个季节的用电量均值。</p>
+<pre tabindex="0"><code>opsd.groupby(&#39;season&#39;)[&#39;Consumption&#39;].mean().plot()
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4ff8acc0.png" alt="按season分组均值">
+　　使用groupby进行重采样，将数据按是星期几进行分组，并计算每组的用电量均值。这里使用lambda函数传入weekday进行分组。</p>
+<pre tabindex="0"><code>opsd.groupby(lambda x:x.weekday)[&#39;Consumption&#39;].mean().plot()
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4ff1a5f8.png" alt="按dayofweek分组均值">
+　　使用resample对风能发电数据进行降采样。按每个月重采样，并计算每月的均值。</p>
+<pre tabindex="0"><code>wind = opsd[&#39;Wind&#39;].resample(&#39;M&#39;).mean()
+wind.plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4e11ae48.png" alt="按月重采样均值"></p>
+<h4 id="数据差分分析周期性">数据差分分析周期性</h4>
+<p>　　在分析周期性的过程中，很重要的一点就是要消除数据的趋势性，常见的消除数据趋势的方法就是差分：计算连续数据点间的差异（这里特指一阶差分）。例如，t时刻的差分值：$\Delta d_t=d_t - d_{t-1}$。可以使用diff方法实现差分操作。<br>
+　　例如，计算太阳能发电的差分序列并绘图：</p>
+<pre tabindex="0"><code>opsd[&#39;Solar&#39;].diff().plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4e0e3fd0.png" alt="一阶差分序列">
+　　也可以通过移动时间序列自行计算差分值。<br>
+　　移动序列可以使用shift方法。shift方法可以沿着时间轴将数据前移或后移，保持索引不变。</p>
+<pre tabindex="0"><code>opsd[&#39;Solar&#39;].tail()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Date
+2017-12-27    16.530
+2017-12-28    14.162
+2017-12-29    29.854
+2017-12-30     7.467
+2017-12-31    19.980
+Freq: D, Name: Solar, dtype: float64
+</code></pre><pre tabindex="0"><code>opsd[&#39;Solar&#39;].shift(1).tail()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Date
+2017-12-27    30.923
+2017-12-28    16.530
+2017-12-29    14.162
+2017-12-30    29.854
+2017-12-31     7.467
+Freq: D, Name: Solar, dtype: float64
+</code></pre><p>　　两个序列相减即可得到原始数据的一阶差分序列。</p>
+<pre tabindex="0"><code>dif = opsd[&#39;Solar&#39;]-opsd[&#39;Solar&#39;].shift(1)
+dif.plot(figsize=(12,6))
+</code></pre><p>　　也可以通过设定shift方法中的参数freq移动索引而数据保持不变，例如指定时间移动一天。</p>
+<pre tabindex="0"><code>opsd[&#39;Solar&#39;].shift(1,freq=&#39;d&#39;).tail()
+</code></pre><p><em><strong>Output:</strong></em></p>
+<pre tabindex="0"><code>Date
+2017-12-28    16.530
+2017-12-29    14.162
+2017-12-30    29.854
+2017-12-31     7.467
+2018-01-01    19.980
+Freq: D, Name: Solar, dtype: float64
+</code></pre><h3 id="滚动窗口">滚动窗口</h3>
+<p>　　与降采样类似，滚动窗口将数据拆分为时间窗口，并且对每个窗口中的数据使用诸如mean，median等函数进行聚合。但是，与降采样不同，滚动窗口以与数据相同的频率重叠和“滚动”，因此变换的时间序列与原始时间序列的频率相同。<br>
+　　例如，设定窗口为7天，且以数据中心为基准点，则每一个数据对应的窗口将包含前面三天与后面三天。具体来看，2017-07-06对应的窗口就是2017-07-03到2017-07-09。</p>
+<pre tabindex="0"><code>opsd[&#39;Wind&#39;].rolling(7).mean().plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4fcae400.png" alt="7天滑窗均值"></p>
+<pre tabindex="0"><code>opsd[&#39;Wind&#39;].rolling(30).mean().plot(figsize=(12,6))
+</code></pre><p>　　当窗口范围中存在缺失值时，窗口将会返回为缺失值，可以设定min_periods为360，只需要对应窗口中有360个以上数据就可以，这样可以容忍一小部分的缺失数据。</p>
+<pre tabindex="0"><code>opsd[&#39;Wind&#39;].rolling(window=365,min_periods=360).mean().plot(figsize=(12,6))
+</code></pre><p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/0x7fbc4ddfe080.png" alt="365天滑窗均值"></p>
+<h2 id="k-means-clustering-algorithm">K-means clustering algorithm</h2>
+<p>　　一个简单的算法伪代码描述如下：
+$$
+\begin{aligned}
+\hline
+&amp;1:\ 选择K个点作为初始质心。\
+&amp;2:\ repeat \
+&amp;3:\ \quad 将每个点指派到最近的质心，形成K个簇。\
+&amp;4:\ \quad 重新计算每个簇的质心。\
+&amp;5:\ until 质心不发生变化。\
+\hline
+\end{aligned}
+$$
+　　相似度使用欧氏距离(Euclidean Distance)度量，给定两个样本$X=(x_1,x_2,&hellip;,x_n)$与$Y=(y_1,y_2,&hellip;,y_n)$，$X$和$Y$两个向量间的欧氏距离表示为：
+$$
+\begin{aligned}
+dist_{ed}(X,Y)=\Vert X-Y \Vert ^2=\sqrt[2]{(x_1-y_1)^2+&hellip;+(x_n-y_n)^2}
+\end{aligned}
+$$</p>
+<h3 id="python实现">Python实现</h3>
+<p>　　距离计算函数<em>point_dist</em>。</p>
+<pre tabindex="0"><code>def point_dist(x,c): 
+    return np.linalg.norm(x-c)
+</code></pre><h4 id="iterrows-遍历方式实现">iterrows 遍历方式实现</h4>
+<pre tabindex="0"><code>def k_means(X,k):
+    centers = X.sample(k).values #从数据集随机选择 K 个样本作为初始化的类中心，k 行 d 列
+    X_labels = np.zeros(len(X)) #样本的类别
+    error = 10e10
+    while(error &gt; 1e-6):
+        for i,x in X.iterrows():#指派样本类标签
+            X_labels[i] = np.argmin([point_dist(x,centers[i,:]) for i in range(k)])
+        centers_pre = centers
+        centers = X.groupby(X_labels).mean().values #更新样本均值，即类中心
+        error = np.linalg.norm(centers_pre - centers)#计算error
+    return X_labels, centers
+</code></pre><h4 id="apply-遍历方式实现">apply 遍历方式实现</h4>
+<pre tabindex="0"><code>def k_means(X,k):
+    #初始化 K 个中心，从原始数据中选择样本
+    centers = X.sample(k).values
+    X_labels = np.zeros(len(X)) #样本的类别
+    error = 10e10
+    while(error &gt; 1e-6):
+        X_labels = X.apply(lambda r : np.argmin([point_dist(r,centers[i,:]) for i in range(k)]),axis=1)
+        centers_pre = centers
+        centers = X.groupby(X_labels).mean().values #更新样本均值，即类中心
+        error = np.linalg.norm(centers_pre - centers)#计算error
+    return X_labels, centers
+</code></pre><h4 id="矩阵运算方式实现">矩阵运算方式实现</h4>
+<p>　　数据集表示成 $n \times d$ 矩阵 $\mathbf{X}$，其中 $n$ 为样本数量，$d$ 为样本的维度。 $k$ 个聚类中心表示成 $k \times d$ 矩阵 $\mathbf{C}$，$\mathbf{C}$ 每一行表示一个聚类中心。样本到 $k$ 个中心的距离表示成 $n \times k$ 矩阵 $\mathbf{D}$。</p>
+<p>　　已知聚类中心，计算样本到中心距离，并将样本划分到距离最小的类的流程如下图所示。</p>
+<p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/BDA%E5%A4%8D%E4%B9%A0/%E6%A0%B7%E6%9C%AC%E5%88%97%E8%A1%A8%E8%AE%A1%E7%AE%97%E6%B5%81%E7%A8%8B.jpg" alt="样本列表计算流程"></p>
+<p>　　使用 Numpy 实现上述计算流程的代码为：</p>
+<pre tabindex="0"><code>for i in range(k):
+	D[:,i] = np.sqrt(np.sum(np.square(X - C[i,:]),axis=1))
+labels = np.argmin(D,axis=1)
+</code></pre><p>　　得到样本的类标签后，聚类中心的更新流程为：1）根据类标签对样本进行分组；2）将聚类中心更新为每一组样本的均值。Python 实现的代码为：</p>
+<pre tabindex="0"><code>C = X.groupby(labels).mean().values
+</code></pre><p>　　完整实现代码：</p>
+<pre tabindex="0"><code>def k_means(X,k):
+    C = X.sample(k).values  #从数据集随机选择 K 个样本作为初始化的类中心，k 行 d 列
+    X_labels = np.zeros(len(X)) #记录样本的类别
+    error = 10e10 #停止迭代的阈值
+    while(error &gt; 1e-6):
+        D = np.zeros((len(X),k)) #样本到每一个中心的距离，n 行 k 列
+        for i in range(k):
+            D[:,i] = np.sqrt(np.sum(np.square(X - C[i,:]),axis=1))
+        labels = np.argmin(D,axis=1)
+        C_pre = C
+        
+        temp_C = X.groupby(labels).mean() #更新样本均值，即类中心
+        C = np.zeros((k,X.shape[1]))
+        for i in temp_C.index:
+            C[i,:] = temp_C.loc[i,:].values
+            
+        if C.shape == C_pre.shape:
+            error = np.linalg.norm(C_pre - C)#计算error
+        else:
+            print(C.shape, C_pre.shape)
+    return labels, C
+</code></pre><h2 id="logistic-regression">Logistic regression</h2>
+<h3 id="线性回归">线性回归</h3>
+<p>$$
+\begin{aligned}
+h_\theta(x)&amp;=\theta^Tx \
+&amp;=\sum_{i=0}^n{\theta_i x_i} \
+&amp;=\theta_0 + \theta_1 x_1 + \theta_2 x_2 + &hellip; + \theta_n x_n
+\end{aligned}
+$$</p>
+<h3 id="sigmoid">sigmoid</h3>
+<p>$$
+\begin{aligned}
+g(z)=\frac{1}{1+e^{-z}}
+\end{aligned}
+$$</p>
+<h3 id="逻辑回归公式">逻辑回归公式</h3>
+<p>　　线性回归公式带入Sigmoid即得：
+$$
+\begin{aligned}
+h_\theta(x)=\frac{1}{1+e^{-{\theta^Tx}}}
+\end{aligned}
+$$</p>
+<h3 id="损失函数">损失函数</h3>
+<p>　　对数形式的似然函数如下：<br>
+$$
+\begin{aligned}
+logL(\theta)=\sum_{i=1}^n{log(p(x_i;\theta))}
+\end{aligned}
+$$
+　　用sigmoid函数表示0-1中取1的概率，损失函数可以定义为：
+$$
+\begin{aligned}
+y&amp;=0时，Cost(h_\theta(x),y)=-log(1-h_\theta(x)) \
+y&amp;=1时，Cost(h_\theta(x),y)=-log(h_\theta(x))
+\end{aligned}
+$$
+　　损失函数的要求是预测结果与真实结果越相近，函数值越小，故在前面加上负号。取对数和上面提到的最大似然函数有关，不影响原函数的单调性，且会放大概率之间的差异，更好的区分各个样本的类别。<br>
+　　故逻辑回归的损失函数如下：
+$$
+\begin{aligned}
+J(\theta)=-\frac{1}{m}\sum_{i=1}^m{[y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))]}
+\end{aligned}
+$$</p>
+<h3 id="梯度下降">梯度下降</h3>
+<p>　　要求出最优参数$\theta$，需要最小化$J(\theta)$，更新参数：
+$$
+\begin{aligned}
+\theta_j := \theta_j-\alpha \frac{\partial J(\theta)}{\partial \theta_j}
+\end{aligned}
+$$
+　　sigmoid函数求导：
+$$
+\begin{aligned}
+\frac{\partial g(z)}{\partial z}=g(z)(1-g(z))
+\end{aligned}
+$$
+　　对g(\theta^Tx)求导：
+$$
+\begin{aligned}
+\frac{\partial g(\theta^Tx)}{\partial z}=g(\theta^Tx)(1-g(\theta^Tx))x_j^{(i)}
+\end{aligned}
+$$
+　　<strong>损失函数求导：</strong>
+$$
+\begin{aligned}
+\frac{\partial J(\theta)}{\partial \theta_j}&amp;= &hellip;\
+&amp;=\frac{1}{m}\sum_{i}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}
+\end{aligned}
+$$
+　　得到逻辑回归的梯度下降更新公式：
+$$
+\begin{aligned}
+\theta_j := \theta_j-\alpha  \frac{1}{m}\sum_{i}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}
+\end{aligned}
+$$</p>
+<h3 id="伪代码描述">伪代码描述</h3>
+<p>$$
+\begin{aligned}
+\hline
+&amp;1:\ 初始化回归系数。\
+&amp;2:\ repeat \
+&amp;3:\ \quad 计算梯度\frac{\partial J(\theta)}{\partial \theta}。\
+&amp;4:\ \quad \theta:=\theta+\alpha * \frac{\partial J(\theta)}{\partial \theta}。\
+&amp;5:\ until 收敛 \  or \  max_loop。\
+&amp;6:\ return\ \theta \
+\hline
+\end{aligned}
+$$</p>
+<h3 id="python实现-1">Python实现</h3>
+<pre tabindex="0"><code>class LR:
+    def __init__(self, alpha=0.01, max_iter=100):
+        self.alpha = alpha
+        self.max_iter = max_iter
+        
+    def fit(self, X, y):
+        X = np.mat(X)  # (rows,cols)
+        m, n = np.shape(X)
+        y = np.mat(y).T  # (rows,cols)
+
+        self.weight = np.ones((n, 1))
+
+        for i in range(self.max_iter):
+            h = self.sigmoid(X * self.weight)
+            error = y - h
+            self.weight = self.weight + self.alpha * X.T * error
+```r
+</code></pre>
+    </article>
+
+
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+<section id="articleNext" class="section nartrow">
+    <h3 class="footer-next-heading">More articles from yzhn&#39;s Notes</h3>
+    <div class="footer-spacer"></div>
+    <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
+        <div class="post-row">
+            
+                <a href="/post/2021%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8Cfintech%E7%B2%BE%E8%8B%B1%E8%AE%AD%E7%BB%83%E8%90%A5-%E6%95%B0%E6%8D%AE%E8%B5%9B%E9%81%93/" class="article-link"
+                 id="article-link-bigger">
+                    <div>
+                        <div class="image-container">
+                            <img src="" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                2021招商银行FinTech精英训练营 数据赛道
+                            </h2>
+                            <p class="article-excerpt">
+                                
+                            </p>
+                            <div class="article-metadata">
+                                May 18, 2021 · 4 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+                <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" class="article-link"
+                >
+                    <div>
+                        <div class="image-container">
+                            <img src="" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                计算机数据安全复习要点总结
+                            </h2>
+                            <p class="article-excerpt">
+                                
+                            </p>
+                            <div class="article-metadata">
+                                May 17, 2021 · 38 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+ <script src="/js/progressBar.js"></script>
+
+        
+        <div class="footer-gradient"></div>
+    <div class="section narrow">
+      <div class="footer-hr"></div>
+      <div class="footer-container">
+        <div class="footer-text">
+          © 2022 yzhn&#39;s Notes
+        </div>
+        <div class="social-icon-outer">
+    <div class="social-icon-container">
+        
+            
+                
+                <a href="https://github.com/yzhn16/"><svg
+class="social-icon-image"
+width="14"
+height="14"
+viewBox="0 0 14 14"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+<path
+  fillRule="evenodd"
+  clipRule="evenodd"
+  d="M7 0C3.1325 0 0 3.21173 0 7.17706C0 10.3529 2.00375 13.0353 4.78625 13.9863C5.13625 14.0491 5.2675 13.8338 5.2675 13.6454C5.2675 13.4749 5.25875 12.9097 5.25875 12.3087C3.5 12.6406 3.045 11.8691 2.905 11.4653C2.82625 11.259 2.485 10.622 2.1875 10.4516C1.9425 10.317 1.5925 9.98508 2.17875 9.97611C2.73 9.96714 3.12375 10.4964 3.255 10.7118C3.885 11.7973 4.89125 11.4923 5.29375 11.3039C5.355 10.8374 5.53875 10.5234 5.74 10.3439C4.1825 10.1645 2.555 9.54549 2.555 6.80026C2.555 6.01976 2.82625 5.37382 3.2725 4.87143C3.2025 4.692 2.9575 3.95635 3.3425 2.96951C3.3425 2.96951 3.92875 2.78111 5.2675 3.70516C5.8275 3.54367 6.4225 3.46293 7.0175 3.46293C7.6125 3.46293 8.2075 3.54367 8.7675 3.70516C10.1063 2.77214 10.6925 2.96951 10.6925 2.96951C11.0775 3.95635 10.8325 4.692 10.7625 4.87143C11.2087 5.37382 11.48 6.01079 11.48 6.80026C11.48 9.55446 9.84375 10.1645 8.28625 10.3439C8.54 10.5682 8.75875 10.9988 8.75875 11.6717C8.75875 12.6316 8.75 13.4032 8.75 13.6454C8.75 13.8338 8.88125 14.0581 9.23125 13.9863C11.9963 13.0353 14 10.3439 14 7.17706C14 3.21173 10.8675 0 7 0Z"
+  fill="#73737D"
+/>
+</svg></a>
+                <span class="hidden">https://github.com/yzhn16/</span>
+            
+        
+    </div>
+</div>
+    </div>
+</div>
+
+    </div>
+
+    
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>

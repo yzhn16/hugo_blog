@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yzhn&#39;s Notes</title>
-    <link>/</link>
-    <description>Recent content on yzhn&#39;s Notes</description>
+    <title>Posts on yzhn&#39;s Notes</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on yzhn&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 May 2022 18:08:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 18:08:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>李宏毅ML课程笔记——Self-Supervised Learning</title>
       <link>/post/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-supervised-learning/</link>
@@ -88,15 +88,6 @@
       
       <guid>/post/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93/</guid>
       <description>&lt;p&gt;在此对阮秋琦著的《数字图像处理学》（第三版）中的部分基础概念及习题进行总结。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Tue, 01 Mar 2022 23:58:03 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>注：由于近期jsdelivr受到DNS污染，目前在中国无法通过jsdelivr使用CDN服务，本站已采用备用方式渲染页面，部分页面和功能暂时</description>
     </item>
     
     <item>

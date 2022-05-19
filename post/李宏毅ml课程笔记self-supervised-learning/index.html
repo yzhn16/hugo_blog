@@ -1,0 +1,739 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/images/favicon.svg">
+    
+    <link rel="stylesheet" href="/scss/global.min.21349b939dfaef508f26ef6f31876a6e87bc5a57aefd0e213d17fe4e5192c499.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+<title>李宏毅ML课程笔记——Self-Supervised Learning | yzhn&#39;s Notes</title>
+<meta name="description" content="
+李宏毅2021/2022春机器学习课程——Self-Supervised Learning">
+<meta property="og:title" content="李宏毅ML课程笔记——Self-Supervised Learning | yzhn&#39;s Notes">
+<meta property="og:site_name" content="yzhn&#39;s Notes">
+<meta property="og:description" content="
+李宏毅2021/2022春机器学习课程——Self-Supervised Learning">
+<meta property="og:url" content="/post/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-supervised-learning/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content='/uploads/default.jpg'><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="李宏毅ML课程笔记——Self-Supervised Learning | yzhn&#39;s Notes">
+
+	<link rel="canonical" href="/post/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-supervised-learning/">
+
+
+	<meta name="twitter:description" content="
+李宏毅2021/2022春机器学习课程——Self-Supervised Learning">
+<meta name="twitter:image" content="/uploads/default.jpg">
+<meta property="article:published_time" content="2022-05-16T18:08:00&#43;00:00">
+	<meta property="article:updated_time" content="2022-05-16T18:08:00&#43;00:00">
+
+
+
+    </head>
+
+
+<body class="line-numbers">
+
+    
+    <script src="/js/initColors.js"></script>
+
+    <div class="layout-styled">
+
+        <Section class="section">
+  <div class="nav-container">
+    <a class="logo-link" href="/">
+      <div id="logo-desktop">
+        <svg
+        width="192"
+        height="23"
+        viewBox="0 0 192 23"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="Logo__Desktop"
+      >
+        <g clipPath="url(#clip0)">
+          <path
+            d="M120.941 6.15477H122.453V2.83255L124.114 2.44922V6.15477H126.713V7.30477H124.114V16.377C124.114 17.314 124.54 17.7826 125.435 17.7826C125.925 17.7826 126.478 17.6335 126.904 17.4205L127.181 18.4214C126.606 18.7835 125.861 18.9964 124.86 18.9964C123.539 18.9964 122.432 18.3788 122.432 16.5261V7.30477H120.92V6.15477H120.941Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M131.739 7.77334C132.825 6.70852 134.273 5.89926 135.764 5.89926C137.723 5.89926 138.937 6.94278 138.937 9.17889V17.6122L140.555 17.8465V18.7409H137.233V9.58352C137.233 7.9863 136.616 7.30482 135.338 7.30482C134.166 7.30482 132.74 8.0076 131.739 8.90204V17.5909L133.442 17.8039V18.7196H128.416V17.8039L130.078 17.5909V1.29926L128.374 1.04371V0.0214844H131.739V7.77334V7.77334Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M141.854 12.4374C141.854 7.6883 143.92 5.89941 146.731 5.89941C149.648 5.89941 151.267 7.64571 151.267 11.9689V12.629H143.6C143.621 16.3772 144.686 17.8253 147.284 17.8253C148.605 17.8253 149.584 17.3994 150.5 16.7818L151.096 17.6124C150.01 18.5068 148.754 18.9966 147.008 18.9966C143.941 18.9753 141.854 17.2929 141.854 12.4374ZM143.621 11.5216H149.521C149.521 8.34849 148.754 6.98552 146.709 6.98552C144.857 6.98552 143.771 8.2633 143.621 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M162.682 7.85849C163.768 6.70849 165.024 5.87793 166.515 5.87793C168.474 5.87793 169.646 6.92145 169.646 9.15756V17.6335L171.286 17.8677V18.6983H167.963V9.68997C167.963 8.07145 167.388 7.32608 166.089 7.32608C164.918 7.32608 163.789 8.02886 162.81 8.9233V17.6122L164.449 17.8464V18.7409H161.127V9.68997C161.127 8.07145 160.552 7.32608 159.253 7.32608C158.082 7.32608 156.953 8.02886 155.973 8.9233V17.6122L157.677 17.8464V18.7409H152.651V17.8464L154.312 17.6122V7.47515L152.609 7.2196V6.15478H155.654L155.888 7.85849C156.974 6.72978 158.188 5.89923 159.679 5.89923C161.212 5.87793 162.277 6.51682 162.682 7.85849Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M171.925 12.4374C171.925 7.6883 173.991 5.89941 176.802 5.89941C179.719 5.89941 181.338 7.64571 181.338 11.9689V12.629H173.671C173.692 16.3772 174.757 17.8253 177.355 17.8253C178.676 17.8253 179.655 17.3994 180.571 16.7818L181.167 17.6124C180.081 18.5068 178.825 18.9966 177.079 18.9966C174.012 18.9753 171.925 17.2929 171.925 12.4374ZM173.692 11.5216H179.591C179.591 8.34849 178.825 6.98552 176.78 6.98552C174.928 6.98552 173.863 8.2633 173.692 11.5216Z"
+            fill="#7A8085"
+          />
+          <path
+            d="M183.084 18.0383V15.504H184.234L184.618 17.442C185.278 17.7189 185.789 17.8892 186.811 17.8892C188.664 17.8892 189.558 17.0374 189.558 15.5466C189.558 14.0559 188.834 13.4809 186.79 12.8846C184.831 12.2883 183.382 11.4577 183.382 9.13645C183.382 7.39016 184.639 5.89941 187.195 5.89941C188.664 5.89941 189.835 6.17627 190.687 6.68738V9.15775H189.558L189.132 7.34756C188.579 7.09201 187.961 7.00682 187.258 7.00682C185.789 7.00682 184.852 7.7309 184.852 8.98738C184.852 10.3077 185.576 10.8189 187.365 11.3513C189.431 12.0115 191.156 12.7142 191.156 15.3976C191.156 17.7615 189.431 18.9753 186.79 18.9753C185.235 18.9753 183.957 18.6346 183.084 18.0383Z"
+            fill="#7A8085"
+          />
+          <path class="change-fill"
+            d="M38.3122 9.98811C38.3122 8.66774 37.9501 8.15663 36.9492 8.15663C36.1186 8.15663 35.0964 8.62515 34.3936 9.20015V16.9733L35.8418 17.165V18.6344H30.0918V17.165L31.5825 16.9733V8.24182L30.0918 7.92237V6.19737H33.9251L34.2446 7.64552C35.3733 6.55941 36.6298 5.87793 38.1418 5.87793C39.9946 5.87793 41.102 6.92145 41.102 9.07237V16.9733L42.5927 17.165V18.6344H38.3122V9.98811V9.98811Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M62.3982 17.1858V18.6553H56.0732V17.1858L57.564 16.9942V8.2627L56.0732 7.94326V6.21826H59.8427L60.226 8.17752C61.0779 6.85715 62.1427 5.94141 63.6973 5.94141C63.8677 5.94141 64.0594 5.9627 64.1871 6.0053L63.8251 8.94418C63.5483 8.81641 63.2501 8.77381 62.8668 8.77381C61.8871 8.77381 61.1418 9.05067 60.3751 9.71085V16.9516L62.3982 17.1858Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M76.7098 6.19733H78.0941V3.08807L80.5432 2.55566V6.21863H82.9709V8.0927H80.5432V15.6742C80.5432 16.5899 80.8839 16.9946 81.6293 16.9946C82.0978 16.9946 82.5876 16.8455 82.907 16.6751L83.3543 18.3575C82.758 18.6983 81.9061 18.9751 80.6709 18.9751C78.9672 18.9751 78.0941 18.1658 78.0941 16.0362V8.0927H76.7098V6.19733Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M90.4664 17.1648V18.6343H84.6738V17.1648L86.1646 16.9731V8.24167L84.6738 7.92222V6.19722H88.9757V16.9731L90.4664 17.1648ZM85.696 1.76759C85.696 0.787963 86.4627 0 87.4423 0C88.422 0 89.1886 0.766667 89.1886 1.76759C89.1886 2.72593 88.422 3.51389 87.421 3.51389C86.4627 3.51389 85.696 2.72593 85.696 1.76759Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M98.3251 7.90097V6.19727H103.053V7.92227L101.924 8.11393L98.3251 18.6556H95.663L92.064 8.09264L90.9991 7.92227V6.19727H96.2593V7.90097L95.0242 8.09264L96.7279 13.6084C97.0473 14.6519 97.1964 15.5037 97.3668 16.4834H97.388C97.5371 15.525 97.7714 14.5241 98.0482 13.5871L99.6668 8.07134L98.3251 7.90097Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M75.6867 17.1224C74.5793 17.1437 74.3664 16.952 74.3664 15.9724V9.79645C74.3664 6.96404 72.9821 5.87793 70.3201 5.87793C68.3821 5.87793 66.7423 6.45293 65.4219 7.28349L66.2312 9.02978C67.3599 8.45478 68.4673 8.09274 69.7238 8.09274C71.1932 8.09274 71.5552 8.88071 71.5552 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C71.0867 16.6326 70.4052 17.0585 69.4469 17.0585C68.3821 17.0585 67.871 16.5261 67.871 15.0353C67.871 13.3103 68.5951 12.8205 70.4904 12.7779V11.2233C66.6358 11.2659 65.0386 12.4372 65.0386 15.2057C65.0386 17.8465 66.4867 18.9752 68.6589 18.9752C70.2136 18.9752 71.0654 18.315 71.7895 17.5696C72.0451 18.5705 72.833 18.9752 73.8978 18.9752C74.6645 18.9752 75.3886 18.7622 75.8571 18.5066L75.6867 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M54.4968 17.1224C53.3894 17.1437 53.1764 16.952 53.1764 15.9724V9.79645C53.1764 6.96404 51.7922 5.87793 49.1301 5.87793C47.1922 5.87793 45.5523 6.45293 44.232 7.28349L45.0412 9.02978C46.1699 8.45478 47.2773 8.09274 48.5338 8.09274C50.0033 8.09274 50.3653 8.88071 50.3653 10.265V11.0316V11.2233V12.7779V12.8844V16.1214C49.8968 16.6326 49.2153 17.0585 48.257 17.0585C47.1922 17.0585 46.681 16.5261 46.681 15.0353C46.681 13.3103 47.4051 12.8205 49.3005 12.7779V11.2233C45.4459 11.2659 43.8486 12.4372 43.8486 15.2057C43.8486 17.8465 45.2968 18.9752 47.469 18.9752C49.0236 18.9752 49.8755 18.315 50.5996 17.5696C50.8551 18.5705 51.6431 18.9752 52.7079 18.9752C53.4746 18.9752 54.1986 18.7622 54.6672 18.5066L54.4968 17.1224Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M107.653 13.055H113.594V11.9476C113.594 7.47534 111.869 5.89941 108.803 5.89941C105.63 5.89941 103.628 7.79478 103.628 12.4161C103.628 17.1013 105.523 18.9966 109.058 18.9966C110.954 18.9966 112.231 18.5068 113.467 17.5272L112.657 16.0577C111.678 16.6753 110.868 17.0587 109.463 17.0587C107.546 17.0587 106.801 16.1855 106.63 14.0133C106.588 13.6939 106.567 13.0976 106.567 12.4587C106.567 12.054 106.567 11.6707 106.588 11.3726V11.3513C106.737 8.51886 107.397 7.60312 108.781 7.60312C110.4 7.60312 110.783 8.58275 110.783 11.3513H107.674V13.055H107.653Z"
+            fill="#000"
+          />
+          <path class="change-fill" d="M17.5907 20.2954H0V23H17.5907V20.2954Z" fill="#000" />
+          <path class="change-fill"
+            d="M0 7.96484V18.9537L5.38796 15.1843V11.7343L0 7.96484Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5689 10.9463V0L12.1597 3.74815V7.13426L17.5689 10.9463Z"
+            fill="#000"
+          />
+          <path class="change-fill"
+            d="M17.5907 18.975L17.5694 12.288L0 0V6.62315L17.5907 18.975Z"
+            fill="#000"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="191.156" height="23" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+</div>
+<div id="logo-mobile" class="hidden">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="23" height="23" viewBox="0 0 512.000000 512.000000"
+    preserveAspectRatio="xMidYMid meet">
+   <metadata>
+   Created by potrace 1.15, written by Peter Selinger 2001-2017
+   </metadata>
+   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+   fill="" stroke="none">
+   <path d="M590 4383 l1 -738 756 -530 c698 -489 1151 -807 2618 -1837 l540
+   -380 3 748 c2 590 -1 751 -10 760 -7 7 -308 218 -668 470 -360 251 -1230 859
+   -1933 1351 -702 491 -1284 893 -1292 893 -13 0 -15 -92 -15 -737z"/>
+   <path d="M3887 4708 l-597 -412 0 -381 0 -381 597 -419 c328 -231 602 -421
+   610 -423 11 -3 13 204 13 1212 0 987 -2 1216 -13 1216 -7 0 -282 -186 -610
+   -412z"/>
+   <path d="M590 2135 c0 -910 3 -1225 11 -1225 10 0 343 231 1049 728 l155 109
+   0 389 0 388 -595 418 c-327 229 -601 417 -607 418 -10 0 -13 -251 -13 -1225z"/>
+   <path d="M590 320 l0 -310 1960 0 1960 0 0 310 0 310 -1960 0 -1960 0 0 -310z"/>
+   </g>
+   </svg>
+</div>
+      <span class="header-hidden">Navigate back to the homepage</span>
+    </a>
+    <div class="nav-controls">
+      <button id="copyButton" class="icon-wrapper">
+        <svg
+    class="icon-image"
+    width="24"
+    height="20"
+    viewBox="0 0 24 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2 5C2 3.34328 3.34328 2 5 2H14C15.6567 2 17 3.34328 17 5V9C17 10.6567 15.6567 12 14 12H10C9.44771 12 9 12.4477 9 13C9 13.5523 9.44771 14 10 14H14C16.7613 14 19 11.7613 19 9V5C19 2.23872 16.7613 0 14 0H5C2.23872 0 0 2.23872 0 5V9C0 10.4938 0.656313 11.8361 1.6935 12.7509C2.10768 13.1163 2.73961 13.0767 3.10494 12.6625C3.47028 12.2483 3.43068 11.6164 3.0165 11.2511C2.39169 10.6999 2 9.89621 2 9V5ZM7 11C7 9.34328 8.34328 8 10 8H14C14.5523 8 15 7.55228 15 7C15 6.44772 14.5523 6 14 6H10C7.23872 6 5 8.23872 5 11V15C5 17.7613 7.23872 20 10 20H19C21.7613 20 24 17.7613 24 15V11C24 9.50621 23.3437 8.16393 22.3065 7.24906C21.8923 6.88372 21.2604 6.92332 20.8951 7.3375C20.5297 7.75168 20.5693 8.38361 20.9835 8.74894C21.6083 9.30007 22 10.1038 22 11V15C22 16.6567 20.6567 18 19 18H10C8.34328 18 7 16.6567 7 15V11Z"
+      fill="#000"
+    />
+</svg>
+        <div id="toolTip" class="tool-tip " >
+            copied
+        </div>
+        <input id="copyText" style="opacity: 0;" type="text" class="tool-tip " />
+      </button>
+
+      <button id="themeColorButton" class="icon-wrapper"> 
+        <div id="sunRays" class="sun-rays"></div>
+        <div id="moonOrSun" class="moon-or-sun"></div>
+        <div id="moonMask" class="moon-mask"></div>
+      </button>
+    </div>
+</div>
+</Section>
+
+
+<script src="/js/toggleLogos.js"></script>
+
+
+<script src="/js/toggleColors.js"></script>
+
+
+<script src="/js/copyUrl.js"></script>
+
+        
+
+<section class="section narrow">
+
+    <section id="articleHero" class="section narrow">
+    <div class="article-hero">
+        <header class="article-header">
+            <h1 class="article-hero-heading">李宏毅ML课程笔记——Self-Supervised Learning</h1>
+            <div class="article-hero-subtitle">
+                <div class="article-meta">
+                    
+
+
+    <div class="article-coauthors-container">
+        
+        <span id="collapsedCoauthors" class="article-coauthors-collapsed">
+            <div class="article-coauthors-list" style="width: 0px;">
+                
+            </div>
+            <strong class="article-coauthors-name-container">
+                
+            </strong>
+            <div class="article-coauthors-icon-container">
+                <svg
+width="17"
+height="17"
+viewBox="0 0 17 17"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+    <path style="fill: var(--primary);"
+      d="M5.3209 8.86719L8.50026 12.0396L11.6796 8.86719L12.6563 9.84385L8.50026 13.9999L4.34424 9.84385L5.3209 8.86719Z"
+    />
+    <path style="fill: var(--primary);"
+      d="M11.6791 8.13281L8.49974 4.96039L5.32039 8.13281L4.34373 7.15615L8.49974 3.00013L12.6558 7.15615L11.6791 8.13281Z"
+    />
+</svg>
+            </div>
+        </span>
+
+        <ul id="uncollapsedCoauthors" class="article-coauthors-list-open hidden">
+            <div id="uncollapsedAction" class="article-icon-open-container">
+                <svg
+width="17"
+height="17"
+viewBox="0 0 17 17"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+    <path style="fill: var(--primary);"
+      d="M11.6796 14L8.50023 10.8276L5.32088 14L4.34422 13.0233L8.50023 8.86732L12.6563 13.0233L11.6796 14Z"
+    />
+    <path style="fill: var(--primary);"
+      d="M5.32041 3L8.49977 6.17243L11.6791 3L12.6558 3.97666L8.49977 8.13268L4.34375 3.97666L5.32041 3Z"
+    />
+</svg>
+            </div>
+            
+        </ul>
+    </div>
+
+
+
+<script src="/js/collapseAuthors.js"></script>
+                    May 16, 2022
+                    • 10 min read
+                </div>
+            </div>
+        </header>
+        
+    </div>
+</section>
+
+
+    <aside id="progressBar" class="aside-container">
+    <div class="aside-align">
+      <div>
+        <div class="overlap-container">
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container" tabIndex={-1}>
+        <div class="track-line" aria-hidden="true">
+            <div id="progressIndicator" class="progress-line"></div>
+        </div>
+    </div>
+</aside>
+
+
+    <article  id="articleContent" class="post-content" style="position:relative;">
+        <p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/cover.jpg" alt="">
+<a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=71">李宏毅2021/2022春机器学习课程——Self-Supervised Learning</a></p>
+<h1 id="自监督式学习self-supervised-learning">自监督式学习（Self-Supervised Learning）</h1>
+<h2 id="芝麻街与进击的巨人">芝麻街与进击的巨人</h2>
+<h3 id="芝麻街">芝麻街</h3>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-1/stavreal.png" style="zoom:50%;" />
+<h3 id="进击的巨人bertolt-hoover">进击的巨人：Bertolt Hoover</h3>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-1/%E8%B4%9D%E7%89%B9%E9%9C%8D%E5%B0%94%E5%BE%B7%E8%83%A1%E4%BD%9B.png" style="zoom:50%;" />
+<h3 id="主流模型参数量">主流模型参数量</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ELMO</td>
+<td style="text-align:center">94M</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">340M</td>
+</tr>
+<tr>
+<td style="text-align:center">GPT-2</td>
+<td style="text-align:center">1542M</td>
+</tr>
+<tr>
+<td style="text-align:center">Megatron</td>
+<td style="text-align:center">8B</td>
+</tr>
+<tr>
+<td style="text-align:center">T5</td>
+<td style="text-align:center">11B</td>
+</tr>
+<tr>
+<td style="text-align:center">Turing NLG</td>
+<td style="text-align:center">17B</td>
+</tr>
+<tr>
+<td style="text-align:center">GPT-3</td>
+<td style="text-align:center">175B</td>
+</tr>
+<tr>
+<td style="text-align:center">Switch Transformer</td>
+<td style="text-align:center">1.6T</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bert">BERT</h2>
+<h3 id="self-supervised-learning">Self-supervised Learning</h3>
+<p>对于数据$x$，监督学习需要知道数据的标签$\hat{y}$，来让模型输出我们想要的$y$。而自监督学习没有标注，将$x$分为两部分，一部分$x&rsquo;$输入到模型得到$y$，另一部分$x&rsquo;&rsquo;$作为标签，然后让$y$和$x&rsquo;&rsquo;$越接近越好。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/self-supervised%20learning.png" style="zoom:50%;" />
+<p>自监督学习可以看作是一种无监督学习的方法，无监督学习的范围很大，里面有很多不同的方法，为了明确说明现在说做的工作，就称为自监督学习。</p>
+<h3 id="masked-token-prediction">Masked token prediction</h3>
+<ul>
+<li>[<a href="https://arxiv.org/abs/1810.04805">1810.04805] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (arxiv.org)</a></li>
+</ul>
+<p>BERT的架构和Transfromer Encoder相同，输入一排向量，输出另一排向量，一般用在文字处理上。</p>
+<p>输入一串token（token是处理一段文字的单位，在中文里一般把一个方块字当作一个token。），随机盖住一些token，盖住token有两种方法：</p>
+<ul>
+<li>变为某个特殊的token</li>
+<li>随机换为另一个token</li>
+</ul>
+<p>对BERT的输出序列分别做线性变换（乘矩阵），再做Softmax就得到了一个分布。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/masking%20input.png" style="zoom:50%;" />
+<p>BERT不知道被盖住的部分是什么内容，但我们知道这部分内容，BERT学习的目标是输出和盖住的部分越接近越好。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/masking%20input2.png" style="zoom:50%;" />
+<h3 id="next-sentence-prediction">Next Sentence Prediction</h3>
+<p>从资料库中拿出两个句子，两个句子之间加入特殊的分隔符号[SEP]，再整个序号的最前面加[CLS]符号，整个序列输入BERT，看[CLS]对应的输出，[CLS]经过BERT的输出再经过线性变换后输出为Yes/No，代表这两个句子是不是相接的。</p>
+<p><em>例：[CLS] I like cat. [SEP] He likes dog</em></p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/next%20sentence%20prediction.png" style="zoom:50%;" />
+<ul>
+<li>
+<p>Next Sentence Prediction对于BERT接下来要做的事情可能无用</p>
+<ul>
+<li>
+<p>[<a href="https://arxiv.org/abs/1907.11692">1907.11692] RoBERTa: A Robustly Optimized BERT Pretraining Approach (arxiv.org)</a></p>
+<p>Next Sentence Prediction这个任务可能比较简单，BERT可能学习不到太多有用的东西。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SOP</strong>：Sentence order prediction Used in ALBERT</p>
+<ul>
+<li>[<a href="https://arxiv.org/abs/1909.11942">1909.11942] ALBERT: A Lite BERT for Self-supervised Learning of Language Representations (arxiv.org)</a></li>
+</ul>
+<p>两个句子本来就连在一起，人为拆分开，本来放在前面的句子作为Sentence 1，本来放在后面的句子作为Sentence 2，或本来放在前面的句子作为Sentence 2，本来放在后面的句子作为Sentence 1。然后让BERT去回答是哪一种顺序。</p>
+</li>
+</ul>
+<h3 id="downstream-tasks">Downstream Tasks</h3>
+<p>在训练BERT时，给了BERT两个任务：</p>
+<ul>
+<li>Masked token prediction</li>
+<li>Next sentence prediction</li>
+</ul>
+<p>在训练BERT时，似乎仅仅在教BERT如何去做“填空题”，但BERT可以用在其他地方，BERT真正在下游任务（Downstream Tasks）中被使用，但需要少量有标注的数据。BERT经过微调（Fine-tune）可以去完成各种其他的任务。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/Fine-tune.png" style="zoom:50%;" />
+<h3 id="glue">GLUE</h3>
+<p>任务集GLUE（General Language Understanding Evaluation）共有9个任务，</p>
+<ul>
+<li>Corpus of Linguistic Acceptability（CoLA）</li>
+<li>Stanford Sentiment Treebank（SST-2）</li>
+<li>Microsoft Research Paraphrase Corpus（MRPC）</li>
+<li>Quora Question Pairs（QQP）</li>
+<li>Semantic Textual Similarity Benchmark（STS-B）</li>
+<li>Multi-Genre Natural Language Inference（MNLI）</li>
+<li>Question-answering NLI（QNLI）</li>
+<li>Recognizing Textual Entailment（RTE）</li>
+<li>Winograd NLI（WNLI）</li>
+</ul>
+<p>可以在这9个任务上分别微调模型得到9个模型，通过结果数值来判断模型的好坏。</p>
+<p>中文版本的GLUE：</p>
+<ul>
+<li><a href="https://www.cluebenchmarks.com/">CLUE中文语言理解基准测评 (cluebenchmarks.com)</a></li>
+</ul>
+<h3 id="how-to-use-bert">How to use BERT</h3>
+<h4 id="case-1">Case 1</h4>
+<blockquote>
+<ul>
+<li>Input：sequence</li>
+<li>Output：class</li>
+<li>Example：Sentiment analysis</li>
+</ul>
+</blockquote>
+<p>给BERT输入一个句子，前面放[CLS] token，对[CLS]输出的向量做线性变换，Softmax后输出class。需要提供大量的已标注的训练资料。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case1.png" style="zoom:50%;" />
+<p>Linear部分是随机初始化，而BERT部分将学会了做“填空题”的BERT模型的参数拿来初始化。</p>
+<h4 id="case-2">Case 2</h4>
+<blockquote>
+<ul>
+<li>Input：sequence</li>
+<li>Output：sequence</li>
+<li>Example：POS tagging（词性标注）</li>
+</ul>
+</blockquote>
+<p>给BERT输入一个句子，前面放[CLS] token，对句子里面每一个token输出的向量做线性变换，Softmax后输出每一个token的类别。需要提供已标注的训练资料。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case2.png" style="zoom:50%;" />
+<h4 id="case-3">Case 3</h4>
+<blockquote>
+<ul>
+<li>
+<p>Input：two sequences</p>
+</li>
+<li>
+<p>Output：a class</p>
+</li>
+<li>
+<p>Example：Natural Language Inference（NLI）</p>
+<p>前提：一个人骑马越过了一架坏掉的飞机，假设：这个人在一个小餐馆里面，输出：矛盾。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case3_eg.png" style="zoom:50%;" />
+</li>
+</ul>
+</blockquote>
+<p>输入两个句子，两个句子之间放[SEP] token，第一个句子前放[CLS] token，整串内容输入BERT，对[CLS]输出的向量做线性变换，Softmax后输出class。需要提供已标注的训练资料。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case3.png" style="zoom:50%;" />
+<h4 id="case-4">Case 4</h4>
+<blockquote>
+<ul>
+<li>
+<p><strong>Extraction-based Question Answering</strong>（有限制的QA，答案一定能在文章中找到。）</p>
+</li>
+<li>
+<p>Input：</p>
+<ul>
+<li>
+<p>Document：$D={d_1,d_2,\cdots,d_N}$</p>
+</li>
+<li>
+<p>Query：$Q={q_1,q_2,\cdots,q_M}$</p>
+</li>
+</ul>
+<p><em>对于中文，$d_i$和$q_i$都是汉字。</em></p>
+</li>
+<li>
+<p>Output：two integers$(s,e)$</p>
+<ul>
+<li>Answer：$A={d_s,\cdots,d_e}$</li>
+</ul>
+<p><em>输出两个正整数，代表答案的范围。</em></p>
+</li>
+</ul>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case4_eg.png" style="zoom:50%;" />
+</blockquote>
+<p>输入问题和文章，问题和文章之间放[SEP] token，问题前放[CLS] token，整串内容输入BERT。</p>
+<p>文章的各个token输出的向量先和一个向量（橙）做内积，再对结果做Softmax，得到答案起始的位置。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case4_1.png" style="zoom:50%;" />
+<p>文章的各个token输出的向量再和一个向量（蓝）做内积，再对结果做Softmax，得到答案结束的位置。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/case4_2.png" style="zoom:50%;" />
+<p>以上只有和BERT输出做内积的两个向量是随机初始化的，即这两个向量是重头开始学习的。</p>
+<h3 id="bert-embryology胚胎学">BERT Embryology（胚胎学）</h3>
+<ul>
+<li>[<a href="https://arxiv.org/abs/2010.02480">2010.02480] Pretrained Language Model Embryology: The Birth of ALBERT (arxiv.org)</a></li>
+</ul>
+<p>BERT的训练需要耗费大量的资源，BERT的训练资料大概是30亿个词，是哈利波特全集的3000倍。有没有什么方法去节省计算资源？</p>
+<p>从观察BERT的训练过程开始，BERT在什么时候学会填什么样的词汇？他的填空能力是怎么增进的？</p>
+<h3 id="pre-training-a-seq2seq-model">Pre-training a seq2seq model</h3>
+<p>BERT只有预训练的Encoder。</p>
+<p>Encoder和Decoder间通过Cross Atention连接起来，在Encoder的输入中故意加一些扰动，希望Decoder输出的句子和弄坏前的句子是一样的。</p>
+<h4 id="mass--bart">MASS / BART</h4>
+<ul>
+<li>[<a href="https://arxiv.org/abs/1905.02450">1905.02450] MASS: Masked Sequence to Sequence Pre-training for Language Generation (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1910.13461">1910.13461] BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (arxiv.org)</a></li>
+</ul>
+<p>对Encoder的输入加一些扰动来弄坏原本的内容：</p>
+<ul>
+<li>盖住一些词</li>
+<li>删掉一些词</li>
+<li>打乱词顺序</li>
+<li>词顺序旋转</li>
+<li>混合</li>
+</ul>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/MASS_BART.png" style="zoom:50%;" />
+<h4 id="t5---comparison">T5 - Comparison</h4>
+<ul>
+<li>Transfer Text-to-Text Transformer（T5）</li>
+</ul>
+<p>T5在Colossal Clean Crawled Corpus（C4）进行训练，对比了多种弄坏的方法。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-2/T5.png" style="zoom:50%;" />
+<h3 id="why-does-bert-work">Why does BERT work?</h3>
+<p>将文字输入到BERT中，得到的输出向量称为<strong>embedding</strong>，代表了各个token的意思，有相似意思的token有着非常相似的embeddng。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/embedding.png" style="zoom:50%;" />
+<p>在语言中常常有一词多义的情况，例如“吃苹果”的“果”和“苹果手机”的“果”的含义可能相差较大。通过Cosine Similarity计算“吃苹果”和“苹果手机”的Embedding的相似度，可以发现它们之间的相似度较低。</p>
+<blockquote>
+<p>&ldquo;You shall know a word by the company it keeps.&rdquo;</p>
+</blockquote>
+<p>一个词的意思可以从上下文看出来，BERT在做“填空题”的过程中所学习的内容也许就是根据上下文来预测当前被盖住的词汇。事实上，BERT之前已经有这样的方法：word embedding，word embedding中的CBOW就是把中间挖空然后预测内容。BERT所抽取出来的向量也叫做<strong>Contextualized word embedding</strong>。</p>
+<p>现在尝试将BERT拿来做蛋白质分类、DNA分类、音乐分类。</p>
+<ul>
+<li>[<a href="https://arxiv.org/abs/2103.07162">2103.07162] Is BERT a Cross-Disciplinary Knowledge Learner? A Surprising Finding of Pre-trained Models&rsquo; Transferability (arxiv.org)</a></li>
+</ul>
+<p>以DNA分类为例：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/DNA.png" style="zoom:50%;" />
+<p>将DNA中的序列替换成文字，输入到BERT中，输出分类，当作是文章分类的任务来处理。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/DNA_2.png" style="zoom:50%;" />
+<p>类似地，对于蛋白质，随意给各个氨基酸映射到词汇上，对于音乐，将各个音符映射到词汇上，得到了下面的结果：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/Protein_DNA_music_res.png" style="zoom:50%;" />
+<p>BERT的表现是比较好的，就算给BERT乱七八糟的句子，它可能也能把任务完成的比较好，这也说明BERT的表现可能并不完全来自于它“看得懂”文章这件事，关于BERT到底为什么好的问题可能还有很大的研究空间。</p>
+<h3 id="more">More</h3>
+<ul>
+<li>[<a href="https://www.youtube.com/watch?v=1_gRK9EIQpc">DLHLP 2020] BERT and its family - Introduction and Fine-tune - YouTube</a></li>
+<li>[<a href="https://www.youtube.com/watch?v=Bywo7m6ySlk">DLHLP 2020] BERT and its family - ELMo, BERT, GPT, XLNet, MASS, BART, UniLM, ELECTRA, and more - YouTube</a></li>
+</ul>
+<h3 id="multi-lingual-bert">Multi-lingual BERT</h3>
+<p>在训练的时候，会拿各种各样的语言来给BERT做“填空题”，Multi-BERT使用了104种语言来训练。拿英文的QA资料去训练，Multi-BERT就会做中文的QA问题。</p>
+<h4 id="zero-shot-reading-comprehension">Zero-shot Reading Comprehension</h4>
+<p>在英文数据集SQuAD和中文数据集DRCD上：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/zero-shot.png" style="zoom:50%;" />
+<ul>
+<li>[<a href="https://arxiv.org/abs/1909.09587">1909.09587] Zero-shot Reading Comprehension by Cross-lingual Transfer Learning with Multi-lingual Language Representation Model (arxiv.org)</a></li>
+</ul>
+<h4 id="cross-lingual-alignment">Cross-lingual Alignment</h4>
+<p>也许对Multi-lingual BERT来说，不同语言间没有什么差别。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/cross-lingual.png" style="zoom:50%;" />
+<h4 id="mean-reciprocal-rankmrr">Mean Reciprocal Rank（MRR）</h4>
+<p>MRR值越高，两个不同语言align的越好（同样意思但不同语言的词汇的向量比较接近）。</p>
+<p>在1000k资料量下，相比200k资料量下的效果显著提升：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/mrr1.png" style="zoom:50%;" />
+<h3 id="一个神奇的实验">一个神奇的实验</h3>
+<p>BERT可以让同样意思但不同语言的词汇的向量很接近，但在训练Multi-lingual BERT时，还是给BERT喂中文，它能够做中文填空，喂英文能够做英文填空，不会混在一起，给他喂英文他并没有填中文进去。说明来自不同语言的符号终究还是不一样，并没有完全抹掉语言的资讯。</p>
+<p>把所有英文的embedding平均起来，再把所有中文的embedding平均起来，两者相减得到的向量就是中文和英文之间的差距。给Multi-lingual BERT一句英文，得到一串embedding，将embedding加上相减得到的向量，这些向量对于Multi-lingual BERT就变成了中文的句子，再让BERT去做“填空题”，就填出了中文的答案。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/wired.png" style="zoom:50%;" />
+<p>语言的资讯还是藏在Multi-lingual BERT中：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-3/unsupervised%20learning.png" style="zoom:50%;" />
+<h2 id="gpt">GPT</h2>
+<h3 id="predict-next-token">Predict Next Token</h3>
+<p>GPT修改了BERT中模型的任务，GPT的任务是预测接下来的句子是什么。</p>
+<p>对于训练资料“台湾大学”，在最前面加上[BOS] token，对于[BOS] token，GPT输出一个embedding，接下来用这个embedding预测下一个应该出现的“台”这个token。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/predict%20next%20sentence.png" style="zoom:50%;" />
+<p>GPT与拿掉Cross attention后的Transformer Decoder结构类似。</p>
+<p>GPT要预测下一个token，有生成的能力，GPT最知名的例子就是用GPT写了一篇关于独角兽的假新闻。</p>
+<ul>
+<li><a href="https://app.inferkit.com/demo">Demo – InferKit</a></li>
+</ul>
+<h3 id="how-to-use-gpt">How to use GPT?</h3>
+<p>GPT有一个更“狂“的使用方式，和人类更接近。</p>
+<h4 id="few-shot-learning">“Few-shot” Learning</h4>
+<p>例如在进行外语考试时，首先会看题目的说明（<em>“&hellip;从A、B、C、D四个选项中选出最佳选项&hellip;”</em>），再会看一个例子（<em>“&hellip;衬衫的价格是9镑15便士，所以你选择&hellip;”</em>）。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/few-shot%20learning.png" style="zoom:50%;" />
+<p>“Few-shot” Learning中完全没有Gradient Descent，GPT文献中将这种训练称为“In-context Learning”。</p>
+<p>类似地，还有“One-shot” Learning、甚至“Zero-shot” Learning。</p>
+<h4 id="one-shot-learning">“One-shot” Learning</h4>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/one-shot%20learning.png" style="zoom:50%;" />
+<h4 id="zero-shot-learning">“Zero-shot” Learning</h4>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/zero-shot%20learning.png" style="zoom:50%;" />
+<p>第三代GPT测试了42个任务：</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/GPT_benchmarks.png" style="zoom:50%;" />
+<h3 id="more-1">More</h3>
+<ul>
+<li>[<a href="https://www.youtube.com/watch?v=DOG1L9lvsDY">DLHLP 2020] 來自獵人暗黑大陸的模型 GPT-3 - YouTube</a></li>
+</ul>
+<h2 id="beyond-text">Beyond Text</h2>
+<p>不止NLP，在语音、图像上都可以用Self-Supervised Learning的技术。</p>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/beyond%20text.png" style="zoom:50%;" />
+<h3 id="image---simclr">Image - SimCLR</h3>
+<ul>
+<li>[<a href="https://arxiv.org/abs/2002.05709">2002.05709] A Simple Framework for Contrastive Learning of Visual Representations (arxiv.org)</a></li>
+<li><a href="https://github.com/google-research/simclr">google-research/simclr: SimCLRv2 - Big Self-Supervised Models are Strong Semi-Supervised Learners (github.com)</a></li>
+</ul>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/SimCLR.png" style="zoom:50%;" />
+<h3 id="image---byol">Image - BYOL</h3>
+<ul>
+<li>[<a href="https://arxiv.org/abs/2006.07733">2006.07733] Bootstrap your own latent: A new approach to self-supervised Learning (arxiv.org)</a></li>
+</ul>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/BYOL.png" style="zoom:50%;" />
+<h3 id="speech">Speech</h3>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/speech.png" style="zoom:50%;" />
+<h3 id="speech-glue---superb">Speech GLUE - SUPERB</h3>
+<p><strong>S</strong>peech processing <strong>U</strong>niversal <strong>PER</strong>formance <strong>B</strong>enchmark，包含了十多个下游任务，包含内容、说话的人、情感、语义等。</p>
+<ul>
+<li>Toolkit：<a href="https://github.com/s3prl/s3prl/">s3prl/s3prl: Self-Supervised Speech Pre-training and Representation Learning Toolkit. (github.com)</a></li>
+</ul>
+<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/7-4/toolkit.png" style="zoom:50%;" />
+<ul>
+<li><a href="https://github.com/andi611/Self-Supervised-Speech-Pretraining-and-Representation-Learning">https://github.com/andi611/Self-Supervised-Speech-Pretraining-and-Representation-Learning</a></li>
+</ul>
+    </article>
+
+
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+<section id="articleNext" class="section nartrow">
+    <h3 class="footer-next-heading">More articles from yzhn&#39;s Notes</h3>
+    <div class="footer-spacer"></div>
+    <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
+        <div class="post-row">
+            
+                <a href="/post/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" class="article-link"
+                 id="article-link-bigger">
+                    <div>
+                        <div class="image-container">
+                            <img src="" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                李宏毅ML课程笔记——生成式对抗网络（GAN）
+                            </h2>
+                            <p class="article-excerpt">
+                                
+                            </p>
+                            <div class="article-metadata">
+                                May 13, 2022 · 10 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+                <a href="/post/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%84%9F%E7%9F%A5%E6%9C%BA/" class="article-link"
+                >
+                    <div>
+                        <div class="image-container">
+                            <img src="" class="article-image" />
+                        </div>
+                        <div>
+                            <h2 class="article-title">
+                                统计学习——感知机
+                            </h2>
+                            <p class="article-excerpt">
+                                
+                            </p>
+                            <div class="article-metadata">
+                                May 12, 2022 · 7 min read
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+ <script src="/js/progressBar.js"></script>
+
+        
+        <div class="footer-gradient"></div>
+    <div class="section narrow">
+      <div class="footer-hr"></div>
+      <div class="footer-container">
+        <div class="footer-text">
+          © 2022 yzhn&#39;s Notes
+        </div>
+        <div class="social-icon-outer">
+    <div class="social-icon-container">
+        
+            
+                
+                <a href="https://github.com/yzhn16/"><svg
+class="social-icon-image"
+width="14"
+height="14"
+viewBox="0 0 14 14"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+<path
+  fillRule="evenodd"
+  clipRule="evenodd"
+  d="M7 0C3.1325 0 0 3.21173 0 7.17706C0 10.3529 2.00375 13.0353 4.78625 13.9863C5.13625 14.0491 5.2675 13.8338 5.2675 13.6454C5.2675 13.4749 5.25875 12.9097 5.25875 12.3087C3.5 12.6406 3.045 11.8691 2.905 11.4653C2.82625 11.259 2.485 10.622 2.1875 10.4516C1.9425 10.317 1.5925 9.98508 2.17875 9.97611C2.73 9.96714 3.12375 10.4964 3.255 10.7118C3.885 11.7973 4.89125 11.4923 5.29375 11.3039C5.355 10.8374 5.53875 10.5234 5.74 10.3439C4.1825 10.1645 2.555 9.54549 2.555 6.80026C2.555 6.01976 2.82625 5.37382 3.2725 4.87143C3.2025 4.692 2.9575 3.95635 3.3425 2.96951C3.3425 2.96951 3.92875 2.78111 5.2675 3.70516C5.8275 3.54367 6.4225 3.46293 7.0175 3.46293C7.6125 3.46293 8.2075 3.54367 8.7675 3.70516C10.1063 2.77214 10.6925 2.96951 10.6925 2.96951C11.0775 3.95635 10.8325 4.692 10.7625 4.87143C11.2087 5.37382 11.48 6.01079 11.48 6.80026C11.48 9.55446 9.84375 10.1645 8.28625 10.3439C8.54 10.5682 8.75875 10.9988 8.75875 11.6717C8.75875 12.6316 8.75 13.4032 8.75 13.6454C8.75 13.8338 8.88125 14.0581 9.23125 13.9863C11.9963 13.0353 14 10.3439 14 7.17706C14 3.21173 10.8675 0 7 0Z"
+  fill="#73737D"
+/>
+</svg></a>
+                <span class="hidden">https://github.com/yzhn16/</span>
+            
+        
+    </div>
+</div>
+    </div>
+</div>
+
+    </div>
+
+    
+    <script src="/js/prism.js"></script>
+</body>
+
+</html>
