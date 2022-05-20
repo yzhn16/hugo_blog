@@ -1,6 +1,6 @@
 # 山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪
 
-![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png)
+
 性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。
 
 <!--more-->

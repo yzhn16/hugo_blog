@@ -174,6 +174,7 @@ V&=W^vI
 $$
 <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-3.png" style="zoom:50%;" />
 
+
 #### Attention分数的计算
 
 由：
@@ -186,7 +187,7 @@ $$
 \alpha_{1,1} \\
 \alpha_{1,2} \\
 \alpha_{1,3} \\
-\alpha_{1,4}
+\alpha_{1,4} \\
 \end{bmatrix}
 =
 \begin{bmatrix}

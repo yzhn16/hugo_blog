@@ -650,14 +650,14 @@ $$
 ##### 梯度（一阶微分）的近似计算方法（滤波模板）:
 
 ###### 直接差分
-   $$
+$$
    \begin{aligned}
    G_x=f(x+1,y)-f(x,y) \\
    G_y=f(x,y+1)-f(x,y)
    \end{aligned}
-   $$
+$$
    直接差分算子：
-   $$
+$$
    垂直方向
    \begin{bmatrix}
    \underline{-1} & 0 \\
@@ -669,17 +669,17 @@ $$
    \underline{-1}& 1 \\
    0 & 0 
    \end{bmatrix}
-   $$
-   
+$$
+
 ###### 交叉差分
-   $$
+$$
    \begin{aligned}
    G_x=f(x+1,y+1)-f(x,y) \\
    G_y=f(x+1,y)-f(x,y+1)
    \end{aligned}
-   $$
+$$
    交叉差分（Roberts）算子：
-   $$
+$$
    垂直方向
    \begin{bmatrix}
    \underline{-1} & 0 \\
@@ -691,19 +691,19 @@ $$
    \underline{0} & -1 \\
    1 & 0 
    \end{bmatrix}
-   $$
+$$
 
 ###### Sobel算子
-   $$
+$$
    \begin{aligned}
    G_x = &f(x+1,y-1)+2f(x+1,y)+f(x+1,y+1)\\
    &-f(x-1,y-1)-2f(x-1,y)-f(x-1,y+1) \\
    G_y = &f(x-1,y+1)+2f(x,y+1)+f(x+1,y+1)\\
    &- f(x-1,y-1)-2f(x,y-1)-f(x+1,y-1)
    \end{aligned}
-   $$
+$$
    Sobel算子：
-   $$
+$$
    垂直方向
    \begin{bmatrix}
    -1 & -2 & -1 \\
@@ -717,7 +717,7 @@ $$
    -2 & \underline{0} & 2 \\
    -1 & 0 & 1 
    \end{bmatrix}
-   $$
+$$
 
 *下划线标出元素为滤波器模板的原点。*
 
@@ -1515,9 +1515,9 @@ $$
 
 ### 试验估计法
 
-  $$
+$$
   H(u,v)=\frac{G(u,v)}{A}
-  $$
+$$
 
   其中，$A$为常量，表示脉冲强度。
 

@@ -1,6 +1,6 @@
 # 李宏毅ML课程笔记——Self-Supervised Learning
 
-![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/7/cover.jpg)
+
 [李宏毅2021/2022春机器学习课程——Self-Supervised Learning](https://www.bilibili.com/video/BV1Wv411h7kN?p=71)
 
 <!--more-->

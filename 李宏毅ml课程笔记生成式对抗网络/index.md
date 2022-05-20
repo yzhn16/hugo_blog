@@ -1,4 +1,4 @@
-# 李宏毅ML课程笔记——生成式对抗网络（GAN）
+# 李宏毅ML课程笔记——Generative Adversarial Networks
 
 [李宏毅2021/2022春机器学习课程——生成式对抗网络](https://www.bilibili.com/video/BV1Wv411h7kN?p=58)
 

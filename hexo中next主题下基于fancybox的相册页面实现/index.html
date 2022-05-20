@@ -12,7 +12,7 @@
 <meta name="keywords" content="" /><meta itemprop="name" content="Hexo中NexT主题下基于Fancybox的相册页面实现">
 <meta itemprop="description" content="最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。"><meta itemprop="datePublished" content="2022-03-05T19:45:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-05T19:45:00+00:00" />
-<meta itemprop="wordCount" content="1498"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="wordCount" content="1504"><meta itemprop="image" content="/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Hexo中NexT主题下基于Fancybox的相册页面实现" />
 <meta property="og:description" content="最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。" />
 <meta property="og:type" content="article" />
@@ -37,7 +37,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0\/"
-    },"genre": "posts","wordcount":  1498 ,
+    },"genre": "posts","wordcount":  1504 ,
     "url": "\/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0\/","datePublished": "2022-03-05T19:45:00+00:00","dateModified": "2022-03-05T19:45:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -49,14 +49,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper" github-corner="right">
     <div class="header-title">
-      <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="yzhn&#39;s Notes"
-    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -124,14 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="/images/fixit.svg"
-    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -200,7 +186,8 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -210,50 +197,47 @@
       
       <div class="post-meta-line"><span title=2022-03-05&#32;19:45:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="March 5, 2022" >March 5, 2022</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 1498 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
-    </div><div class="content" id="content"><p>最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。</p>
-<p><em>本文所提出的方案中，图片的存储基于<a
-  href="https://oss.console.aliyun.com/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->阿里云OSS对象存储</a>实现。</em></p>
-<h1 id="效果图">效果图</h1>
-<p><img
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 1504 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+    </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif 2x"
+    data-src="/images/fancybox.jpg"
+    data-srcset="/images/fancybox.jpg, /images/fancybox.jpg 1.5x, /images/fancybox.jpg 2x"
     data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif"
-    title="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif" /></p>
+    alt="/images/fancybox.jpg"
+    title="/images/fancybox.jpg" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#效果图">效果图</a></li>
+<li><a href="#缩略图生成">缩略图生成</a></li>
+<li><a href="#图片存储">图片存储</a></li>
+<li><a href="#页面生成">页面生成</a></li>
+<li><a href="#页面样式">页面样式</a>
+<ul>
+<li><a href="#为图片四周加上阴影">为图片四周加上阴影</a></li>
+</ul></li>
+<li><a href="#页面内容">页面内容</a></li>
+<li><a href="#不足之处">不足之处</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul>
+</nav></div>
+      </div><div class="content" id="content"><p>最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。</p>
+
+<p><em>本文所提出的方案中，图片的存储基于<a href="https://oss.console.aliyun.com/">阿里云OSS对象存储</a>实现。</em></p>
+
+<h1 id="效果图">效果图</h1>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif" alt="" /></p>
+
 <h1 id="缩略图生成">缩略图生成</h1>
-<p>考虑到原图像的占用空间较大，直接在页面引入原图可能会严重拖慢内容加载速度，故对于原图像可以先进行适当的缩小以减少占用空间，而在点击图像后查看大图的情况下再加载原图。<br>
-这里提供一个我个人实现的图片裁切程序，基于Python+OpenCV实现，也可以<a
-  href="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/run.py"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->点击此处直接下载</a>。</p>
+
+<p>考虑到原图像的占用空间较大，直接在页面引入原图可能会严重拖慢内容加载速度，故对于原图像可以先进行适当的缩小以减少占用空间，而在点击图像后查看大图的情况下再加载原图。<br />
+这里提供一个我个人实现的图片裁切程序，基于Python+OpenCV实现，也可以<a href="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/run.py">点击此处直接下载</a>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -303,15 +287,14 @@
 </span></span><span class="line"><span class="cl">    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;./raw/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;./images/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">img</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;./images-s/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;./images-s/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>此段程序的实现逻辑是对于<strong>raw文件夹</strong>下的每一张图片，先在<strong>images文件夹</strong>下保存图片（<em>可以抹除图片中的地理位置等信息</em>），再对图片进行如下处理：</p>
-<ol>
-<li>获取图像的宽度、高度，并比较大小；</li>
-<li>根据比较的结果将较小的一边进行填充以成为一张正方形的图片；</li>
-<li>将图片缩放到目标宽度，并保存在<strong>images-s文件夹</strong>下。</li>
-</ol>
+</div>
+<p>此段程序的实现逻辑是对于<strong>raw文件夹</strong>下的每一张图片，先在<strong>images文件夹</strong>下保存图片（*可以抹除图片中的地理位置等信息*），再对图片进行如下处理：<br />
+1. 获取图像的宽度、高度，并比较大小；<br />
+2. 根据比较的结果将较小的一边进行填充以成为一张正方形的图片；<br />
+3. 将图片缩放到目标宽度，并保存在<strong>images-s文件夹</strong>下。</p>
+
 <p>文件树如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -326,30 +309,31 @@
 </span></span><span class="line"><span class="cl">├─images
 </span></span><span class="line"><span class="cl">├─images-s
 </span></span><span class="line"><span class="cl">├─raw
-</span></span><span class="line"><span class="cl">└─run.py
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">└─run.py</span></span></code></pre></td></tr></table>
 </div>
-</div><p>将需要处理的图片放在<strong>raw文件夹</strong>后执行<strong>run.py</strong>即可，会在images文件夹和images-s文件夹中分别生成<strong>同名的原图和缩略图</strong>。</p>
+</div>
+<p>将需要处理的图片放在<strong>raw文件夹</strong>后执行<strong>run.py</strong>即可，会在images文件夹和images-s文件夹中分别生成<strong>同名的原图和缩略图</strong>。</p>
+
 <h1 id="图片存储">图片存储</h1>
-<p>由于相关文档已经非常详细，故关于阿里云OSS对象存储的基本使用本文不再赘述。<br>
-对于原图和缩略图的存储，我在Bucket中建立了两个文件夹：gallery和gallery-s，分别存储原图和缩略图。<br>
+
+<p>由于相关文档已经非常详细，故关于阿里云OSS对象存储的基本使用本文不再赘述。<br />
+对于原图和缩略图的存储，我在Bucket中建立了两个文件夹：gallery和gallery-s，分别存储原图和缩略图。<br />
 建立完成后，将上一步骤中的处理结果分别放在两个文件夹中即可。</p>
+
 <h1 id="页面生成">页面生成</h1>
-<p>首先：</p>
-<ul>
-<li>在Hexo中生成新的Page</li>
-</ul>
+
+<p>首先：<br />
+- 在Hexo中生成新的Page</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hexo new page gallery
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hexo new page gallery</span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>在Next的主题配置文件中的menu项加入相关链接</li>
-</ul>
+</div>
+<ul>
+<li><p>在Next的主题配置文件中的menu项加入相关链接</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -357,13 +341,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">menu: 
-</span></span><span class="line"><span class="cl">  + gallery: /gallery/ || fa fa-camera
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">+ gallery: /gallery/ || fa fa-camera</span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>（可选）languages下zh-CN.yml文件中加入对应中英文对照。</li>
+</div></li>
+
+<li><p>（可选）languages下zh-CN.yml文件中加入对应中英文对照。</p></li>
 </ul>
+
 <h1 id="页面样式">页面样式</h1>
+
 <p>在<code>root/source/_data/styles.styl</code>中加入如下代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -458,10 +444,11 @@
 </span></span><span class="line"><span class="cl">		<span class="k">min-width</span><span class="p">:</span> <span class="mi">75</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="为图片四周加上阴影">为图片四周加上阴影</h2>
+</div>
+<h2 id="为图片四周加上阴影">为图片四周加上阴影</h2>
+
 <p>可在源代码中加入如下样式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -474,11 +461,13 @@
 <pre tabindex="0" class="chroma"><code class="language-CSS" data-lang="CSS"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">img</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kp">-webkit-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="kp">-moz-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><em>注：自从 NexT-7.3.0 开始，官方推荐采用数据文件将配置与主题分离，以在不修改主题源码的同时完成选项配置、自定义布局、自定义样式，便于后续 NexT 版本更新。</em></p>
+</div>
+<p><em>注：自从 NexT-7.3.0 开始，官方推荐采用数据文件将配置与主题分离，以在不修改主题源码的同时完成选项配置、自定义布局、自定义样式，便于后续 NexT 版本更新。</em></p>
+
 <h1 id="页面内容">页面内容</h1>
+
 <p>Fancybox文档中给出了一段基础代码示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -489,10 +478,10 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;image.jpg&#34;</span> <span class="na">data-fancybox</span> <span class="na">data-caption</span><span class="o">=</span><span class="s">&#34;My caption&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;thumbnail.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>其中image.jpg为原图，thumbnail.jpg为缩略图。<br>
+</div>
+<p>其中image.jpg为原图，thumbnail.jpg为缩略图。<br />
 下面给出我所修改的代码示例（可直接在对应的md文件中编写）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -575,31 +564,21 @@
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;1-s.jpg&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;image-caption&#34;</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="不足之处">不足之处</h1>
+</div>
+<h1 id="不足之处">不足之处</h1>
+
 <ul>
-<li>图片的生成、上传及页面HTML代码的编辑较为繁琐；</li>
-<li>图片无法根据页面宽度等自适应换行，在小屏幕设备上缩略图可能比较拥挤。</li>
+<li>图片的生成、上传及页面HTML代码的编辑较为繁琐；<br /></li>
+<li>图片无法根据页面宽度等自适应换行，在小屏幕设备上缩略图可能比较拥挤。<br />
+<br /></li>
 </ul>
+
 <h1 id="参考链接">参考链接</h1>
+
 <ul>
-<li><a
-  href="https://tding.top/archives/607c3b85.html"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->Hexo-NexT 实现相册 | 小丁的个人博客</a></li>
+<li><a href="https://tding.top/archives/607c3b85.html">Hexo-NexT 实现相册 | 小丁的个人博客</a><br /></li>
 </ul></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -627,7 +606,7 @@
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现" data-image="/images/fancybox.jpg"><i class="fa-brands fa-weibo fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/hexo%E4%B8%ADnext%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%9F%BA%E4%BA%8Efancybox%E7%9A%84%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" data-title="Hexo中NexT主题下基于Fancybox的相册页面实现"><i class="fa-brands fa-evernote fa-fw"></i></a>
@@ -680,5 +659,5 @@
   
   
 ><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

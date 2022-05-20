@@ -12,7 +12,7 @@
 <meta name="keywords" content="" /><meta itemprop="name" content="李宏毅ML课程笔记——Self-attention">
 <meta itemprop="description" content="李宏毅2021/2022春机器学习课程——自注意力机制（Self-attention）"><meta itemprop="datePublished" content="2022-04-23T17:45:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-23T17:45:00+00:00" />
-<meta itemprop="wordCount" content="2411"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="wordCount" content="2373"><meta itemprop="image" content="/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="李宏毅ML课程笔记——Self-attention" />
 <meta property="og:description" content="李宏毅2021/2022春机器学习课程——自注意力机制（Self-attention）" />
 <meta property="og:type" content="article" />
@@ -37,7 +37,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention\/"
-    },"genre": "posts","wordcount":  2411 ,
+    },"genre": "posts","wordcount":  2373 ,
     "url": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention\/","datePublished": "2022-04-23T17:45:00+00:00","dateModified": "2022-04-23T17:45:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -49,14 +49,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper" github-corner="right">
     <div class="header-title">
-      <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="yzhn&#39;s Notes"
-    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -124,14 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="/images/fixit.svg"
-    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -200,7 +186,8 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -210,382 +197,483 @@
       
       <div class="post-meta-line"><span title=2022-04-23&#32;17:45:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="April 23, 2022" >April 23, 2022</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 2411 字&nbsp;
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 2373 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
-    </div><div class="content" id="content"><p><a
-  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=38"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->李宏毅2021/2022春机器学习课程——自注意力机制（Self-attention）</a></p>
-<h1 id="自注意力机制self-attention">自注意力机制（Self-Attention）</h1>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/attention.png"
+    data-srcset="/images/attention.png, /images/attention.png 1.5x, /images/attention.png 2x"
+    data-sizes="auto"
+    alt="/images/attention.png"
+    title="/images/attention.png" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#自注意力机制-self-attention">自注意力机制（Self-Attention）</a>
+<ul>
+<li><a href="#将一排向量作为输入">将一排向量作为输入</a>
+<ul>
+<li><a href="#方法">方法</a></li>
+<li><a href="#输入">输入</a></li>
+<li><a href="#输出">输出</a>
+<ul>
+<li><a href="#n个向量对应n个标签">N个向量对应N个标签</a></li>
+<li><a href="#n个向量对应一个标签">N个向量对应一个标签</a></li>
+<li><a href="#n个向量对应多个标签-seq2seq">N个向量对应多个标签（seq2seq）</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#fully-connected-network">Fully-connected Network</a></li>
+<li><a href="#self-attention">Self-attention</a>
+<ul>
+<li><a href="#如何生成-b-1">如何生成$b^1$？</a>
+<ul>
+<li><a href="#a-1-与其他向量的相关性-alpha-的计算方法">$a^1$与其他向量的相关性$\alpha$的计算方法</a>
+<ul>
+<li><a href="#dot-product"><strong>Dot-product</strong></a></li>
+<li><a href="#additive">Additive</a></li>
+</ul></li>
+<li><a href="#b-1-的计算">$b^1$的计算</a></li>
+</ul></li>
+<li><a href="#输出向量组-b-1-b-2-b-3-b-4-的完整计算过程">输出向量组${b^1,b^2,b^3,b^4}$的完整计算过程</a>
+<ul>
+<li><a href="#q-k-v-的计算">$Q$、$K$、$V$的计算</a></li>
+<li><a href="#attention分数的计算">Attention分数的计算</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#end-bmatrix">\end{bmatrix}</a></li>
+<li><a href="#end-bmatrix-1">\end{bmatrix}</a></li>
+<li><a href="#end-bmatrix-2">\end{bmatrix}</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#总结">总结</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#multi-head-self-attention">Multi-head Self-attention</a></li>
+<li><a href="#位置编码">位置编码</a></li>
+<li><a href="#self-attention用于语音">Self-attention用于语音</a></li>
+<li><a href="#self-attention用于图像">Self-attention用于图像</a></li>
+<li><a href="#self-attention-v-s-cnn">Self-attention v.s. CNN</a></li>
+<li><a href="#self-attention-v-s-rnn">Self-attention v.s. RNN</a></li>
+<li><a href="#self-attention用于图">Self-attention用于图</a></li>
+<li><a href="#more">More</a></li>
+</ul></li>
+</ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=38">李宏毅2021/2022春机器学习课程——自注意力机制（Self-attention）</a></p>
+
+<h1 id="自注意力机制-self-attention">自注意力机制（Self-Attention）</h1>
+
 <p>考虑两种不同的输入：</p>
+
 <ul>
-<li>输入是一个向量</li>
-<li><strong>输入是一排向量</strong>（输入的向量个数可能会改变）</li>
+<li>输入是一个向量<br /></li>
+<li><strong>输入是一排向量</strong>（输入的向量个数可能会改变）<br />
+<br /></li>
 </ul>
+
 <h2 id="将一排向量作为输入">将一排向量作为输入</h2>
+
 <h3 id="方法">方法</h3>
+
 <ul>
-<li>One-hot Encoding</li>
-<li>Word Embedding</li>
+<li>One-hot Encoding<br /></li>
+<li>Word Embedding<br />
+<br /></li>
 </ul>
+
 <h3 id="输入">输入</h3>
+
 <ul>
-<li>一段语音窗口</li>
-<li>一张图</li>
-<li>分子结构</li>
-<li>&hellip;</li>
+<li>一段语音窗口<br /></li>
+<li>一张图<br /></li>
+<li>分子结构<br /></li>
+<li>&hellip;<br />
+<br /></li>
 </ul>
+
 <h3 id="输出">输出</h3>
+
 <h4 id="n个向量对应n个标签">N个向量对应N个标签</h4>
+
 <ul>
-<li>句子中每个词的词性：I saw a saw -&gt; N V DET N</li>
-<li>社交网络中每个人的购买意向：甲 -&gt; buy;乙 -&gt; not</li>
+<li>句子中每个词的词性：I saw a saw -&gt; N V DET N<br /></li>
+<li>社交网络中每个人的购买意向：甲 -&gt; buy;乙 -&gt; not<br />
+<br /></li>
 </ul>
+
 <h4 id="n个向量对应一个标签">N个向量对应一个标签</h4>
+
 <ul>
-<li>情感分析：this is good -&gt; positive</li>
-<li>分子属性分析：一个分子图 -&gt; 亲水性</li>
+<li>情感分析：this is good -&gt; positive<br /></li>
+<li>分子属性分析：一个分子图 -&gt; 亲水性<br />
+<br /></li>
 </ul>
-<h4 id="n个向量对应多个标签seq2seq">N个向量对应多个标签（seq2seq）</h4>
+
+<h4 id="n个向量对应多个标签-seq2seq">N个向量对应多个标签（seq2seq）</h4>
+
 <ul>
-<li>机器翻译</li>
+<li>机器翻译<br />
+<br /></li>
 </ul>
+
 <h2 id="fully-connected-network">Fully-connected Network</h2>
+
 <p>使用全连接网络，设置窗口大小，每次输入邻近的多个词。但限制于窗口大小，无法考虑整个句子的影响，且窗口覆盖整个句子比较困难。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/fc.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/fc.png" style="zoom:50%;" /></p>
+
 <h2 id="self-attention">Self-attention</h2>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention.png" style="zoom:50%;" /></p>
+
 <p>例：</p>
+
 <ul>
-<li>输入：一排向量${a^1,a^2,a^3,a^4}$</li>
-<li>输出：一排向量${b^1,b^2,b^3,b^4}$</li>
+<li>输入：一排向量${a^1,a^2,a^3,a^4}$<br /></li>
+<li>输出：一排向量${b^1,b^2,b^3,b^4}$<br />
+<br /></li>
 </ul>
+
 <p><em>$b^1$、$b^2$、$b^3$、$b^4$分别都是考虑了$a^1$、$a^2$、$a^3$、$a^4$而产生的。</em></p>
-<h3 id="如何生成b1">如何生成$b^1$？</h3>
-<h4 id="a1与其他向量的相关性alpha的计算方法">$a^1$与其他向量的相关性$\alpha$的计算方法</h4>
+
+<h3 id="如何生成-b-1">如何生成$b^1$？</h3>
+
+<h4 id="a-1-与其他向量的相关性-alpha-的计算方法">$a^1$与其他向量的相关性$\alpha$的计算方法</h4>
+
 <h5 id="dot-product"><strong>Dot-product</strong></h5>
+
 <p>输入两个向量，分别与矩阵$W^q$和$W^k$相乘，再将得到的向量$q$和$k$做点乘。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/dot-product.png" style="zoom:50%;" />
-$$
-\begin{aligned}
-q&=a^1\times W^q \\
-k&=a^2\times W^k \\
-\alpha &= q\cdot k
-\end{aligned}
-$$
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/dot-product.png" style="zoom:50%;" /><br />
+$$<br />
+\begin{aligned}<br />
+q&amp;=a^1\times W^q <br />
+k&amp;=a^2\times W^k <br />
+\alpha &amp;= q\cdot k<br />
+\end{aligned}<br />
+$$</p>
+
 <h5 id="additive">Additive</h5>
+
 <p>输入两个向量，分别与矩阵$W^q$和$W^k$相乘，将得到的向量$q$和$k$串起来并通过激活函数，最后通过一个变换得到$alpha$。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/additive.png" style="zoom:50%;" />
-<h4 id="b1的计算">$b^1$的计算</h4>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/additive.png" style="zoom:50%;" /></p>
+
+<h4 id="b-1-的计算">$b^1$的计算</h4>
+
 <p>本节中的例子中，对于$b^1$，计算步骤如下：</p>
+
 <ul>
-<li>step1.计算$q^1$</li>
+<li>step1.计算$q^1$<br />
+<br /></li>
 </ul>
-<p>$$
-q^1=W^qa^1
+
+<p>$$<br />
+q^1=W^qa^1<br />
 $$</p>
+
 <ul>
-<li>step2.计算$k^1$、$k^2$、$k^3$、$k^4$</li>
+<li>step2.计算$k^1$、$k^2$、$k^3$、$k^4$<br />
+<br /></li>
 </ul>
-<p>$$
-k^i=W^ka^i
+
+<p>$$<br />
+k^i=W^ka^i<br />
 $$</p>
+
 <ul>
-<li>step3.计算$\alpha_{1,1}$、$\alpha_{1,2}$、$\alpha_{1,3}$、$\alpha_{1,4}$</li>
+<li>step3.计算$\alpha<em>{1,1}$、$\alpha</em>{1,2}$、$\alpha<em>{1,3}$、$\alpha</em>{1,4}$<br />
+<br /></li>
 </ul>
-<p>$$
-\alpha_{1,i}=q^1\cdot k^i \
+
+<p>$$<br />
+\alpha_{1,i}=q^1\cdot k^i <br />
 $$</p>
+
 <ul>
-<li>step4.通过Soft-max（也可使用ReLU等）计算$\alpha_{1,1}&rsquo;$、$\alpha_{1,2}&rsquo;$、$\alpha_{1,3}&rsquo;$、$\alpha_{1,4}'$</li>
+<li>step4.通过Soft-max（也可使用ReLU等）计算$\alpha<em>{1,1}&lsquo;$、$\alpha</em>{1,2}&lsquo;$、$\alpha<em>{1,3}&lsquo;$、$\alpha</em>{1,4}&lsquo;$<br />
+<br /></li>
 </ul>
-<p>$$
-\alpha_{1,i}&rsquo;=\frac{\exp(\alpha_{1,i})}{\sum_j\exp(\alpha_{1,j})}
+
+<p>$$<br />
+\alpha<em>{1,i}&lsquo;=\frac{\exp(\alpha</em>{1,i})}{\sum<em>j\exp(\alpha</em>{1,j})}<br />
 $$</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-1.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-1.png" style="zoom:50%;" /></p>
+
 <ul>
-<li>
-<p>step5.计算$v^1$、$v^2$、$v^3$、$v^4$
-$$
-v^i=W^va^i
-$$</p>
-</li>
-<li>
-<p>step6.计算$b^1$（根据Attenion分数抽取重要信息）
-$$
-b^1=\sum_j\alpha_{1,j}&lsquo;v^j
-$$</p>
-</li>
+<li><p>step5.计算$v^1$、$v^2$、$v^3$、$v^4$<br />
+$$<br />
+v^i=W^va^i<br />
+$$</p></li>
+
+<li><p>step6.计算$b^1$（根据Attenion分数抽取重要信息）<br />
+$$<br />
+b^1=\sum<em>j\alpha</em>{1,j}&lsquo;v^j<br />
+$$</p></li>
 </ul>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-2.png" style="zoom:50%;" />
-<h3 id="输出向量组b1b2b3b4的完整计算过程">输出向量组${b^1,b^2,b^3,b^4}$的完整计算过程</h3>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-2.png" style="zoom:50%;" /></p>
+
+<h3 id="输出向量组-b-1-b-2-b-3-b-4-的完整计算过程">输出向量组${b^1,b^2,b^3,b^4}$的完整计算过程</h3>
+
 <p>整理以上过程，$Q$、$K$、$V$和Attention分数的计算过程如下：</p>
-<h4 id="qkv的计算">$Q$、$K$、$V$的计算</h4>
-<p>由：
-$$
-\begin{aligned}
-q^i &amp;=W^qa^i \
-k^i &amp;=W^ka^i \
-v^i &amp;=W^va^i
-\end{aligned}
-$$
-有：
-$$
-\begin{aligned}
-\begin{bmatrix}
-q^1 &amp; q^2 &amp; q^3 &amp; q^4
-\end{bmatrix}
-&amp;=W^q
-\begin{bmatrix}
-a^1 &amp; a^2 &amp; a^3 &amp; a^4
-\end{bmatrix}
-\
-\begin{bmatrix}
-k^1 &amp; k^2 &amp; k^3 &amp; k^4
-\end{bmatrix}
-&amp;=W^k
-\begin{bmatrix}
-a^1 &amp; a^2 &amp; a^3 &amp; a^4
-\end{bmatrix}
-\
-\begin{bmatrix}
-v^1 &amp; v^2 &amp; v^3 &amp; v^4
-\end{bmatrix}
-&amp;=W^v
-\begin{bmatrix}
-a^1 &amp; a^2 &amp; a^3 &amp; a^4
-\end{bmatrix}
-\end{aligned}
-$$
-即：
-$$
-\begin{aligned}
-Q&amp;=W^qI \
-K&amp;=W^kI \
-V&amp;=W^vI
-\end{aligned}
-$$
+
+<h4 id="q-k-v-的计算">$Q$、$K$、$V$的计算</h4>
+
+<p>由：<br />
+$$<br />
+\begin{aligned}<br />
+q^i &amp;=W^qa^i <br />
+k^i &amp;=W^ka^i <br />
+v^i &amp;=W^va^i<br />
+\end{aligned}<br />
+$$<br />
+有：<br />
+$$<br />
+\begin{aligned}<br />
+\begin{bmatrix}<br />
+q^1 &amp; q^2 &amp; q^3 &amp; q^4<br />
+\end{bmatrix}<br />
+&amp;=W^q<br />
+\begin{bmatrix}<br />
+a^1 &amp; a^2 &amp; a^3 &amp; a^4<br />
+\end{bmatrix}<br />
+<br />
+\begin{bmatrix}<br />
+k^1 &amp; k^2 &amp; k^3 &amp; k^4<br />
+\end{bmatrix}<br />
+&amp;=W^k<br />
+\begin{bmatrix}<br />
+a^1 &amp; a^2 &amp; a^3 &amp; a^4<br />
+\end{bmatrix}<br />
+<br />
+\begin{bmatrix}<br />
+v^1 &amp; v^2 &amp; v^3 &amp; v^4<br />
+\end{bmatrix}<br />
+&amp;=W^v<br />
+\begin{bmatrix}<br />
+a^1 &amp; a^2 &amp; a^3 &amp; a^4<br />
+\end{bmatrix}<br />
+\end{aligned}<br />
+$$<br />
+即：<br />
+$$<br />
+\begin{aligned}<br />
+Q&amp;=W^qI <br />
+K&amp;=W^kI <br />
+V&amp;=W^vI<br />
+\end{aligned}<br />
+$$<br />
 <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-3.png" style="zoom:50%;" /></p>
+
 <h4 id="attention分数的计算">Attention分数的计算</h4>
-<h1 id="endbmatrix">由：
-$$
-\alpha_{1,i}=k^i\cdot q^1 \
-$$
-有：
-$$
-\begin{bmatrix}
-\alpha_{1,1} \
-\alpha_{1,2} \
-\alpha_{1,3} \
-\alpha_{1,4}
-\end{bmatrix}</h1>
-<h1 id="endbmatrix-1">\begin{bmatrix}
-k^1 \
-k^2 \
-k^3 \
-k^4
-\end{bmatrix}
-\cdot
-q^1
-$$
-进一步有：
-$$
-\begin{bmatrix}
-\alpha_{1,1} &amp; \alpha_{2,1} &amp; \alpha_{3,1} &amp;\alpha_{4,1} \
-\alpha_{1,2} &amp; \alpha_{2,2} &amp; \alpha_{3,2} &amp;\alpha_{4,2} \
-\alpha_{1,3} &amp; \alpha_{2,3} &amp; \alpha_{3,3} &amp;\alpha_{4,3} \
-\alpha_{1,4} &amp; \alpha_{2,4} &amp; \alpha_{3,4} &amp;\alpha_{4,4} \
-\end{bmatrix}</h1>
-<p>\begin{bmatrix}
-k^1 \
-k^2 \
-k^3 \
-k^4
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-q^1 &amp; q^2 &amp; q^3 &amp;q^4
-\end{bmatrix}
-$$
-即：
-$$
-A=K^TQ
-$$
-对$A$进行Soft-max得到$A&rsquo;$：
-$$
-A&rsquo;=
-\begin{bmatrix}
-\alpha_{1,1}&rsquo; &amp; \alpha_{2,1}&rsquo; &amp; \alpha_{3,1}&rsquo; &amp;\alpha_{4,1}&rsquo; \
-\alpha_{1,2}&rsquo; &amp; \alpha_{2,2}&rsquo; &amp; \alpha_{3,2}&rsquo; &amp;\alpha_{4,2}&rsquo; \
-\alpha_{1,3}&rsquo; &amp; \alpha_{2,3}&rsquo; &amp; \alpha_{3,3}&rsquo; &amp;\alpha_{4,3}&rsquo; \
-\alpha_{1,4}&rsquo; &amp; \alpha_{2,4}&rsquo; &amp; \alpha_{3,4}&rsquo; &amp;\alpha_{4,4}&rsquo; \
-\end{bmatrix}
-$$
+
+<p>由：<br />
+$$<br />
+\alpha<em>{1,i}=k^i\cdot q^1 <br />
+$$<br />
+有：<br />
+$$<br />
+\begin{bmatrix}<br />
+\alpha</em>{1,1} <br />
+\alpha<em>{1,2} <br />
+\alpha</em>{1,3} <br />
+\alpha_{1,4} \</p>
+
+<h1 id="end-bmatrix">\end{bmatrix}</h1>
+
+<p>\begin{bmatrix}<br />
+k^1 <br />
+k^2 <br />
+k^3 <br />
+k^4<br />
+\end{bmatrix}<br />
+\cdot<br />
+q^1<br />
+$$<br />
+进一步有：<br />
+$$<br />
+\begin{bmatrix}<br />
+\alpha<em>{1,1} &amp; \alpha</em>{2,1} &amp; \alpha<em>{3,1} &amp;\alpha</em>{4,1} <br />
+\alpha<em>{1,2} &amp; \alpha</em>{2,2} &amp; \alpha<em>{3,2} &amp;\alpha</em>{4,2} <br />
+\alpha<em>{1,3} &amp; \alpha</em>{2,3} &amp; \alpha<em>{3,3} &amp;\alpha</em>{4,3} <br />
+\alpha<em>{1,4} &amp; \alpha</em>{2,4} &amp; \alpha<em>{3,4} &amp;\alpha</em>{4,4} \</p>
+
+<h1 id="end-bmatrix-1">\end{bmatrix}</h1>
+
+<p>\begin{bmatrix}<br />
+k^1 <br />
+k^2 <br />
+k^3 <br />
+k^4<br />
+\end{bmatrix}<br />
+\cdot<br />
+\begin{bmatrix}<br />
+q^1 &amp; q^2 &amp; q^3 &amp;q^4<br />
+\end{bmatrix}<br />
+$$<br />
+即：<br />
+$$<br />
+A=K^TQ<br />
+$$<br />
+对$A$进行Soft-max得到$A&rsquo;$：<br />
+$$<br />
+A&rsquo;=<br />
+\begin{bmatrix}<br />
+\alpha<em>{1,1}&rsquo; &amp; \alpha</em>{2,1}&rsquo; &amp; \alpha<em>{3,1}&rsquo; &amp;\alpha</em>{4,1}&rsquo; <br />
+\alpha<em>{1,2}&rsquo; &amp; \alpha</em>{2,2}&rsquo; &amp; \alpha<em>{3,2}&rsquo; &amp;\alpha</em>{4,2}&rsquo; <br />
+\alpha<em>{1,3}&rsquo; &amp; \alpha</em>{2,3}&rsquo; &amp; \alpha<em>{3,3}&rsquo; &amp;\alpha</em>{4,3}&rsquo; <br />
+\alpha<em>{1,4}&rsquo; &amp; \alpha</em>{2,4}&rsquo; &amp; \alpha<em>{3,4}&rsquo; &amp;\alpha</em>{4,4}&rsquo; <br />
+\end{bmatrix}<br />
+$$<br />
 <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-4.png" style="zoom:50%;" /></p>
-<h1 id="endbmatrix-2">最后将$V$与$A&rsquo;$相乘，得到$b^1$、$b^2$、$b^3$、$b^4$：
-$$
-\begin{bmatrix}
-b^1 &amp; b^2 &amp; b^3 &amp; b^4
-\end{bmatrix}</h1>
-<p>\begin{bmatrix}
-v^1 &amp; v^2 &amp; v^3 &amp; v^4
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-\alpha_{1,1}&rsquo; &amp; \alpha_{2,1}&rsquo; &amp; \alpha_{3,1}&rsquo; &amp;\alpha_{4,1}&rsquo; \
-\alpha_{1,2}&rsquo; &amp; \alpha_{2,2}&rsquo; &amp; \alpha_{3,2}&rsquo; &amp;\alpha_{4,2}&rsquo; \
-\alpha_{1,3}&rsquo; &amp; \alpha_{2,3}&rsquo; &amp; \alpha_{3,3}&rsquo; &amp;\alpha_{4,3}&rsquo; \
-\alpha_{1,4}&rsquo; &amp; \alpha_{2,4}&rsquo; &amp; \alpha_{3,4}&rsquo; &amp;\alpha_{4,4}&rsquo; \
-\end{bmatrix}
-$$
-即得到Self-attention的输出：
-$$
-O=VA&rsquo;
+
+<p>最后将$V$与$A&rsquo;$相乘，得到$b^1$、$b^2$、$b^3$、$b^4$：<br />
+$$<br />
+\begin{bmatrix}<br />
+b^1 &amp; b^2 &amp; b^3 &amp; b^4</p>
+
+<h1 id="end-bmatrix-2">\end{bmatrix}</h1>
+
+<p>\begin{bmatrix}<br />
+v^1 &amp; v^2 &amp; v^3 &amp; v^4<br />
+\end{bmatrix}<br />
+\cdot<br />
+\begin{bmatrix}<br />
+\alpha<em>{1,1}&rsquo; &amp; \alpha</em>{2,1}&rsquo; &amp; \alpha<em>{3,1}&rsquo; &amp;\alpha</em>{4,1}&rsquo; <br />
+\alpha<em>{1,2}&rsquo; &amp; \alpha</em>{2,2}&rsquo; &amp; \alpha<em>{3,2}&rsquo; &amp;\alpha</em>{4,2}&rsquo; <br />
+\alpha<em>{1,3}&rsquo; &amp; \alpha</em>{2,3}&rsquo; &amp; \alpha<em>{3,3}&rsquo; &amp;\alpha</em>{4,3}&rsquo; <br />
+\alpha<em>{1,4}&rsquo; &amp; \alpha</em>{2,4}&rsquo; &amp; \alpha<em>{3,4}&rsquo; &amp;\alpha</em>{4,4}&rsquo; <br />
+\end{bmatrix}<br />
+$$<br />
+即得到Self-attention的输出：<br />
+$$<br />
+O=VA&rsquo;<br />
 $$</p>
+
 <h4 id="总结">总结</h4>
-<p>$$
-\begin{aligned}
-&amp;Q=W^qI \
-&amp;K=W^kI \
-&amp;V=W^vI \
-&amp;A=K^TQ \
-&amp;A \rightarrow A&rsquo; \
-&amp;O=VA'
-\end{aligned}
+
+<p>$$<br />
+\begin{aligned}<br />
+&amp;Q=W^qI <br />
+&amp;K=W^kI <br />
+&amp;V=W^vI <br />
+&amp;A=K^TQ <br />
+&amp;A \rightarrow A&rsquo; <br />
+&amp;O=VA&rsquo;<br />
+\end{aligned}<br />
 $$</p>
+
 <p>$W^q$、$W^k$、$W^v$是需要学习的参数。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-5.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention-5.png" style="zoom:50%;" /></p>
+
 <h2 id="multi-head-self-attention">Multi-head Self-attention</h2>
+
 <p>多个$q$，对应不同种类的相关性。</p>
-<p>例如对于2 head的情况，$a^i$对应的$q^i$、$k^i$、$v^i$具体有$q^{i,1}$、$k^{i,1}$、$v^{i,1}$：
-$$
-\begin{aligned}
-&amp;q^{i,1}=W^{q,1}q^i \
-&amp;q^{i,2}=W^{q,2}q^i
-\end{aligned}
-$$
+
+<p>例如对于2 head的情况，$a^i$对应的$q^i$、$k^i$、$v^i$具体有$q^{i,1}$、$k^{i,1}$、$v^{i,1}$：<br />
+$$<br />
+\begin{aligned}<br />
+&amp;q^{i,1}=W^{q,1}q^i <br />
+&amp;q^{i,2}=W^{q,2}q^i<br />
+\end{aligned}<br />
+$$<br />
 类似的，$a^j$对应的$q^j$、$k^j$、$v^j$具体有$q^{j,1}$、$k^{j,1}$、$v^{j,1}$：</p>
-<p>在使用Dot-product计算Attention分数时，使用对应的$q$和$k$进行计算，$q^{i,1}$分别和$k^{i,1}$、$k^{j,1}$进行计算，在将Attention分数分别和$v^{i,1}$、$v^{j,1}$计算，得到$b^{i,1}$，类似可得到$b^{i,2}$。
-$$
-b^i=W^O
-\begin{bmatrix}
-b^{i,1} \
-b^{i,2}
-\end{bmatrix}
-$$
+
+<p>在使用Dot-product计算Attention分数时，使用对应的$q$和$k$进行计算，$q^{i,1}$分别和$k^{i,1}$、$k^{j,1}$进行计算，在将Attention分数分别和$v^{i,1}$、$v^{j,1}$计算，得到$b^{i,1}$，类似可得到$b^{i,2}$。<br />
+$$<br />
+b^i=W^O<br />
+\begin{bmatrix}<br />
+b^{i,1} <br />
+b^{i,2}<br />
+\end{bmatrix}<br />
+$$<br />
 <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/multi-head%20self-attention.png" style="zoom:50%;" /></p>
+
 <h2 id="位置编码">位置编码</h2>
+
 <p>Self-attention中，对输入的几个向量所进行的操作是相同的，与位置无关，可能丢失了位置信息。</p>
-<p>为每一个位置都设定一个向量$e^i$，将该向量加到$a^i$上。
-$$
-e^i+a^i\rightarrow q^i,k^i,v^i
-$$
+
+<p>为每一个位置都设定一个向量$e^i$，将该向量加到$a^i$上。<br />
+$$<br />
+e^i+a^i\rightarrow q^i,k^i,v^i<br />
+$$<br />
 向量$e^i$可以通过一个规则设定（人工）或从训练数据中学习出来。</p>
+
 <p>有各种不同的方法产生位置编码：</p>
+
 <ul>
-<li>Sinusoidal</li>
-<li>Position embedding</li>
-<li>FLOATER</li>
-<li>RNN</li>
-<li>&hellip;</li>
+<li>Sinusoidal<br /></li>
+<li>Position embedding<br /></li>
+<li>FLOATER<br /></li>
+<li>RNN<br /></li>
+<li>&hellip;<br />
+<br /></li>
 </ul>
+
 <h2 id="self-attention用于语音">Self-attention用于语音</h2>
+
 <p>把声音讯号表示为一排向量，一般一个向量只有10ms的长度，会导致向量个数过多，$A&rsquo;$计算的复杂度是$O(L^2)$，一般使用<strong>Truncated Self-attention</strong>，不看一整句话，只看一小部分。</p>
+
 <h2 id="self-attention用于图像">Self-attention用于图像</h2>
+
 <p>一张图片可以看成是一排向量。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20for%20img.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20for%20img.png" style="zoom:50%;" /></p>
+
 <ul>
-<li>Self-Attention GAN</li>
-<li>Detection Transformer(DETR)</li>
+<li>Self-Attention GAN<br /></li>
+<li>Detection Transformer(DETR)<br />
+<br /></li>
 </ul>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20for%20img2.png" style="zoom:50%;" />
-<h2 id="self-attention-vs-cnn">Self-attention v.s. CNN</h2>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20for%20img2.png" style="zoom:50%;" /></p>
+
+<h2 id="self-attention-v-s-cnn">Self-attention v.s. CNN</h2>
+
 <p>Self-attention可以看作复杂化的CNN，Self-attention考虑全局。CNN是Self-attention的特例，Self-attention可以通过设定合适的参数，达到和CNN同样的效果。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1911.03584"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1911.03584] On the Relationship between Self-Attention and Convolutional Layers (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1911.03584">1911.03584] On the Relationship between Self-Attention and Convolutional Layers (arxiv.org)</a><br />
+<br /></li>
 </ul>
-<h2 id="self-attention-vs-rnn">Self-attention v.s. RNN</h2>
+
+<h2 id="self-attention-v-s-rnn">Self-attention v.s. RNN</h2>
+
 <p>RNN（Recurrent Neural Network）：</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20vs%20RNN.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/4/self-attention%20vs%20RNN.png" style="zoom:50%;" /></p>
+
 <p>RNN的缺点很明显，很难去考虑到输入位置较远的向量，并且无法并行计算。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/2006.16236"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->2006.16236] Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/2006.16236">2006.16236] Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <h2 id="self-attention用于图">Self-attention用于图</h2>
+
 <p>图中每个结点可以表示为一个向量，边可以用来考虑结点之间的关联性，计算Attention分数时，只需计算相连的结点。</p>
+
 <p>Self-attention用在图上面，是某一种类型的GNN（Graph Neural Network）。</p>
+
 <h2 id="more">More</h2>
+
 <p>Self-Attention的计算量较大，优化效率是一个研究方向。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/2011.04006"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->2011.04006] Long Range Arena: A Benchmark for Efficient Transformers (arxiv.org)</a></li>
-<li>[<a
-  href="https://arxiv.org/abs/2009.06732"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->2009.06732] Efficient Transformers: A Survey (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/2011.04006">2011.04006] Long Range Arena: A Benchmark for Efficient Transformers (arxiv.org)</a><br /></li>
+<li>[<a href="https://arxiv.org/abs/2009.06732">2009.06732] Efficient Transformers: A Survey (arxiv.org)</a><br /></li>
 </ul></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -613,7 +701,7 @@ $$
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention" data-image="/images/attention.png"><i class="fa-brands fa-weibo fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0self-attention/" data-title="李宏毅ML课程笔记——Self-attention"><i class="fa-brands fa-evernote fa-fw"></i></a>
@@ -666,5 +754,5 @@ $$
   
   
 ><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

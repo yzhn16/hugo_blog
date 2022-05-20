@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>李宏毅ML课程笔记——生成式对抗网络（GAN） - yzhn&#39;s Notes</title><meta name="author" content="">
+    <title>李宏毅ML课程笔记——Generative Adversarial Networks - yzhn&#39;s Notes</title><meta name="author" content="">
 <meta name="author-link" content="">
 <meta name="description" content="李宏毅2021/2022春机器学习课程——生成式对抗网络" />
-<meta name="keywords" content="" /><meta itemprop="name" content="李宏毅ML课程笔记——生成式对抗网络（GAN）">
+<meta name="keywords" content="" /><meta itemprop="name" content="李宏毅ML课程笔记——Generative Adversarial Networks">
 <meta itemprop="description" content="李宏毅2021/2022春机器学习课程——生成式对抗网络"><meta itemprop="datePublished" content="2022-05-13T17:45:00+00:00" />
 <meta itemprop="dateModified" content="2022-05-13T17:45:00+00:00" />
-<meta itemprop="wordCount" content="4658"><meta itemprop="image" content="/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="李宏毅ML课程笔记——生成式对抗网络（GAN）" />
+<meta itemprop="wordCount" content="4643"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="李宏毅ML课程笔记——Generative Adversarial Networks" />
 <meta property="og:description" content="李宏毅2021/2022春机器学习课程——生成式对抗网络" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
-<meta name="twitter:title" content="李宏毅ML课程笔记——生成式对抗网络（GAN）"/>
+<meta name="twitter:title" content="李宏毅ML课程笔记——Generative Adversarial Networks"/>
 <meta name="twitter:description" content="李宏毅2021/2022春机器学习课程——生成式对抗网络"/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -32,12 +32,12 @@
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "李宏毅ML课程笔记——生成式对抗网络（GAN）",
+    "headline": "李宏毅ML课程笔记——Generative Adversarial Networks",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C\/"
-    },"genre": "posts","wordcount":  4658 ,
+    },"genre": "posts","wordcount":  4643 ,
     "url": "\/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C\/","datePublished": "2022-05-13T17:45:00+00:00","dateModified": "2022-05-13T17:45:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -49,14 +49,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper" github-corner="right">
     <div class="header-title">
-      <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="yzhn&#39;s Notes"
-    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -124,14 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="/images/fixit.svg"
-    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -200,773 +186,580 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
   </aside>
 
-  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">李宏毅ML课程笔记——生成式对抗网络（GAN）</h1><div class="post-meta">
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">李宏毅ML课程笔记——Generative Adversarial Networks</h1><div class="post-meta">
       
       <div class="post-meta-line"><span title=2022-05-13&#32;17:45:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 13, 2022" >May 13, 2022</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 4658 字&nbsp;
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 4643 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;</div>
-    </div><div class="content" id="content"><p><a
-  href="https://www.bilibili.com/video/BV1Wv411h7kN?p=58"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->李宏毅2021/2022春机器学习课程——生成式对抗网络</a></p>
-<h1 id="生成式对抗网络gan">生成式对抗网络（GAN）</h1>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/GAN.jpg"
+    data-srcset="/images/GAN.jpg, /images/GAN.jpg 1.5x, /images/GAN.jpg 2x"
+    data-sizes="auto"
+    alt="/images/GAN.jpg"
+    title="/images/GAN.jpg" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#生成式对抗网络-gan">生成式对抗网络（GAN）</a>
+<ul>
+<li><a href="#generator">Generator</a>
+<ul>
+<li><a href="#network-as-generator">Network as Generator</a></li>
+<li><a href="#why-distribution">Why distribution？</a></li>
+</ul></li>
+<li><a href="#generative-adversarial-network-gan">Generative Adversarial Network（GAN）</a>
+<ul>
+<li><a href="#anime-face-generation">Anime Face Generation</a></li>
+<li><a href="#discriminator">Discriminator</a></li>
+<li><a href="#basic-idea-of-gan">Basic Idea of GAN</a></li>
+<li><a href="#algorithm">Algorithm</a></li>
+</ul></li>
+<li><a href="#theory-behind-gan">Theory behind GAN</a>
+<ul>
+<li><a href="#objective">Objective</a></li>
+<li><a href="#sampling">Sampling</a></li>
+<li><a href="#discriminator-1">Discriminator</a></li>
+<li><a href="#why-js-divergence">Why JS Divergence？</a></li>
+</ul></li>
+<li><a href="#tips-for-gan">Tips for GAN</a>
+<ul>
+<li><a href="#js散度的问题">JS散度的问题</a></li>
+<li><a href="#wasserstein-distance">Wasserstein distance</a></li>
+<li><a href="#wgan">WGAN</a></li>
+<li><a href="#d-in-1-lipschitz">$D\in 1-Lipschitz$</a></li>
+<li><a href="#more-tips">More Tips</a></li>
+</ul></li>
+<li><a href="#gan-for-sequence-generation">GAN for Sequence Generation</a></li>
+<li><a href="#more-generative-models">More Generative Models</a></li>
+<li><a href="#evaluation-of-generation">Evaluation of Generation</a>
+<ul>
+<li><a href="#quality-of-image">Quality of Image</a></li>
+<li><a href="#diversity-mode-collapse">Diversity - Mode Collapse</a></li>
+<li><a href="#diversity-mode-dropping">Diversity - Mode Dropping</a></li>
+<li><a href="#diversity">Diversity</a></li>
+<li><a href="#fréchet-inception-distance-fid">Fréchet Inception Distance（FID）</a></li>
+<li><a href="#we-don-t-want-memory-gan">We don&rsquo;t want memory GAN</a></li>
+<li><a href="#more-about-evaluation">More about evaluation</a></li>
+</ul></li>
+<li><a href="#conditional-generation">Conditional Generation</a>
+<ul>
+<li><a href="#conditional-gan">Conditional GAN</a></li>
+<li><a href="#其他应用">其他应用</a></li>
+</ul></li>
+<li><a href="#learning-from-unpaired-data">Learning from Unpaired Data</a>
+<ul>
+<li><a href="#cycle-gan">Cycle GAN</a></li>
+<li><a href="#selfie2anime">SELFIE2ANIME</a></li>
+<li><a href="#text-style-transfer">Text Style Transfer</a></li>
+<li><a href="#more">More</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=58">李宏毅2021/2022春机器学习课程——生成式对抗网络</a></p>
+
+<h1 id="生成式对抗网络-gan">生成式对抗网络（GAN）</h1>
+
 <h2 id="generator">Generator</h2>
+
 <h3 id="network-as-generator">Network as Generator</h3>
+
 <p>输入$x$和一个简单的分布$z$（不固定，从一个分布中采样得到，每次使用网络时都会随机生成。），经过网络输出一个复杂的分布$y$。这样的网络称为<strong>Generator</strong>。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/generator.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/generator.png" style="zoom:50%;" /></p>
+
 <h3 id="why-distribution">Why distribution？</h3>
+
 <p>当任务需要一些“创造力”时（同样的输入有多种可能的输出），需要预测分布。</p>
+
 <ul>
-<li>
-<p>eg1. <em>Video Prediction</em></p>
+<li>eg1. <em>Video Prediction</em><br />
+<br /></li>
+</ul>
+
 <p>输入：吃豆人游戏的历史帧序列</p>
+
 <p>输出：吃豆人游戏新一帧的内容（吃豆人可能向不同的方向移动）</p>
-</li>
-<li>
-<p>eg2. <em>Drawing</em></p>
+
+<ul>
+<li>eg2. <em>Drawing</em><br />
+<br /></li>
+</ul>
+
 <p>输入：“Character with red eyes”</p>
+
 <p>输出1：酷拉皮卡</p>
+
 <p>输出2：辉夜</p>
-</li>
-<li>
-<p>eg3. <em>Chatbot</em></p>
+
+<ul>
+<li>eg3. <em>Chatbot</em><br />
+<br /></li>
+</ul>
+
 <p>输入：“你知道辉夜是谁吗？”</p>
+
 <p>输出1：“她是秀知院学生会&hellip;”</p>
+
 <p>输出2：“她开创了忍者时代&hellip;”</p>
-</li>
-</ul>
-<h2 id="generative-adversarial-networkgan">Generative Adversarial Network（GAN）</h2>
+
+<h2 id="generative-adversarial-network-gan">Generative Adversarial Network（GAN）</h2>
+
 <ul>
-<li><a
-  href="https://github.com/hindupuravinash/the-gan-zoo"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->hindupuravinash/the-gan-zoo: A list of all named GANs! (github.com)</a></li>
+<li><a href="https://github.com/hindupuravinash/the-gan-zoo">hindupuravinash/the-gan-zoo: A list of all named GANs! (github.com)</a><br />
+<br /></li>
 </ul>
+
 <h3 id="anime-face-generation">Anime Face Generation</h3>
+
 <p><strong>Unconditional generation</strong></p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/unconditional.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/unconditional.png" style="zoom:50%;" /></p>
+
 <ul>
-<li><a
-  href="https://zhuanlan.zhihu.com/p/24767059"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->GAN学习指南：从原理入门到制作生成Demo - 知乎 (zhihu.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24767059">GAN学习指南：从原理入门到制作生成Demo - 知乎 (zhihu.com)</a><br />
+<br /></li>
 </ul>
+
 <h3 id="discriminator">Discriminator</h3>
+
 <p>Discriminator本身也是一个网络，Discriminator拿一张图片作为输入，输出一个数值。数字越大，表示图片越接近真实的图片。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/discriminator.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/discriminator.png" style="zoom:50%;" /></p>
+
 <h3 id="basic-idea-of-gan">Basic Idea of GAN</h3>
+
 <blockquote>
 <p>写作敌人，念做朋友。</p>
 </blockquote>
+
 <p>二者关系好比Generator造假钞，Discriminator是抓造假钞的警察，Generator越来越像，Discriminator的辨别能力越来越强。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/basic%20idea.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/basic%20idea.png" style="zoom:50%;" /></p>
+
 <h3 id="algorithm">Algorithm</h3>
+
 <p>首先初始化generator $G$和discriminator $D$，在每一次训练中：</p>
+
 <ul>
-<li>
-<p>Step 1：定住$G$，更新$D$</p>
+<li>Step 1：定住$G$，更新$D$<br />
+<br /></li>
+</ul>
+
 <p>$D$学习去给真实二次元人物赋予更高的分数，而为生成的二次元人物赋予更低的分数。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/step1.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/step1.png" style="zoom:50%;" /></p>
+
 <p>$D$分辨真正的二次元人物和生成的二次元人物之间的差异，可以当作一个分类或回归任务处理。</p>
-</li>
-<li>
-<p>Step 2：定住$D$，更新$G$</p>
+
+<ul>
+<li>Step 2：定住$D$，更新$G$<br />
+<br /></li>
+</ul>
+
 <p>$G$学习去“骗过”$D$，经过调整后，使得生成的图片能在$D$中产生更高的分数。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/step2.png" style="zoom:50%;" />
-</li>
-</ul>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-1/step2.png" style="zoom:50%;" /></p>
+
 <h2 id="theory-behind-gan">Theory behind GAN</h2>
+
 <h3 id="objective">Objective</h3>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/objective.png" style="zoom:50%;" />
-<p>$$
-G^\ast=\arg\min_G Div(P_G,P_{data})
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/objective.png" style="zoom:50%;" /></p>
+
+<p>$$<br />
+G^\ast=\arg\min_G Div(P<em>G,P</em>{data})<br />
 $$</p>
-<p>其中$Div(P_G,P_{data})$是$P_G$与$P_{data}$之间的散度（Divergence），可以看作是两个分布之间某种距离，散度越大，代表两个分布越不像，散度越小，代表两个分布越相近。c.f. $w^\ast,b^\ast=\arg\min_{w,b}L$</p>
+
+<p>其中$Div(P<em>G,P</em>{data})$是$P<em>G$与$P</em>{data}$之间的散度（Divergence），可以看作是两个分布之间某种距离，散度越大，代表两个分布越不像，散度越小，代表两个分布越相近。c.f. $w^\ast,b^\ast=\arg\min_{w,b}L$</p>
+
 <h3 id="sampling">Sampling</h3>
-<p>虽然不清楚$P_G$和$P_{data}$的分布，但是可以从其中采样来计算散度。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/sampling.png" style="zoom:50%;" />
+
+<p>虽然不清楚$P<em>G$和$P</em>{data}$的分布，但是可以从其中采样来计算散度。</p>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/sampling.png" style="zoom:50%;" /></p>
+
 <h3 id="discriminator-1">Discriminator</h3>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1406.2661"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1406.2661] Generative Adversarial Networks (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1406.2661">1406.2661] Generative Adversarial Networks (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <p>Discriminator的训练目标是看到真实数据就给出一个高的分数，看到生成数据就给出一个低的分数。</p>
+
 <ul>
-<li>
-<p><strong>Training</strong>：$D^\ast=\arg\max_DV(D,G)$</p>
-</li>
-<li>
-<p><strong>Objective Function</strong> for $D$：$V(G,D)=E_{y\sim P_{data}}[\log D(y)]+E_{y\sim P_G}[\log(1-D(y))]$</p>
-</li>
+<li><p><strong>Training</strong>：$D^\ast=\arg\max_DV(D,G)$</p></li>
+
+<li><p><strong>Objective Function</strong> for $D$：$V(G,D)=E<em>{y\sim P</em>{data}}[\log D(y)]+E_{y\sim P_G}[\log(1-D(y))]$</p></li>
 </ul>
+
 <p>$V(D,G)$是交叉熵的相反数，Discriminator可以等同于一个分类器，最小化交叉熵。而正好$\max_DV(D,G)$就和<strong>JS散度</strong>有关。</p>
-<p>最开始，$P_G$和$P_{data}$混在一起，散度很小，Discriminator难以分辨哪些数据是生成数据而哪些数据是真实数据，即Discriminator难以区分小的$max_D{V(D,G)}$。</p>
-<p>若$P_G$和$P_{data}$散度很大，$max_DV(D,G)$比较大，DIscriminator则很容易区分生成数据和真实数据。</p>
-<p>此时，有：
-$$
-G^\ast=\arg\min_G\max_DV(G,D)
+
+<p>最开始，$P<em>G$和$P</em>{data}$混在一起，散度很小，Discriminator难以分辨哪些数据是生成数据而哪些数据是真实数据，即Discriminator难以区分小的$max_D{V(D,G)}$。</p>
+
+<p>若$P<em>G$和$P</em>{data}$散度很大，$max_DV(D,G)$比较大，DIscriminator则很容易区分生成数据和真实数据。</p>
+
+<p>此时，有：<br />
+$$<br />
+G^\ast=\arg\min_G\max_DV(G,D)<br />
 $$</p>
+
 <h3 id="why-js-divergence">Why JS Divergence？</h3>
+
 <p>除了JS散度，也可以使用例如KL散度等其他散度。如何设计目标函数，得到不同的散度，在f-GAN论文中有详细的证明。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1606.00709"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1606.00709] f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1606.00709">1606.00709] f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <h2 id="tips-for-gan">Tips for GAN</h2>
+
 <h3 id="js散度的问题">JS散度的问题</h3>
-<p>在大多数情况下，$P_G$和$P_{data}$重复的部分非常少。</p>
+
+<p>在大多数情况下，$P<em>G$和$P</em>{data}$重复的部分非常少。</p>
+
 <ul>
-<li>
-<p>数据本身的特性：数据是高维空间中的低维流形，重叠的部分可以忽略。</p>
+<li>数据本身的特性：数据是高维空间中的低维流形，重叠的部分可以忽略。<br />
+<br /></li>
+</ul>
+
 <blockquote>
 <p>流形学习的观点认为，我们所能观察到的数据实际上是由一个低维流形映射到高维空间上的。由于数据内部特征的限制，一些高维中的数据会产生维度上的冗余，实际上只需要比较低的维度就能唯一地表示。例如单位圆上有无穷多个点，无法用二唯坐标系上的点来表示圆上所有的点，而若使用极坐标，圆心在原点的圆只需一个参数——半径，就可以确定。</p>
 </blockquote>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/manifold.png" style="zoom:50%;" />
-</li>
-<li>
-<p>采样：即使$P_G$和$P_{data}$有重叠，若采样的点不够多，对Discriminator来说也是没有重叠的。</p>
-</li>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/manifold.png" style="zoom:50%;" /></p>
+
+<ul>
+<li>采样：即使$P<em>G$和$P</em>{data}$有重叠，若采样的点不够多，对Discriminator来说也是没有重叠的。<br />
+<br /></li>
 </ul>
+
 <p>而以上的问题会导致JS散度出现问题。</p>
+
 <p>在两个分布完全不重叠时，无论两个分布的中心距离有多近，其JS散度都是一个常数$\log2$，无法判断哪个case更好，从而无法更新参数。</p>
-<p>参考证明：<a
-  href="https://www.cnblogs.com/MorStar/p/14882813.html"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->JS散度(Jensen–Shannon divergence) - MorStar - 博客园 (cnblogs.com)</a></p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/js%20div%20problem.png" style="zoom:50%;" />
+
+<p>参考证明：<a href="https://www.cnblogs.com/MorStar/p/14882813.html">JS散度(Jensen–Shannon divergence) - MorStar - 博客园 (cnblogs.com)</a></p>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/js%20div%20problem.png" style="zoom:50%;" /></p>
+
 <p>直观来看，如果两个分布不重叠，二分类的准确率几乎可以达到100%。</p>
+
 <h3 id="wasserstein-distance">Wasserstein distance</h3>
+
 <p>考虑两个分布$P$和$Q$，想象一台推土机，$P$是一堆土，$Q$是要堆放的目的地，把$P$挪动到$Q$的平均距离就是Wasserstein distance。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance.png" style="zoom:50%;" /></p>
+
 <p>考虑更复杂的情况，移动的方案可能有无穷多种。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance2.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance2.png" style="zoom:50%;" /></p>
+
 <p>穷举所有的移动方法，看哪一个移动方法可以让平均的距离最小，最小的值就是Wasserstein distance。但计算方法似乎比较复杂，要计算距离还需要求解这样一个最优化问题。</p>
+
 <p>假设现在我们已经可以计算Wasserstein distance，就可以解决JS散度带来的问题。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance3.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance3.png" style="zoom:50%;" /></p>
+
 <h3 id="wgan">WGAN</h3>
+
 <p>WGAN使用Wasserstein distance取代JS散度。</p>
-<p>省略过程，要得到Wasserstein distance，只需解以下这个式子：
-$$
-\max_{D\in 1-Lipschitz}{E_{y\sim P_{data}}[D(y)]-E_{y\sim P_G}[D(y)]}
-$$
+
+<p>省略过程，要得到Wasserstein distance，只需解以下这个式子：<br />
+$$<br />
+\max<em>{D\in 1-Lipschitz}{E</em>{y\sim P<em>{data}}[D(y)]-E</em>{y\sim P_G}[D(y)]}<br />
+$$<br />
 $D\in 1-Lipschitz$：$D$需要是一个足够平滑的函数，不能是变动很剧烈的函数，若没有这个限制，单纯让生成数据越小越好，真实数据越大越好，在生成数据和真实数据没有重叠的情况下，会给真实数据无穷大的正值而给生成数据无穷小的负值。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance4.png" style="zoom:50%;" />
-<h3 id="din-1-lipschitz">$D\in 1-Lipschitz$</h3>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/wasserstein%20distance4.png" style="zoom:50%;" /></p>
+
+<h3 id="d-in-1-lipschitz">$D\in 1-Lipschitz$</h3>
+
 <ul>
-<li>
-<p>Original WGAN：Weight</p>
+<li>Original WGAN：Weight<br />
+<br /></li>
+</ul>
+
 <p>强制参数$w$在$c$和$-c$之间，参数更新后若$w\gt c$，则$w=c$，若$w\lt -c$，则$w=-c$。</p>
-</li>
-<li>
-<p>Improved WGAN：Gradient Penalty</p>
+
+<ul>
+<li>Improved WGAN：Gradient Penalty<br />
+<br /></li>
+</ul>
+
 <p>在真实数据和生成数据中各取一个样本，两点连线中再取一个样本，要求这个点的梯度接近1。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/gradient%20penalty.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-2/gradient%20penalty.png" style="zoom:50%;" /></p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1704.00028"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1704.00028] Improved Training of Wasserstein GANs (arxiv.org)</a></li>
-</ul>
-</li>
-<li>
-<p>Spectral Normalization（SNGAN）：让梯度模长在任何地方都小于1</p>
+<li><p>[<a href="https://arxiv.org/abs/1704.00028">1704.00028] Improved Training of Wasserstein GANs (arxiv.org)</a></p></li>
+
+<li><p>Spectral Normalization（SNGAN）：让梯度模长在任何地方都小于1</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1802.05957"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1802.05957] Spectral Normalization for Generative Adversarial Networks (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1802.05957">1802.05957] Spectral Normalization for Generative Adversarial Networks (arxiv.org)</a><br />
+<br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="more-tips">More Tips</h3>
+
 <ul>
-<li>Tops from Soumith
+<li>Tops from Soumith<br />
+
 <ul>
-<li><a
-  href="https://github.com/soumith/ganhacks"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->soumith/ganhacks: starter from &ldquo;How to Train a GAN?&rdquo; at NIPS2016 (github.com)</a></li>
-</ul>
-</li>
-<li>Tips in DCGAN：Guideline for network architecture design for image generation
+<li><a href="https://github.com/soumith/ganhacks">soumith/ganhacks: starter from &laquo;How to Train a GAN?&raquo; at NIPS2016 (github.com)</a><br /></li>
+</ul></li>
+<li>Tips in DCGAN：Guideline for network architecture design for image generation<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1511.06434"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1511.06434] Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (arxiv.org)</a></li>
-</ul>
-</li>
-<li>Improved techniques for training GANs
+<li>[<a href="https://arxiv.org/abs/1511.06434">1511.06434] Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (arxiv.org)</a><br /></li>
+</ul></li>
+<li>Improved techniques for training GANs<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1606.03498"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1606.03498] Improved Techniques for Training GANs (arxiv.org)</a></li>
-</ul>
-</li>
-<li>Tips from BigGAN
+<li>[<a href="https://arxiv.org/abs/1606.03498">1606.03498] Improved Techniques for Training GANs (arxiv.org)</a><br /></li>
+</ul></li>
+<li>Tips from BigGAN<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1809.11096"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1809.11096] Large Scale GAN Training for High Fidelity Natural Image Synthesis (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1809.11096">1809.11096] Large Scale GAN Training for High Fidelity Natural Image Synthesis (arxiv.org)</a><br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>GAN的训练需要Generator和Discriminator共同配合，若有其中一方不再进步，另一方也会停下来，<em>Generator和Discriminator需要棋逢敌手</em>。</p>
+
+<p>GAN的训练需要Generator和Discriminator共同配合，若有其中一方不再进步，另一方也会停下来，*Generator和Discriminator需要棋逢敌手*。</p>
+
 <h2 id="gan-for-sequence-generation">GAN for Sequence Generation</h2>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/GAN%20seq.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/GAN%20seq.png" style="zoom:50%;" /></p>
+
 <p>Decoder参数改变后，经过max输出的文字可能不会发生改变，就无法完成参数更新。可以用RL来训练。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1905.09922"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1905.09922] Training language GANs from Scratch (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1905.09922">1905.09922] Training language GANs from Scratch (arxiv.org)</a><br />
+<br /></li>
 </ul>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/scratch.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/scratch.png" style="zoom:50%;" /></p>
+
 <h2 id="more-generative-models">More Generative Models</h2>
+
 <ul>
-<li><a
-  href="https://www.youtube.com/playlist?list=PLJV_el3uVTsMq6JEFPW35BCiOQTsoqwNw"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->GAN（Full version）</a></li>
-<li><a
-  href="https://youtu.be/8zomhgKrsmQ"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->Variational Autoencoder（VAE）</a></li>
-<li><a
-  href="https://youtu.be/uXY18nzdSsM"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->FLOW-based Model</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLJV_el3uVTsMq6JEFPW35BCiOQTsoqwNw">GAN（Full version）</a><br /></li>
+<li><a href="https://youtu.be/8zomhgKrsmQ">Variational Autoencoder（VAE）</a><br /></li>
+<li><a href="https://youtu.be/uXY18nzdSsM">FLOW-based Model</a><br />
+<br /></li>
 </ul>
+
 <h2 id="evaluation-of-generation">Evaluation of Generation</h2>
+
 <h3 id="quality-of-image">Quality of Image</h3>
+
 <p>评价图像质量最直接的做法是找人来看，在Generator研究初期，有人会选几张图说“看，这个结果应该比目前的结果都要好，应该是SOTA。”，这显然不够客观，如何自动地评价生成图像的质量？</p>
+
 <p>一个方法是使用图像分类器，输入一张图片$y$，输出图片属于各个类的概率分布$p(c|y)$，分布越集中，产生的图片可能就越好。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/quality%20of%20img.png" style="zoom:50%;" />
-<h3 id="diversity---mode-collapse">Diversity - Mode Collapse</h3>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/quality%20of%20img.png" style="zoom:50%;" /></p>
+
+<h3 id="diversity-mode-collapse">Diversity - Mode Collapse</h3>
+
 <p>仅使用以上这种方法评估图像质量时可能会遇到Mode Collapse（模式坍塌）的问题。</p>
+
 <p>训练GAN的过程可能会遇到以下问题：</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20collapse.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20collapse.png" style="zoom:50%;" /></p>
+
 <p>Generator生成出来的图片可能来来去去都是那几张：</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20collapse2.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20collapse2.png" style="zoom:50%;" /></p>
+
 <p>直觉上看，这样的点是Discriminator的“盲点”，Discriminator没办法看出这样的图片是假的，当Generator学会产生这种图片后，就永远都可以骗过Discriminator。</p>
-<h3 id="diversity---mode-dropping">Diversity - Mode Dropping</h3>
+
+<h3 id="diversity-mode-dropping">Diversity - Mode Dropping</h3>
+
 <p>Mode Dropping可能比Mode Collapse更难侦测出来，产生出来的数据可能只能贴近已有真实数据的分布，但真实的数据分布的多样性其实是更大的。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20dropping.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20dropping.png" style="zoom:50%;" /></p>
+
 <p>一个人脸生成的例子：</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20dropping2.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/mode%20dropping2.png" style="zoom:50%;" /></p>
+
 <h3 id="diversity">Diversity</h3>
+
 <p>过去判定多样性的做法是将一批图片输入到图片分类器中，计算所有图片的概率分布的均值，若平均的分布非常集中，则代表多样性不够。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/diversity.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/diversity.png" style="zoom:50%;" /></p>
+
 <p>若输入这批图片产生的分布都非常不同，平均后的结果非常平坦，则代表多样性是足够的。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/diversity2.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/diversity2.png" style="zoom:50%;" /></p>
+
 <p>Diversity和Quality的评估方式相反，Diversity看的是一批图片的平均，而Quality看的是一张图片。</p>
+
 <p><strong>Inception Score（IS）</strong>：质量越高，多样性越大，则IS越高。</p>
-<h3 id="fréchet-inception-distancefid">Fréchet Inception Distance（FID）</h3>
+
+<h3 id="fréchet-inception-distance-fid">Fréchet Inception Distance（FID）</h3>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1706.08500"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1706.08500] GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1706.08500">1706.08500] GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <p>取Softmax前的输出向量，假设真实图像和生成图像都是高斯分布，计算这两个高斯分布之间的Fréchet distance，这个距离越小说明真实图像与生成图像越接近，生成图像品质越高。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/FID.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/FID.png" style="zoom:50%;" /></p>
+
 <p>可能需要大量的图片样本才能做到。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1711.10337"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1711.10337] Are GANs Created Equal? A Large-Scale Study (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1711.10337">1711.10337] Are GANs Created Equal? A Large-Scale Study (arxiv.org)</a><br />
+<br /></li>
 </ul>
-<h3 id="we-dont-want-memory-gan">We don&rsquo;t want memory GAN</h3>
+
+<h3 id="we-don-t-want-memory-gan">We don&rsquo;t want memory GAN</h3>
+
 <p>生成出来的图片有可能和训练集一模一样，这种情况下FID非常小，也有可能仅仅把图片翻转，这样很难侦测出来。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1511.01844"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1511.01844] A note on the evaluation of generative models (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1511.01844">1511.01844] A note on the evaluation of generative models (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <h3 id="more-about-evaluation">More about evaluation</h3>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1802.03446"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1802.03446] Pros and Cons of GAN Evaluation Measures (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1802.03446">1802.03446] Pros and Cons of GAN Evaluation Measures (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <h2 id="conditional-generation">Conditional Generation</h2>
+
 <p>前面所提到的Unconditional GAN的输入都是一个随机的分布。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20generation.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20generation.png" style="zoom:50%;" /></p>
+
 <p>例如要做文本转图片，需要给模型一个文本输入$x$。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/text-to-img.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/text-to-img.png" style="zoom:50%;" /></p>
+
 <h3 id="conditional-gan">Conditional GAN</h3>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20GAN.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20GAN.png" style="zoom:50%;" /></p>
+
 <p>在Unconditional GAN中，Discriminator接受一个图片$y$作为输入，输出一个数值，代表图片是真实的或是生成的，但这样的方法无法解Conditional GAN的问题，Generator可以产生非常接近真实的图片，但是忽略了输入的条件。</p>
+
 <p>Conditional GAN中，需要成对的训练数据。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20GAN2.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-3/conditional%20GAN2.png" style="zoom:50%;" /></p>
+
 <p>Conditional GAN也可以用图像来生成图像，例如图像去雾，黑白转彩色，白天转黑夜，素描转实物。也叫<strong>Image translation</strong>或<strong>pix2pix</strong>。</p>
+
 <p>通常可以将GAN和有监督学习结合，得到更好的结果。</p>
+
 <h3 id="其他应用">其他应用</h3>
+
 <ul>
-<li>Sound-to-image</li>
-<li>Talking Head Generation
+<li>Sound-to-image<br /></li>
+<li>Talking Head Generation<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1905.08233"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1905.08233] Few-Shot Adversarial Learning of Realistic Neural Talking Head Models (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1905.08233">1905.08233] Few-Shot Adversarial Learning of Realistic Neural Talking Head Models (arxiv.org)</a><br />
+<br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h2 id="learning-from-unpaired-data">Learning from Unpaired Data</h2>
+
 <p>有一堆$x$和一堆$y$，但$x$和$y$不成对（未标注）。pseudo labeling（伪标签）和back translation（反向翻译）都需要一些成对的数据。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/unpaired%20data.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/unpaired%20data.png" style="zoom:50%;" /></p>
+
 <p>例如在影像风格转换，将定义域$\mathcal{X}$真人头像转为定义域$\mathcal{Y}$二次元头像：</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/image%20style%20transfer.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/image%20style%20transfer.png" style="zoom:50%;" /></p>
+
 <h3 id="cycle-gan">Cycle GAN</h3>
+
 <p>输入一个Domain $\mathcal{X}$，输出Domain $\mathcal{Y}$。但如果仍然按照之前的方法学习，GAN无法判断生成的二次元图像是否与输入的真人图像是相似的，可能会将输入当作为高斯噪声，忽略输入的内容。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/cycle%20gan.png" style="zoom:50%;" />
-<p>Cycle GAN中会训练两个Generator，第一个Generator $G_{\mathcal{X}\rightarrow \mathcal{Y}}$将$\mathcal{X}$ domain的图变成$\mathcal{Y}$ domain的图，第二个Generator $G_{\mathcal{Y}\rightarrow \mathcal{X}}$将$\mathcal{Y}$ domain的图还原为$\mathcal{X}$ domain的图。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/cycle%20gan2.png" style="zoom:50%;" />
-<p>Cycle GAN能保证真实图片和生成图片有一些关系，但如何保证这种关系是我们想要的呢？例如输入一个戴眼镜的人，$G_{\mathcal{X}\rightarrow \mathcal{Y}}$将眼镜转成痣，但$G_{\mathcal{Y}\rightarrow \mathcal{X}}$又会把痣转成眼镜。理论上可能会出现这样的情况，不过在实际中这种情况往往不会出现。</p>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/cycle%20gan.png" style="zoom:50%;" /></p>
+
+<p>Cycle GAN中会训练两个Generator，第一个Generator $G<em>{\mathcal{X}\rightarrow \mathcal{Y}}$将$\mathcal{X}$ domain的图变成$\mathcal{Y}$ domain的图，第二个Generator $G</em>{\mathcal{Y}\rightarrow \mathcal{X}}$将$\mathcal{Y}$ domain的图还原为$\mathcal{X}$ domain的图。</p>
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/cycle%20gan2.png" style="zoom:50%;" /></p>
+
+<p>Cycle GAN能保证真实图片和生成图片有一些关系，但如何保证这种关系是我们想要的呢？例如输入一个戴眼镜的人，$G<em>{\mathcal{X}\rightarrow \mathcal{Y}}$将眼镜转成痣，但$G</em>{\mathcal{Y}\rightarrow \mathcal{X}}$又会把痣转成眼镜。理论上可能会出现这样的情况，不过在实际中这种情况往往不会出现。</p>
+
 <p>类似地还有Disco GAN和Dual GAN，思想与Cycle GAN基本相同。</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1703.05192"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1703.05192] Learning to Discover Cross-Domain Relations with Generative Adversarial Networks (arxiv.org)</a></li>
-<li>[<a
-  href="https://arxiv.org/abs/1704.02510"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1704.02510] DualGAN: Unsupervised Dual Learning for Image-to-Image Translation (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1703.05192">1703.05192] Learning to Discover Cross-Domain Relations with Generative Adversarial Networks (arxiv.org)</a><br /></li>
+<li>[<a href="https://arxiv.org/abs/1704.02510">1704.02510] DualGAN: Unsupervised Dual Learning for Image-to-Image Translation (arxiv.org)</a><br />
+<br /></li>
 </ul>
+
 <p>此外还有能够在多种风格之间转换的Star GAN：</p>
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1704.02510"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1704.02510] DualGAN: Unsupervised Dual Learning for Image-to-Image Translation (arxiv.org)</a></li>
+<li>[<a href="https://arxiv.org/abs/1704.02510">1704.02510] DualGAN: Unsupervised Dual Learning for Image-to-Image Translation (arxiv.org)</a><br />
+<br /></li>
 </ul>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/starGAN.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/starGAN.png" style="zoom:50%;" /></p>
+
 <h3 id="selfie2anime">SELFIE2ANIME</h3>
+
 <ul>
-<li>
-<p><a
-  href="https://selfie2anime.com/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->Selfie2Anime</a></p>
-</li>
-<li>
-<p>[<a
-  href="https://arxiv.org/abs/1907.10830"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1907.10830] U-GAT-IT: Unsupervised Generative Attentional Networks with Adaptive Layer-Instance Normalization for Image-to-Image Translation (arxiv.org)</a></p>
-</li>
+<li><p><a href="https://selfie2anime.com/">Selfie2Anime</a></p></li>
+
+<li><p>[<a href="https://arxiv.org/abs/1907.10830">1907.10830] U-GAT-IT: Unsupervised Generative Attentional Networks with Adaptive Layer-Instance Normalization for Image-to-Image Translation (arxiv.org)</a></p></li>
 </ul>
+
 <h3 id="text-style-transfer">Text Style Transfer</h3>
+
 <p>文字风格转换，例如将负面的句子转为正面的句子。和Cycle GAN的做法类似。</p>
-<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/text%20style%20transfer.png" style="zoom:50%;" />
+
+<p><img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B2021%E6%98%A5/6/6-4/text%20style%20transfer.png" style="zoom:50%;" /></p>
+
 <h3 id="more">More</h3>
+
 <ul>
-<li>Unsupervised Abstractive Summarization
+<li>Unsupervised Abstractive Summarization<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1810.02851"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1810.02851] Learning to Encode Text as Human-Readable Summaries using Generative Adversarial Networks (arxiv.org)</a></li>
-</ul>
-</li>
-<li>Unsupervised Translation
+<li>[<a href="https://arxiv.org/abs/1810.02851">1810.02851] Learning to Encode Text as Human-Readable Summaries using Generative Adversarial Networks (arxiv.org)</a><br /></li>
+</ul></li>
+<li>Unsupervised Translation<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1710.04087"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1710.04087] Word Translation Without Parallel Data (arxiv.org)</a></li>
-<li>[<a
-  href="https://arxiv.org/abs/1710.11041"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1710.11041] Unsupervised Neural Machine Translation (arxiv.org)</a></li>
-</ul>
-</li>
-<li>Unsupervised ASR
+<li>[<a href="https://arxiv.org/abs/1710.04087">1710.04087] Word Translation Without Parallel Data (arxiv.org)</a><br /></li>
+<li>[<a href="https://arxiv.org/abs/1710.11041">1710.11041] Unsupervised Neural Machine Translation (arxiv.org)</a><br /></li>
+</ul></li>
+<li>Unsupervised ASR<br />
+
 <ul>
-<li>[<a
-  href="https://arxiv.org/abs/1804.00316"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1804.00316] Completely Unsupervised Phoneme Recognition by Adversarially Learning Mapping Relationships from Audio Embeddings (arxiv.org)</a></li>
-<li>[<a
-  href="https://arxiv.org/abs/1812.09323"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1812.09323] Unsupervised Speech Recognition via Segmental Empirical Output Distribution Matching (arxiv.org)</a></li>
-<li>[<a
-  href="https://arxiv.org/abs/1904.04100"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->1904.04100] Completely Unsupervised Speech Recognition By A Generative Adversarial Network Harmonized With Iteratively Refined Hidden Markov Models (arxiv.org)</a></li>
-</ul>
-</li>
+<li>[<a href="https://arxiv.org/abs/1804.00316">1804.00316] Completely Unsupervised Phoneme Recognition by Adversarially Learning Mapping Relationships from Audio Embeddings (arxiv.org)</a><br /></li>
+<li>[<a href="https://arxiv.org/abs/1812.09323">1812.09323] Unsupervised Speech Recognition via Segmental Empirical Output Distribution Matching (arxiv.org)</a><br /></li>
+<li>[<a href="https://arxiv.org/abs/1904.04100">1904.04100] Completely Unsupervised Speech Recognition By A Generative Adversarial Network Harmonized With Iteratively Refined Hidden Markov Models (arxiv.org)</a><br /></li>
+</ul></li>
 </ul></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -990,14 +783,14 @@ $D\in 1-Lipschitz$：$D$需要是一个足够平滑的函数，不能是变动�
   
 >阅读原始文档</a></span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）"><i class="fa-brands fa-twitter fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks"><i class="fa-brands fa-twitter fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）"><i class="fa-brands fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——生成式对抗网络（GAN）"><i class="fa-brands fa-evernote fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks" data-image="/images/GAN.jpg"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%9D%8E%E5%AE%8F%E6%AF%85ml%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C/" data-title="李宏毅ML课程笔记——Generative Adversarial Networks"><i class="fa-brands fa-evernote fa-fw"></i></a>
   </span>
       </div>
     </div>
@@ -1047,5 +840,5 @@ $D\in 1-Lipschitz$：$D$需要是一个足够平滑的函数，不能是变动�
   
   
 ><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

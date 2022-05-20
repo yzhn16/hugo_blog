@@ -3,6 +3,7 @@
 最近想给博客写一个相册界面，在网络找了一些实现方式但都不太满意，然而自己的前端基础几乎为零，只能拿此前生成的博客页面里的HTML源代码来参考，正好Fancybox也非常合适。找学过前端的室友请教了一下之后，魔改了一番此前博文的HTML代码，效果还不错，故在此分享一下我的实现方式。
 <!--more-->  
 *本文所提出的方案中，图片的存储基于[阿里云OSS对象存储](https://oss.console.aliyun.com/)实现。*
+
 # 效果图
 ![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/Hexo%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2/GIF.gif)
 # 缩略图生成

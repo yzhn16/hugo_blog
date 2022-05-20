@@ -1,6 +1,6 @@
 # Hexo博客及各组件的部署过程和常见问题
 
-![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/hexo.png)
+
 自从使用Hexo搭建个人博客以来，在建站、迁移以及服务器等方面都遇到了不少问题，本篇博文对所遇到的问题进行总结，会持续更新。
 <!--more-->
 # Linux设置定时任务

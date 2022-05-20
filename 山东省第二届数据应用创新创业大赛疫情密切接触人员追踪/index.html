@@ -8,16 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪 - yzhn&#39;s Notes</title><meta name="author" content="">
 <meta name="author-link" content="">
-<meta name="description" content="
-性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。" />
+<meta name="description" content="性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。" />
 <meta name="keywords" content="" /><meta itemprop="name" content="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪">
-<meta itemprop="description" content="
-性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。"><meta itemprop="datePublished" content="2021-04-03T23:13:00+00:00" />
+<meta itemprop="description" content="性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。"><meta itemprop="datePublished" content="2021-04-03T23:13:00+00:00" />
 <meta itemprop="dateModified" content="2021-04-03T23:13:00+00:00" />
 <meta itemprop="wordCount" content="5544"><meta itemprop="image" content="/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪" />
-<meta property="og:description" content="
-性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。" />
+<meta property="og:description" content="性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-03T23:13:00+00:00" />
@@ -27,12 +24,11 @@
 <meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪"/>
-<meta name="twitter:description" content="
-性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。"/>
+<meta name="twitter:description" content="性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。"/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" /><link rel="prev" href="/%E4%B8%AD%E7%A7%BB%E9%9B%86%E6%88%90%E9%9B%84%E5%AE%89%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6%E9%99%A2%E9%A6%96%E5%B1%8Aonecity%E7%BC%96%E7%A8%8B%E5%A4%A7%E8%B5%9B/" /><link rel="next" href="/pyecharts%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%A5zbg%E8%B4%A2%E7%BB%8F%E6%B1%82%E8%81%8C%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B%E4%B8%BA%E4%BE%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" /><link rel="prev" href="/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8D%9A%E5%AE%A2/" /><link rel="next" href="/pyecharts%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%A5zbg%E8%B4%A2%E7%BB%8F%E6%B1%82%E8%81%8C%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B%E4%B8%BA%E4%BE%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -53,14 +49,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper" github-corner="right">
     <div class="header-title">
-      <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="yzhn&#39;s Notes"
-    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -128,14 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="/images/fixit.svg"
-    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -204,7 +186,8 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -216,23 +199,60 @@
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="April 3, 2021" >April 3, 2021</time>
           </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 5544 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
-    </div><div class="content" id="content"><p><img
+    </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png 2x"
+    data-src="/images/sdbd2.jpg"
+    data-srcset="/images/sdbd2.jpg, /images/sdbd2.jpg 1.5x, /images/sdbd2.jpg 2x"
     data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png"
-    title="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/sdgov_2.png" />
-性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。</p>
+    alt="/images/sdbd2.jpg"
+    title="/images/sdbd2.jpg" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#赛题介绍">赛题介绍</a>
+<ul>
+<li><a href="#赛题任务">赛题任务</a></li>
+<li><a href="#评分标准">评分标准</a></li>
+<li><a href="#数据集描述">数据集描述</a></li>
+</ul></li>
+<li><a href="#解决思路">解决思路</a>
+<ul>
+<li><a href="#直接密接人员">直接密接人员</a></li>
+<li><a href="#间接密接人员">间接密接人员</a>
+<ul>
+<li><a href="#k-d-tree">K-D Tree</a></li>
+<li><a href="#网格化搜索">网格化搜索</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#关于效率">关于效率</a></li>
+<li><a href="#关于准确率">关于准确率</a></li>
+<li><a href="#个人实现完整代码">个人实现完整代码</a></li>
+<li><a href="#rank5实现-江离-重楼">Rank5实现（江离.重楼）</a></li>
+</ul></li>
+</ul>
+</nav></div>
+      </div><div class="content" id="content"><p>性能优化赛题，k-d树方案。初赛Rank28，复赛Rank16。</p>
+
 <h2 id="赛题介绍">赛题介绍</h2>
+
 <h3 id="赛题任务">赛题任务</h3>
+
 <p>　　通过筛选个人基本信息、个人防疫信息、亮码位置、亮码时间等数据，判定直接密接人员，间接密接人员，判定疫情传播风险等级，辅助决策疫情防控力度。</p>
+
 <h3 id="评分标准">评分标准</h3>
+
 <p>　　准确率分数使用<strong>macro F1</strong>计算。</p>
-<p>　　直接密接人员：与确诊患者亮码时间差的绝对值在5分钟内，距离在10米以内。<br>
-　　间接密接人员：与直接密接人员的亮码时间差的绝对值在5分钟内，距离在10米以内。<br>
+
+<p>　　直接密接人员：与确诊患者亮码时间差的绝对值在5分钟内，距离在10米以内。<br />
+　　间接密接人员：与直接密接人员的亮码时间差的绝对值在5分钟内，距离在10米以内。<br />
 　　如果既是直接密接人员又是间接密接人员，统一归类为直接密接人员。</p>
+
 <p>　　距离计算参考函数如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -255,26 +275,32 @@
 </span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">dlat</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">dlon</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 </span></span><span class="line"><span class="cl">    <span class="n">distance</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">asin</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">*</span> <span class="mf">6371.393</span> <span class="o">*</span> <span class="mi">1000</span>
 </span></span><span class="line"><span class="cl">    <span class="n">distance</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">distance</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">distance</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="数据集描述">数据集描述</h3>
-<p>　　<strong>个人轨迹数据（df_travel.csv）</strong>：<br>
-　　id：String，人员唯一ID<br>
-　　usetime：Date，亮码时间<br>
-　　lng：Float，亮码位置经度（小数点5位，GCJ02坐标系）<br>
+</div>
+<h3 id="数据集描述">数据集描述</h3>
+
+<p>　　<strong>个人轨迹数据（df_travel.csv）</strong>：<br />
+　　id：String，人员唯一ID<br />
+　　usetime：Date，亮码时间<br />
+　　lng：Float，亮码位置经度（小数点5位，GCJ02坐标系）<br />
 　　lat：Float，亮码位置纬度（小数点5位，GCJ02坐标系）</p>
-<p>　　<strong>确诊患者亮码记录（confirm.csv）</strong>：<br>
-　　亮码时间：Date，亮码时间；<br>
-　　lng：Float，亮码位置经度（小数点5位，GCJ02坐标系）<br>
-　　lat：Float，亮码位置纬度（小数点5位，GCJ02坐标系）<br>
-　　备注：String，确诊患者的具体行为<br>
+
+<p>　　<strong>确诊患者亮码记录（confirm.csv）</strong>：<br />
+　　亮码时间：Date，亮码时间；<br />
+　　lng：Float，亮码位置经度（小数点5位，GCJ02坐标系）<br />
+　　lat：Float，亮码位置纬度（小数点5位，GCJ02坐标系）<br />
+　　备注：String，确诊患者的具体行为<br />
 　　<em>只有一名确诊患者</em></p>
+
 <h2 id="解决思路">解决思路</h2>
-<p>　　整体上来看，方案比较常规，决赛还未开始，对于这题有没有一些特殊的方法，还需要等待答辩结束。  位于Rank5的江离重楼大佬在复赛结束后就分享了自己的代码和思路<br>
+
+<p>　　整体上来看，方案比较常规，决赛还未开始，对于这题有没有一些特殊的方法，还需要等待答辩结束。  位于Rank5的江离重楼大佬在复赛结束后就分享了自己的代码和思路<br />
 　　为每条轨迹记录添加唯一索引，先根据确诊人员信息和条件判断出直接密接的记录，根据这些记录筛选每个id在接触时间以后的所有记录，最后再根据这些记录和条件判断间接密接人员，<strong>先初筛，后细筛</strong>。</p>
+
 <h3 id="直接密接人员">直接密接人员</h3>
-<p>　　轨迹数据的规模为200万+条，确诊人员记录约为50条，规模并不大，所以直接考虑计算所有点对之间的Euclidean Distance / CityBlock Distance，筛选出亮码时间差在300秒以内以及经纬度距离在0.00025内的点对，再根据经纬度计算精确距离差，筛选出直接密接人员。<br>
+
+<p>　　轨迹数据的规模为200万+条，确诊人员记录约为50条，规模并不大，所以直接考虑计算所有点对之间的Euclidean Distance / CityBlock Distance，筛选出亮码时间差在300秒以内以及经纬度距离在0.00025内的点对，再根据经纬度计算精确距离差，筛选出直接密接人员。<br />
 　　在复赛阶段对这个方案又做了一些小优化，在线下环境成绩有所提升。由于确诊人员记录数量极少，所以根据这些点的经纬度及时间可以先大幅缩小搜索范围，即先使用集合运算挑选出处在可能范围内的人员轨迹记录，再做如上操作，代码如下。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -339,10 +365,10 @@
 </span></span><span class="line"><span class="cl">    <span class="n">c_result</span> <span class="o">=</span> <span class="n">c_idx</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distance</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># t_result = t_idx[np.where(distance &lt;= 10)[0]]</span>
 </span></span><span class="line"><span class="cl">   
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">candidate_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c_result</span><span class="p">)),</span> <span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">candidate_</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c_result</span><span class="p">)),</span> <span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>　　<strong>对距离计算函数进行了修改</strong>，使用numpy，改为矩阵并行计算。</p>
+</div>
+<p>　　<strong>对距离计算函数进行了修改</strong>，使用numpy，改为矩阵并行计算。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -360,13 +386,16 @@
 </span></span><span class="line"><span class="cl">    <span class="n">lat1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lat1</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="n">lng2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lng2</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="n">lat2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lat2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&#34;2 * arcsin(sqrt(sin((lat2 - lat1) / 2) ** 2 + cos(lat1) * cos(lat2) * sin((lng2 - lng1) / 2) ** 2)) * 6371.393 * 1000&#34;</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&#34;2 * arcsin(sqrt(sin((lat2 - lat1) / 2) ** 2 + cos(lat1) * cos(lat2) * sin((lng2 - lng1) / 2) ** 2)) * 6371.393 * 1000&#34;</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="间接密接人员">间接密接人员</h3>
-<p>　　关于间接密接人员的搜索，尝试了两种方案，一种是使用KD树，另一种是将经纬度以一定的尺度网格化（0.0001），对于直接密接人员的记录，搜索其附近的九个格子。<br>
+</div>
+<h3 id="间接密接人员">间接密接人员</h3>
+
+<p>　　关于间接密接人员的搜索，尝试了两种方案，一种是使用KD树，另一种是将经纬度以一定的尺度网格化（0.0001），对于直接密接人员的记录，搜索其附近的九个格子。<br />
 　　我所使用的是KD树的方案，然而比赛结束后看到Rank5 江离.重楼大佬在群里的分享，也是使用的网格化搜索的方案，不过语言方面使用的是C++，这才意识到针对计算密集型程序Python和C++巨大的效率差距，初赛阶段看到以Python作为入口语言，就默认用Python实现了，复赛阶段也一直没向这个方向进行优化，最后只排到了Rank16，这也是做这次比赛的遗憾之处吧~</p>
+
 <h4 id="k-d-tree">K-D Tree</h4>
+
 <p>　　Scipy中提供了KDTree的接口，scipy.spatial.cKDTree，其底层使用C语言实现，效率更高。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -427,28 +456,28 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">c_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_idx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">distance</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">candidate</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c_result</span><span class="p">)),</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">candidate</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c_result</span><span class="p">)),</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="网格化搜索">网格化搜索</h4>
-<p>　　网格化搜索实现起来相对比较简单，其思想类似于GeoHash，即将二位的经纬度坐标点映射到一维，但GeoHash在这里并不适合，一方面是效率过低，另一方面，和直接将经纬度点映射到0,1,&hellip;,n的效果相同。<br>
-<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png"
-    title="GeoHash" /></p>
+</div>
+<h4 id="网格化搜索">网格化搜索</h4>
+
+<p>　　网格化搜索实现起来相对比较简单，其思想类似于GeoHash，即将二位的经纬度坐标点映射到一维，但GeoHash在这里并不适合，一方面是效率过低，另一方面，和直接将经纬度点映射到0,1,&hellip;,n的效果相同。<br />
+  <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/ShanDongBD_covid/2095550-d86dc182d102451b.png" alt="GeoHash" /></p>
+
 <h2 id="关于效率">关于效率</h2>
-<p>　　复赛结束时，线上成绩约为30s，并不算优秀。<br>
-　　除计算外，I/O方面的优化也是本题的上分点之一。<br>
+
+<p>　　复赛结束时，线上成绩约为30s，并不算优秀。<br />
+　　除计算外，I/O方面的优化也是本题的上分点之一。<br />
 　　关于效率的计算，比较奇怪的是，线上评测成绩的抖动幅度似乎不小，我个人第一次和第二次提交的代码几乎相同，但线上成绩提升了近30%，除此之外，主办方所的线上环境只开放了CPU的一个核心，但经过实验，多进程对该题是work的，能带来大概25%的提升。但如果时间效率足够高的话，多进程显然就不太合适了，进程创建和切换所带来的开销已经不能忽略不计了。</p>
+
 <h2 id="关于准确率">关于准确率</h2>
-<p>　　初赛使用该方案的macro F1为1.0，但是对于复赛阶段的数据为0.999179，针对复赛的数据如何达到1.0还需要等决赛答辩后学习思路。<br>
-　　补充：经验证，将密接的亮码时间判定从300秒改为310秒即可达到1.0的准确率，逻辑比较迷。<br>
+
+<p>　　初赛使用该方案的macro F1为1.0，但是对于复赛阶段的数据为0.999179，针对复赛的数据如何达到1.0还需要等决赛答辩后学习思路。<br />
+　　补充：经验证，将密接的亮码时间判定从300秒改为310秒即可达到1.0的准确率，逻辑比较迷。<br />
 　　不过这场比赛在密接的判定上确实比较模糊，有些复杂情况难以判定，主办方在一些问题上也没有给出明确的答复，需要多次尝试来进行验证。</p>
+
 <h2 id="个人实现完整代码">个人实现完整代码</h2>
+
 <p>　　<strong>由纯Python实现</strong>，和C/C++等语言的实现相比，时间效率并不算高，仅供参考。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -713,10 +742,11 @@
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">dirname</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 所需预测的文件夹</span>
 </span></span><span class="line"><span class="cl">    <span class="n">savePath</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 预测结果保存文件</span>
-</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">savePath</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">savePath</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="rank5实现江离重楼">Rank5实现（江离.重楼）</h2>
+</div>
+<h2 id="rank5实现-江离-重楼">Rank5实现（江离.重楼）</h2>
+
 <p>　　转自群聊。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1795,8 +1825,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">getDist</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">    <span class="n">work</span><span class="p">(</span><span class="s">&#34;../data/record.csv&#34;</span><span class="p">,</span> <span class="s">&#34;../data/df_travel.csv&#34;</span><span class="p">,</span> <span class="s">&#34;../submit.csv&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
@@ -1825,7 +1854,7 @@
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪" data-image="/images/sdbd2.jpg"><i class="fa-brands fa-weibo fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E5%B1%B1%E4%B8%9C%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E7%96%AB%E6%83%85%E5%AF%86%E5%88%87%E6%8E%A5%E8%A7%A6%E4%BA%BA%E5%91%98%E8%BF%BD%E8%B8%AA/" data-title="山东省第二届数据应用创新创业大赛——疫情密切接触人员追踪"><i class="fa-brands fa-evernote fa-fw"></i></a>
@@ -1841,7 +1870,7 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/%E4%B8%AD%E7%A7%BB%E9%9B%86%E6%88%90%E9%9B%84%E5%AE%89%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6%E9%99%A2%E9%A6%96%E5%B1%8Aonecity%E7%BC%96%E7%A8%8B%E5%A4%A7%E8%B5%9B/" class="prev" rel="prev" title="中移集成（雄安产业研究院）首届OneCity编程大赛"><i class="fa-solid fa-angle-left fa-fw"></i>中移集成（雄安产业研究院）首届OneCity编程大赛</a>
+  <div class="post-nav"><a href="/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%8D%9A%E5%AE%A2/" class="prev" rel="prev" title="使用Hexo搭建静态页面博客"><i class="fa-solid fa-angle-left fa-fw"></i>使用Hexo搭建静态页面博客</a>
       <a href="/pyecharts%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%A5zbg%E8%B4%A2%E7%BB%8F%E6%B1%82%E8%81%8C%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B%E4%B8%BA%E4%BE%8B/" class="next" rel="next" title="Pyecharts数据可视化（以ZBG财经求职力挑战赛为例）">Pyecharts数据可视化（以ZBG财经求职力挑战赛为例）<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></main><footer class="footer">
@@ -1878,5 +1907,5 @@
   
   
 ><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

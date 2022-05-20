@@ -1,6 +1,6 @@
 # 2022招商银行FinTech精英训练营 数据赛道首日基线
 
-![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/fintech2022/fintech2022.png)
+
 一个简单的方案，lgb五折，无特征工程，仅简单处理了缺失值，CV 0.9504 LB 0.9535。
 
 <!--more-->

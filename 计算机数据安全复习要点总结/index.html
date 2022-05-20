@@ -12,7 +12,7 @@
 <meta name="keywords" content="" /><meta itemprop="name" content="计算机数据安全复习要点总结">
 <meta itemprop="description" content="本文参考《计算机信息安全技术》（付永钢著）对计算机数据安全课程中的主要内容进行总结。"><meta itemprop="datePublished" content="2021-05-17T16:51:00+00:00" />
 <meta itemprop="dateModified" content="2021-05-17T16:51:00+00:00" />
-<meta itemprop="wordCount" content="18699"><meta itemprop="image" content="/logo.png"/>
+<meta itemprop="wordCount" content="18558"><meta itemprop="image" content="/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="计算机数据安全复习要点总结" />
 <meta property="og:description" content="本文参考《计算机信息安全技术》（付永钢著）对计算机数据安全课程中的主要内容进行总结。" />
 <meta property="og:type" content="article" />
@@ -37,7 +37,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93\/"
-    },"genre": "posts","wordcount":  18699 ,
+    },"genre": "posts","wordcount":  18558 ,
     "url": "\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93\/","datePublished": "2021-05-17T16:51:00+00:00","dateModified": "2021-05-17T16:51:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -49,14 +49,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper" github-corner="right">
     <div class="header-title">
-      <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="yzhn&#39;s Notes"
-    title="yzhn&#39;s Notes" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -124,14 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="yzhn&#39;s Notes"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/images/fixit.svg"
-    data-srcset="/images/fixit.svg, /images/fixit.svg 1.5x, /images/fixit.svg 2x"
-    data-sizes="auto"
-    alt="/images/fixit.svg"
-    title="/images/fixit.svg" /><span class="header-title-text">yzhn&#39;s Notes</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="yzhn&#39;s Notes"><span class="header-title-text">乘月返真</span></a><span class="header-subtitle">YZhn的个人空间</span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -200,7 +186,8 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container-reverse" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -210,543 +197,746 @@
       
       <div class="post-meta-line"><span title=2021-05-17&#32;16:51:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 17, 2021" >May 17, 2021</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 18699 字&nbsp;
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 18558 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 38 分钟&nbsp;</div>
-    </div><div class="content" id="content"><p>本文参考《计算机信息安全技术》（付永钢著）对计算机数据安全课程中的主要内容进行总结。</p>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/cryptology.jpeg"
+    data-srcset="/images/cryptology.jpeg, /images/cryptology.jpeg 1.5x, /images/cryptology.jpeg 2x"
+    data-sizes="auto"
+    alt="/images/cryptology.jpeg"
+    title="/images/cryptology.jpeg" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+<ul>
+<li><a href="#第1章-计算机信息安全技术概述">第1章 计算机信息安全技术概述</a>
+<ul>
+<li><a href="#信息安全模型">信息安全模型</a>
+<ul>
+<li><a href="#通信安全模型">通信安全模型</a></li>
+<li><a href="#信息访问安全模型">信息访问安全模型</a></li>
+<li><a href="#动态安全模型">动态安全模型</a></li>
+<li><a href="#appdrr模型">APPDRR模型</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#第2章-密码技术">第2章 密码技术</a>
+<ul>
+<li><a href="#传统密码体制">传统密码体制</a>
+<ul>
+<li><a href="#代换密码">代换密码</a>
+<ul>
+<li><a href="#移位密码-凯撒密码">移位密码/凯撒密码</a></li>
+<li><a href="#仿射密码">仿射密码</a></li>
+</ul></li>
+<li><a href="#传统密码的分析">传统密码的分析</a>
+<ul>
+<li><a href="#统计分析法">统计分析法</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#现代对称密码体制">现代对称密码体制</a>
+<ul>
+<li><a href="#des">DES</a></li>
+</ul></li>
+<li><a href="#非对称密码体制">非对称密码体制</a>
+<ul>
+<li><a href="#rsa">RSA</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#第3章-信息认证技术">第3章 信息认证技术</a>
+<ul>
+<li><a href="#哈希函数">哈希函数</a>
+<ul>
+<li><a href="#md5">MD5</a></li>
+</ul></li>
+<li><a href="#消息认证技术">消息认证技术</a>
+<ul>
+<li><a href="#消息认证方法">消息认证方法</a>
+<ul>
+<li><a href="#基于加密方法的消息认证">基于加密方法的消息认证</a>
+<ul>
+<li><a href="#基于对称加密方式的消息认证过程">基于对称加密方式的消息认证过程</a></li>
+<li><a href="#添加校验码的消息认证过程">添加校验码的消息认证过程</a></li>
+<li><a href="#基于公钥加密的消息认证过程">基于公钥加密的消息认证过程</a></li>
+</ul></li>
+<li><a href="#基于哈希函数的消息认证">基于哈希函数的消息认证</a>
+<ul>
+<li><a href="#使用哈希函数的消息认证过程">使用哈希函数的消息认证过程</a></li>
+<li><a href="#保证机密性的哈希函数消息认证过程">保证机密性的哈希函数消息认证过程</a></li>
+<li><a href="#混合加密认证">混合加密认证</a></li>
+</ul></li>
+<li><a href="#基于消息认证码-mac-的消息认证">基于消息认证码（MAC）的消息认证</a>
+<ul>
+<li><a href="#基于消息认证码的认证过程">基于消息认证码的认证过程</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#数字签名">数字签名</a>
+<ul>
+<li><a href="#数字签名的实现">数字签名的实现</a>
+<ul>
+<li><a href="#直接数字签名">直接数字签名</a></li>
+<li><a href="#仲裁数字签名">仲裁数字签名</a>
+<ul>
+<li><a href="#方案1-采用对称加密算法的数字签名">方案1：采用对称加密算法的数字签名</a></li>
+<li><a href="#方案2-使用对称密码算法-密文传输">方案2：使用对称密码算法，密文传输</a></li>
+<li><a href="#方案3-使用公开密钥算法-密文传输">方案3：使用公开密钥算法，密文传输</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#身份认证">身份认证</a>
+<ul>
+<li><a href="#基于对称密钥的身份认证">基于对称密钥的身份认证</a>
+<ul>
+<li><a href="#基于对称密钥的双向身份认证">基于对称密钥的双向身份认证</a>
+<ul>
+<li><a href="#needham-schroeder协议">Needham-Schroeder协议</a></li>
+<li><a href="#denning协议">Denning协议</a></li>
+<li><a href="#neuman-stubblebine协议">Neuman-Stubblebine协议</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#基于公钥的身份认证">基于公钥的身份认证</a>
+<ul>
+<li><a href="#基于公钥的双向身份认证">基于公钥的双向身份认证</a>
+<ul>
+<li><a href="#denning-sacco协议">Denning-Sacco协议</a></li>
+<li><a href="#woo-lam协议">Woo-Lam协议</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#第4章-计算机病毒">第4章 计算机病毒</a>
+<ul>
+<li><a href="#计算机病毒的特征及分类">计算机病毒的特征及分类</a>
+<ul>
+<li><a href="#计算机病毒的特征">计算机病毒的特征</a>
+<ul>
+<li><a href="#传染性">传染性</a></li>
+<li><a href="#破坏性">破坏性</a></li>
+<li><a href="#隐蔽性">隐蔽性</a></li>
+<li><a href="#寄生性">寄生性</a></li>
+<li><a href="#可触发性">可触发性</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#计算机病毒制作与反病毒技术">计算机病毒制作与反病毒技术</a>
+<ul>
+<li><a href="#病毒的检测">病毒的检测</a>
+<ul>
+<li><a href="#特征代码法">特征代码法</a></li>
+<li><a href="#校验和法">校验和法</a></li>
+<li><a href="#行为监测法">行为监测法</a></li>
+<li><a href="#软件模拟法">软件模拟法</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#第5章-网络攻击与防范技术">第5章 网络攻击与防范技术</a>
+<ul>
+<li><a href="#网络攻击概述和分类">网络攻击概述和分类</a>
+<ul>
+<li><a href="#网络攻击的步骤概览">网络攻击的步骤概览</a></li>
+</ul></li>
+<li><a href="#拒绝服务攻击">拒绝服务攻击</a></li>
+</ul></li>
+<li><a href="#第6章-防火墙技术">第6章 防火墙技术</a>
+<ul>
+<li><a href="#防火墙的体系结构">防火墙的体系结构</a>
+<ul>
+<li><a href="#堡垒主机体系结构">堡垒主机体系结构</a></li>
+<li><a href="#双宿主主机体系结构">双宿主主机体系结构</a></li>
+<li><a href="#屏蔽主机体系结构">屏蔽主机体系结构</a></li>
+<li><a href="#屏蔽子网体系结构">屏蔽子网体系结构</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#第7章-入侵检测技术">第7章 入侵检测技术</a>
+<ul>
+<li><a href="#入侵检测系统的特点和分类">入侵检测系统的特点和分类</a>
+<ul>
+<li><a href="#入侵检测系统的分类">入侵检测系统的分类</a>
+<ul>
+<li><a href="#基于主机的入侵检测系统">基于主机的入侵检测系统</a></li>
+<li><a href="#基于网络的入侵检测系统">基于网络的入侵检测系统</a></li>
+<li><a href="#分布式入侵检测系统">分布式入侵检测系统</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+      </div><div class="content" id="content"><p>本文参考《计算机信息安全技术》（付永钢著）对计算机数据安全课程中的主要内容进行总结。</p>
+
 <h1 id="第1章-计算机信息安全技术概述">第1章 计算机信息安全技术概述</h1>
+
 <h2 id="信息安全模型">信息安全模型</h2>
+
 <h3 id="通信安全模型">通信安全模型</h3>
-<p>　　通信一方通过公开信道将消息传送给另一方，要保护信息传输的机密性、真实性等特性，就涉及通信安全。通信的发送方要对信息进行相关的安全变换，可以是加密、签名，接收方接收后，再进行相关的逆变换，如解密、验证、签名等。双方进行的安全变换通常需要使用一些秘密信息，如加密密钥、解密密钥等。根据上述安全模型，设计安全服务需要完成以下4个基本任务。<br>
-　　（1）设计一个算法，执行安全相关的转换，算法应具有足够的安全强度。<br>
-　　（2）生成该算法所使用的秘密信息，也就是密钥。<br>
-　　（3）设计秘密信息的分布与共享的方法，也就是密钥的分配方案。<br>
-　　（4）设定通信双方使用的安全协议，该协议利用密码算法和密钥实现安全服务。<br>
-　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    title="经典的通信安全模型" /></p>
+
+<p>　　通信一方通过公开信道将消息传送给另一方，要保护信息传输的机密性、真实性等特性，就涉及通信安全。通信的发送方要对信息进行相关的安全变换，可以是加密、签名，接收方接收后，再进行相关的逆变换，如解密、验证、签名等。双方进行的安全变换通常需要使用一些秘密信息，如加密密钥、解密密钥等。根据上述安全模型，设计安全服务需要完成以下4个基本任务。<br />
+　　（1）设计一个算法，执行安全相关的转换，算法应具有足够的安全强度。<br />
+　　（2）生成该算法所使用的秘密信息，也就是密钥。<br />
+　　（3）设计秘密信息的分布与共享的方法，也就是密钥的分配方案。<br />
+　　（4）设定通信双方使用的安全协议，该协议利用密码算法和密钥实现安全服务。<br />
+　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%BB%8F%E5%85%B8%E7%9A%84%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png" alt="经典的通信安全模型" /></p>
+
 <h3 id="信息访问安全模型">信息访问安全模型</h3>
-<p>　　还有一些与安全相关的情形不完全适用于上述模型，William Stallings给出了如图所示的信息访问安全模型。该模型希望保护信息系统不受有害的访问。有害的访问分为两种：一种有害的访问是由黑客发起的，他们有时并没有恶意，只是满足于闯入计算机系统，展示自己的技术水平或利用计算机技术进行获利；另一种有害的访问来源于恶意软件，如病毒、木马、蠕虫等。对付有害攻击所需要的安全服务包含鉴别和访问控制两类。<br>
-<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    title="信息访问安全模型" /></p>
+
+<p>　　还有一些与安全相关的情形不完全适用于上述模型，William Stallings给出了如图所示的信息访问安全模型。该模型希望保护信息系统不受有害的访问。有害的访问分为两种：一种有害的访问是由黑客发起的，他们有时并没有恶意，只是满足于闯入计算机系统，展示自己的技术水平或利用计算机技术进行获利；另一种有害的访问来源于恶意软件，如病毒、木马、蠕虫等。对付有害攻击所需要的安全服务包含鉴别和访问控制两类。<br />
+  <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%A1%E6%81%AF%E8%AE%BF%E9%97%AE%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png" alt="信息访问安全模型" /></p>
+
 <h3 id="动态安全模型">动态安全模型</h3>
-<p>　　PPDR模型由4个主要部分组成：安全策略（Policy）、防护（Protection）、检测（Detection）和响应（Response）。PPDR模型是在整体的安全策略的控制和指导下，综合运用防护工具（如防火墙、身份认证、加密等）的同时，利用检测工具（如漏洞评估、入侵检测系统）了解和评估系统的安全状态，通过适当的安全响应将系统调整到一个比较安全的状态。防护、检测和响应组成了一个完整的、动态的安全循环。<br>
-<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    title="PPDR安全模型" /></p>
+
+<p>　　PPDR模型由4个主要部分组成：安全策略（Policy）、防护（Protection）、检测（Detection）和响应（Response）。PPDR模型是在整体的安全策略的控制和指导下，综合运用防护工具（如防火墙、身份认证、加密等）的同时，利用检测工具（如漏洞评估、入侵检测系统）了解和评估系统的安全状态，通过适当的安全响应将系统调整到一个比较安全的状态。防护、检测和响应组成了一个完整的、动态的安全循环。<br />
+  <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/PPDR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png" alt="PPDR安全模型" /></p>
+
 <h3 id="appdrr模型">APPDRR模型</h3>
-<p>　　网络安全的动态特性在PPDR模型中得到了一定程度的体现，其中主要是通过入侵的检测和响应完成网络安全的动态防护。但PPDR模型不能描述网络安全的动态螺旋上升过程。为了使PPDR模型能够贴切地描述网络安全的本质规律，人们对PPDR模型进行了修正和补充，在此基础上提出了 APPDRR模型，如图1.5所示。APPDRR模型认为网络安全由风险评估（Assessment）、安全策略（Policy）、系统防护（Protection）、动态检测（Detection）、实时响应（Reaction）和灾难恢复（Restoration）6个部分组成。<br>
-<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png"
-    title="APPDRR模型" /></p>
+
+<p>　　网络安全的动态特性在PPDR模型中得到了一定程度的体现，其中主要是通过入侵的检测和响应完成网络安全的动态防护。但PPDR模型不能描述网络安全的动态螺旋上升过程。为了使PPDR模型能够贴切地描述网络安全的本质规律，人们对PPDR模型进行了修正和补充，在此基础上提出了 APPDRR模型，如图1.5所示。APPDRR模型认为网络安全由风险评估（Assessment）、安全策略（Policy）、系统防护（Protection）、动态检测（Detection）、实时响应（Reaction）和灾难恢复（Restoration）6个部分组成。<br />
+  <img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/APPDRR%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B.png" alt="APPDRR模型" /></p>
+
 <h1 id="第2章-密码技术">第2章 密码技术</h1>
+
 <h2 id="传统密码体制">传统密码体制</h2>
+
 <h3 id="代换密码">代换密码</h3>
-<h4 id="移位密码凯撒密码">移位密码/凯撒密码</h4>
-<p>　　设$P = C = Z_{26} $，对$ 0 ≤ k ≤ 25$，定义：
-$$
-\begin{aligned}
-e_k(x) &amp;= (x+k)\ mod\ 26 \
-d(y) &amp;= (y-k)\ mod\ 26
-\end{aligned}
-$$
-　　其中$ x,y ∈ Z_{26} $。</p>
+
+<h4 id="移位密码-凯撒密码">移位密码/凯撒密码</h4>
+
+<p>　　设$P = C = Z_{26} $，对$ 0 ≤ k ≤ 25$，定义：<br />
+$$<br />
+\begin{aligned}<br />
+e<em>k(x) &amp;= (x+k)\ mod\ 26 <br />
+d(y) &amp;= (y-k)\ mod\ 26<br />
+\end{aligned}<br />
+$$<br />
+　　其中$ x,y ∈ Z</em>{26} $。</p>
+
 <p>　　<strong>凯撒(Caesar)密码</strong>是$ k=3 $的情况，即向右移动源字母表中的三个字母。</p>
+
 <p>　　<strong>eg</strong>. 若明文为：”please confirm receipt“，则密文为”SOHDVH FRQILUP UHFHLSW“。</p>
+
 <p>　　代换字母表如下所示。</p>
-<p>$$
-\begin{array}{c|ccccccccccccc}
-\searrow &amp; A &amp; B &amp; C &amp; D &amp; E &amp; F &amp; G &amp; H &amp; I &amp; J &amp; K &amp; L &amp; M  \
-\hline
-\ &amp; D &amp; E &amp; F &amp; G &amp; H &amp; I &amp; J &amp; K &amp; L &amp; M &amp; N &amp; O &amp; P \
-\hline
-\searrow &amp; N &amp; O &amp; P &amp; Q &amp; R &amp; S &amp; T &amp; U &amp; V &amp; W &amp; X &amp; Y &amp; Z \
-\hline
-\ &amp; Q &amp; R &amp; S &amp; T &amp; U &amp; V &amp; W &amp; X &amp; Y &amp; Z &amp; A &amp; B &amp; C
-\end{array}
+
+<p>$$<br />
+\begin{array}{c|ccccccccccccc}<br />
+\searrow &amp; A &amp; B &amp; C &amp; D &amp; E &amp; F &amp; G &amp; H &amp; I &amp; J &amp; K &amp; L &amp; M  <br />
+\hline<br />
+\ &amp; D &amp; E &amp; F &amp; G &amp; H &amp; I &amp; J &amp; K &amp; L &amp; M &amp; N &amp; O &amp; P <br />
+\hline<br />
+\searrow &amp; N &amp; O &amp; P &amp; Q &amp; R &amp; S &amp; T &amp; U &amp; V &amp; W &amp; X &amp; Y &amp; Z <br />
+\hline<br />
+\ &amp; Q &amp; R &amp; S &amp; T &amp; U &amp; V &amp; W &amp; X &amp; Y &amp; Z &amp; A &amp; B &amp; C<br />
+\end{array}<br />
 $$</p>
+
 <h4 id="仿射密码">仿射密码</h4>
-<p>　　设$ P=C=Z_{26} $，且$K={(a,b)∈Z_{26} × Z_{26} | gcd(a,26)=1}$，对$k=(a,b)∈K$ ，定义：<br>
-$$
-\begin{aligned}
-e_k(x) &amp;= (ax+b)\ mod\ 26 \
-d_k(y) &amp;= a^{-1}(y-b)\ mod\ 26
-\end{aligned}
-$$
-　　其中$ (x,y) ∈ Z_{26} $。</p>
-<p>　　<strong>eg</strong>.假定$ k=(7,3),7^{-1}\ mod\ 26=15$，加密函数为$ e_k(x)=7x+3 $，则相应的解密函数为$ d_k(y)=$$15(y-3)=15y-19 $，其中所有的运算都是在$Z_{26}$中。容易验证，$d_k(e_k(x))=$ $d_k(7x+3)=$ $15(7x+3)-19=$ $x+45-19=x$。</p>
+
+<p>　　设$ P=C=Z<em>{26} $，且$K={(a,b)∈Z</em>{26} × Z_{26} | gcd(a,26)=1}$，对$k=(a,b)∈K$ ，定义：<br />
+$$<br />
+\begin{aligned}<br />
+e_k(x) &amp;= (ax+b)\ mod\ 26 <br />
+d<em>k(y) &amp;= a^{-1}(y-b)\ mod\ 26<br />
+\end{aligned}<br />
+$$<br />
+　　其中$ (x,y) ∈ Z</em>{26} $。</p>
+
+<p>　　<strong>eg</strong>.假定$ k=(7,3),7^{-1}\ mod\ 26=15$，加密函数为$ e_k(x)=7x+3 $，则相应的解密函数为$ d<em>k(y)=$$15(y-3)=15y-19 $，其中所有的运算都是在$Z</em>{26}$中。容易验证，$d_k(e_k(x))=$ $d_k(7x+3)=$ $15(7x+3)-19=$ $x+45-19=x$。</p>
+
 <p>　　关于$a^{-1}$：$a$在$Z_m$群的乘法逆元，其值可通过费马小定理求出，以下给出仿射密码中$a$与$a^{-1}$的对应表。</p>
-<p>$$
-\begin{array} {c|cccccccccccc}
-a &amp; 1 &amp; 3 &amp; 5 &amp; 7 &amp; 9 &amp; 11 &amp; 15 &amp; 17 &amp; 19 &amp;21 &amp; 23 &amp; 25 \
-\hline
-a^{-1} &amp; 1 &amp; 9 &amp; 21 &amp; 15 &amp; 3 &amp; 19 &amp; 7 &amp; 23 &amp; 11 &amp; 5 &amp; 17 &amp;25
-\end{array}
+
+<p>$$<br />
+\begin{array} {c|cccccccccccc}<br />
+a &amp; 1 &amp; 3 &amp; 5 &amp; 7 &amp; 9 &amp; 11 &amp; 15 &amp; 17 &amp; 19 &amp;21 &amp; 23 &amp; 25 <br />
+\hline<br />
+a^{-1} &amp; 1 &amp; 9 &amp; 21 &amp; 15 &amp; 3 &amp; 19 &amp; 7 &amp; 23 &amp; 11 &amp; 5 &amp; 17 &amp;25<br />
+\end{array}<br />
 $$</p>
+
 <h3 id="传统密码的分析">传统密码的分析</h3>
+
 <h4 id="统计分析法">统计分析法</h4>
-<p>　　通过对大量材料的汇编统计，获得26个字母的概率分布。
-$$
-\begin{array} {cc|cc|cc|cc}
-字母 &amp; 概率 &amp; 字母 &amp; 概率 &amp; 字母 &amp; 概率 &amp; 字母 &amp; 概率 \
-\hline
-A &amp; 0.082 &amp; H &amp; 0.061 &amp; O &amp; 0.075 &amp; V &amp; 0.010 \
-B &amp; 0.015 &amp; I &amp; 0.070 &amp; P &amp; 0.019 &amp; W &amp; 0.023 \
-C &amp; 0.028 &amp; J &amp; 0.002 &amp; Q &amp; 0.001 &amp; X &amp; 0.001 \
-D &amp; 0.043 &amp; K &amp; 0.008 &amp; R &amp; 0.060 &amp; Y &amp; 0.020 \
-E  &amp; 0.127 &amp; L &amp;  0.040 &amp; S &amp; 0.063 &amp; Z &amp; 0.001 \
-F &amp; 0.022 &amp; M &amp; 0.024 &amp; T &amp; 0.091 \
-G &amp; 0.020 &amp; N &amp; 0.067 &amp; U &amp; 0.028
-\end{array}
-$$
-　　基于以上概率分布，可以把26个字母分为以下5组。<br>
-　　（1）E出现的概率最高，大约为0.12；<br>
-　　（2）T、A、O、I、N、S、H、R每个出现的概率为0.06~0.09；　　
-　　（3）D、L每个出现的概率大约为0.04；　　
-　　（4）C、U、M、W、F、G、Y、P、B每个出现的概率为0.015~0.023；　　
-　　（5）V、K、J、Ⅹ、Q、Z出现的概率最低，每个出现的概率都少于0.01。<br>
-　　对单表代换密码和置换密码进行分析时，可以利用该语言的统计规律性进行分析，较容易得到正确的解密结果。<br>
-　　<strong>eg</strong>.假设从仿射密码获得的密文为：“FMXVEDKAPHFERBNDKRXRSREFMORUDSDKDVSHVUFEDKAPRKDLYEVLRHHR”。<br>
+
+<p>　　通过对大量材料的汇编统计，获得26个字母的概率分布。<br />
+$$<br />
+\begin{array} {cc|cc|cc|cc}<br />
+字母 &amp; 概率 &amp; 字母 &amp; 概率 &amp; 字母 &amp; 概率 &amp; 字母 &amp; 概率 <br />
+\hline<br />
+A &amp; 0.082 &amp; H &amp; 0.061 &amp; O &amp; 0.075 &amp; V &amp; 0.010 <br />
+B &amp; 0.015 &amp; I &amp; 0.070 &amp; P &amp; 0.019 &amp; W &amp; 0.023 <br />
+C &amp; 0.028 &amp; J &amp; 0.002 &amp; Q &amp; 0.001 &amp; X &amp; 0.001 <br />
+D &amp; 0.043 &amp; K &amp; 0.008 &amp; R &amp; 0.060 &amp; Y &amp; 0.020 <br />
+E  &amp; 0.127 &amp; L &amp;  0.040 &amp; S &amp; 0.063 &amp; Z &amp; 0.001 <br />
+F &amp; 0.022 &amp; M &amp; 0.024 &amp; T &amp; 0.091 <br />
+G &amp; 0.020 &amp; N &amp; 0.067 &amp; U &amp; 0.028<br />
+\end{array}<br />
+$$<br />
+　　基于以上概率分布，可以把26个字母分为以下5组。<br />
+　　（1）E出现的概率最高，大约为0.12；<br />
+　　（2）T、A、O、I、N、S、H、R每个出现的概率为0.06~0.09；　　<br />
+　　（3）D、L每个出现的概率大约为0.04；　　<br />
+　　（4）C、U、M、W、F、G、Y、P、B每个出现的概率为0.015~0.023；　　<br />
+　　（5）V、K、J、Ⅹ、Q、Z出现的概率最低，每个出现的概率都少于0.01。<br />
+　　对单表代换密码和置换密码进行分析时，可以利用该语言的统计规律性进行分析，较容易得到正确的解密结果。<br />
+　　<strong>eg</strong>.假设从仿射密码获得的密文为：“FMXVEDKAPHFERBNDKRXRSREFMORUDSDKDVSHVUFEDKAPRKDLYEVLRHHR”。<br />
 　　密文字母出现的频率是R（8次），D（7次），E（5次），H（5次），K（5次），F（4次），S（4次），V（4次）。可以假定R是e的加密，且D是t的加密，因为e和t分别是两个最常见的字母。数值化后，有$e_k(4)=17$，且$e_k(19)=3$。代入加密函数$e_k(x)=ax+b$，可得到一个含两个未知量的线性方程组：</p>
-<p>$$
-\left{
-\begin{aligned}
-4a+b &amp;= 17 \
-19a+b &amp;= 3
-\end{aligned}
-\right.
+
+<p>$$<br />
+\left{<br />
+\begin{aligned}<br />
+4a+b &amp;= 17 <br />
+19a+b &amp;= 3<br />
+\end{aligned}<br />
+\right.<br />
 $$</p>
-<p>　　这个系统有唯一的解$a=6,b=19$（在$Z_{26}$上）。但这是一个非法的密钥，因为$gcd(a,26)=2&gt;1$，所以上面的假设有误。
-下一个猜想可能R是e的加密，E是t的加密，得$a=13$，又是不可能的。继续假定R是e的加密，且K是t的加密。于是产生了$a=3,b=5$，这至少是一个合法的密钥。接下来计算相应于$k=(3,5)$的解密函数，然后解密密文看是否得到了有意义的英文串。容易证明这是一个有效的密钥。<br>
-　　最后的明文是:<br>
+
+<p>　　这个系统有唯一的解$a=6,b=19$（在$Z_{26}$上）。但这是一个非法的密钥，因为$gcd(a,26)=2&gt;1$，所以上面的假设有误。<br />
+下一个猜想可能R是e的加密，E是t的加密，得$a=13$，又是不可能的。继续假定R是e的加密，且K是t的加密。于是产生了$a=3,b=5$，这至少是一个合法的密钥。接下来计算相应于$k=(3,5)$的解密函数，然后解密密文看是否得到了有意义的英文串。容易证明这是一个有效的密钥。<br />
+　　最后的明文是:<br />
 　　<code>algorithms are quite general definitions of arithmetic processes</code></p>
+
 <h2 id="现代对称密码体制">现代对称密码体制</h2>
+
 <h3 id="des">DES</h3>
+
 <p>　　// TODO</p>
+
 <h2 id="非对称密码体制">非对称密码体制</h2>
+
 <h3 id="rsa">RSA</h3>
-<p>　　RSA中，公开密钥和私人密钥是一对大素数（100~200位十进制数或更大）的函数。在使用RSA公钥体制之前，每个参与者必须产生一对密钥。<br>
-　　（1）密钥产生<br>
-　　　　①随机选择两个不同的大素数$p$和$q$，计算乘积$n=p×q$。<br>
-　　　　②计算其欧拉函数值$\Phi(x)=(p-1)(q-1)$。<br>
-　　　　③随机选取加密密钥$k$，使$k$与$\Phi(n)$互素，即$gcd(k,\Phi(n))=1$。可以先设$k$为一个初值，并且$k&lt;\Phi(n)$，然后采用试探法求出满足条件的$k$，可以令$sk=k(或pk=k)$。<br>
-　　　　④利用欧几里得扩展算法计算$sk$的逆元，即解密密钥$pk$，以满足：
-$$
-\begin{aligned}
-sk · pk = 1\ mod\ \Phi(n)
-\end{aligned}
-$$
-　　　　即：
-$$
-\begin{aligned}
-pk = sk^{-1}\ mod\ \Phi(n)
-\end{aligned}
+
+<p>　　RSA中，公开密钥和私人密钥是一对大素数（100~200位十进制数或更大）的函数。在使用RSA公钥体制之前，每个参与者必须产生一对密钥。<br />
+　　（1）密钥产生<br />
+　　　　①随机选择两个不同的大素数$p$和$q$，计算乘积$n=p×q$。<br />
+　　　　②计算其欧拉函数值$\Phi(x)=(p-1)(q-1)$。<br />
+　　　　③随机选取加密密钥$k$，使$k$与$\Phi(n)$互素，即$gcd(k,\Phi(n))=1$。可以先设$k$为一个初值，并且$k&lt;\Phi(n)$，然后采用试探法求出满足条件的$k$，可以令$sk=k(或pk=k)$。<br />
+　　　　④利用欧几里得扩展算法计算$sk$的逆元，即解密密钥$pk$，以满足：<br />
+$$<br />
+\begin{aligned}<br />
+sk · pk = 1\ mod\ \Phi(n)<br />
+\end{aligned}<br />
+$$<br />
+　　　　即：<br />
+$$<br />
+\begin{aligned}<br />
+pk = sk^{-1}\ mod\ \Phi(n)<br />
+\end{aligned}<br />
 $$</p>
-<p>　　（2）加密<br>
-　　　　对消息$m$进行加密时，首先将它分解为比$n$小的数据分组$m_i$，即$m=m_1m_2\cdots m_i\cdots$。然后每块明文自乘$sk$次幂，再按模$n$求余数，即可得到密文。<br>
-　　　　密文为：
-$$
-\begin{aligned}
-C_i=m_i^{sk}\ mod\ n
-\end{aligned}
-$$
-　　　　密文序列为：
-$$
-\begin{aligned}
-C=C_1C_2\cdots C_i \cdots
-\end{aligned}
-$$
-　　（3）解密<br>
-　　　　与加密算法基本相同，将每块密文自乘$pk$次幂，再按模$n$求余数，即可得到明文。<br>
-　　　　明文为：
-$$
-\begin{aligned}
-m_i=C_i^{pk}\ mod\ n
-\end{aligned}
-$$
-　　　　明文序列为：
-$$
-\begin{aligned}
-m=m_1m_2\cdots m_i\cdots
-\end{aligned}
+
+<p>　　（2）加密<br />
+　　　　对消息$m$进行加密时，首先将它分解为比$n$小的数据分组$m_i$，即$m=m_1m_2\cdots m_i\cdots$。然后每块明文自乘$sk$次幂，再按模$n$求余数，即可得到密文。<br />
+　　　　密文为：<br />
+$$<br />
+\begin{aligned}<br />
+C_i=m_i^{sk}\ mod\ n<br />
+\end{aligned}<br />
+$$<br />
+　　　　密文序列为：<br />
+$$<br />
+\begin{aligned}<br />
+C=C_1C_2\cdots C_i \cdots<br />
+\end{aligned}<br />
+$$<br />
+　　（3）解密<br />
+　　　　与加密算法基本相同，将每块密文自乘$pk$次幂，再按模$n$求余数，即可得到明文。<br />
+　　　　明文为：<br />
+$$<br />
+\begin{aligned}<br />
+m_i=C_i^{pk}\ mod\ n<br />
+\end{aligned}<br />
+$$<br />
+　　　　明文序列为：<br />
+$$<br />
+\begin{aligned}<br />
+m=m_1m_2\cdots m_i\cdots<br />
+\end{aligned}<br />
 $$</p>
-<p>　　<strong>eg</strong>.RSA的加密和解密过程。
-　　（1）选择两个素数$p=47,q=61$。<br>
-　　（2）计算$n=p·q=2867$。<br>
-　　（3）计算$\Phi(n)=(p-1)(q-1)=2760$。<br>
-　　（4）选择一个$sk=167$，它小于$\Phi(n)$且与$\Phi(n)=2760$互为素数。<br>
-　　（5）求出$pk$，使得$sk · pk=1\ mod\ 2760$，易得$pk=1223$，因为$1223×167=204241=74×2760+1$。<br>
-　　（6）结果得到的公开密钥为$KU={1223,2867}$，私人密钥为$KR={167,2867}$。<br>
-　　明文输入$m=123\ 456\ 789$。<br>
-　　首先将明文分成3组：<br>
-$$
-\begin{aligned}
-m_1=123\
-m_2=456\
-m_3=789
-\end{aligned}
-$$
-　　用私钥$sk$进行加密：<br>
-$$
-\begin{aligned}
-C_1=m_1^{167}\ mod\ 2867 = 1770\
-C_2=m_2^{167}\ mod\ 2867 = 1321\
-C_3=m_3^{167}\ mod\ 2867 = 1297
-\end{aligned}
-$$
-　　得到密文：<br>
-$$
-\begin{aligned}
-C=1770\ 1321\ 1297
-\end{aligned}
-$$
-　　用公钥$pk$解密：<br>
-$$
-\begin{aligned}
-m_1=C_1^{1223}\ mod\ 2867 = 123\
-m_2=C_2^{1223}\ mod\ 2867 = 456\
-m_3=C_3^{1223}\ mod\ 2867 = 789
-\end{aligned}
+
+<p>　　<strong>eg</strong>.RSA的加密和解密过程。<br />
+　　（1）选择两个素数$p=47,q=61$。<br />
+　　（2）计算$n=p·q=2867$。<br />
+　　（3）计算$\Phi(n)=(p-1)(q-1)=2760$。<br />
+　　（4）选择一个$sk=167$，它小于$\Phi(n)$且与$\Phi(n)=2760$互为素数。<br />
+　　（5）求出$pk$，使得$sk · pk=1\ mod\ 2760$，易得$pk=1223$，因为$1223×167=204241=74×2760+1$。<br />
+　　（6）结果得到的公开密钥为$KU={1223,2867}$，私人密钥为$KR={167,2867}$。<br />
+　　明文输入$m=123\ 456\ 789$。<br />
+　　首先将明文分成3组：<br />
+$$<br />
+\begin{aligned}<br />
+m_1=123<br />
+m_2=456<br />
+m_3=789<br />
+\end{aligned}<br />
+$$<br />
+　　用私钥$sk$进行加密：<br />
+$$<br />
+\begin{aligned}<br />
+C_1=m_1^{167}\ mod\ 2867 = 1770<br />
+C_2=m_2^{167}\ mod\ 2867 = 1321<br />
+C_3=m_3^{167}\ mod\ 2867 = 1297<br />
+\end{aligned}<br />
+$$<br />
+　　得到密文：<br />
+$$<br />
+\begin{aligned}<br />
+C=1770\ 1321\ 1297<br />
+\end{aligned}<br />
+$$<br />
+　　用公钥$pk$解密：<br />
+$$<br />
+\begin{aligned}<br />
+m_1=C_1^{1223}\ mod\ 2867 = 123<br />
+m_2=C_2^{1223}\ mod\ 2867 = 456<br />
+m_3=C_3^{1223}\ mod\ 2867 = 789<br />
+\end{aligned}<br />
 $$</p>
+
 <h1 id="第3章-信息认证技术">第3章 信息认证技术</h1>
+
 <h2 id="哈希函数">哈希函数</h2>
+
 <h3 id="md5">MD5</h3>
+
 <p>　　算法简述：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由4个32位分组组成，将这4个32为分组级联后将生成一个128位的散列值。</p>
+
 <h2 id="消息认证技术">消息认证技术</h2>
+
 <h3 id="消息认证方法">消息认证方法</h3>
+
 <p>　　消息认证主要使用密码技术来实现。在实际使用中，通过消息认证函数$f$产生用于鉴别的消息认证码，将其用于某个身份认证协议，发送方和接收方通过消息认证码对其进行相应的认证。</p>
+
 <h4 id="基于加密方法的消息认证">基于加密方法的消息认证</h4>
+
 <h5 id="基于对称加密方式的消息认证过程">基于对称加密方式的消息认证过程</h5>
-<p>　　假设$K$是通信双方共同拥有的会话密钥，发送方A只需使用$K$对消息$M$进行加密，将密文$C$发送给接收方B即可。由于密钥$K$只有A和B共同拥有，因此能够保证消息的机密性。此外，由于A是除B外唯一拥有密钥和产生正确密文$M$的一方，若B使用$K$对密文$C$进行解密还原出正确的消息$M$，就可以知道消息$M$的内容没有遭到篡改，同时也保证消息来自A。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="基于对称加密的消息认证过程" /></p>
+
+<p>　　假设$K$是通信双方共同拥有的会话密钥，发送方A只需使用$K$对消息$M$进行加密，将密文$C$发送给接收方B即可。由于密钥$K$只有A和B共同拥有，因此能够保证消息的机密性。此外，由于A是除B外唯一拥有密钥和产生正确密文$M$的一方，若B使用$K$对密文$C$进行解密还原出正确的消息$M$，就可以知道消息$M$的内容没有遭到篡改，同时也保证消息来自A。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="基于对称加密的消息认证过程" /></p>
+
 <h5 id="添加校验码的消息认证过程">添加校验码的消息认证过程</h5>
+
 <p>　　然而，在实际使用中，简单的加密并不能达到真正消息认证的目的。消息$M$对接收方B来说是未知的，因此当B对密文进行解密后，如何判断$M$的合法性。如果$M$本身具有某种结构，如文本文章，那么B只需对解密后的消息进行结构上的分析即可判断$M$的合法性。但是，在实际通信中，消息$M$可能是随机的二进制位序列，如可执行代码、声音文件等，即使B解密后仍无法判断消息$M$是否是合法的。</p>
-<p>　　解决这一问题的方法是发送方在对消息M进行加密前，首先对消息通过校验函数$F(·)$产生一个校验码，将校验码附加在消息M之上，再进行加密。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="添加校验码的消息认证过程" /></p>
+
+<p>　　解决这一问题的方法是发送方在对消息M进行加密前，首先对消息通过校验函数$F(·)$产生一个校验码，将校验码附加在消息M之上，再进行加密。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%BB%E5%8A%A0%E6%A0%A1%E9%AA%8C%E7%A0%81%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="添加校验码的消息认证过程" /></p>
+
 <h5 id="基于公钥加密的消息认证过程">基于公钥加密的消息认证过程</h5>
-<p>　　在公开密钥加密体制中，发送方A可以使用自己的私钥$K_{AS}$对消息$M$进行加密，由于只有对应A的公钥$K_{AP}$才能正确解密出消息M，因此采用该方法可以对消息$M$的来源进行认证。同时，该方法和前面所讲的对称加密方法一样，在实际应用中需要在消息M加密之前附加一定的校验码来提高认证的能力。</p>
-<p>　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="基于公钥加密的消息认证过程" /></p>
-<p>　　由于解密时使用的是A的公钥$K_{AP}$，因此该方法不能保证消息的机密性，要保证消息的机密性，必须使用接收方B的公钥$K_{BP}$。A可以先使用自己的私钥$K_{AP}$对消息进行加密，然后再使用接收方B的公钥$K_{BP}$进行加密，则同时既保证了机密性，又提供了消息认证的能力。</p>
+
+<p>　　在公开密钥加密体制中，发送方A可以使用自己的私钥$K<em>{AS}$对消息$M$进行加密，由于只有对应A的公钥$K</em>{AP}$才能正确解密出消息M，因此采用该方法可以对消息$M$的来源进行认证。同时，该方法和前面所讲的对称加密方法一样，在实际应用中需要在消息M加密之前附加一定的校验码来提高认证的能力。</p>
+
+<p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="基于公钥加密的消息认证过程" /></p>
+
+<p>　　由于解密时使用的是A的公钥$K<em>{AP}$，因此该方法不能保证消息的机密性，要保证消息的机密性，必须使用接收方B的公钥$K</em>{BP}$。A可以先使用自己的私钥$K<em>{AP}$对消息进行加密，然后再使用接收方B的公钥$K</em>{BP}$进行加密，则同时既保证了机密性，又提供了消息认证的能力。</p>
+
 <h4 id="基于哈希函数的消息认证">基于哈希函数的消息认证</h4>
+
 <h5 id="使用哈希函数的消息认证过程">使用哈希函数的消息认证过程</h5>
+
 <p>　　哈希函数由于其单向性和抗碰撞性，因此常用来做消息认证。哈希函数以一个变长的消息$M$作为输入，产生一个具有固定长度的散列值$H(M)$，也称为消息摘要。散列值是原始消息的函数，原始信息任何内容的变化都将导致散列值的改变，因此可用于检测信息的完整性。</p>
-<p>　　简单的消息认证方法可以用通信双方的共享密钥$K$对散列值$H(M)$进行加密，将加密后的结果$C=E_K(H(M))$以附件的方式附着在消息$M$上进行传输，接收方收到消息后，只需对$C$进行解密，即可获得散列值$H(M)$，然后使用哈希函数对消息$M$计算另一个散列值$H(M)$，通过比较$H(M)$与$H\prime(M)$二者是否匹配，即可完成对消息进行的认证。
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="基于哈希函数的消息认证" /></p>
+
+<p>　　简单的消息认证方法可以用通信双方的共享密钥$K$对散列值$H(M)$进行加密，将加密后的结果$C=E_K(H(M))$以附件的方式附着在消息$M$上进行传输，接收方收到消息后，只需对$C$进行解密，即可获得散列值$H(M)$，然后使用哈希函数对消息$M$计算另一个散列值$H(M)$，通过比较$H(M)$与$H\prime(M)$二者是否匹配，即可完成对消息进行的认证。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BD%BF%E7%94%A8%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="基于哈希函数的消息认证" /></p>
+
 <h5 id="保证机密性的哈希函数消息认证过程">保证机密性的哈希函数消息认证过程</h5>
-<p>　　若需要保证消息的机密性，可将散列值附加在消息上，并使用双方的会话密钥$K$对其进行加密，得到加密后的密文$C=E_K(M‖H(M)$，并对其进行传输。由于哈希函数的散列值具有对原始消息进行差错检测的能力，因此接收方可以通过这种方式来验证消息是否遭到篡改。因为只有使用通信双方所拥有的会话密钥$K$才能对密文进行解密，因此只要密钥不泄露就可验证消息来自正确的发送方，同时也保证了消息的机密性。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="保证机密性的哈希函数消息认证过程" /></p>
+
+<p>　　若需要保证消息的机密性，可将散列值附加在消息上，并使用双方的会话密钥$K$对其进行加密，得到加密后的密文$C=E_K(M‖H(M)$，并对其进行传输。由于哈希函数的散列值具有对原始消息进行差错检测的能力，因此接收方可以通过这种方式来验证消息是否遭到篡改。因为只有使用通信双方所拥有的会话密钥$K$才能对密文进行解密，因此只要密钥不泄露就可验证消息来自正确的发送方，同时也保证了消息的机密性。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E4%BF%9D%E8%AF%81%E6%9C%BA%E5%AF%86%E6%80%A7%E7%9A%84%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="保证机密性的哈希函数消息认证过程" /></p>
+
 <h5 id="混合加密认证">混合加密认证</h5>
-<p>　　采用公钥加密的方法同样可以用于消息认证。该方法是发送方A使用自己的私钥$K_{AS}$对散列值$H(M)$进行加密，将加密后的密文$C=E_{KAS}(H(M))$附在原始消息$M$上进行传输。接收方B只需使用A的公钥对密文进行解密，得到散列值$H(M)$后就能对消息进行认证。</p>
-<p>　　同样，如果保证消息的机密性，可使用接收方B的公钥$K_{BP}$对消息$M$和加密后的密文$C=E_{KAS}(H(M))$进行加密，得到新的密文$X=E_{KBP}(M‖E_{KAS}(H(M))$。由于使用了接收方B的公钥进行加密，因此只有正确的接收方B才能对密文进行正确解密，从而保证了消息的机密性的同时，也提供了认证的能力。</p>
-<p>　　采用公钥进行非对称加密能提供很好的机密性，而且与对称加密相比，密钥的管理相对容易。但由于非对称加密算法产生的密文不紧凑，加密速度慢，不适合加密数据量较大的消息，因此在实际使用中，常常将对称加密与公钥加密合起来一起使用。具体方法是使用一个对称密钥$K$对消息$M$和加密后的密文$C=E_{KAS}(H(M))$进行加密，再使用接收方B的公钥$K_{BP}$对密钥$K$进行加密，将两个加密结果进行传输。由于使用密钥$K$对消息进行了加密，同时使用了接收方的公钥$K_{BP}$对密钥$K$进行加密，因此只有正确的接收方B才能获得对称密钥$K$，保证了消息的机密性和认证功能。同时，由于对称加密的速度较快，因此在保证了安全性的基础上提高了运算的速度。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg"
-    title="混合加密认证过程" /></p>
-<h4 id="基于消息认证码mac的消息认证">基于消息认证码（MAC）的消息认证</h4>
+
+<p>　　采用公钥加密的方法同样可以用于消息认证。该方法是发送方A使用自己的私钥$K<em>{AS}$对散列值$H(M)$进行加密，将加密后的密文$C=E</em>{KAS}(H(M))$附在原始消息$M$上进行传输。接收方B只需使用A的公钥对密文进行解密，得到散列值$H(M)$后就能对消息进行认证。</p>
+
+<p>　　同样，如果保证消息的机密性，可使用接收方B的公钥$K<em>{BP}$对消息$M$和加密后的密文$C=E</em>{KAS}(H(M))$进行加密，得到新的密文$X=E<em>{KBP}(M‖E</em>{KAS}(H(M))$。由于使用了接收方B的公钥进行加密，因此只有正确的接收方B才能对密文进行正确解密，从而保证了消息的机密性的同时，也提供了认证的能力。</p>
+
+<p>　　采用公钥进行非对称加密能提供很好的机密性，而且与对称加密相比，密钥的管理相对容易。但由于非对称加密算法产生的密文不紧凑，加密速度慢，不适合加密数据量较大的消息，因此在实际使用中，常常将对称加密与公钥加密合起来一起使用。具体方法是使用一个对称密钥$K$对消息$M$和加密后的密文$C=E<em>{KAS}(H(M))$进行加密，再使用接收方B的公钥$K</em>{BP}$对密钥$K$进行加密，将两个加密结果进行传输。由于使用密钥$K$对消息进行了加密，同时使用了接收方的公钥$K_{BP}$对密钥$K$进行加密，因此只有正确的接收方B才能获得对称密钥$K$，保证了消息的机密性和认证功能。同时，由于对称加密的速度较快，因此在保证了安全性的基础上提高了运算的速度。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E8%AE%A4%E8%AF%81.jpg" alt="混合加密认证过程" /></p>
+
+<h4 id="基于消息认证码-mac-的消息认证">基于消息认证码（MAC）的消息认证</h4>
+
 <h5 id="基于消息认证码的认证过程">基于消息认证码的认证过程</h5>
+
 <p>　　使用消息认证码进行消息认证，其基本思想与使用哈希函数类似，同样都是对消息产生个定长的输出，用于鉴别消息的完整性。然而使用哈希函数的时候往往需要对散列值进行加密，如果在不需要保证消息机密性的条件下，使用加密会影响速度。消息认证码在进行定长输出的时候，使用了一个密钥来和消息一起产生定长的输出，这个定长的输出就是消息认证码。</p>
+
 <p>　　使用过程：假设通信双方A、B拥有会话密钥$K$，用于产生MAC的函数为$C$。当发送方A要向接收方B发送消息M时，先计算出消息$M$的MAC值，即MAC=$C_K(M)$，然后将MAC值附加在消息$M$上一起发送给B。接收方B收到消息后，使用与发送方相同的会话密钥$K$计算出消息$M$的MAC值，然后与发送方A发送过来的MAC值进行比较，若二者匹配，则消息合法。由于共享密钥$K$只有A和B共享，攻击者想篡改消息$M$，但没有密钥$K$，那么计算出来的MAC值将与原先的MAC值不同，因此接收方B就能通过比较MAC值来判断消息的合法性。</p>
-<p>　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg"
-    title="基于消息码的认证过程" /></p>
+
+<p>　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B.jpg" alt="基于消息码的认证过程" /></p>
+
 <h2 id="数字签名">数字签名</h2>
+
 <h3 id="数字签名的实现">数字签名的实现</h3>
+
 <h4 id="直接数字签名">直接数字签名</h4>
-<p>　　直接数字签名过程可以总结为以下步骤。
-　　（1）发送方首先对被发送文件采用哈希函数进行运算，得到一个固定长度的数字串，称为报文摘要。<br>
-　　（2）发送方生成发送文件的报文摘要，用自己的私钥对摘要进行加密，形成发送方的数字签名$S$。<br>
-　　（3）这个数字签名将作为报文的附件和报文$M$一起发送给接收方。<br>
-　　（4）接收方接收到报文后，用同样的哈希算法计算出新的报文摘要，再用发送方的公钥对报文附件的数字签名进行解密，比较两个报文摘要，如果值相同，接收方就能确认该数是发送方。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg"
-    title="直接数字签名" /></p>
+
+<p>　　直接数字签名过程可以总结为以下步骤。<br />
+　　（1）发送方首先对被发送文件采用哈希函数进行运算，得到一个固定长度的数字串，称为报文摘要。<br />
+　　（2）发送方生成发送文件的报文摘要，用自己的私钥对摘要进行加密，形成发送方的数字签名$S$。<br />
+　　（3）这个数字签名将作为报文的附件和报文$M$一起发送给接收方。<br />
+　　（4）接收方接收到报文后，用同样的哈希算法计算出新的报文摘要，再用发送方的公钥对报文附件的数字签名进行解密，比较两个报文摘要，如果值相同，接收方就能确认该数是发送方。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.jpg" alt="直接数字签名" /></p>
+
 <h4 id="仲裁数字签名">仲裁数字签名</h4>
+
 <p>　　在仲裁数字签名中，假设用户A与B要进行通信，每个从A发往B的签名报文首先都先发送给仲裁者C，C检验该报文及其签名的出处和内容，然后对报文注明日期，同时指明该报文已通过仲裁者的检验。仲裁者的引入解决了直接签名方案中所面临的问题，即发送方的否认行为。在这种方案中，仲裁者的地位十分关键和敏感，它必须是一个所有通信方都能充分信任的仲裁机构，也就是说仲裁者C必须是一个可信的系统。</p>
-<p>$$
-\begin{aligned}
-A \longrightarrow C \longrightarrow B
-\end{aligned}
+
+<p>$$<br />
+\begin{aligned}<br />
+A \longrightarrow C \longrightarrow B<br />
+\end{aligned}<br />
 $$</p>
-<h5 id="方案1采用对称加密算法的数字签名">方案1：采用对称加密算法的数字签名</h5>
-<p>　　设C是可信第三方，它能同时与A、B通信。它与A有共享密钥$K_A$，与B有共享密钥$K_B$。<br>
-　　（1）A产生报文$M$并计算其散列值$H(M)$，然后将附加了数字签名的报文发送给仲裁者C，并用$K_A$加密，数字签名由A的标识符$ID_A$ 和报文的散列值$H(M)$构成。<br>
-　　（2）仲裁者C对数字签名进行解密，验证其散列值是有效散列值。<br>
-　　（3）验证后，C向B发送一个报文，用$K_S$加密，该报文包括A的标识符$ID_A$、A发出的原始报文$M$、A的数字签名和时间戳$T$。<br>
-　　（4）B解密恢复出报文和签名。<br>
-　　时间戳$T$的作用是让B能够判断$M$是否是过时的报文。<br>
-　　上述方案可表述为：
-　　（1）$A \longrightarrow C:M‖E_{KA}(ID_A‖H(M))$<br>
-　　（2）$C \longrightarrow B:E_{KB}(ID_A‖M‖E_{KA}(ID_A‖H(M‖T))$<br>
-　　在这种方案中，B不能直接验证A的签名，签名是用来解决争端的。B可以认定报文$M$来自A是因为$M$经过了C的验证，这种方案中通信双方A、B对C是高度信任的，即A可以相信C不会泄露$K_A$，因此不会产生伪造的签名。B也相信C发送的报文$M$是经过验证的，确实来自A。此外，A、B还必须相信C能公平地解决争端。<br>
+
+<h5 id="方案1-采用对称加密算法的数字签名">方案1：采用对称加密算法的数字签名</h5>
+
+<p>　　设C是可信第三方，它能同时与A、B通信。它与A有共享密钥$K_A$，与B有共享密钥$K_B$。<br />
+　　（1）A产生报文$M$并计算其散列值$H(M)$，然后将附加了数字签名的报文发送给仲裁者C，并用$K_A$加密，数字签名由A的标识符$ID_A$ 和报文的散列值$H(M)$构成。<br />
+　　（2）仲裁者C对数字签名进行解密，验证其散列值是有效散列值。<br />
+　　（3）验证后，C向B发送一个报文，用$K_S$加密，该报文包括A的标识符$ID<em>A$、A发出的原始报文$M$、A的数字签名和时间戳$T$。<br />
+　　（4）B解密恢复出报文和签名。<br />
+　　时间戳$T$的作用是让B能够判断$M$是否是过时的报文。<br />
+　　上述方案可表述为：<br />
+　　（1）$A \longrightarrow C:M‖E</em>{KA}(ID<em>A‖H(M))$<br />
+　　（2）$C \longrightarrow B:E</em>{KB}(ID<em>A‖M‖E</em>{KA}(ID_A‖H(M‖T))$<br />
+　　在这种方案中，B不能直接验证A的签名，签名是用来解决争端的。B可以认定报文$M$来自A是因为$M$经过了C的验证，这种方案中通信双方A、B对C是高度信任的，即A可以相信C不会泄露$K_A$，因此不会产生伪造的签名。B也相信C发送的报文$M$是经过验证的，确实来自A。此外，A、B还必须相信C能公平地解决争端。<br />
 　　这种方案的缺陷在于报文$M$的内容是以明文的形式传送给仲裁者C，任何攻击者都能获取该消息。</p>
-<h5 id="方案2使用对称密码算法密文传输">方案2：使用对称密码算法，密文传输</h5>
-<p>　　方案2是在方案1的基础上加强了数据的机密性。在此方案中，通信双方A、B使用共享密钥$K_S$来加密所要传送的报文$M$。A向C传送的报文中包含A的标识符$ID_A$、使用$K_S$加密原始报文$M$后的密文及数字签名，其中数字签名是由$ID_A$和加密报文的散列值构成的。仲裁者C经过检验，将收到的报文添加时间戳后，加密发送给接收方B。整个交互过程可以表述如下。<br>
-　　（1）$A \longrightarrow C:ID_A‖E_{KS}(M)‖E_{KA}(ID_A‖H(E_{KS}(M)))$<br>
-　　（2）$C \longrightarrow B:E_{KB}(ID_A‖E_{KS}(M)‖E_{KA}(ID_A‖H(E_{KS}(M))‖T)$<br>
+
+<h5 id="方案2-使用对称密码算法-密文传输">方案2：使用对称密码算法，密文传输</h5>
+
+<p>　　方案2是在方案1的基础上加强了数据的机密性。在此方案中，通信双方A、B使用共享密钥$K_S$来加密所要传送的报文$M$。A向C传送的报文中包含A的标识符$ID_A$、使用$K_S$加密原始报文$M$后的密文及数字签名，其中数字签名是由$ID_A$和加密报文的散列值构成的。仲裁者C经过检验，将收到的报文添加时间戳后，加密发送给接收方B。整个交互过程可以表述如下。<br />
+　　（1）$A \longrightarrow C:ID<em>A‖E</em>{KS}(M)‖E_{KA}(ID<em>A‖H(E</em>{KS}(M)))$<br />
+　　（2）$C \longrightarrow B:E_{KB}(ID<em>A‖E</em>{KS}(M)‖E_{KA}(ID<em>A‖H(E</em>{KS}(M))‖T)$<br />
 　　在这种方案中，尽管仲裁者C无法读取消息报文$M$中的内容，但他仍能防止A或B中任何一方的欺诈。但两种方案都存在的问题是：仲裁者C可能与发送方勾结来否认签名报文，或者与接收方共同伪造发送方的签名。</p>
-<h5 id="方案3使用公开密钥算法密文传输">方案3：使用公开密钥算法，密文传输</h5>
-<p>　　针对上述两种方案的缺陷，采用公开密钥方案就能够迎刃而解。使用公开密钥进行数字签名时，A对报文$M$进行两次加密：先用其私钥$K_{AS}$对消息$M$进行加密，再用B的公钥$K_{BP}$加密，得到加密后的签名；A再用$K_{AS}$对其标识符$ID_A$和上述加密后的签名进行加密，然后连同$ID_A$一起发送给C。经过双重加密后，报文$M$只有B才能阅读，对C来说是安全的，但C能通过外层的解密，从而证实报文确实是来自A的（因为只有A有私钥$K_{AS}$）。C通过验证A的公/私钥对（$K_{AP}$和$K_{AS}$）的有效性完成对报文的验证。然后C再用自己的私钥$K_{CS}$对A的标识符IDA、双重加密后的M及时间戳进行加密后发送给B。整个交互过程可以表述如下：<br>
-　　（1）$A \longrightarrow C:ID_A‖(E_{KAS}(ID_A‖E_{KBP}(E_{KAS}(M)))$<br>
-　　（2）$C \longrightarrow B:E_{KCS}(ID_A‖K_{KBP}(E_{KAS}(M))‖T)$<br>
-　　采用公开密钥的数字签名方案具有许多优点：首先，通信前，通信各方没有任何共享信息，从而避免了联合欺诈；其次，A发给B的消息对其他人是保密的，包括C；最后，即使A的私钥$K_{AS}$已泄密或被盗，但C的私钥$K_{CS}$没有泄密，那么时间戳不正确的消息是不能被发送的。</p>
+
+<h5 id="方案3-使用公开密钥算法-密文传输">方案3：使用公开密钥算法，密文传输</h5>
+
+<p>　　针对上述两种方案的缺陷，采用公开密钥方案就能够迎刃而解。使用公开密钥进行数字签名时，A对报文$M$进行两次加密：先用其私钥$K<em>{AS}$对消息$M$进行加密，再用B的公钥$K</em>{BP}$加密，得到加密后的签名；A再用$K_{AS}$对其标识符$ID_A$和上述加密后的签名进行加密，然后连同$ID<em>A$一起发送给C。经过双重加密后，报文$M$只有B才能阅读，对C来说是安全的，但C能通过外层的解密，从而证实报文确实是来自A的（因为只有A有私钥$K</em>{AS}$）。C通过验证A的公/私钥对（$K<em>{AP}$和$K</em>{AS}$）的有效性完成对报文的验证。然后C再用自己的私钥$K_{CS}$对A的标识符IDA、双重加密后的M及时间戳进行加密后发送给B。整个交互过程可以表述如下：<br />
+　　（1）$A \longrightarrow C:ID<em>A‖(E</em>{KAS}(ID<em>A‖E</em>{KBP}(E<em>{KAS}(M)))$<br />
+　　（2）$C \longrightarrow B:E</em>{KCS}(ID<em>A‖K</em>{KBP}(E<em>{KAS}(M))‖T)$<br />
+　　采用公开密钥的数字签名方案具有许多优点：首先，通信前，通信各方没有任何共享信息，从而避免了联合欺诈；其次，A发给B的消息对其他人是保密的，包括C；最后，即使A的私钥$K</em>{AS}$已泄密或被盗，但C的私钥$K_{CS}$没有泄密，那么时间戳不正确的消息是不能被发送的。</p>
+
 <h2 id="身份认证">身份认证</h2>
+
 <h3 id="基于对称密钥的身份认证">基于对称密钥的身份认证</h3>
+
 <h4 id="基于对称密钥的双向身份认证">基于对称密钥的双向身份认证</h4>
+
 <h5 id="needham-schroeder协议">Needham-Schroeder协议</h5>
-<p>　　Needham-Schroeder协议利用KDC进行密钥分配，同时具备了身份认证的功能。假设通信双方A、B和KDC分别共享密钥$K_A$和$K_B$。<br>
-　　（1）$A \longrightarrow KDC:ID_A‖ID_B‖N_1$<br>
-　　（2）$KDC \longrightarrow A:E_{Ka}(K_S‖ID_B‖N_1‖E_{Kb}(K_S‖ID_A))$<br>
-　　（3）$A \longrightarrow B:E_{KB}(K_S‖ID_A)$<br>
-　　（4）$B \longrightarrow A:E_{KS}(N_2)$<br>
-　　（5）$A \longrightarrow B:E_{KS}(f(N_2))$<br>
-　　该协议的目的是要保证将会话密钥Ks安全地分配给A和B。<br>
-　　第1步，A将他的身份信息$ID_A$、B的身份信息$ID_B$及一个作为临时交互值的随机数$N_1$组成的消息发给KDC，表明A要与B认证并通信。<br>
-　　第2步，KDC产生A、B之间的会话密钥$K_S$，用KDC与B的共享密钥$K_B$对会话密钥$K_S$和A的身份信息$ID_A$进行加密，然后用它和A的共享密钥$K_A$对随机数$N_1$、B的身份信息$ID_B$、会话密钥$K_S$和已加密的信息进行加密，然后将它发送给A。<br>
-　　第3步，A将消息解密并获得$K_S$，比较$N_1$和第一步所发送的$N_1$是否一致，然后将KDC发来的用$K_B$加密的消息发送给B。<br>
-　　第4步，B对消息进行解密并获得$K_S$，然后产生另一随机数$N_2$，用$K_S$加密并发送给A。<br>
-　　第5步，A对消息解密，并用函数$f$产生新的结果，并用$K_S$加密，然后发给B。<br>
-　　第6步，B对消息解密，并验证它是否是$f$产生的结果。<br>
-　　在这个过程中，第4、5步可以防止某些重放攻击。例如，若攻击者窃听到第3步中的报文并进行重放，重放报文中的$K_S$是一个过期的会话密钥，若没有第4、5步的交互过程，B将试图使用这个过期密钥，从而产生混乱。<br>
+
+<p>　　Needham-Schroeder协议利用KDC进行密钥分配，同时具备了身份认证的功能。假设通信双方A、B和KDC分别共享密钥$K_A$和$K_B$。<br />
+　　（1）$A \longrightarrow KDC:ID_A‖ID_B‖N<em>1$<br />
+　　（2）$KDC \longrightarrow A:E</em>{Ka}(K_S‖ID_B‖N<em>1‖E</em>{Kb}(K_S‖ID<em>A))$<br />
+　　（3）$A \longrightarrow B:E</em>{KB}(K_S‖ID<em>A)$<br />
+　　（4）$B \longrightarrow A:E</em>{KS}(N<em>2)$<br />
+　　（5）$A \longrightarrow B:E</em>{KS}(f(N_2))$<br />
+　　该协议的目的是要保证将会话密钥Ks安全地分配给A和B。<br />
+　　第1步，A将他的身份信息$ID_A$、B的身份信息$ID_B$及一个作为临时交互值的随机数$N_1$组成的消息发给KDC，表明A要与B认证并通信。<br />
+　　第2步，KDC产生A、B之间的会话密钥$K_S$，用KDC与B的共享密钥$K_B$对会话密钥$K_S$和A的身份信息$ID_A$进行加密，然后用它和A的共享密钥$K_A$对随机数$N_1$、B的身份信息$ID_B$、会话密钥$K_S$和已加密的信息进行加密，然后将它发送给A。<br />
+　　第3步，A将消息解密并获得$K_S$，比较$N_1$和第一步所发送的$N_1$是否一致，然后将KDC发来的用$K_B$加密的消息发送给B。<br />
+　　第4步，B对消息进行解密并获得$K_S$，然后产生另一随机数$N_2$，用$K_S$加密并发送给A。<br />
+　　第5步，A对消息解密，并用函数$f$产生新的结果，并用$K_S$加密，然后发给B。<br />
+　　第6步，B对消息解密，并验证它是否是$f$产生的结果。<br />
+　　在这个过程中，第4、5步可以防止某些重放攻击。例如，若攻击者窃听到第3步中的报文并进行重放，重放报文中的$K_S$是一个过期的会话密钥，若没有第4、5步的交互过程，B将试图使用这个过期密钥，从而产生混乱。<br />
 　　尽管如此，该协议仍然存在漏洞，容易受到重放攻击。例如，攻击者Ⅹ可能从某些途径获得一个过期的会话密钥。X就可以冒充A重放第3步的报文，欺骗B使用过期的会话密钥，除非B明确记得以前与A通信所使用的所有会话密钥，否则B无法确定是否是重放的消息。</p>
+
 <h5 id="denning协议">Denning协议</h5>
-<p>　　Denning协议对Needham-Schroeder协议进行了修改，引入了时间戳机制，整个过程如下：<br>
-　　（1）$A \longrightarrow KDC:ID_A‖ID_B$<br>
-　　（2）$KDC \longrightarrow A:E_{Ka}(K_S‖ID_B‖T‖E_{Kb}(K_S‖ID_A‖T))$<br>
-　　（3）$A \longrightarrow B:E_{KB}(K_S‖ID_A‖T)$<br>
-　　（4）$B \longrightarrow A:E_{KS}(N_1)$<br>
-　　（5）$A \longrightarrow B:E_{KS}(f(N_1))$<br>
+
+<p>　　Denning协议对Needham-Schroeder协议进行了修改，引入了时间戳机制，整个过程如下：<br />
+　　（1）$A \longrightarrow KDC:ID_A‖ID<em>B$<br />
+　　（2）$KDC \longrightarrow A:E</em>{Ka}(K_S‖ID<em>B‖T‖E</em>{Kb}(K_S‖ID<em>A‖T))$<br />
+　　（3）$A \longrightarrow B:E</em>{KB}(K_S‖ID<em>A‖T)$<br />
+　　（4）$B \longrightarrow A:E</em>{KS}(N<em>1)$<br />
+　　（5）$A \longrightarrow B:E</em>{KS}(f(N_1))$<br />
 　　时间戳$T$使A和B确信会话密钥$K_S$是最新产生的，这样A和B都知道此次交换的是一个新的会话密钥。A和B通过验证下列式子来验证密钥的及时性：</p>
-<p>$$
-\begin{aligned}
-\vert c-T \vert &lt;\Delta t_1 + \Delta t_2
-\end{aligned}
+
+<p>$$<br />
+\begin{aligned}<br />
+\vert c-T \vert &lt;\Delta t_1 + \Delta t_2<br />
+\end{aligned}<br />
 $$</p>
-<p>其中，$c$是本地时钟的时间值，$T$是报文携带的时间戳，$\Delta t_1$是KDC时钟与本地时钟的正常偏差，$\Delta t_2$是网络的正常时延值，满足该公式的时间戳被认为是合法的。由于是使用与KDC的共享密钥对时间戳进行加密，因此即使攻击者知道旧的会话密钥，也不能成功地重放消息，因为B可以根据消息的及时性检测出来。<br>
-　　与Needham-Schroeder协议相比，Denning协议的安全性更高，但同时也带来了新的问题，即如何安全准确地通过网络进行时钟同步。因此，该协议也存在着一定的危险，由于时钟同步机制的出错或受到破坏，通信各方的时钟不同步，协议将容易遭到重放攻击。例如，发送方的时钟快于接收方的时钟，攻击者可以窃听到发送端的报文，由于报文中的时间戳快于接收方的本地时间，攻击者可以等到接收方时钟等于报文时间戳时重放该报文，这种重放可能导致不可预知的结果，这样的攻击称为抑制-重放攻击。　　
+
+<p>其中，$c$是本地时钟的时间值，$T$是报文携带的时间戳，$\Delta t_1$是KDC时钟与本地时钟的正常偏差，$\Delta t_2$是网络的正常时延值，满足该公式的时间戳被认为是合法的。由于是使用与KDC的共享密钥对时间戳进行加密，因此即使攻击者知道旧的会话密钥，也不能成功地重放消息，因为B可以根据消息的及时性检测出来。<br />
+　　与Needham-Schroeder协议相比，Denning协议的安全性更高，但同时也带来了新的问题，即如何安全准确地通过网络进行时钟同步。因此，该协议也存在着一定的危险，由于时钟同步机制的出错或受到破坏，通信各方的时钟不同步，协议将容易遭到重放攻击。例如，发送方的时钟快于接收方的时钟，攻击者可以窃听到发送端的报文，由于报文中的时间戳快于接收方的本地时间，攻击者可以等到接收方时钟等于报文时间戳时重放该报文，这种重放可能导致不可预知的结果，这样的攻击称为抑制-重放攻击。　　<br />
 　　解决抑制-重放攻击的一种方法是要求通信各方必须根据KDC的时钟周期性地校验时钟。另一种方法是基于随机数的临时交互值的认证协议，它不要求时钟同步，并且接收的临时交互值对发送方而言是不可预知的，从而不易受到抑制-重放攻击。</p>
+
 <h5 id="neuman-stubblebine协议">Neuman-Stubblebine协议</h5>
-<p>　　Neuman-Stubblebine协议提出目的是为了试图解决抑制-重放攻击，同时解决Needham-Schroeder协议中出现的问题：<br>
-　　（1）$A \longrightarrow B:ID_A‖N_1$<br>
-　　（2）$B \longrightarrow KDC:ID_B‖N_2‖E_{Kb}(ID_A‖N_1‖T)$<br>
-　　（3）$KDC \longrightarrow A:E_{KA}(ID_B‖N_1‖K_S‖T)‖E_{KB}(ID_A‖K_S‖T)‖N_2$<br>
-　　（4）$A \longrightarrow B:E_{KB}(ID_A‖K_S‖T)‖E_{KS}(N_2)$<br>
-　　第1步，A发起认证。A产生临时交互值$N_1$，连同自己的身份信息$ID_A$以明文的形式发送给B，$N_1$的作用是在进行密钥分发时将返回给A，A通过验证$N_1$的值来确认消息的时效性。<br>
-　　第2步，B向KDC申请会话密钥。B将A的身份信息$ID_A$、临时交互值$N_1$及时间戳$T$用他和KDC的共享密钥$K_B$加密，把加密结果、自己的身份信息$ID_B$和新的临时交互值$N_2$起发送给KDC。其中用$K_B$加密的数据$E_{KB}(ID_A‖N_1‖T)$的作用是请求KDC向A发布一个可信的“票据”，指定了“票据”的接收者、有效期，以及A发送的临时交互值N1。<br>
-　　第3步，KDC产生会话密钥$K_S$，然后产生两个消息。第一个消息是由B的身份信息$ID_B$、A的临时交互值$N_1$、会话密钥$K_S$和时间戳组成，并用他与A的共享密钥$K_A$加密；第二个消息是由A的身份信息$ID_A$、会话密钥$K_S$和时间戳组成，并用他与B的共享密钥$K_B$加密。将这两个消息连同B的临时交互值$N_2$一起发送给A。时间戳$T$给出了会话密钥的使用时限，$ID_B$用于证实B已经收到初始报文，$N_1$能够检测重放攻击。<br>
-　　第4步，A用KDC与B的共享密钥$K_B$加密的消息和加密后的$N_2$发送给B。B从加密消息中得到共享密钥并解密出$N_2$，通过比较$N_2$来鉴别消息是来自A还是一次重放攻击。<br>
-　　这个协议为A、B双方建立会话提供了一种安全有效的会话密钥交换方式。在协议中，时间戳$T$只是相对B的本地时钟，也只有B对其进行校验，因此不需要时钟的同步。同时，A可以保存用于鉴别B的消息，可以减少与KDC的多次交互。假设A、B完成了上面的协议和通信，然后终止连接，A要和B再次建立新的会话时，只要A保存了原有的消息，并在密钥的有效期限内，不必依赖KDC，就能够在3步之内重新进行身份认证。<br>
-　　（1）$A \longrightarrow B:E_{KB}[ID_A‖K_S‖T]‖N_1 \prime$<br>
-　　（2）$B \longrightarrow A:N_2 \prime ‖E_{KS}(N_1)$<br>
-　　（3）$A \longrightarrow B:E_{KS}(N_2)$<br>
+
+<p>　　Neuman-Stubblebine协议提出目的是为了试图解决抑制-重放攻击，同时解决Needham-Schroeder协议中出现的问题：<br />
+　　（1）$A \longrightarrow B:ID_A‖N_1$<br />
+　　（2）$B \longrightarrow KDC:ID_B‖N<em>2‖E</em>{Kb}(ID_A‖N<em>1‖T)$<br />
+　　（3）$KDC \longrightarrow A:E</em>{KA}(ID_B‖N_1‖K<em>S‖T)‖E</em>{KB}(ID_A‖K_S‖T)‖N<em>2$<br />
+　　（4）$A \longrightarrow B:E</em>{KB}(ID_A‖K<em>S‖T)‖E</em>{KS}(N_2)$<br />
+　　第1步，A发起认证。A产生临时交互值$N_1$，连同自己的身份信息$ID_A$以明文的形式发送给B，$N_1$的作用是在进行密钥分发时将返回给A，A通过验证$N_1$的值来确认消息的时效性。<br />
+　　第2步，B向KDC申请会话密钥。B将A的身份信息$ID_A$、临时交互值$N_1$及时间戳$T$用他和KDC的共享密钥$K_B$加密，把加密结果、自己的身份信息$ID_B$和新的临时交互值$N_2$起发送给KDC。其中用$K<em>B$加密的数据$E</em>{KB}(ID_A‖N_1‖T)$的作用是请求KDC向A发布一个可信的“票据”，指定了“票据”的接收者、有效期，以及A发送的临时交互值N1。<br />
+　　第3步，KDC产生会话密钥$K_S$，然后产生两个消息。第一个消息是由B的身份信息$ID_B$、A的临时交互值$N_1$、会话密钥$K_S$和时间戳组成，并用他与A的共享密钥$K_A$加密；第二个消息是由A的身份信息$ID_A$、会话密钥$K_S$和时间戳组成，并用他与B的共享密钥$K_B$加密。将这两个消息连同B的临时交互值$N_2$一起发送给A。时间戳$T$给出了会话密钥的使用时限，$ID_B$用于证实B已经收到初始报文，$N_1$能够检测重放攻击。<br />
+　　第4步，A用KDC与B的共享密钥$K_B$加密的消息和加密后的$N_2$发送给B。B从加密消息中得到共享密钥并解密出$N_2$，通过比较$N<em>2$来鉴别消息是来自A还是一次重放攻击。<br />
+　　这个协议为A、B双方建立会话提供了一种安全有效的会话密钥交换方式。在协议中，时间戳$T$只是相对B的本地时钟，也只有B对其进行校验，因此不需要时钟的同步。同时，A可以保存用于鉴别B的消息，可以减少与KDC的多次交互。假设A、B完成了上面的协议和通信，然后终止连接，A要和B再次建立新的会话时，只要A保存了原有的消息，并在密钥的有效期限内，不必依赖KDC，就能够在3步之内重新进行身份认证。<br />
+　　（1）$A \longrightarrow B:E</em>{KB}[ID_A‖K_S‖T]‖N_1 \prime$<br />
+　　（2）$B \longrightarrow A:N<em>2 \prime ‖E</em>{KS}(N<em>1)$<br />
+　　（3）$A \longrightarrow B:E</em>{KS}(N_2)$<br />
 　　B在第1步收到消息后可以验证密钥有没有过期，新产生的N1、N2用来检测是否有重放攻击。</p>
+
 <h3 id="基于公钥的身份认证">基于公钥的身份认证</h3>
+
 <h4 id="基于公钥的双向身份认证">基于公钥的双向身份认证</h4>
+
 <h5 id="denning-sacco协议">Denning-Sacco协议</h5>
-<p>　　在公开密钥加密的身份认证中，也需要有一个类似的中心系统来分发通信各方的公开密钥证书。因为在没有认证中心或密钥分配中心的情况下，要使通信各方都能拥有对方的当前公钥是不切实际的。<br>
-　　Denning-Sacco协议是一种使用时间戳机制的公钥分配和认证方法。假设通信双方分别为A和B，AS为认证服务器。<br>
-　　（1）$A \longrightarrow AS:ID_A‖ID_B$<br>
-　　（2）$AS \longrightarrow A:E_{KSAS}(ID_A‖K_{PA}‖T)‖E_{KSAS}(ID_B‖K_{PB}‖T)$<br>
-　　（3）$A \longrightarrow B:E_{KSAS}(ID_A‖K_{PA}‖T)‖E_{KSAS}(ID_B‖K_{PB}‖T)‖E_{KPB}(E_{KSA}(K_S‖T)$<br>
-　　其中，$K_{PA}、K_{SA}、K_{PB}、K_{SB}$分别为A和B的公钥和私钥。$K_{PAS}$和$K_{SAS}$分别为AS的公钥和私钥。在这个协议中，认证中心系统不负责密钥的分配，而是提供公钥证书，所以称为认证服务器(AS)。会话密钥$K_S$的选择和加密完全由A来完成，因此不存在被AS泄露的危险。同时使用了时间戳机制，可以防止重放攻击对密钥安全性的威胁。<br>
+
+<p>　　在公开密钥加密的身份认证中，也需要有一个类似的中心系统来分发通信各方的公开密钥证书。因为在没有认证中心或密钥分配中心的情况下，要使通信各方都能拥有对方的当前公钥是不切实际的。<br />
+　　Denning-Sacco协议是一种使用时间戳机制的公钥分配和认证方法。假设通信双方分别为A和B，AS为认证服务器。<br />
+　　（1）$A \longrightarrow AS:ID_A‖ID<em>B$<br />
+　　（2）$AS \longrightarrow A:E</em>{KSAS}(ID<em>A‖K</em>{PA}‖T)‖E_{KSAS}(ID<em>B‖K</em>{PB}‖T)$<br />
+　　（3）$A \longrightarrow B:E_{KSAS}(ID<em>A‖K</em>{PA}‖T)‖E_{KSAS}(ID<em>B‖K</em>{PB}‖T)‖E<em>{KPB}(E</em>{KSA}(K<em>S‖T)$<br />
+　　其中，$K</em>{PA}、K<em>{SA}、K</em>{PB}、K<em>{SB}$分别为A和B的公钥和私钥。$K</em>{PAS}$和$K_{SAS}$分别为AS的公钥和私钥。在这个协议中，认证中心系统不负责密钥的分配，而是提供公钥证书，所以称为认证服务器(AS)。会话密钥$K_S$的选择和加密完全由A来完成，因此不存在被AS泄露的危险。同时使用了时间戳机制，可以防止重放攻击对密钥安全性的威胁。<br />
 　　这个协议简洁明了，但不足之处仍然是需要严格的时钟同步才能保证协议的安全。</p>
+
 <h5 id="woo-lam协议">Woo-Lam协议</h5>
-<p>　　Woo-Lam协议使用随机数作为临时交互值来代替时间戳，它是一种以KDC为中心的认证协议。<br>
-　　（1）$A \longrightarrow KDC:ID_A‖ID_B$<br>
-　　（2）$KDC \longrightarrow A:E_{KSK}(ID_B‖K_{PB})$<br>
-　　（3）$A \longrightarrow B:E_{KPB}(N_1‖ID_A)$<br>
-　　（4）$B \longrightarrow KDC:ID_B‖ID_A‖E_{KPK}(N_1)$<br>
-　　（5）$KDC \longrightarrow B:E_{KSK}(ID_A‖K_{PA})‖E_{KPB}(E_{KSK}(N_1‖K_S‖ID_B))$<br>
-　　（6）$B \longrightarrow A:E_{KPA}(E_{KSK}(N_1‖K_S‖ID_B)‖N_2)$<br>
-　　（7）$A \longrightarrow B:E_{KS}(N_2)$<br>
-　　其中，$K_{PK}$和$K_{SK}$分别是KDC的公钥和私钥。在协议刚开始，A向KDC发送一个要和B建立安全连接的请求，KDC将B的公钥证书副本返回给A，A通过B的公钥告诉B想与他通信，同时将临时交互值$N_1$发给B。然后，B向KDC请求A的公钥证书和会话密钥，由于B发送消息中包含A的临时交互值，因此KDC可以用临时交互值对会话密钥加戳，其中临时交互值受KDC的公钥保护。接着，KDC将A的公钥证书的副本和消息${N_1，K_S，ID_B}$一起返回给B。这条消息说明，$K_S$是KDC为B产生的且与$N_1$有关的密钥。$N_1$使A确信$K_S$是新会话密钥。用KDC的私钥对三元组${N_1，K_S，ID_B}$加密，使得B可以验证该三元组确实来自KDC。由于是用B的公钥对该三元组加密，因此其他各方均不能利用该三元组与A建立假冒连接。在第6步，B用A的公钥对$E_{KSA}(N_1‖K_S‖ID_B)$和B产生的随机数$N_2$加密后发送给A，A先解密得出会话密钥$K$，然后用$K_S$对$N_2$加密发送给B，这样可以使B确信A已经获得正确的会话密钥。<br>
-　　相比 Denning-Sacco协议，这个协议对抵抗攻击的能力更强，但也存在着某些安全隐患。改进的方法是在第5步和第6步中加入A的身份信息$ID_A$，将会话密钥与双方的身份信息绑定在一起。将$ID_A$和$N_1$绑定在一起唯一标识了A的连接请求。具体过程如下：<br>
-　　（1）$A \longrightarrow KDC:ID_A‖ID_B$<br>
-　　（2）$KDC \longrightarrow A:E_{KSK}(ID_B‖K_{PB})$<br>
-　　（3）$A \longrightarrow B:E_{KPB}(N_1‖ID_A)$<br>
-　　（4）$B \longrightarrow KDC:ID_B‖ID_A‖E_{KPK}(N_1)$<br>
-　　（5）$KDC \longrightarrow B:E_{KSK}(ID_A‖K_{PA})‖E_{KPB}(E_{KSK}(N_1‖K_S‖ID_A‖ID_B))$<br>
-　　（6）$B \longrightarrow A:E_{KPA}(E_{KSK}(N_1‖K_S‖ID_A‖ID_B)‖N_2)$<br>
-　　（7）$A \longrightarrow B:E_{KS}(N_2)$</p>
+
+<p>　　Woo-Lam协议使用随机数作为临时交互值来代替时间戳，它是一种以KDC为中心的认证协议。<br />
+　　（1）$A \longrightarrow KDC:ID_A‖ID<em>B$<br />
+　　（2）$KDC \longrightarrow A:E</em>{KSK}(ID<em>B‖K</em>{PB})$<br />
+　　（3）$A \longrightarrow B:E_{KPB}(N_1‖ID_A)$<br />
+　　（4）$B \longrightarrow KDC:ID_B‖ID<em>A‖E</em>{KPK}(N<em>1)$<br />
+　　（5）$KDC \longrightarrow B:E</em>{KSK}(ID<em>A‖K</em>{PA})‖E<em>{KPB}(E</em>{KSK}(N_1‖K_S‖ID<em>B))$<br />
+　　（6）$B \longrightarrow A:E</em>{KPA}(E_{KSK}(N_1‖K_S‖ID_B)‖N<em>2)$<br />
+　　（7）$A \longrightarrow B:E</em>{KS}(N<em>2)$<br />
+　　其中，$K</em>{PK}$和$K_{SK}$分别是KDC的公钥和私钥。在协议刚开始，A向KDC发送一个要和B建立安全连接的请求，KDC将B的公钥证书副本返回给A，A通过B的公钥告诉B想与他通信，同时将临时交互值$N_1$发给B。然后，B向KDC请求A的公钥证书和会话密钥，由于B发送消息中包含A的临时交互值，因此KDC可以用临时交互值对会话密钥加戳，其中临时交互值受KDC的公钥保护。接着，KDC将A的公钥证书的副本和消息${N_1，K_S，ID_B}$一起返回给B。这条消息说明，$K_S$是KDC为B产生的且与$N_1$有关的密钥。$N_1$使A确信$K_S$是新会话密钥。用KDC的私钥对三元组${N_1，K_S，ID<em>B}$加密，使得B可以验证该三元组确实来自KDC。由于是用B的公钥对该三元组加密，因此其他各方均不能利用该三元组与A建立假冒连接。在第6步，B用A的公钥对$E</em>{KSA}(N_1‖K_S‖ID_B)$和B产生的随机数$N_2$加密后发送给A，A先解密得出会话密钥$K$，然后用$K_S$对$N_2$加密发送给B，这样可以使B确信A已经获得正确的会话密钥。<br />
+　　相比 Denning-Sacco协议，这个协议对抵抗攻击的能力更强，但也存在着某些安全隐患。改进的方法是在第5步和第6步中加入A的身份信息$ID_A$，将会话密钥与双方的身份信息绑定在一起。将$ID_A$和$N_1$绑定在一起唯一标识了A的连接请求。具体过程如下：<br />
+　　（1）$A \longrightarrow KDC:ID_A‖ID<em>B$<br />
+　　（2）$KDC \longrightarrow A:E</em>{KSK}(ID<em>B‖K</em>{PB})$<br />
+　　（3）$A \longrightarrow B:E_{KPB}(N_1‖ID_A)$<br />
+　　（4）$B \longrightarrow KDC:ID_B‖ID<em>A‖E</em>{KPK}(N<em>1)$<br />
+　　（5）$KDC \longrightarrow B:E</em>{KSK}(ID<em>A‖K</em>{PA})‖E<em>{KPB}(E</em>{KSK}(N_1‖K_S‖ID_A‖ID<em>B))$<br />
+　　（6）$B \longrightarrow A:E</em>{KPA}(E_{KSK}(N_1‖K_S‖ID_A‖ID_B)‖N<em>2)$<br />
+　　（7）$A \longrightarrow B:E</em>{KS}(N_2)$</p>
+
 <h1 id="第4章-计算机病毒">第4章 计算机病毒</h1>
+
 <h2 id="计算机病毒的特征及分类">计算机病毒的特征及分类</h2>
+
 <h3 id="计算机病毒的特征">计算机病毒的特征</h3>
+
 <h4 id="传染性">传染性</h4>
-<p>　　传染性是病毒的基本特征，是判断一个程序是否为计算机病毒的最重要的特征。病毒能通过自我复制来传染正常文件，达到破坏计算机正常运行的目的。但它的传染是有条件的，也就是病毒程序必须被执行之后才具有传染性，才能传染其他文件。病毒一旦进入计算机系统，就会开始寻找机会感染其他文件。<br>
+
+<p>　　传染性是病毒的基本特征，是判断一个程序是否为计算机病毒的最重要的特征。病毒能通过自我复制来传染正常文件，达到破坏计算机正常运行的目的。但它的传染是有条件的，也就是病毒程序必须被执行之后才具有传染性，才能传染其他文件。病毒一旦进入计算机系统，就会开始寻找机会感染其他文件。<br />
 　　计算机病毒的主要传播渠道有硬盘、光盘、可移动存储器、网页、电子邮件和FTP下载等。</p>
+
 <h4 id="破坏性">破坏性</h4>
+
 <p>　　任何计算机病毒感染了系统后，都会对系统产生不同程度的影响。病毒都是可执行程序或代码，当病毒代码运行时就会降低系统的工作效率，占用系统资源。病毒发作时的破坏程度取决于病毒设计者。轻则占用系统资源，影响计算机运行速度，降低计算机工作效率，使用户不能正常使用计算机；重则毁坏系统，破坏用户计算机中的数据并使之无法恢复，甚至破坏计算机硬件，给用户带来巨大的损失。</p>
+
 <h4 id="隐蔽性">隐蔽性</h4>
+
 <p>　　计算机病毒具有很强的隐蔽性，它一般都是具有很高编程技巧的、短小精悍的代码，通常附在正常的程序之中或藏在磁盘隐秘的地方。没有经过代码分析是很难将病毒程序和正常程序区分开的。有些病毒采用了极其高明的手段来隐藏自已，如使用隐藏文件、注册表内的相似字符等，而且有的病毒在感染了系统之后，计算机系统仍能正常工作，用户不会感到有任何异常，普通用户无法在正常的情况下发现病毒。</p>
+
 <h4 id="寄生性">寄生性</h4>
+
 <p>　　一般情况下，计算机病毒都不会独立存在，而是寄生于其他程序中，当执行这个程序时，病毒代码就会被执行。病毒寄生在其他程序中的同时，也进行感染扩散，病毒潜伏寄生的时间越长，感染的范围也就越大，对用户造成的影响也就越大。在未满足触发条件或正常程序未启动之前，用户是不易发觉病毒的存在的。</p>
+
 <h4 id="可触发性">可触发性</h4>
+
 <p>　　大部分病毒感染系统之后一般不会马上发作，而是隐藏在系统中，就像定时炸弹一样，只有在满足特定条件时才被触发。潜伏机制是计算机病毒内部的一种机制，在不满足触发条件时，病毒只会感染而不做破坏，只有在触发条件满足的情况下才会表现出来。例如黑色星期五病毒，不到预定时间，用户就不会觉察出异常。一旦遇到13日并且是星期五，病毒就会被激活并且对系统进行破坏。当然，还有著名的CIH病毒，它是在每月的26日发作。</p>
+
 <h2 id="计算机病毒制作与反病毒技术">计算机病毒制作与反病毒技术</h2>
+
 <h3 id="病毒的检测">病毒的检测</h3>
+
 <h4 id="特征代码法">特征代码法</h4>
-<p>　　特征代码技术是根据病毒程序的特征，如感染标记、特征程序段内容、文件长度变化、文件校验和变化等对病毒进行分类处理，而后在程序运行中凡有类似的特征点出现，则认定是病毒，是早期病毒检测技术的主要方法，也是大多数反病毒软件的静态扫描方法。一般认为，特征代码法是检测已知病毒的最简单、开销最小的方法。<br>
-　　特征代码法的工作原理是对每种病毒样本抽取特征代码，根据该特征代码进行病毒检测。主要依据原则为：抽取的代码比较特殊，不大可能与普通正常程序代码吻合。抽取的代码要有适当的长度，一方面维持特征代码的唯一性，也就是说一定要具有代表性，使用所选的特征代码都能够正确地检查出它所代表的病毒。如果病毒特征代码选择得不准确，就会带来误报（发现的不是病毒）或漏报（真正病毒没有发现）。另一方面不要有太大的时间和空间的开销。一般是在保持唯一性的前提下，尽量使特征代码长度短些，以减少时间和空间的开销。用每一种病毒代码中含有的特定字符或字符串对被检测的对象进行扫描，如果在被检测对象内部发现某种特定字符或字符串，则表明发现了该字符或字符串代表的病毒前面介绍传染机制时提到的感染标记就是一种识别病毒的特定字符。实现这种扫描的软件称为特征扫描器。根据特征代码法的工作原理，特征扫描器由病毒特征代码库和扫描引擎两部分组成。病毒特征代码库包含了经过特别选定的各种病毒的反映其特征的字符或字符串。扫描引擎利用病毒特征代码库对检测对象进行匹配性扫描，一日有匹配便发出报警显然，病毒特征代码库中的病毒特征代码越多。<br>
+
+<p>　　特征代码技术是根据病毒程序的特征，如感染标记、特征程序段内容、文件长度变化、文件校验和变化等对病毒进行分类处理，而后在程序运行中凡有类似的特征点出现，则认定是病毒，是早期病毒检测技术的主要方法，也是大多数反病毒软件的静态扫描方法。一般认为，特征代码法是检测已知病毒的最简单、开销最小的方法。<br />
+　　特征代码法的工作原理是对每种病毒样本抽取特征代码，根据该特征代码进行病毒检测。主要依据原则为：抽取的代码比较特殊，不大可能与普通正常程序代码吻合。抽取的代码要有适当的长度，一方面维持特征代码的唯一性，也就是说一定要具有代表性，使用所选的特征代码都能够正确地检查出它所代表的病毒。如果病毒特征代码选择得不准确，就会带来误报（发现的不是病毒）或漏报（真正病毒没有发现）。另一方面不要有太大的时间和空间的开销。一般是在保持唯一性的前提下，尽量使特征代码长度短些，以减少时间和空间的开销。用每一种病毒代码中含有的特定字符或字符串对被检测的对象进行扫描，如果在被检测对象内部发现某种特定字符或字符串，则表明发现了该字符或字符串代表的病毒前面介绍传染机制时提到的感染标记就是一种识别病毒的特定字符。实现这种扫描的软件称为特征扫描器。根据特征代码法的工作原理，特征扫描器由病毒特征代码库和扫描引擎两部分组成。病毒特征代码库包含了经过特别选定的各种病毒的反映其特征的字符或字符串。扫描引擎利用病毒特征代码库对检测对象进行匹配性扫描，一日有匹配便发出报警显然，病毒特征代码库中的病毒特征代码越多。<br />
 　　扫描引擎能识别的病毒也就越多特征代码法的优点是检测速度快，误报警率低，能够准确地查出病毒并确定病毒的种类和名称，为消除病毒提供确切的信息。缺点是不能检测出未知病毒、变种病毒和隐蔽性病毒，需要定期更新病毒资料库，具有滞后性，同时，搜集已知病毒的特征代码费用开销大。</p>
+
 <h4 id="校验和法">校验和法</h4>
-<p>　　校验和法的工作原理是计算正常文件内容的校验和，将该校验和写入文件中或写入别的文件中保存。在文件使用过程中，定期地或每次使用文件前，检查文件当前内容算出的校验和与原来保存的校验和是否一致，如果不一致便发出染毒报警。<br>
-　　运用校验和法检测病毒一般采用以下3种方式。<br>
-　　（1）在检测病毒工具中纳入校验和法，对被查对象文件计算其正常状态的校验和，将校验和值写入被查文件中或检测工具中，然后进行比较。<br>
-　　（2）在应用程序中放入校验和自动检查功能，将文件正常状态的校验和写人文件本身中，每当应用程序启动时，比较当前校验和与原校验和的值，实现应用程序的自检测。<br>
+
+<p>　　校验和法的工作原理是计算正常文件内容的校验和，将该校验和写入文件中或写入别的文件中保存。在文件使用过程中，定期地或每次使用文件前，检查文件当前内容算出的校验和与原来保存的校验和是否一致，如果不一致便发出染毒报警。<br />
+　　运用校验和法检测病毒一般采用以下3种方式。<br />
+　　（1）在检测病毒工具中纳入校验和法，对被查对象文件计算其正常状态的校验和，将校验和值写入被查文件中或检测工具中，然后进行比较。<br />
+　　（2）在应用程序中放入校验和自动检查功能，将文件正常状态的校验和写人文件本身中，每当应用程序启动时，比较当前校验和与原校验和的值，实现应用程序的自检测。<br />
 　　（3）将校验和检査程序常驻内存，每当应用程序开始运行时，自动比较检查应用程序内容或别的文件中预先保存的校验和。</p>
+
 <p>　　校验和法既能发现已知病毒，也能发现未知病毒，但是，它不能识别病毒种类，不能报出病毒名称。由于病毒感染并非文件内容改变的唯一性原因，文件内容的改变有可能是正常程序引起的，如软件版本更新、变更口令及修改运行参数等，因此校验和法常常有虚假报警，而且此法也会影响文件的运行速度。另外，校验和法对某些隐蔽性极好的病毒无效。这种病毒进驻内存后，会自动剥去染毒程序中的病毒代码，使校验和法受骗，对一个有毒文件算出正常校验和。因此，校验和法的优点是方法简单，能发现未知病毒，被查文件的细微变化也能发现；其缺点是必须预先记录正常状态的校验和，会有虚假报警，不能识别病毒名称不能对付某些隐蔽性极好的病毒。</p>
+
 <h4 id="行为监测法">行为监测法</h4>
-<p>　　行为监测法是常用的行为判定技术，其工作原理是利用病毒的特有行为特征进行检测，旦发现病毒行为则立即报警。经过对病毒多年的观察和研究，人们发现病毒的一些行为是病毒共有的，而且比较特殊。在正常程序中，这些行为比较罕见，如一般引导型病毒都会占用INT 13H；病毒常驻内存后，为防止操作系统将其覆盖，必须修改系统内存总量；对COM、EXE文件必须执行写入操作；染毒程度运行时，先运行病毒，后执行宿主程序，两者切换等许多特征行为。行为监测法就是引入一些人工智能技术，通过分析检查对象的逻辑结构，将其分为多个模块，分别引入虚拟机中执行并监测，从而查出使用特定触发条件的病毒。<br>
+
+<p>　　行为监测法是常用的行为判定技术，其工作原理是利用病毒的特有行为特征进行检测，旦发现病毒行为则立即报警。经过对病毒多年的观察和研究，人们发现病毒的一些行为是病毒共有的，而且比较特殊。在正常程序中，这些行为比较罕见，如一般引导型病毒都会占用INT 13H；病毒常驻内存后，为防止操作系统将其覆盖，必须修改系统内存总量；对COM、EXE文件必须执行写入操作；染毒程度运行时，先运行病毒，后执行宿主程序，两者切换等许多特征行为。行为监测法就是引入一些人工智能技术，通过分析检查对象的逻辑结构，将其分为多个模块，分别引入虚拟机中执行并监测，从而查出使用特定触发条件的病毒。<br />
 　　行为监测法的优点在于不仅可以发现已知病毒，而且可以相当准确地预报未知的多数病毒。但也有其缺点，即可能虚假报警和不能识别病毒名称，而且实现起来有一定难度。</p>
+
 <h4 id="软件模拟法">软件模拟法</h4>
-<p>　　变种病毒每次感染都变化其病毒代码，对付这种病毒，特征代码法失效，因为变种病毒代码实施密码化，而且每次所用的密钥不同，把染毒的代码相互比较也无法找出相同的可能作为特征的稳定代码。虽然行为监测法可以检测出变种病毒，但在检测出病毒后，因为病毒的种类不知道，也无法做杀毒处理。<br>
+
+<p>　　变种病毒每次感染都变化其病毒代码，对付这种病毒，特征代码法失效，因为变种病毒代码实施密码化，而且每次所用的密钥不同，把染毒的代码相互比较也无法找出相同的可能作为特征的稳定代码。虽然行为监测法可以检测出变种病毒，但在检测出病毒后，因为病毒的种类不知道，也无法做杀毒处理。<br />
 　　软件模拟法是新的病毒检测工具所使用的方法之一。该工具开始运行时，使用特征代码法检测病毒，如果发现有隐蔽性病毒或变种病毒的嫌疑时，启动软件模拟模块。软件模拟法模拟CPU的执行，在其设计的虚拟机下执行病毒的变体引擎解码程序，安全地将变种病毒解开，监视病毒的运行，使其露出本来的面目，再加以扫描。待病毒自身的密码译码以后，再运用特征代码法来识别病毒的种类。</p>
+
 <p>　　总地来说，特征代码法查杀已知病毒比较安全彻底，实施比较简单，常用于静态扫描模块中；其他几种方法适用于查杀未知病毒和变种病毒，但误报率高，实施难度大，在常驻内存的动态监测模块中发挥重要作用。</p>
+
 <h1 id="第5章-网络攻击与防范技术">第5章 网络攻击与防范技术</h1>
+
 <h2 id="网络攻击概述和分类">网络攻击概述和分类</h2>
+
 <h3 id="网络攻击的步骤概览">网络攻击的步骤概览</h3>
-<p>　　（1）目标探测。攻击者在攻击之前的首要任务，就是明确攻击目标是单个主机还是整个网段，并了解目标的具体网络信息等。<br>
-　　（2）端口扫描。通过端口扫描可以搜集到目标主机的各种有用信息，包括端口是否开放，能否匿名登录，等等。<br>
-　　（3）网络监听。黑客可以借助网络监听技术对其他用户进行攻击，同时也可以截获用户名、口令等有用信息。<br>
-　　（4）实施攻击。采用有效的方式对目标主机进行攻击，如缓冲区溢出、DoS等。<br>
+
+<p>　　（1）目标探测。攻击者在攻击之前的首要任务，就是明确攻击目标是单个主机还是整个网段，并了解目标的具体网络信息等。<br />
+　　（2）端口扫描。通过端口扫描可以搜集到目标主机的各种有用信息，包括端口是否开放，能否匿名登录，等等。<br />
+　　（3）网络监听。黑客可以借助网络监听技术对其他用户进行攻击，同时也可以截获用户名、口令等有用信息。<br />
+　　（4）实施攻击。采用有效的方式对目标主机进行攻击，如缓冲区溢出、DoS等。<br />
 　　（5）撤退。留下后门，消除攻击的痕迹。</p>
+
 <h2 id="拒绝服务攻击">拒绝服务攻击</h2>
-<p>　　DoS（Denial of service，拒绝服务）攻击是一种既简单又有效的攻击方式。它是针对系统的可用性发起的攻击，通过某些手段使得目标系统或网络不能提供正常的服务。该攻击主要是利用了TCP/IP中存在的设计缺陷，或者操作系统及网络设备的网络协议栈存在的实现缺陷。<br>
-　　一些商业及政府网站都曾经遭受拒绝服务攻击。在2000年2月发生的一次针对某些高利润的站点（如雅虎、易趣等）的拒绝服务攻击持续了近两天，使这些公司遭受了很大的损失，事后这些攻击确定为分布式的拒绝服务攻击。<br>
-　　从攻击技术来看，υoS攻击表现为带宽消耗、系统资源消耗、程序实现上的缺陷、系统策略的修改等几种。带宽消耗是通过网络发送大量信息，用足够的传输信息消耗掉有限的带宽资源。系统资源消耗是向系统发送大量信息，针对操作系统中有限的资源，如进程数、磁盘、CPU、内存、文件句柄等。利用程序实现上的缺陷，对异常行为的不正确处理，通过发送些非法数据包使系统死机或重启，如 Ping of Death。修改或篡改系统策略也可以使得它不能提供正常的服务。<br>
-　　从攻击目标来看，有通用类型的DoS攻击和系统相关的攻击。通用类型的DoS攻击往往是与具体系统无关的，如针对协议设计缺陷的攻击。系统相关的攻击往往与具体的实现有关。最终，所有的攻击都是与系统相关的，因为有些系统可以针对协议的缺陷提供一些补救措施，从而免受此类攻击。<br>
+
+<p>　　DoS（Denial of service，拒绝服务）攻击是一种既简单又有效的攻击方式。它是针对系统的可用性发起的攻击，通过某些手段使得目标系统或网络不能提供正常的服务。该攻击主要是利用了TCP/IP中存在的设计缺陷，或者操作系统及网络设备的网络协议栈存在的实现缺陷。<br />
+　　一些商业及政府网站都曾经遭受拒绝服务攻击。在2000年2月发生的一次针对某些高利润的站点（如雅虎、易趣等）的拒绝服务攻击持续了近两天，使这些公司遭受了很大的损失，事后这些攻击确定为分布式的拒绝服务攻击。<br />
+　　从攻击技术来看，υoS攻击表现为带宽消耗、系统资源消耗、程序实现上的缺陷、系统策略的修改等几种。带宽消耗是通过网络发送大量信息，用足够的传输信息消耗掉有限的带宽资源。系统资源消耗是向系统发送大量信息，针对操作系统中有限的资源，如进程数、磁盘、CPU、内存、文件句柄等。利用程序实现上的缺陷，对异常行为的不正确处理，通过发送些非法数据包使系统死机或重启，如 Ping of Death。修改或篡改系统策略也可以使得它不能提供正常的服务。<br />
+　　从攻击目标来看，有通用类型的DoS攻击和系统相关的攻击。通用类型的DoS攻击往往是与具体系统无关的，如针对协议设计缺陷的攻击。系统相关的攻击往往与具体的实现有关。最终，所有的攻击都是与系统相关的，因为有些系统可以针对协议的缺陷提供一些补救措施，从而免受此类攻击。<br />
 　　一些典型的DoS攻击有 Ping of Death、Teardrop、UDP Flooding、Land、SYN Flooding和Smurf等。</p>
+
 <h1 id="第6章-防火墙技术">第6章 防火墙技术</h1>
+
 <h2 id="防火墙的体系结构">防火墙的体系结构</h2>
+
 <h3 id="堡垒主机体系结构">堡垒主机体系结构</h3>
-<p>　　堡垒主机体系结构在某些地方也称为筛选路由器体系结构。堡垒主机是内部网在 Internet上的代表。堡垒主机是任何外来访问者都可以连接、访问的。通过该堡垒主机，防火墙内的系统可以对外操作，外部网用户也可以获取防火墙内的服务。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg"
-    title="堡垒主机体系结构示意图" />
+
+<p>　　堡垒主机体系结构在某些地方也称为筛选路由器体系结构。堡垒主机是内部网在 Internet上的代表。堡垒主机是任何外来访问者都可以连接、访问的。通过该堡垒主机，防火墙内的系统可以对外操作，外部网用户也可以获取防火墙内的服务。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%A0%A1%E5%9E%92%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg" alt="堡垒主机体系结构示意图" /><br />
 　　堡垒主机是一种被强化的可以防御攻击的计算机，被暴露于因特网之上，作为进入内部网络的一个检查点（checkpoint），以达到把整个网络的安全问题集中在某个主机上解决。正是由于这个原因，防火墙的建造者和防火墙的管理者应尽力给予其保护，特别是在防火墙的安装和初始化的过程中应予以仔细保护。</p>
+
 <h3 id="双宿主主机体系结构">双宿主主机体系结构</h3>
-<p>　　双宿主主机的防火墙系统由一台装有两个网卡的堡垒主机构成。两个网卡分别与外部网及内部网相连。堡垒主机上运行防火墙软件，可以转发数据、提供服务等。堡垒主机将防止在外部网络和内部系统之间建立任何直接的连接，可以确保数据包不能直接从外部网络到达内部网络。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    title="双宿主主机体系结构示意图" /><br>
-　　双宿主主机有两个接口，具有以下特点。<br>
-　　（1）两个端口之间不能进行直接的IP数据包的转发。<br>
-　　（2）防火墙内部的系统可以与双宿主主机进行通信，同时防火墙外部的系统也可以与双宿主主机进行通信，但二者之间不能直接进行通信。<br>
+
+<p>　　双宿主主机的防火墙系统由一台装有两个网卡的堡垒主机构成。两个网卡分别与外部网及内部网相连。堡垒主机上运行防火墙软件，可以转发数据、提供服务等。堡垒主机将防止在外部网络和内部系统之间建立任何直接的连接，可以确保数据包不能直接从外部网络到达内部网络。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%8F%8C%E5%AE%BF%E4%B8%BB%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="双宿主主机体系结构示意图" /><br />
+　　双宿主主机有两个接口，具有以下特点。<br />
+　　（1）两个端口之间不能进行直接的IP数据包的转发。<br />
+　　（2）防火墙内部的系统可以与双宿主主机进行通信，同时防火墙外部的系统也可以与双宿主主机进行通信，但二者之间不能直接进行通信。<br />
 　　这种体系结构的优点是结构非常简单，易于实现，并且具有高度的安全性，可以完全阻止内部网络与外部网络通信。</p>
+
 <h3 id="屏蔽主机体系结构">屏蔽主机体系结构</h3>
-<p>　　双宿主主机体系结构是由一台同时连接在内外部网络之间的双宿主主机提供安全保障的，而屏蔽主机体系结构则不同，在屏蔽主机体系结构提供安全保护的主机仅仅与内部网相连。另外，主机过滤还有一台单独的过滤路由器。包过滤路由器应避免用户直接与代理服务器相连。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    title="屏蔽主机体系结构示意图" /><br>
+
+<p>　　双宿主主机体系结构是由一台同时连接在内外部网络之间的双宿主主机提供安全保障的，而屏蔽主机体系结构则不同，在屏蔽主机体系结构提供安全保护的主机仅仅与内部网相连。另外，主机过滤还有一台单独的过滤路由器。包过滤路由器应避免用户直接与代理服务器相连。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E4%B8%BB%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="屏蔽主机体系结构示意图" /><br />
 　　这种结构的堡垒主机位于内部网络，而过滤路由器按以下规则过滤数据包：任何外部网（如 Internet）的主机都只能与内部网的堡垒主机建立连接，甚至只有提供某些类型服务的外部网主机才被允许与堡垒主机建立连接。任何外部系统对内部网络的操作都必须经过堡垒主机，同时堡垒主机本身就要求有较全面的安全维护。包过滤系统也允许堡垒主机与外部网进行一些“可以接受（即符合站点的安全规则）”的连接。</p>
+
 <h3 id="屏蔽子网体系结构">屏蔽子网体系结构</h3>
-<p>　　屏蔽子网体系结构也称为屏蔽子网网关体系结构，就是在屏蔽主机体系结构中的内部网和外部网之间再增加一个被隔离的子网，这个子网由堡垒主机、应用级网关等公用服务器组成，习惯上将这个子网称为“非军事区”（De Militarised Zone，DMZ）。在屏蔽主机体系结构中，堡垒主机最易受到攻击，尽管可以对它提供最大限度的保护，但因其为入侵者首先能攻击到的机器，所以它仍然是整个系统最容易出问题的环节。<br>
-　　用边界网络来隔离堡垒主机与内部网，能减轻入侵者在攻破堡垒主机后带给内部网的压力。人侵者即使攻破堡垒主机也不可能对内部网进行任意操作，而只可能进行部分操作。<br>
-　　在最简单的屏蔽子网体系结构中，有两台都与边界网络相连的过滤路由器，一台位于边界网络与内部网络之间，而另一台位于边界网络与外部网络之间。在这种结构下，入侵者要攻击到内部网必须通过两台路由器的安全控制，即使入侵者通过了堡垒主机，它还必须通过内部路由器才能抵达内部网，因此整个网络安全机制就不会因一个站点攻破而全部瘫痪。<br>
-　　<img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    data-srcset="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 1.5x, https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg 2x"
-    data-sizes="auto"
-    alt="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg"
-    title="屏蔽子网体系结构示意图" /></p>
+
+<p>　　屏蔽子网体系结构也称为屏蔽子网网关体系结构，就是在屏蔽主机体系结构中的内部网和外部网之间再增加一个被隔离的子网，这个子网由堡垒主机、应用级网关等公用服务器组成，习惯上将这个子网称为“非军事区”（De Militarised Zone，DMZ）。在屏蔽主机体系结构中，堡垒主机最易受到攻击，尽管可以对它提供最大限度的保护，但因其为入侵者首先能攻击到的机器，所以它仍然是整个系统最容易出问题的环节。<br />
+　　用边界网络来隔离堡垒主机与内部网，能减轻入侵者在攻破堡垒主机后带给内部网的压力。人侵者即使攻破堡垒主机也不可能对内部网进行任意操作，而只可能进行部分操作。<br />
+　　在最简单的屏蔽子网体系结构中，有两台都与边界网络相连的过滤路由器，一台位于边界网络与内部网络之间，而另一台位于边界网络与外部网络之间。在这种结构下，入侵者要攻击到内部网必须通过两台路由器的安全控制，即使入侵者通过了堡垒主机，它还必须通过内部路由器才能抵达内部网，因此整个网络安全机制就不会因一个站点攻破而全部瘫痪。<br />
+　　<img src="https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0/%E5%B1%8F%E8%94%BD%E5%AD%90%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="屏蔽子网体系结构示意图" /></p>
+
 <h1 id="第7章-入侵检测技术">第7章 入侵检测技术</h1>
+
 <h2 id="入侵检测系统的特点和分类">入侵检测系统的特点和分类</h2>
+
 <h3 id="入侵检测系统的分类">入侵检测系统的分类</h3>
+
 <h4 id="基于主机的入侵检测系统">基于主机的入侵检测系统</h4>
-<p>　　基于主机的入侵检测系统通常安装在需要重点检测的主机上，主要是对该主机的网络实时连接及系统审计日志进行智能分析和判断。<br>
+
+<p>　　基于主机的入侵检测系统通常安装在需要重点检测的主机上，主要是对该主机的网络实时连接及系统审计日志进行智能分析和判断。<br />
 　　由于基于主机的入侵检测系统必须安装在需要保护的设备上，这必定降低该设备的工作效率。另外，全面部署主机入侵检测系统代价较大，任何企业都无法将所有主机用主机入侵检测系统保护，只能选择其中的一部分。此时，那些未安装主机入侵检测系统的机器将成为保护的盲点，入侵者可利用这些机器达到攻击目标。因此，随着网络使用的频繁程度越来越高，基于主机入侵检测系统将无法适应这种局面，它只能作为网络入侵检测的一个有力补充。</p>
+
 <h4 id="基于网络的入侵检测系统">基于网络的入侵检测系统</h4>
-<p>　　NIDS在混杂模式下监视网段中传输的各种数据包，并对这些数据包的内容、源地址、目的地址等进行分析和检测。如果发现入侵行为或可疑事件，人侵检测系统就会发出警报，甚至切断网络连接。它通常安装在网络上比较重要的网段，也可以说容易出问题的网段，利用网络侦听技术，通过对网络上的数据流进行捕捉、分析，以判断是否存在入侵。它以网络上传输的信息包为主要研究对象，保护网络的运行。<br>
+
+<p>　　NIDS在混杂模式下监视网段中传输的各种数据包，并对这些数据包的内容、源地址、目的地址等进行分析和检测。如果发现入侵行为或可疑事件，人侵检测系统就会发出警报，甚至切断网络连接。它通常安装在网络上比较重要的网段，也可以说容易出问题的网段，利用网络侦听技术，通过对网络上的数据流进行捕捉、分析，以判断是否存在入侵。它以网络上传输的信息包为主要研究对象，保护网络的运行。<br />
 　　基于网络的IDS成本低，只需要在网络的关键点进行部署即可，其次对那些基于协议入侵的行为有很好的防范作用，并且对攻击进行实时响应，而与主机操作系统无关。但是随着网络上传送的数据包的日益庞大，对每个数据包进行捕获分析已经不太现实了，这将严重增加系统的负荷，丟包现象将逐渐增多，从而影响NIDS的性能。</p>
+
 <p>　　基于对上述两种IDS的分析，分布式入侵检测系统已经是现在和将来入侵检测系统应用发展的必然趋势。</p>
+
 <h4 id="分布式入侵检测系统">分布式入侵检测系统</h4>
-<p>　　典型的DIDS是管理端/传感器结构。NIDS作为传感器放置在网络的各个地方，并向中央管理平台汇报情况。攻击日志定时地传送到管理平台并保存在中央数据库中，新的攻击特征库能发送到各个传感器上。每个传感器能根据所在网络的实际需要配置不同的规则集，报警信息能发到管理平台的消息系统，用各种方式通知IDS管理员。<br>
+
+<p>　　典型的DIDS是管理端/传感器结构。NIDS作为传感器放置在网络的各个地方，并向中央管理平台汇报情况。攻击日志定时地传送到管理平台并保存在中央数据库中，新的攻击特征库能发送到各个传感器上。每个传感器能根据所在网络的实际需要配置不同的规则集，报警信息能发到管理平台的消息系统，用各种方式通知IDS管理员。<br />
 　　对DIDS来说，传感器可以使用NIDS或 HIDS，或者同时使用，而且传感器有的工作在混杂模式，有的工作在非混杂模式，然而无论什么情况，DIDS都有一个显著的特征，即分布在网络不同位置的传感器都向中央管理平台传送报警和日志信息。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -774,7 +964,7 @@ $$</p>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/"><i class="fa-brands fa-facebook-square fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结" data-web><i class="fa-brands fa-whatsapp fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结" data-image="/images/cryptology.jpeg"><i class="fa-brands fa-weibo fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结" data-description=""><i class="fa-brands fa-blogger fa-fw"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-title="计算机数据安全复习要点总结"><i class="fa-brands fa-evernote fa-fw"></i></a>
@@ -827,5 +1017,5 @@ $$</p>
   
   
 ><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

@@ -1,6 +1,6 @@
 # 2021招商银行FinTech精英训练营 数据赛道
 
-![](https://hexo-img-meurice.oss-cn-beijing.aliyuncs.com/cover/2021Fintech.jpg)
+
 时间序列回归赛题，一个简单的方案分享+指标MAPE翻车记录，B榜Rank53。magic number yyds~
 
 <!--more-->
